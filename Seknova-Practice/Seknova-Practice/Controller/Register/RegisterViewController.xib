@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="Seknova_Practice" customModuleProvider="target">
+            <connections>
+                <outlet property="againPasswordTextfield" destination="aJO-Go-LbT" id="VK4-4w-6bP"/>
+                <outlet property="cuntryLabel" destination="gu4-70-Rgx" id="wBD-gV-WwA"/>
+                <outlet property="emailTextfield" destination="RJJ-K5-Tbu" id="nbg-jl-QmB"/>
+                <outlet property="passwordTextfield" destination="2ef-Qh-feh" id="hd4-IS-wq3"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="RegisterBackgroundView" customModule="Seknova_Practice" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REGISTER ACCOINT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3b-XB-QUp">
+                    <rect key="frame" x="43" y="143" width="344" height="39"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <color key="textColor" name="NavigationBar"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="註  冊  帳  號" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i21-jF-Y5H">
+                    <rect key="frame" x="129" y="202" width="172" height="28"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <color key="textColor" name="NavigationBar"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uDX-Sb-a9V">
+                    <rect key="frame" x="43" y="285" width="344" height="198.66666666666663"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="電子信箱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RJJ-K5-Tbu">
+                            <rect key="frame" x="0.0" y="0.0" width="344" height="66.333333333333329"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密碼 (8-16字元,需含大小寫英文與字母" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ef-Qh-feh">
+                            <rect key="frame" x="0.0" y="66.333333333333314" width="344" height="66"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="再一次輸入密碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aJO-Go-LbT">
+                            <rect key="frame" x="0.0" y="132.33333333333331" width="344" height="66.333333333333314"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="aJO-Go-LbT" firstAttribute="width" secondItem="uDX-Sb-a9V" secondAttribute="width" id="4C4-tS-eVR"/>
+                        <constraint firstItem="RJJ-K5-Tbu" firstAttribute="height" secondItem="uDX-Sb-a9V" secondAttribute="height" multiplier="0.3333" id="B2L-AW-uUo"/>
+                        <constraint firstItem="aJO-Go-LbT" firstAttribute="height" secondItem="uDX-Sb-a9V" secondAttribute="height" multiplier="0.3334" id="Soe-5J-qz5"/>
+                        <constraint firstItem="2ef-Qh-feh" firstAttribute="width" secondItem="uDX-Sb-a9V" secondAttribute="width" id="Ydi-8S-61D"/>
+                        <constraint firstItem="2ef-Qh-feh" firstAttribute="height" secondItem="uDX-Sb-a9V" secondAttribute="height" multiplier="0.3333" id="c04-7c-5yR"/>
+                        <constraint firstItem="RJJ-K5-Tbu" firstAttribute="width" secondItem="uDX-Sb-a9V" secondAttribute="width" id="vQE-ZV-PEf"/>
+                    </constraints>
+                </stackView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Seknova" translatesAutoresizingMaskIntoConstraints="NO" id="1ag-KM-2w1">
+                    <rect key="frame" x="306" y="103" width="124" height="32"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Taiwan(台灣)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gu4-70-Rgx">
+                    <rect key="frame" x="58" y="504" width="344" height="46"/>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pickerBg" translatesAutoresizingMaskIntoConstraints="NO" id="aEL-a8-dqg">
+                    <rect key="frame" x="43" y="505" width="344" height="44"/>
+                </imageView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="i21-jF-Y5H" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.4" id="10n-qo-VYv"/>
+                <constraint firstItem="aEL-a8-dqg" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.8" id="37M-vm-0XD"/>
+                <constraint firstItem="i3b-XB-QUp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="7xo-mo-917"/>
+                <constraint firstItem="1ag-KM-2w1" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.288372" id="Ab2-ZL-U3h"/>
+                <constraint firstItem="1ag-KM-2w1" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="E5Z-zI-lrW"/>
+                <constraint firstItem="i3b-XB-QUp" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.8" id="GL6-hu-9qB"/>
+                <constraint firstItem="1ag-KM-2w1" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.0402516" id="Hki-eh-QCH"/>
+                <constraint firstItem="uDX-Sb-a9V" firstAttribute="top" secondItem="i21-jF-Y5H" secondAttribute="bottom" constant="55" id="Ny7-9c-8iP"/>
+                <constraint firstItem="i21-jF-Y5H" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.0352201" id="ObE-WG-Cdm"/>
+                <constraint firstItem="aEL-a8-dqg" firstAttribute="top" secondItem="uDX-Sb-a9V" secondAttribute="bottom" constant="21.333333333333371" id="OjL-Y0-6gk"/>
+                <constraint firstItem="gu4-70-Rgx" firstAttribute="leading" secondItem="aEL-a8-dqg" secondAttribute="leading" constant="15" id="Pe7-Rv-wqi"/>
+                <constraint firstItem="uDX-Sb-a9V" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="RJy-Iz-b8l"/>
+                <constraint firstItem="aEL-a8-dqg" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="RRh-7s-qjA"/>
+                <constraint firstItem="aEL-a8-dqg" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.0553459" id="Sea-06-bAs"/>
+                <constraint firstItem="gu4-70-Rgx" firstAttribute="height" secondItem="aEL-a8-dqg" secondAttribute="height" multiplier="1.04545" id="USo-Q6-NgC"/>
+                <constraint firstItem="i21-jF-Y5H" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="VpP-qn-3Wu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1ag-KM-2w1" secondAttribute="trailing" id="X6H-rj-wk3"/>
+                <constraint firstItem="i3b-XB-QUp" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="cc7-3P-Kg2"/>
+                <constraint firstItem="i21-jF-Y5H" firstAttribute="top" secondItem="i3b-XB-QUp" secondAttribute="bottom" constant="20" id="guR-g8-qqe"/>
+                <constraint firstItem="gu4-70-Rgx" firstAttribute="centerY" secondItem="aEL-a8-dqg" secondAttribute="centerY" id="leQ-ec-UGI"/>
+                <constraint firstItem="i3b-XB-QUp" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.0490566" id="tXz-rJ-Izf"/>
+                <constraint firstItem="gu4-70-Rgx" firstAttribute="width" secondItem="aEL-a8-dqg" secondAttribute="width" id="wbC-Tv-H8h"/>
+                <constraint firstItem="uDX-Sb-a9V" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.25" id="xrl-4Z-BnC"/>
+                <constraint firstItem="uDX-Sb-a9V" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.8" id="z4o-dm-xz7"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
+            <point key="canvasLocation" x="64.186046511627907" y="-11.587982832618026"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Seknova" width="467" height="72"/>
+        <image name="pickerBg" width="301" height="38"/>
+        <namedColor name="NavigationBar">
+            <color red="0.75700002908706665" green="0.059000000357627869" blue="0.14100000262260437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
