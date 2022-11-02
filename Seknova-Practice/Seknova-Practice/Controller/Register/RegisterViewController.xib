@@ -13,9 +13,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="Seknova_Practice" customModuleProvider="target">
             <connections>
                 <outlet property="againPasswordTextfield" destination="aJO-Go-LbT" id="VK4-4w-6bP"/>
+                <outlet property="contrastButton" destination="6r8-9x-U6n" id="tel-2b-2Sa"/>
                 <outlet property="cuntryLabel" destination="gu4-70-Rgx" id="wBD-gV-WwA"/>
+                <outlet property="cuntryPickerView" destination="tqM-4F-FCh" id="OwP-qo-Rxw"/>
                 <outlet property="emailTextfield" destination="RJJ-K5-Tbu" id="nbg-jl-QmB"/>
                 <outlet property="passwordTextfield" destination="2ef-Qh-feh" id="hd4-IS-wq3"/>
+                <outlet property="registerButton" destination="9fs-Vc-Ksf" id="o1Z-qW-AWf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -42,17 +45,17 @@
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="電子信箱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RJJ-K5-Tbu">
                             <rect key="frame" x="0.0" y="0.0" width="344" height="66.333333333333329"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密碼 (8-16字元,需含大小寫英文與字母" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ef-Qh-feh">
                             <rect key="frame" x="0.0" y="66.333333333333314" width="344" height="66"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="再一次輸入密碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aJO-Go-LbT">
                             <rect key="frame" x="0.0" y="132.33333333333331" width="344" height="66.333333333333314"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                         </textField>
                     </subviews>
                     <constraints>
@@ -76,15 +79,53 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pickerBg" translatesAutoresizingMaskIntoConstraints="NO" id="aEL-a8-dqg">
                     <rect key="frame" x="43" y="505" width="344" height="44"/>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fs-Vc-Ksf">
+                    <rect key="frame" x="98.666666666666686" y="831.33333333333337" width="233" height="46.666666666666629"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="註冊" cornerStyle="capsule">
+                        <backgroundConfiguration key="background" strokeWidth="5">
+                            <color key="strokeColor" name="NavigationBar"/>
+                        </backgroundConfiguration>
+                        <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                        <color key="baseForegroundColor" name="NavigationBar"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="registerButton:" destination="-1" eventType="touchUpInside" id="2KH-et-r6Y"/>
+                    </connections>
+                </button>
+                <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tqM-4F-FCh">
+                    <rect key="frame" x="0.0" y="618" width="430" height="280"/>
+                </pickerView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6r8-9x-U6n">
+                    <rect key="frame" x="43" y="573" width="17" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="6r8-9x-U6n" secondAttribute="height" multiplier="1:1" id="lPn-US-VD3"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" cornerStyle="capsule">
+                        <backgroundConfiguration key="background" strokeWidth="2" strokeOutset="5">
+                            <color key="backgroundColor" systemColor="labelColor"/>
+                            <color key="strokeColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </backgroundConfiguration>
+                        <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="contrastClick:" destination="-1" eventType="touchUpInside" id="RhB-7s-vaW"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="i21-jF-Y5H" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.4" id="10n-qo-VYv"/>
                 <constraint firstItem="aEL-a8-dqg" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.8" id="37M-vm-0XD"/>
+                <constraint firstItem="tqM-4F-FCh" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="4ji-hh-YaQ"/>
                 <constraint firstItem="i3b-XB-QUp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="7xo-mo-917"/>
+                <constraint firstItem="tqM-4F-FCh" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.3" id="ANt-fp-e9e"/>
                 <constraint firstItem="1ag-KM-2w1" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.288372" id="Ab2-ZL-U3h"/>
                 <constraint firstItem="1ag-KM-2w1" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="E5Z-zI-lrW"/>
+                <constraint firstItem="6r8-9x-U6n" firstAttribute="width" secondItem="tqM-4F-FCh" secondAttribute="height" multiplier="17:279" id="Fge-eJ-mcj"/>
                 <constraint firstItem="i3b-XB-QUp" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.8" id="GL6-hu-9qB"/>
                 <constraint firstItem="1ag-KM-2w1" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.0402516" id="Hki-eh-QCH"/>
                 <constraint firstItem="uDX-Sb-a9V" firstAttribute="top" secondItem="i21-jF-Y5H" secondAttribute="bottom" constant="55" id="Ny7-9c-8iP"/>
@@ -94,12 +135,20 @@
                 <constraint firstItem="uDX-Sb-a9V" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="RJy-Iz-b8l"/>
                 <constraint firstItem="aEL-a8-dqg" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="RRh-7s-qjA"/>
                 <constraint firstItem="aEL-a8-dqg" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.0553459" id="Sea-06-bAs"/>
+                <constraint firstItem="6r8-9x-U6n" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="43" id="TiZ-dO-sj3"/>
                 <constraint firstItem="gu4-70-Rgx" firstAttribute="height" secondItem="aEL-a8-dqg" secondAttribute="height" multiplier="1.04545" id="USo-Q6-NgC"/>
                 <constraint firstItem="i21-jF-Y5H" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="VpP-qn-3Wu"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1ag-KM-2w1" secondAttribute="trailing" id="X6H-rj-wk3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="9fs-Vc-Ksf" secondAttribute="bottom" constant="20" id="apy-an-yK0"/>
+                <constraint firstItem="6r8-9x-U6n" firstAttribute="top" secondItem="aEL-a8-dqg" secondAttribute="bottom" constant="24" id="boC-ui-o4b"/>
+                <constraint firstItem="tqM-4F-FCh" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="bta-Bb-Ngk"/>
                 <constraint firstItem="i3b-XB-QUp" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="cc7-3P-Kg2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="tqM-4F-FCh" secondAttribute="bottom" id="deM-He-lhu"/>
+                <constraint firstItem="9fs-Vc-Ksf" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="esM-h4-Due"/>
                 <constraint firstItem="i21-jF-Y5H" firstAttribute="top" secondItem="i3b-XB-QUp" secondAttribute="bottom" constant="20" id="guR-g8-qqe"/>
+                <constraint firstItem="9fs-Vc-Ksf" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.54186" id="lJR-oe-hwu"/>
                 <constraint firstItem="gu4-70-Rgx" firstAttribute="centerY" secondItem="aEL-a8-dqg" secondAttribute="centerY" id="leQ-ec-UGI"/>
+                <constraint firstItem="9fs-Vc-Ksf" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.05" id="q9S-9Y-FTX"/>
                 <constraint firstItem="i3b-XB-QUp" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.0490566" id="tXz-rJ-Izf"/>
                 <constraint firstItem="gu4-70-Rgx" firstAttribute="width" secondItem="aEL-a8-dqg" secondAttribute="width" id="wbC-Tv-H8h"/>
                 <constraint firstItem="uDX-Sb-a9V" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.25" id="xrl-4Z-BnC"/>
@@ -115,6 +164,9 @@
         <namedColor name="NavigationBar">
             <color red="0.75700002908706665" green="0.059000000357627869" blue="0.14100000262260437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

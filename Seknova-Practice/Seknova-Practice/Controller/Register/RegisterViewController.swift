@@ -14,8 +14,11 @@ class RegisterViewController: BaseViewController {
     @IBOutlet weak var passwordTextfield: UITextField!
     @IBOutlet weak var againPasswordTextfield: UITextField!
     @IBOutlet weak var cuntryLabel: UILabel!
+    @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var cuntryPickerView: UIPickerView!
+    @IBOutlet weak var contrastButton: UIButton!
     // MARK: - Variables
-
+    let cuntryArray = ["Taiwan(台灣)","China(中國)","America(美國)","Japan(日本)"]
     
     
     
@@ -29,6 +32,8 @@ class RegisterViewController: BaseViewController {
         cuntryLabel.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(tapLabel))
         cuntryLabel.addGestureRecognizer(tap)
+        cuntryPickerView.delegate = self
+        cuntryPickerView.dataSource = self
     }
 
     
@@ -58,9 +63,48 @@ class RegisterViewController: BaseViewController {
     
     @objc func tapLabel() {
         print("tap label")
-        
+        cuntryPickerView.isHidden = false
+        registerButton.isHidden = true
     }
 
+    @IBAction func contrastClick(_ sender: Any) {
+        var configuration = UIButton.Configuration.filled()
+        configuration.background.strokeColor = .darkGray
+        configuration.background.strokeWidth = 2
+        configuration.background.strokeOutset = 5
+        configuration.background.cornerRadius = 20
+        contrastButton.configuration = configuration
+        contrastButton.tintColor = .red
+    }
+    
+    @IBAction func registerButton(_ sender: Any) {
+//        let regex = NSRegularExpression(pattern: "/^(?=.*[a-z])(?=.*\\d)[a-zA-Z\\d]{8,16}$/" , options: NSRegularExpression.Options.allowCommentsAndWhitespace)
+//        if (passwordTextfield.text?.matches(of: passwordRegularExpression)){
+//            print("密碼格式錯誤")
+//        }
+    }
+    
+}
+
+    // MARK: - extension
+extension RegisterViewController: UIPickerViewDelegate,UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return cuntryArray.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return cuntryArray[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        cuntryLabel.text = cuntryArray[row]
+        cuntryPickerView.isHidden = true
+        registerButton.isHidden = false
+    }
 }
 
 

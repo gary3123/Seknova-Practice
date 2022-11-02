@@ -9,5 +9,7 @@ import UIKit
 
 extension UIColor {
     
-    static var navigationBar = UIColor(named: "NavigationBar Color")
+    static var navigationBar = UIColor(named: "NavigationBar")
+    
+    static var facebook = UIColor(named: "Facebook")
 }

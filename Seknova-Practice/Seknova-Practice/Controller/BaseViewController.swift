@@ -8,22 +8,28 @@
 import UIKit
 
 class BaseViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+ 
+    //設定 Navigation Bar
+    func setNavigationbar(backgroundcolor: UIColor?,
+                          tintColor: UIColor? = .white,
+                          foregroundColor: UIColor? = .white) {
+        let appearence = UINavigationBarAppearance()
+        appearence.configureWithOpaqueBackground()
+        appearence.backgroundColor = backgroundcolor
+        self.navigationController?.navigationBar.tintColor = tintColor
+        appearence.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor : foregroundColor ?? .white
+        ]
+        
+        self.navigationController?.navigationBar.standardAppearance = appearence
+        self.navigationController?.navigationBar.scrollEdgeAppearance = appearence
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.topItem?.title = "Login"
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // 點擊螢幕收起鍵盤
+    override  func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
-    */
-
+    
 }
