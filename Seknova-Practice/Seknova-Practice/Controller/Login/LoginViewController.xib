@@ -19,7 +19,7 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="3mk-lH-KaZ" customClass="AlphaBackgroundView" customModule="Seknova_Practice" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="3mk-lH-KaZ">
             <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>

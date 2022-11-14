@@ -24,7 +24,6 @@ class BaseViewController: UIViewController {
         self.navigationController?.navigationBar.standardAppearance = appearence
         self.navigationController?.navigationBar.scrollEdgeAppearance = appearence
         self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.topItem?.title = "Login"
     }
     
     // 點擊螢幕收起鍵盤

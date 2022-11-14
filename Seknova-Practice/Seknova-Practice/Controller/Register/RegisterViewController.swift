@@ -19,7 +19,7 @@ class RegisterViewController: BaseViewController {
     @IBOutlet weak var contrastButton: UIButton!
     // MARK: - Variables
     let cuntryArray = ["Taiwan(台灣)","China(中國)","America(美國)","Japan(日本)"]
-    
+    var contrastStatus = false
     
     
     
@@ -27,18 +27,32 @@ class RegisterViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.insertSubview(AlphaBackgroundView(imageName: "Background.jpg"), at: 0)
+        setupUI()
+        self.title = "Register"
+    }
+
+    
+    // MARK: - UI Settings
+
+    func setupUI() {
         setupTextfield()
+        setupPickerView()
+        setupLabel()
+    }
+    
+    func setupLabel() {
         // 開啟 Label 交互功能
         cuntryLabel.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(tapLabel))
         cuntryLabel.addGestureRecognizer(tap)
+    }
+    
+    func setupPickerView() {
         cuntryPickerView.delegate = self
         cuntryPickerView.dataSource = self
     }
-
     
-    
-    // MARK: - UI Settings
     fileprivate func setupTextfield() {
         emailTextfield.setTextFieldImage(imageName: "mail",
                                          imageX: 9 ,
@@ -56,8 +70,16 @@ class RegisterViewController: BaseViewController {
                                                  imageWidth: 25,
                                                  imageheight: 30)
     }
-    
-    
+    //設定同意書的按鈕格式及顏色
+    func setContrastButton ( tintColor: UIColor ) {
+        var configuration = UIButton.Configuration.filled()
+        configuration.background.strokeColor = .darkGray
+        configuration.background.strokeWidth = 2
+        configuration.background.strokeOutset = 5
+        configuration.background.cornerRadius = 20
+        contrastButton.configuration = configuration
+        contrastButton.tintColor = tintColor
+    }
     
     // MARK: - IBAction
     
@@ -68,20 +90,51 @@ class RegisterViewController: BaseViewController {
     }
 
     @IBAction func contrastClick(_ sender: Any) {
-        var configuration = UIButton.Configuration.filled()
-        configuration.background.strokeColor = .darkGray
-        configuration.background.strokeWidth = 2
-        configuration.background.strokeOutset = 5
-        configuration.background.cornerRadius = 20
-        contrastButton.configuration = configuration
-        contrastButton.tintColor = .red
+        if contrastStatus == false {
+            contrastStatus = true
+            setContrastButton(tintColor: .systemBlue)
+        }
+        else {
+            contrastStatus = false
+            setContrastButton(tintColor: .white)
+        }
+        
     }
     
     @IBAction func registerButton(_ sender: Any) {
-//        let regex = NSRegularExpression(pattern: "/^(?=.*[a-z])(?=.*\\d)[a-zA-Z\\d]{8,16}$/" , options: NSRegularExpression.Options.allowCommentsAndWhitespace)
-//        if (passwordTextfield.text?.matches(of: passwordRegularExpression)){
-//            print("密碼格式錯誤")
-//        }
+        var alertMessageArray :[String] = []
+        var alertMessageString = ""
+        if emailTextfield.text!.validate(type: .email) {
+            
+        } else {
+            alertMessageArray.append("電子信箱格式錯誤")
+        }
+        
+        if passwordTextfield.text!.validate(type: .password) {
+            
+        }else {
+            alertMessageArray.append("密碼格式錯誤")
+        }
+        
+        if againPasswordTextfield.text != passwordTextfield.text {
+            alertMessageArray.append("密碼不一致")
+        }
+        if contrastStatus == false {
+            alertMessageArray.append("未勾選同意書")
+        }
+        
+        for i in 0...alertMessageArray.count-1 {
+            alertMessageString.append("\(alertMessageArray[i])")
+            if i != alertMessageArray.count-1 {
+                alertMessageString.append("\n")
+            }
+        }
+        
+        Alert.showAlertWith(title: "註冊格式錯誤",
+                            message: alertMessageString,
+                            vc: self,
+                            confirmTitle: "關閉")
+        
     }
     
 }

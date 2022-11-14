@@ -23,8 +23,9 @@ class LoginViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationbar(backgroundcolor: .navigationBar)
-        
+        view.insertSubview(AlphaBackgroundView(imageName: "Background5.jpg"), at: 0)
         setupUI()
+        self.title = "Login"
     }
 
     // MARK: - UI Settings

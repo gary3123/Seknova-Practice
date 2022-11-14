@@ -8,17 +8,34 @@
 import UIKit
 
 class AlphaBackgroundView: UIView {
-
+    
+    // MARK: - Variables
+    
     let fullScreenSize = UIScreen.main.bounds.size
     
-    var imageView: UIImageView = UIImageView(image: UIImage(named: "Background5.jpg"))
+    var imageView: UIImageView!
     
-    override func prepareForInterfaceBuilder() {
-        setAlphaBackground()
+    // MARK: - LifeCycle
+    
+    init(imageName: String) {
+        super.init(frame: CGRect(x: 0, y: 0, width: fullScreenSize.width, height: fullScreenSize.height))
+        self.imageView = UIImageView(image: UIImage(named: imageName)) // "Background5.jpg"
+        self.imageView.frame = CGRect(x: 0,
+                                      y: 0,
+                                      width: fullScreenSize.width,
+                                      height: fullScreenSize.height)
+        self.imageView.contentMode = .scaleAspectFit
+        self.imageView.alpha = 0.2
+        self.addSubview(self.imageView)
+        self.insertSubview(self.imageView, at: 0)
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func awakeFromNib() {
-        setAlphaBackground()
+        // setAlphaBackground()
     }
     
     func setAlphaBackground() {

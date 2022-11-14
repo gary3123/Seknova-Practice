@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3374733282785F6644403987 /* Pods_Seknova_Practice_Seknova_PracticeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E53C86D42EB499112CB44D2 /* Pods_Seknova_Practice_Seknova_PracticeUITests.framework */; };
+		4E2E94E02913B7F900E2533F /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2E94DF2913B7F900E2533F /* String+Extensions.swift */; };
+		4E2E94E32913BDE200E2533F /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2E94E22913BDE200E2533F /* Alert.swift */; };
 		4E79C97A28F40FCF00F3017B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E79C97928F40FCF00F3017B /* AppDelegate.swift */; };
 		4E79C97C28F40FCF00F3017B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E79C97B28F40FCF00F3017B /* SceneDelegate.swift */; };
 		4E79C98328F40FD100F3017B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E79C98228F40FD100F3017B /* Assets.xcassets */; };
@@ -23,7 +25,6 @@
 		4E854D80290270DB0097D79E /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E854D7E290270DB0097D79E /* LoginViewController.xib */; };
 		4E88DB4E290283C9005DCFC9 /* AlphaBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88DB4D290283C9005DCFC9 /* AlphaBackgroundView.swift */; };
 		4E9BA6BC29090E1700EA71A5 /* TextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BA6BB29090E1700EA71A5 /* TextField+Extensions.swift */; };
-		4E9BA6C0290A793A00EA71A5 /* RigsterBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BA6BF290A793A00EA71A5 /* RigsterBackgroundView.swift */; };
 		9F0797D51F2F439D88BA34B4 /* Pods_Seknova_Practice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24BD3366D14F68E6807C079D /* Pods_Seknova_Practice.framework */; };
 		AB7E72BFEFD88A0C57D46B13 /* Pods_Seknova_PracticeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35593199C3A17A67170D258B /* Pods_Seknova_PracticeTests.framework */; };
 /* End PBXBuildFile section */
@@ -49,6 +50,8 @@
 		0F46DE910FEBAD4F4DB2D4E6 /* Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig"; path = "Target Support Files/Pods-Seknova-Practice-Seknova-PracticeUITests/Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		24BD3366D14F68E6807C079D /* Pods_Seknova_Practice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Seknova_Practice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35593199C3A17A67170D258B /* Pods_Seknova_PracticeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Seknova_PracticeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E2E94DF2913B7F900E2533F /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		4E2E94E22913BDE200E2533F /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		4E79C97628F40FCF00F3017B /* Seknova-Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Seknova-Practice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E79C97928F40FCF00F3017B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E79C97B28F40FCF00F3017B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,7 +71,6 @@
 		4E854D7E290270DB0097D79E /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		4E88DB4D290283C9005DCFC9 /* AlphaBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaBackgroundView.swift; sourceTree = "<group>"; };
 		4E9BA6BB29090E1700EA71A5 /* TextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extensions.swift"; sourceTree = "<group>"; };
-		4E9BA6BF290A793A00EA71A5 /* RigsterBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RigsterBackgroundView.swift; sourceTree = "<group>"; };
 		5E53C86D42EB499112CB44D2 /* Pods_Seknova_Practice_Seknova_PracticeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Seknova_Practice_Seknova_PracticeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66AB2B0F508E9F55A2DC51EB /* Pods-Seknova-PracticeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-PracticeTests.debug.xcconfig"; path = "Target Support Files/Pods-Seknova-PracticeTests/Pods-Seknova-PracticeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		73B98C0961C0E0B99FCF814F /* Pods-Seknova-Practice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-Practice.debug.xcconfig"; path = "Target Support Files/Pods-Seknova-Practice/Pods-Seknova-Practice.debug.xcconfig"; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			children = (
 				4E8303C22907D8EF005DBEA5 /* Color+Extensions.swift */,
 				4E9BA6BB29090E1700EA71A5 /* TextField+Extensions.swift */,
+				4E2E94DF2913B7F900E2533F /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				4E8303C42907D92A005DBEA5 /* Extensions */,
+				4E2E94E22913BDE200E2533F /* Alert.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -211,7 +215,6 @@
 			isa = PBXGroup;
 			children = (
 				4E88DB4D290283C9005DCFC9 /* AlphaBackgroundView.swift */,
-				4E9BA6BF290A793A00EA71A5 /* RigsterBackgroundView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -476,7 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E9BA6C0290A793A00EA71A5 /* RigsterBackgroundView.swift in Sources */,
+				4E2E94E02913B7F900E2533F /* String+Extensions.swift in Sources */,
 				4E88DB4E290283C9005DCFC9 /* AlphaBackgroundView.swift in Sources */,
 				4E9BA6BC29090E1700EA71A5 /* TextField+Extensions.swift in Sources */,
 				4E79C97A28F40FCF00F3017B /* AppDelegate.swift in Sources */,
@@ -484,6 +487,7 @@
 				4E854D7A29026E9B0097D79E /* RegisterViewController.swift in Sources */,
 				4E8303C32907D8EF005DBEA5 /* Color+Extensions.swift in Sources */,
 				4E854D7F290270DB0097D79E /* LoginViewController.swift in Sources */,
+				4E2E94E32913BDE200E2533F /* Alert.swift in Sources */,
 				4E8303C12907D559005DBEA5 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
