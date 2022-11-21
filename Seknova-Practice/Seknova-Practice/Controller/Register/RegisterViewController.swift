@@ -10,19 +10,22 @@ import UIKit
 class RegisterViewController: BaseViewController {
     
     // MARK: - IBOutlet
+    
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     @IBOutlet weak var againPasswordTextfield: UITextField!
     @IBOutlet weak var cuntryLabel: UILabel!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var cuntryPickerView: UIPickerView!
+    @IBOutlet weak var contrastLabel: UILabel!
     @IBOutlet weak var contrastButton: UIButton!
+    @IBOutlet weak var contrastContentButton: UIButton!
+    
     // MARK: - Variables
+    
     let cuntryArray = ["Taiwan(台灣)","China(中國)","America(美國)","Japan(日本)"]
     var contrastStatus = false
-    
-    
-    
+        
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
@@ -31,7 +34,6 @@ class RegisterViewController: BaseViewController {
         setupUI()
         self.title = "Register"
     }
-
     
     // MARK: - UI Settings
 
@@ -46,6 +48,8 @@ class RegisterViewController: BaseViewController {
         cuntryLabel.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(tapLabel))
         cuntryLabel.addGestureRecognizer(tap)
+        // 設定 label 大小符合字的大小
+        contrastLabel.sizeToFit()
     }
     
     func setupPickerView() {
@@ -70,8 +74,9 @@ class RegisterViewController: BaseViewController {
                                                  imageWidth: 25,
                                                  imageheight: 30)
     }
-    //設定同意書的按鈕格式及顏色
-    func setContrastButton ( tintColor: UIColor ) {
+    
+    // 設定同意書的按鈕格式及顏色
+    func setContrastButton(tintColor: UIColor) {
         var configuration = UIButton.Configuration.filled()
         configuration.background.strokeColor = .darkGray
         configuration.background.strokeWidth = 2
@@ -93,54 +98,71 @@ class RegisterViewController: BaseViewController {
         if contrastStatus == false {
             contrastStatus = true
             setContrastButton(tintColor: .systemBlue)
-        }
-        else {
+        } else {
             contrastStatus = false
             setContrastButton(tintColor: .white)
         }
-        
     }
     
     @IBAction func registerButton(_ sender: Any) {
         var alertMessageArray :[String] = []
         var alertMessageString = ""
-        if emailTextfield.text!.validate(type: .email) {
-            
-        } else {
-            alertMessageArray.append("電子信箱格式錯誤")
-        }
+//        if emailTextfield.text!.validate(type: .email) {
+//
+//        } else {
+//            alertMessageArray.append("電子信箱格式錯誤")
+//        }
+//
+//        if passwordTextfield.text!.validate(type: .password) {
+//
+//        }else {
+//            alertMessageArray.append("密碼格式錯誤")
+//        }
+//
+//        if againPasswordTextfield.text != passwordTextfield.text {
+//            alertMessageArray.append("密碼不一致")
+//        }
+//        if ContrastStatus.shared.contrastsStatus == false {
+//            alertMessageArray.append("未勾選同意書")
+//        }
         
-        if passwordTextfield.text!.validate(type: .password) {
-            
-        }else {
-            alertMessageArray.append("密碼格式錯誤")
-        }
         
-        if againPasswordTextfield.text != passwordTextfield.text {
-            alertMessageArray.append("密碼不一致")
-        }
-        if contrastStatus == false {
-            alertMessageArray.append("未勾選同意書")
-        }
-        
-        for i in 0...alertMessageArray.count-1 {
+        for i in 0..<alertMessageArray.count {
             alertMessageString.append("\(alertMessageArray[i])")
             if i != alertMessageArray.count-1 {
                 alertMessageString.append("\n")
             }
         }
-        
-        Alert.showAlertWith(title: "註冊格式錯誤",
-                            message: alertMessageString,
-                            vc: self,
-                            confirmTitle: "關閉")
-        
+        // 判斷沒有格式錯誤後跳到重新認證信頁面，反之，跳出格式錯誤的Alert
+        if alertMessageString == "" {
+            navigationController?.pushViewController(RecertifictionLeterViewController(), animated: true)
+        } else {
+            Alert.showAlertWith(title: "註冊格式錯誤",
+                                message: alertMessageString,
+                                vc: self,
+                                confirmTitle: "關閉")
+        }
     }
     
+    // 設定 popover 基本屬性
+    @IBAction func ContrastPopoverButton(_ sender: Any) {
+        let pop = ContrastPopoverViewController()
+        pop.delegate = self
+        let width = self.view.bounds.width
+        let height = self.view.bounds.height
+        pop.modalPresentationStyle = .popover
+        pop.popoverPresentationController?.delegate = self
+        pop.popoverPresentationController?.sourceView = navigationController?.navigationBar
+        pop.popoverPresentationController?.sourceRect = CGRect(x: 0, y: 0, width: view.frame.width, height: navigationController?.navigationBar.frame.height ?? 44)
+        pop.preferredContentSize = CGSize(width: width, height: height)
+        present(pop, animated: true)
+    }
 }
 
-    // MARK: - extension
+// MARK: - UIPickerViewDelegate, UIPickerViewDataSource
+
 extension RegisterViewController: UIPickerViewDelegate,UIPickerViewDataSource {
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -160,4 +182,29 @@ extension RegisterViewController: UIPickerViewDelegate,UIPickerViewDataSource {
     }
 }
 
+// MARK: - UIPopoverPresentationControllerDelegate
 
+extension RegisterViewController: UIPopoverPresentationControllerDelegate {
+
+    func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
+        return .none
+    }
+}
+
+// MARK: -
+
+extension RegisterViewController: ContrastPopoverViewControllerDelegate {
+    
+    func didTappedConfirm(isConfirm: Bool) {
+        contrastStatus = isConfirm
+        DispatchQueue.main.async {
+            if self.contrastStatus == false {
+                self.contrastStatus = false
+                self.setContrastButton(tintColor: .white)
+            } else {
+                self.contrastStatus = true
+                self.setContrastButton(tintColor: .systemBlue)
+            }
+        }
+    }
+}
