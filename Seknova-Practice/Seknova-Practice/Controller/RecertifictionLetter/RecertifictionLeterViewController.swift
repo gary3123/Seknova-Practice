@@ -15,7 +15,6 @@ class RecertifictionLeterViewController: BaseViewController {
     
     // MARK: - Variables
     
-    
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,13 +29,17 @@ class RecertifictionLeterViewController: BaseViewController {
     // MARK: - IBAction
     
     @IBAction func clickNextStep(_ sender: Any) {
+        print("email:\(UserPreferences.shared.email)")
+        print("password:\(UserPreferences.shared.password)")
         navigationController?.popToRootViewController(animated: true)
     }
     
-    //設定 popover 基本屬性
     
     
     // MARK: - extension
     
     
 }
+
+    // MARK: - protocol
+

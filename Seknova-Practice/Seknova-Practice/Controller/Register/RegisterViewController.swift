@@ -58,6 +58,7 @@ class RegisterViewController: BaseViewController {
     }
     
     fileprivate func setupTextfield() {
+        // 設定 TextField 圖標
         emailTextfield.setTextFieldImage(imageName: "mail",
                                          imageX: 9 ,
                                          imageY: 10,
@@ -73,6 +74,9 @@ class RegisterViewController: BaseViewController {
                                                  imageY: 3,
                                                  imageWidth: 25,
                                                  imageheight: 30)
+        // 設定密碼為黑點
+        passwordTextfield.isSecureTextEntry = true
+        againPasswordTextfield.isSecureTextEntry = true
     }
     
     // 設定同意書的按鈕格式及顏色
@@ -133,9 +137,11 @@ class RegisterViewController: BaseViewController {
                 alertMessageString.append("\n")
             }
         }
-        // 判斷沒有格式錯誤後跳到重新認證信頁面，反之，跳出格式錯誤的Alert
+        // 判斷沒有格式錯誤後跳到重新認證信頁面以及放到UserDefault，反之，跳出格式錯誤的Alert
         if alertMessageString == "" {
             navigationController?.pushViewController(RecertifictionLeterViewController(), animated: true)
+            UserPreferences.shared.email = emailTextfield.text!
+            UserPreferences.shared.password = passwordTextfield.text!
         } else {
             Alert.showAlertWith(title: "註冊格式錯誤",
                                 message: alertMessageString,

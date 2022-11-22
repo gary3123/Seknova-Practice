@@ -13,6 +13,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="Seknova_Practice" customModuleProvider="target">
             <connections>
                 <outlet property="accountTextfield" destination="6o1-nc-uci" id="Bbh-5O-mrG"/>
+                <outlet property="forgotPasswordButton" destination="TsL-Uq-p4v" id="pa5-Ll-M9v"/>
+                <outlet property="loadingActivity" destination="H9s-QS-gTg" id="OSO-qg-Ard"/>
+                <outlet property="loginButton" destination="Sr2-LK-r2i" id="Mx5-IG-b1T"/>
                 <outlet property="passwordTextfield" destination="DiK-js-Lpd" id="56g-LK-Hoh"/>
                 <outlet property="registerButton" destination="fe6-YH-qJM" id="xLL-hr-1oL"/>
                 <outlet property="view" destination="3mk-lH-KaZ" id="x1t-xe-u6E"/>
@@ -71,6 +74,14 @@
                         <constraint firstItem="GBL-m6-Ked" firstAttribute="width" secondItem="Sax-eb-tBM" secondAttribute="width" id="RLF-03-tM9"/>
                         <constraint firstItem="GBL-m6-Ked" firstAttribute="centerX" secondItem="Sax-eb-tBM" secondAttribute="centerX" id="UZT-Hn-4af"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                            <size key="value" width="0.0" height="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sr2-LK-r2i">
                     <rect key="frame" x="69" y="554" width="292" height="47.666666666666629"/>
@@ -87,6 +98,9 @@
                             <integer key="value" value="20"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="clickLogin:" destination="-1" eventType="touchUpInside" id="5Gg-N9-ohz"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7o-gw-Phv">
                     <rect key="frame" x="69" y="611.66666666666663" width="292" height="47.666666666666629"/>
@@ -135,6 +149,9 @@
                             <integer key="value" value="20"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="clickForgotPassword:" destination="-1" eventType="touchUpInside" id="xbR-BB-C57"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fe6-YH-qJM">
                     <rect key="frame" x="238.66666666666666" y="832.66666666666663" width="122.33333333333334" height="50.333333333333371"/>
@@ -152,7 +169,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <action selector="TurnToRegisterViewController:" destination="-1" eventType="touchUpInside" id="ylu-Lb-7pn"/>
+                        <action selector="clickRegister:" destination="-1" eventType="touchUpInside" id="Bd0-su-iVa"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZNj-et-esv">
@@ -181,6 +198,18 @@
                     <rect key="frame" x="102.66666666666667" y="455" width="23.333333333333329" height="475.33333333333343"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </imageView>
+                <activityIndicatorView hidden="YES" opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="H9s-QS-gTg">
+                    <rect key="frame" x="161.33333333333334" y="446.66666666666669" width="107.33333333333334" height="107.66666666666669"/>
+                    <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="H9s-QS-gTg" secondAttribute="height" multiplier="1:1" id="uuL-Av-8X3"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="mFf-10-aVY"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -204,10 +233,12 @@
                 <constraint firstItem="fe6-YH-qJM" firstAttribute="width" secondItem="3mk-lH-KaZ" secondAttribute="width" multiplier="0.284987" id="Ija-zq-6Ub"/>
                 <constraint firstItem="V7o-gw-Phv" firstAttribute="top" secondItem="Sr2-LK-r2i" secondAttribute="bottom" constant="10" id="IvI-Nu-c9M"/>
                 <constraint firstItem="GBL-m6-Ked" firstAttribute="width" secondItem="3mk-lH-KaZ" secondAttribute="width" multiplier="0.8" id="JSN-6G-hEv"/>
+                <constraint firstItem="H9s-QS-gTg" firstAttribute="centerY" secondItem="mFf-10-aVY" secondAttribute="centerY" id="K03-4l-Und"/>
                 <constraint firstItem="3cS-GE-aDP" firstAttribute="trailing" secondItem="Sax-eb-tBM" secondAttribute="trailing" id="L1c-zq-6kD"/>
                 <constraint firstItem="fe6-YH-qJM" firstAttribute="trailing" secondItem="ZNj-et-esv" secondAttribute="trailing" id="PQL-mh-KBQ"/>
                 <constraint firstItem="ZNj-et-esv" firstAttribute="top" secondItem="1PG-TO-qPu" secondAttribute="bottom" constant="10.666666666666629" id="Pgn-gl-3RJ"/>
                 <constraint firstItem="1PG-TO-qPu" firstAttribute="width" secondItem="V7o-gw-Phv" secondAttribute="width" id="Rkn-N1-vg6"/>
+                <constraint firstItem="H9s-QS-gTg" firstAttribute="width" secondItem="3mk-lH-KaZ" secondAttribute="width" multiplier="0.25" id="Se7-Si-WF2"/>
                 <constraint firstItem="mFf-10-aVY" firstAttribute="bottom" secondItem="fe6-YH-qJM" secondAttribute="bottom" constant="15" id="U2C-HS-6RG"/>
                 <constraint firstItem="Sr2-LK-r2i" firstAttribute="width" secondItem="mFf-10-aVY" secondAttribute="width" multiplier="0.679389" id="UeA-0m-RPr"/>
                 <constraint firstItem="ZNj-et-esv" firstAttribute="leading" secondItem="s8B-ZH-Hxb" secondAttribute="trailing" constant="-57" id="VWl-Sb-nI4"/>
@@ -218,6 +249,7 @@
                 <constraint firstItem="1PG-TO-qPu" firstAttribute="height" secondItem="Sr2-LK-r2i" secondAttribute="height" id="aj9-r5-fLT"/>
                 <constraint firstItem="V7o-gw-Phv" firstAttribute="width" secondItem="Sr2-LK-r2i" secondAttribute="width" id="eHi-5m-7Mo"/>
                 <constraint firstItem="mFf-10-aVY" firstAttribute="bottom" secondItem="TsL-Uq-p4v" secondAttribute="bottom" constant="15" id="eh5-1D-kJb"/>
+                <constraint firstItem="H9s-QS-gTg" firstAttribute="centerX" secondItem="mFf-10-aVY" secondAttribute="centerX" id="fJS-LZ-PQR"/>
                 <constraint firstItem="TsL-Uq-p4v" firstAttribute="leading" secondItem="ZNj-et-esv" secondAttribute="leading" id="hPn-j8-2LM"/>
                 <constraint firstItem="Sr2-LK-r2i" firstAttribute="centerY" secondItem="3mk-lH-KaZ" secondAttribute="centerY" multiplier="1.24" id="hiT-uQ-UKe"/>
                 <constraint firstItem="Sax-eb-tBM" firstAttribute="centerX" secondItem="Sr2-LK-r2i" secondAttribute="centerX" id="kvx-Ed-3Us"/>
@@ -233,7 +265,7 @@
                 <constraint firstItem="1PG-TO-qPu" firstAttribute="leading" secondItem="6AV-cd-aNb" secondAttribute="trailing" constant="-57" id="yoG-9z-D6R"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
-            <point key="canvasLocation" x="-229.59999999999999" y="-830.73463268365822"/>
+            <point key="canvasLocation" x="-230.23255813953489" y="-831.11587982832623"/>
         </view>
     </objects>
     <resources>
@@ -244,6 +276,9 @@
         <namedColor name="Facebook">
             <color red="0.27058823529411763" green="0.35294117647058826" blue="0.64313725490196083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

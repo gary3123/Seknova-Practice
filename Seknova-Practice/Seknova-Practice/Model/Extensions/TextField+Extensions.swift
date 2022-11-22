@@ -24,7 +24,5 @@ extension UITextField {
         self.tintColor = .lightGray
     }
     
-//    func numberAndEnglishInput {
-//        let charset = CharacterSet(charactersIn: <#T##String#>)
-//    }
+
 }

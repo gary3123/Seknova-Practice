@@ -68,6 +68,14 @@
                         <constraint firstItem="2ef-Qh-feh" firstAttribute="height" secondItem="uDX-Sb-a9V" secondAttribute="height" multiplier="0.3333" id="c04-7c-5yR"/>
                         <constraint firstItem="RJJ-K5-Tbu" firstAttribute="width" secondItem="uDX-Sb-a9V" secondAttribute="width" id="vQE-ZV-PEf"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                            <size key="value" width="0.0" height="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </stackView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Seknova" translatesAutoresizingMaskIntoConstraints="NO" id="1ag-KM-2w1">
                     <rect key="frame" x="306" y="103" width="124" height="32"/>
@@ -135,8 +143,8 @@
                                 <action selector="ContrastPopoverButton:" destination="-1" eventType="touchUpInside" id="TvE-b3-MlJ"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqV-BV-8Su">
-                            <rect key="frame" x="236.66666666666669" y="3" width="21.666666666666686" height="19.666666666666668"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqV-BV-8Su" userLabel="。">
+                            <rect key="frame" x="244.33333333333331" y="3" width="21.666666666666686" height="19.666666666666668"/>
                             <attributedString key="attributedText">
                                 <fragment content=" 。">
                                     <attributes>
@@ -151,11 +159,11 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="mqV-BV-8Su" firstAttribute="centerY" secondItem="RT8-z5-iz8" secondAttribute="centerY" id="7jL-de-iKM"/>
-                        <constraint firstItem="mqV-BV-8Su" firstAttribute="trailing" secondItem="9aW-81-Ve2" secondAttribute="trailing" constant="4" id="ALe-09-Tdy"/>
                         <constraint firstItem="9aW-81-Ve2" firstAttribute="width" secondItem="UJF-UP-6Xm" secondAttribute="width" multiplier="0.29" id="CgV-FG-Ag0"/>
                         <constraint firstItem="RT8-z5-iz8" firstAttribute="height" secondItem="UJF-UP-6Xm" secondAttribute="height" multiplier="0.972973" id="EJJ-JB-tpe"/>
                         <constraint firstItem="RT8-z5-iz8" firstAttribute="centerY" secondItem="UJF-UP-6Xm" secondAttribute="centerY" id="MRT-qq-WGP"/>
                         <constraint firstItem="9aW-81-Ve2" firstAttribute="leading" secondItem="RT8-z5-iz8" secondAttribute="trailing" id="V6n-Ub-azx"/>
+                        <constraint firstItem="mqV-BV-8Su" firstAttribute="leading" secondItem="9aW-81-Ve2" secondAttribute="trailing" constant="-10" id="gAV-cj-Qlc"/>
                         <constraint firstItem="9aW-81-Ve2" firstAttribute="centerY" secondItem="UJF-UP-6Xm" secondAttribute="centerY" id="kMa-gH-D6m"/>
                         <constraint firstItem="9aW-81-Ve2" firstAttribute="height" secondItem="RT8-z5-iz8" secondAttribute="height" multiplier="1.16667" id="lRY-AV-lLj"/>
                         <constraint firstItem="RT8-z5-iz8" firstAttribute="leading" secondItem="UJF-UP-6Xm" secondAttribute="leading" id="ovY-rN-mev"/>
