@@ -17,6 +17,7 @@ class UserPreferences {
     enum UserPreference: String {
         case email
         case password
+        case firstLogin
     }
     
     var email: String {
@@ -26,5 +27,10 @@ class UserPreferences {
     var password: String {
         get { return userPreferance.string( forKey: UserPreference.password.rawValue) ?? ""}
         set { return userPreferance.set( newValue, forKey: UserPreference.password.rawValue)}
+    }
+    
+    var firstLogin: Bool {
+        get {return userPreferance.bool(forKey: UserPreference.firstLogin.rawValue) }
+        set {return userPreferance.set( newValue, forKey: UserPreference.firstLogin.rawValue)}
     }
 }

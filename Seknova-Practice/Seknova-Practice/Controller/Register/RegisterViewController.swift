@@ -109,24 +109,27 @@ class RegisterViewController: BaseViewController {
     }
     
     @IBAction func registerButton(_ sender: Any) {
+        
         var alertMessageArray :[String] = []
         var alertMessageString = ""
-//        if emailTextfield.text!.validate(type: .email) {
 //
+//        if emailTextfield.text!.validate(type: .email) {
 //        } else {
 //            alertMessageArray.append("電子信箱格式錯誤")
 //        }
 //
 //        if passwordTextfield.text!.validate(type: .password) {
-//
-//        }else {
+//        } else {
 //            alertMessageArray.append("密碼格式錯誤")
 //        }
 //
 //        if againPasswordTextfield.text != passwordTextfield.text {
+//        } else {
 //            alertMessageArray.append("密碼不一致")
 //        }
-//        if ContrastStatus.shared.contrastsStatus == false {
+//
+//        if contrastStatus == false {
+//        } else {
 //            alertMessageArray.append("未勾選同意書")
 //        }
         
@@ -142,6 +145,7 @@ class RegisterViewController: BaseViewController {
             navigationController?.pushViewController(RecertifictionLeterViewController(), animated: true)
             UserPreferences.shared.email = emailTextfield.text!
             UserPreferences.shared.password = passwordTextfield.text!
+            UserPreferences.shared.firstLogin = true
         } else {
             Alert.showAlertWith(title: "註冊格式錯誤",
                                 message: alertMessageString,
@@ -154,6 +158,7 @@ class RegisterViewController: BaseViewController {
     @IBAction func ContrastPopoverButton(_ sender: Any) {
         let pop = ContrastPopoverViewController()
         pop.delegate = self
+        pop.root = .registerVC
         let width = self.view.bounds.width
         let height = self.view.bounds.height
         pop.modalPresentationStyle = .popover
@@ -197,7 +202,7 @@ extension RegisterViewController: UIPopoverPresentationControllerDelegate {
     }
 }
 
-// MARK: -
+// MARK: - Extension
 
 extension RegisterViewController: ContrastPopoverViewControllerDelegate {
     
@@ -212,5 +217,6 @@ extension RegisterViewController: ContrastPopoverViewControllerDelegate {
                 self.setContrastButton(tintColor: .systemBlue)
             }
         }
+        
     }
 }

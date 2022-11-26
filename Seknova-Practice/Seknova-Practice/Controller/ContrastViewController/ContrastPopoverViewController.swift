@@ -19,6 +19,13 @@ class ContrastPopoverViewController: UIViewController {
     
     var delegate: ContrastPopoverViewControllerDelegate?
     
+    var root: LastPage = .loginVC
+    
+    enum LastPage {
+        case registerVC
+        case loginVC
+    }
+    
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +34,18 @@ class ContrastPopoverViewController: UIViewController {
     }
 
     // MARK: - IBAction
+    
     @IBAction func clickButton(_ sender: Any) {
-        delegate?.didTappedConfirm(isConfirm: true)
-        dismiss(animated: true)
+        switch root {
+        case .loginVC:
+            let audiovisualTeachingVC = AudiovisualTeachingViewController()
+            navigationController?.pushViewController(audiovisualTeachingVC, animated: true)
+            print("從登入進來")
+        case .registerVC:
+            print("從註冊進來")
+            delegate?.didTappedConfirm(isConfirm: true)
+            dismiss(animated: true)
+        }
     }
 }
 

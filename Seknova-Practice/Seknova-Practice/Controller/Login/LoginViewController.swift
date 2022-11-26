@@ -19,8 +19,9 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var loadingActivity: UIActivityIndicatorView!
     
     // MARK: - Variables
-    var registerStatus = false
     
+    var registerStatus = false
+    var firstLoginStatus = false
     
     // MARK: - LifeCycle
     
@@ -34,12 +35,8 @@ class LoginViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         // 如果已經有註冊或登入過帳號的話，會自動把帳密打進 TextField
-        if UserPreferences.shared.email != "" &&
-            UserPreferences.shared.password != ""{
-            accountTextfield.text = UserPreferences.shared.email
-            passwordTextfield.text = UserPreferences.shared.password
-            
-        }
+        accountTextfield.text = UserPreferences.shared.email
+        passwordTextfield.text = UserPreferences.shared.password
     }
 
     // MARK: - UI Settings
@@ -70,7 +67,6 @@ class LoginViewController: BaseViewController {
     // 設定跳轉到註冊的頁面
     @IBAction func clickRegister(_ sender: Any) {
         let registerVC = RegisterViewController()
-        let RecertifictionLetterVC = RecertifictionLeterViewController()
         self.navigationController?.pushViewController(registerVC, animated: true)
     }
     
@@ -84,9 +80,12 @@ class LoginViewController: BaseViewController {
             // 載入持續4秒
             DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
                self.loadingActivity.stopAnimating()
+                if UserPreferences.shared.firstLogin == true {
+                    UserPreferences.shared.firstLogin = false
+                    self.navigationController?.pushViewController(ContrastPopoverViewController(), animated: true)
+                }
             }
-            
-        }else{
+        } else {
             Alert.showAlertWith(title: "帳號或密碼錯誤",
                                 message: "您輸入的帳號或密碼有誤\n請重新輸入",
                                 vc: self,
@@ -95,15 +94,12 @@ class LoginViewController: BaseViewController {
     }
     
     // 忘記密碼跳轉
-    
     @IBAction func clickForgotPassword(_ sender: Any) {
         let forgotPasswordVC = ForgotPassword()
         navigationController?.pushViewController(forgotPasswordVC, animated: true)
     }
-    
 }
 
-    // MARK : - Extension
 
 
 

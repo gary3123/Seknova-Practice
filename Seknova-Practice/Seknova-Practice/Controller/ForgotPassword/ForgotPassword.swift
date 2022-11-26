@@ -11,7 +11,8 @@ class ForgotPassword: BaseViewController {
     
     
     // MARK: - IBOutlet
-    
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var sendOutButton: UIButton!
     
     // MARK: - Variables
 
@@ -23,7 +24,7 @@ class ForgotPassword: BaseViewController {
         setNavigationbar(backgroundcolor:  .navigationBar)
         view.insertSubview(AlphaBackgroundView(imageName: "Background.jpg"), at: 0)
         self.title = "Forgot Password"
-        
+        emailTextField.setBottomBorder()
         
         
     }
@@ -33,7 +34,11 @@ class ForgotPassword: BaseViewController {
     
     // MARK: - IBAction
 
-
+    @IBAction func clickSendOut(_ sender: Any) {
+        let resetPasswordVC = ResetPasswordViewController()
+        navigationController?.pushViewController(resetPasswordVC, animated: true)
+    }
+    
 }
 
 // MARK : - Extension

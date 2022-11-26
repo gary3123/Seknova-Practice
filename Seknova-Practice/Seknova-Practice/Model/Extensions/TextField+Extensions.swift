@@ -9,6 +9,7 @@ import UIKit
 
 extension UITextField {
     
+    // 設定 TextField 圖標
     func setTextFieldImage(imageName: String,
                            imageX: Int,
                            imageY: Int,
@@ -24,5 +25,15 @@ extension UITextField {
         self.tintColor = .lightGray
     }
     
-
+    // 設定 TextField 的樣式為底線
+    func setBottomBorder() {
+        self.borderStyle = .none
+        self.layer.backgroundColor = UIColor.white.cgColor
+        self.layer.masksToBounds = false
+        self.layer.shadowColor = UIColor.navigationBar?
+            .cgColor
+        self.layer.shadowOffset = CGSize(width: 0, height: 1)
+        self.layer.shadowOpacity = 1
+        self.layer.shadowRadius = 0
+    }
 }

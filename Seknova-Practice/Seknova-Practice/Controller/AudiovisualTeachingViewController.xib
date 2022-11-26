@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AudiovisualTeachingViewController" customModule="Seknova_Practice" customModuleProvider="target">
+            <connections>
+                <outlet property="nextStep" destination="uSG-Pi-5PX" id="rOX-QS-6On"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="youtubeVedio" destination="ZhR-nl-X5F" id="SBd-SC-7Xb"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AUDIOVISUAL TEACHING" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ciw-jk-imT">
+                    <rect key="frame" x="23" y="87" width="344" height="39"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <color key="textColor" name="NavigationBar"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="教 學 影 片" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNs-A1-FPj">
+                    <rect key="frame" x="109" y="146" width="172" height="26.333333333333343"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <color key="textColor" name="NavigationBar"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZhR-nl-X5F">
+                    <rect key="frame" x="0.0" y="221" width="390" height="215"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <wkWebViewConfiguration key="configuration" allowsInlineMediaPlayback="YES">
+                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                        <wkPreferences key="preferences"/>
+                    </wkWebViewConfiguration>
+                </wkWebView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSG-Pi-5PX">
+                    <rect key="frame" x="78.666666666666686" y="555.33333333333337" width="233" height="46.666666666666629"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="下一步" cornerStyle="capsule">
+                        <backgroundConfiguration key="background" strokeWidth="5">
+                            <color key="strokeColor" name="NavigationBar"/>
+                        </backgroundConfiguration>
+                        <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                        <color key="baseForegroundColor" name="NavigationBar"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="clickNextStep:" destination="-1" eventType="touchUpInside" id="LOZ-WK-S6z"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="ZhR-nl-X5F" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="0Ml-dc-lAg"/>
+                <constraint firstItem="HNs-A1-FPj" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.441026" id="4X3-Wj-vH1"/>
+                <constraint firstItem="uSG-Pi-5PX" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="150" id="6Wp-j4-hzH"/>
+                <constraint firstItem="ZhR-nl-X5F" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="-100" id="7I3-tl-1iR"/>
+                <constraint firstItem="Ciw-jk-imT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="8dI-X8-BVq"/>
+                <constraint firstItem="uSG-Pi-5PX" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0552923" id="PWb-dI-dZo"/>
+                <constraint firstItem="HNs-A1-FPj" firstAttribute="top" secondItem="Ciw-jk-imT" secondAttribute="bottom" constant="20" id="V1Y-Ok-aKp"/>
+                <constraint firstItem="uSG-Pi-5PX" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.597436" id="WOy-xl-qCl"/>
+                <constraint firstItem="uSG-Pi-5PX" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="gQK-jO-9Lh"/>
+                <constraint firstItem="ZhR-nl-X5F" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="hld-Gi-LQB"/>
+                <constraint firstItem="Ciw-jk-imT" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="i4S-sz-JuQ"/>
+                <constraint firstItem="Ciw-jk-imT" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.882051" id="jl2-jo-ERs"/>
+                <constraint firstItem="Ciw-jk-imT" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.051114" id="kWh-Ta-GhA"/>
+                <constraint firstItem="HNs-A1-FPj" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0312006" id="ni3-sf-TR6"/>
+                <constraint firstItem="ZhR-nl-X5F" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.254739" id="rAW-DR-SvT"/>
+                <constraint firstItem="HNs-A1-FPj" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="xaT-jv-3jG"/>
+            </constraints>
+            <point key="canvasLocation" x="10.769230769230768" y="20.616113744075829"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="NavigationBar">
+            <color red="0.75700002908706665" green="0.059000000357627869" blue="0.14100000262260437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

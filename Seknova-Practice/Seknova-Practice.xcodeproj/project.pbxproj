@@ -10,6 +10,12 @@
 		3374733282785F6644403987 /* Pods_Seknova_Practice_Seknova_PracticeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E53C86D42EB499112CB44D2 /* Pods_Seknova_Practice_Seknova_PracticeUITests.framework */; };
 		4E2E94E02913B7F900E2533F /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2E94DF2913B7F900E2533F /* String+Extensions.swift */; };
 		4E2E94E32913BDE200E2533F /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2E94E22913BDE200E2533F /* Alert.swift */; };
+		4E71FBC1292FAAAE00B75F9B /* BodyInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E71FBBF292FAAAE00B75F9B /* BodyInformationViewController.swift */; };
+		4E71FBC2292FAAAE00B75F9B /* BodyInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E71FBC0292FAAAE00B75F9B /* BodyInformationViewController.xib */; };
+		4E71FBC6292FAFDB00B75F9B /* AudiovisualTeachingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E71FBC4292FAFDB00B75F9B /* AudiovisualTeachingViewController.swift */; };
+		4E71FBC7292FAFDB00B75F9B /* AudiovisualTeachingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E71FBC5292FAFDB00B75F9B /* AudiovisualTeachingViewController.xib */; };
+		4E71FBCB2930EF4A00B75F9B /* BloodSugarIndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E71FBC92930EF4A00B75F9B /* BloodSugarIndexViewController.swift */; };
+		4E71FBCC2930EF4A00B75F9B /* BloodSugarIndexViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E71FBCA2930EF4A00B75F9B /* BloodSugarIndexViewController.xib */; };
 		4E79C97A28F40FCF00F3017B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E79C97928F40FCF00F3017B /* AppDelegate.swift */; };
 		4E79C97C28F40FCF00F3017B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E79C97B28F40FCF00F3017B /* SceneDelegate.swift */; };
 		4E79C98328F40FD100F3017B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E79C98228F40FD100F3017B /* Assets.xcassets */; };
@@ -17,6 +23,10 @@
 		4E79C99128F40FD200F3017B /* Seknova_PracticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E79C99028F40FD200F3017B /* Seknova_PracticeTests.swift */; };
 		4E79C99B28F40FD200F3017B /* Seknova_PracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E79C99A28F40FD200F3017B /* Seknova_PracticeUITests.swift */; };
 		4E79C99D28F40FD200F3017B /* Seknova_PracticeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E79C99C28F40FD200F3017B /* Seknova_PracticeUITestsLaunchTests.swift */; };
+		4E7F94DC292CD6F000F28F69 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7F94DA292CD6F000F28F69 /* ResetPasswordViewController.swift */; };
+		4E7F94DD292CD6F000F28F69 /* ResetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E7F94DB292CD6F000F28F69 /* ResetPasswordViewController.xib */; };
+		4E7F94E0292E2BCC00F28F69 /* PrivacyConsentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7F94DE292E2BCC00F28F69 /* PrivacyConsentViewController.swift */; };
+		4E7F94E1292E2BCC00F28F69 /* PrivacyConsentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E7F94DF292E2BCC00F28F69 /* PrivacyConsentViewController.xib */; };
 		4E8303C12907D559005DBEA5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8303C02907D559005DBEA5 /* BaseViewController.swift */; };
 		4E8303C32907D8EF005DBEA5 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8303C22907D8EF005DBEA5 /* Color+Extensions.swift */; };
 		4E854D7A29026E9B0097D79E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E854D7829026E9B0097D79E /* RegisterViewController.swift */; };
@@ -59,6 +69,12 @@
 		35593199C3A17A67170D258B /* Pods_Seknova_PracticeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Seknova_PracticeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E2E94DF2913B7F900E2533F /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		4E2E94E22913BDE200E2533F /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		4E71FBBF292FAAAE00B75F9B /* BodyInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyInformationViewController.swift; sourceTree = "<group>"; };
+		4E71FBC0292FAAAE00B75F9B /* BodyInformationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BodyInformationViewController.xib; sourceTree = "<group>"; };
+		4E71FBC4292FAFDB00B75F9B /* AudiovisualTeachingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudiovisualTeachingViewController.swift; sourceTree = "<group>"; };
+		4E71FBC5292FAFDB00B75F9B /* AudiovisualTeachingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudiovisualTeachingViewController.xib; sourceTree = "<group>"; };
+		4E71FBC92930EF4A00B75F9B /* BloodSugarIndexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodSugarIndexViewController.swift; sourceTree = "<group>"; };
+		4E71FBCA2930EF4A00B75F9B /* BloodSugarIndexViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BloodSugarIndexViewController.xib; sourceTree = "<group>"; };
 		4E79C97628F40FCF00F3017B /* Seknova-Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Seknova-Practice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E79C97928F40FCF00F3017B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E79C97B28F40FCF00F3017B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +86,10 @@
 		4E79C99628F40FD200F3017B /* Seknova-PracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Seknova-PracticeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E79C99A28F40FD200F3017B /* Seknova_PracticeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seknova_PracticeUITests.swift; sourceTree = "<group>"; };
 		4E79C99C28F40FD200F3017B /* Seknova_PracticeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seknova_PracticeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4E7F94DA292CD6F000F28F69 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		4E7F94DB292CD6F000F28F69 /* ResetPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResetPasswordViewController.xib; sourceTree = "<group>"; };
+		4E7F94DE292E2BCC00F28F69 /* PrivacyConsentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyConsentViewController.swift; sourceTree = "<group>"; };
+		4E7F94DF292E2BCC00F28F69 /* PrivacyConsentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrivacyConsentViewController.xib; sourceTree = "<group>"; };
 		4E8303C02907D559005DBEA5 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		4E8303C22907D8EF005DBEA5 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		4E854D7829026E9B0097D79E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +154,42 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		4E71FBBD292F9D8200B75F9B /* ContrastViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4EFBDA622923AE8300202B2A /* ContrastPopoverViewController.swift */,
+				4EFBDA632923AE8300202B2A /* ContrastPopoverViewController.xib */,
+			);
+			path = ContrastViewController;
+			sourceTree = "<group>";
+		};
+		4E71FBBE292FAA5400B75F9B /* BodyInformationViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4E71FBBF292FAAAE00B75F9B /* BodyInformationViewController.swift */,
+				4E71FBC0292FAAAE00B75F9B /* BodyInformationViewController.xib */,
+			);
+			path = BodyInformationViewController;
+			sourceTree = "<group>";
+		};
+		4E71FBC3292FAF6600B75F9B /* AudiovisualTeachingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4E71FBC4292FAFDB00B75F9B /* AudiovisualTeachingViewController.swift */,
+				4E71FBC5292FAFDB00B75F9B /* AudiovisualTeachingViewController.xib */,
+			);
+			name = AudiovisualTeachingViewController;
+			sourceTree = "<group>";
+		};
+		4E71FBC82930EF0C00B75F9B /* BloodSugarIndex */ = {
+			isa = PBXGroup;
+			children = (
+				4E71FBC92930EF4A00B75F9B /* BloodSugarIndexViewController.swift */,
+				4E71FBCA2930EF4A00B75F9B /* BloodSugarIndexViewController.xib */,
+			);
+			path = BloodSugarIndex;
+			sourceTree = "<group>";
+		};
 		4E79C96D28F40FCF00F3017B = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +244,24 @@
 			path = "Seknova-PracticeUITests";
 			sourceTree = "<group>";
 		};
+		4E7F94D9292CD6B300F28F69 /* ResetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				4E7F94DA292CD6F000F28F69 /* ResetPasswordViewController.swift */,
+				4E7F94DB292CD6F000F28F69 /* ResetPasswordViewController.xib */,
+			);
+			path = ResetPassword;
+			sourceTree = "<group>";
+		};
+		4E7F94E2292E2BD800F28F69 /*  PrivacyConsent */ = {
+			isa = PBXGroup;
+			children = (
+				4E7F94DE292E2BCC00F28F69 /* PrivacyConsentViewController.swift */,
+				4E7F94DF292E2BCC00F28F69 /* PrivacyConsentViewController.xib */,
+			);
+			path = " PrivacyConsent";
+			sourceTree = "<group>";
+		};
 		4E8303C42907D92A005DBEA5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,8 +286,6 @@
 			children = (
 				4E854D7829026E9B0097D79E /* RegisterViewController.swift */,
 				4E854D7929026E9B0097D79E /* RegisterViewController.xib */,
-				4EFBDA622923AE8300202B2A /* ContrastPopoverViewController.swift */,
-				4EFBDA632923AE8300202B2A /* ContrastPopoverViewController.xib */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -239,11 +311,17 @@
 		4EC6764128F826780027BF79 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4EFBDA71292BA14000202B2A /* ForgotPassword */,
+				4E71FBC82930EF0C00B75F9B /* BloodSugarIndex */,
+				4E71FBC3292FAF6600B75F9B /* AudiovisualTeachingViewController */,
+				4E71FBBE292FAA5400B75F9B /* BodyInformationViewController */,
+				4E71FBBD292F9D8200B75F9B /* ContrastViewController */,
 				4E8303C02907D559005DBEA5 /* BaseViewController.swift */,
 				4E854D7729026E420097D79E /* Login */,
 				4E854D7C29026EA90097D79E /* Register */,
 				4EFBDA6629263A3B00202B2A /* RecertifictionLetter */,
+				4EFBDA71292BA14000202B2A /* ForgotPassword */,
+				4E7F94D9292CD6B300F28F69 /* ResetPassword */,
+				4E7F94E2292E2BD800F28F69 /*  PrivacyConsent */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -386,12 +464,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E79C98628F40FD100F3017B /* LaunchScreen.storyboard in Resources */,
+				4E71FBC7292FAFDB00B75F9B /* AudiovisualTeachingViewController.xib in Resources */,
+				4E7F94E1292E2BCC00F28F69 /* PrivacyConsentViewController.xib in Resources */,
 				4EFBDA652923AE8300202B2A /* ContrastPopoverViewController.xib in Resources */,
 				4E79C98328F40FD100F3017B /* Assets.xcassets in Resources */,
 				4E854D7B29026E9B0097D79E /* RegisterViewController.xib in Resources */,
 				4EFBDA75292BA17100202B2A /* ForgotPassword.xib in Resources */,
+				4E7F94DD292CD6F000F28F69 /* ResetPasswordViewController.xib in Resources */,
 				4E854D80290270DB0097D79E /* LoginViewController.xib in Resources */,
+				4E71FBCC2930EF4A00B75F9B /* BloodSugarIndexViewController.xib in Resources */,
 				4EFBDA6E292666AA00202B2A /* RecertifictionLeterViewController.xib in Resources */,
+				4E71FBC2292FAAAE00B75F9B /* BodyInformationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,6 +606,9 @@
 				4E88DB4E290283C9005DCFC9 /* AlphaBackgroundView.swift in Sources */,
 				4E9BA6BC29090E1700EA71A5 /* TextField+Extensions.swift in Sources */,
 				4EFBDA6D292666AA00202B2A /* RecertifictionLeterViewController.swift in Sources */,
+				4E7F94E0292E2BCC00F28F69 /* PrivacyConsentViewController.swift in Sources */,
+				4E71FBC1292FAAAE00B75F9B /* BodyInformationViewController.swift in Sources */,
+				4E71FBCB2930EF4A00B75F9B /* BloodSugarIndexViewController.swift in Sources */,
 				4E79C97A28F40FCF00F3017B /* AppDelegate.swift in Sources */,
 				4E79C97C28F40FCF00F3017B /* SceneDelegate.swift in Sources */,
 				4E854D7A29026E9B0097D79E /* RegisterViewController.swift in Sources */,
@@ -530,7 +616,9 @@
 				4E854D7F290270DB0097D79E /* LoginViewController.swift in Sources */,
 				4E2E94E32913BDE200E2533F /* Alert.swift in Sources */,
 				4EFBDA642923AE8300202B2A /* ContrastPopoverViewController.swift in Sources */,
+				4E71FBC6292FAFDB00B75F9B /* AudiovisualTeachingViewController.swift in Sources */,
 				4EFBDA74292BA17100202B2A /* ForgotPassword.swift in Sources */,
+				4E7F94DC292CD6F000F28F69 /* ResetPasswordViewController.swift in Sources */,
 				4EFBDA70292B78E400202B2A /* UserPreference.swift in Sources */,
 				4E8303C12907D559005DBEA5 /* BaseViewController.swift in Sources */,
 			);
