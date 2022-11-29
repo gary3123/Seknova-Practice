@@ -11,6 +11,7 @@ class LoginViewController: BaseViewController {
     
     // MARK: - IBOutlet
     
+    @IBOutlet weak var textfieldStackView: UIStackView!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var accountTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
@@ -28,7 +29,7 @@ class LoginViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationbar(backgroundcolor: .navigationBar)
-        view.insertSubview(AlphaBackgroundView(imageName: "Background5.jpg"), at: 0)
+        view.insertSubview(AlphaBackgroundView(imageName: "Background5.jpg", alpha: 0.2), at: 0)
         setupUI()
         self.title = "Login"
     }
@@ -60,6 +61,10 @@ class LoginViewController: BaseViewController {
                                             imageheight: 15)
         // 設定密碼為黑點
         passwordTextfield.isSecureTextEntry = true
+        
+        //
+        textfieldStackView.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMaxXMinYCorner,.layerMinXMaxYCorner,.layerMinXMinYCorner]
+        textfieldStackView.layer.cornerRadius = 5
     }
     
     // MARK: - IBAction
@@ -78,7 +83,7 @@ class LoginViewController: BaseViewController {
             // 載入畫面運作
             loadingActivity.startAnimating()
             // 載入持續4秒
-            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                self.loadingActivity.stopAnimating()
                 if UserPreferences.shared.firstLogin == true {
                     UserPreferences.shared.firstLogin = false

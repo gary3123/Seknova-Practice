@@ -22,7 +22,7 @@ class ForgotPassword: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationbar(backgroundcolor:  .navigationBar)
-        view.insertSubview(AlphaBackgroundView(imageName: "Background.jpg"), at: 0)
+        view.insertSubview(AlphaBackgroundView(imageName: "Background.jpg", alpha: 0.2), at: 0)
         self.title = "Forgot Password"
         emailTextField.setBottomBorder()
         
@@ -35,8 +35,13 @@ class ForgotPassword: BaseViewController {
     // MARK: - IBAction
 
     @IBAction func clickSendOut(_ sender: Any) {
-        let resetPasswordVC = ResetPasswordViewController()
-        navigationController?.pushViewController(resetPasswordVC, animated: true)
+        if emailTextField.text == UserPreferences.shared.email {
+            let resetPasswordVC = ResetPasswordViewController()
+            navigationController?.pushViewController(resetPasswordVC, animated: true)
+        }else {
+            Alert.showAlertWith(title: "信箱錯誤", message: "", vc: self, confirmTitle: "確認")
+        }
+       
     }
     
 }

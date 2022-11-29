@@ -18,6 +18,7 @@
                 <outlet property="loginButton" destination="Sr2-LK-r2i" id="Mx5-IG-b1T"/>
                 <outlet property="passwordTextfield" destination="DiK-js-Lpd" id="56g-LK-Hoh"/>
                 <outlet property="registerButton" destination="fe6-YH-qJM" id="xLL-hr-1oL"/>
+                <outlet property="textfieldStackView" destination="Sax-eb-tBM" id="InT-VJ-f47"/>
                 <outlet property="view" destination="3mk-lH-KaZ" id="x1t-xe-u6E"/>
             </connections>
         </placeholder>
@@ -35,8 +36,8 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="GBL-m6-Ked">
                             <rect key="frame" x="0.0" y="0.0" width="344" height="149"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="帳號" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6o1-nc-uci" customClass="CustomTextField" customModule="Seknova_Practice" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="344" height="74.333333333333329"/>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="帳號" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6o1-nc-uci" customClass="CustomTextField" customModule="Seknova_Practice" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="344" height="76.666666666666671"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -47,8 +48,12 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DiK-js-Lpd" customClass="CustomTextField" customModule="Seknova_Practice" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="74.333333333333314" width="344" height="74.666666666666686"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KRA-Xi-jo1">
+                                    <rect key="frame" x="0.0" y="76.666666666666686" width="344" height="0.6666666666666714"/>
+                                    <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                </view>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DiK-js-Lpd" customClass="CustomTextField" customModule="Seknova_Practice" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="77.333333333333314" width="344" height="71.666666666666686"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -61,10 +66,15 @@
                                 </textField>
                             </subviews>
                             <constraints>
+                                <constraint firstItem="KRA-Xi-jo1" firstAttribute="height" secondItem="GBL-m6-Ked" secondAttribute="height" multiplier="0.005" id="06F-30-aZp"/>
                                 <constraint firstItem="DiK-js-Lpd" firstAttribute="width" secondItem="GBL-m6-Ked" secondAttribute="width" id="Dda-BW-M66"/>
-                                <constraint firstItem="DiK-js-Lpd" firstAttribute="height" secondItem="GBL-m6-Ked" secondAttribute="height" multiplier="0.5" id="M4r-KI-Dv7"/>
+                                <constraint firstItem="KRA-Xi-jo1" firstAttribute="top" secondItem="6o1-nc-uci" secondAttribute="bottom" constant="1.4210854715202004e-14" id="E3M-fA-F5X"/>
+                                <constraint firstItem="DiK-js-Lpd" firstAttribute="top" secondItem="KRA-Xi-jo1" secondAttribute="bottom" id="HtY-Vn-SRU"/>
+                                <constraint firstItem="DiK-js-Lpd" firstAttribute="height" secondItem="GBL-m6-Ked" secondAttribute="height" multiplier="0.48" id="M4r-KI-Dv7"/>
+                                <constraint firstItem="KRA-Xi-jo1" firstAttribute="width" secondItem="GBL-m6-Ked" secondAttribute="width" id="Xb1-7a-wyL"/>
+                                <constraint firstItem="KRA-Xi-jo1" firstAttribute="leading" secondItem="GBL-m6-Ked" secondAttribute="leading" id="YuD-mO-MUI"/>
                                 <constraint firstItem="6o1-nc-uci" firstAttribute="width" secondItem="GBL-m6-Ked" secondAttribute="width" id="dXv-xV-OHR"/>
-                                <constraint firstItem="6o1-nc-uci" firstAttribute="height" secondItem="GBL-m6-Ked" secondAttribute="height" multiplier="0.5" id="fIc-ep-ych"/>
+                                <constraint firstAttribute="trailing" secondItem="KRA-Xi-jo1" secondAttribute="trailing" id="ycL-GP-TBp"/>
                             </constraints>
                             <variation key="heightClass=regular-widthClass=compact" hidden="NO"/>
                         </stackView>
@@ -80,6 +90,9 @@
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
                             <size key="value" width="0.0" height="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </stackView>
@@ -281,6 +294,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

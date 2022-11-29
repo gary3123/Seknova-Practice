@@ -11,6 +11,7 @@ class RegisterViewController: BaseViewController {
     
     // MARK: - IBOutlet
     
+    @IBOutlet weak var registerStackView: UIStackView!
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     @IBOutlet weak var againPasswordTextfield: UITextField!
@@ -30,7 +31,8 @@ class RegisterViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.insertSubview(AlphaBackgroundView(imageName: "Background.jpg"), at: 0)
+       
+        view.insertSubview(AlphaBackgroundView(imageName: "Background.jpg", alpha: 0.2), at: 0)
         setupUI()
         self.title = "Register"
     }
@@ -60,23 +62,29 @@ class RegisterViewController: BaseViewController {
     fileprivate func setupTextfield() {
         // 設定 TextField 圖標
         emailTextfield.setTextFieldImage(imageName: "mail",
-                                         imageX: 9 ,
-                                         imageY: 10,
-                                         imageWidth: 30,
-                                         imageheight: 20)
+                                         imageX: 7 ,
+                                         imageY: 11,
+                                         imageWidth: 28,
+                                         imageheight: 18)
         passwordTextfield.setTextFieldImage(imageName: "password",
-                                            imageX: 12 ,
-                                            imageY: 3,
-                                            imageWidth: 25,
-                                            imageheight: 30)
+                                            imageX: 10 ,
+                                            imageY: 5,
+                                            imageWidth: 22,
+                                            imageheight: 28)
         againPasswordTextfield.setTextFieldImage(imageName: "password",
-                                                 imageX: 12 ,
-                                                 imageY: 3,
-                                                 imageWidth: 25,
-                                                 imageheight: 30)
+                                                 imageX: 10 ,
+                                                 imageY: 5,
+                                                 imageWidth: 22,
+                                                 imageheight: 28)
         // 設定密碼為黑點
         passwordTextfield.isSecureTextEntry = true
         againPasswordTextfield.isSecureTextEntry = true
+        
+        // 設定 StackView 樣式
+        registerStackView.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMaxXMinYCorner,.layerMinXMaxYCorner,.layerMinXMinYCorner]
+        registerStackView.layer.cornerRadius = 5
+        
+        
     }
     
     // 設定同意書的按鈕格式及顏色

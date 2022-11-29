@@ -13,6 +13,8 @@ class BloodSugarIndexViewController: BaseViewController {
     
     @IBOutlet weak var lowSugarPickerView: UIPickerView!
     @IBOutlet weak var highSugarPickerView: UIPickerView!
+    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var understandMoreButton: UIButton!
     
     // MARK: - Variables
     let lowSugar = Array(65...75)
@@ -23,7 +25,7 @@ class BloodSugarIndexViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.insertSubview(AlphaBackgroundView(imageName: "Background.jpg"), at: 0)
+        view.insertSubview(AlphaBackgroundView(imageName: "SugarIndex.jpg", alpha: 1), at: 0)
         setupUI()
     }
     
@@ -36,12 +38,23 @@ class BloodSugarIndexViewController: BaseViewController {
     func setupPickerView() {
         lowSugarPickerView.dataSource = self
         lowSugarPickerView.delegate = self
+        lowSugarPickerView.layer.shadowOpacity = 0.5
         highSugarPickerView.dataSource = self
         highSugarPickerView.delegate = self
         
     }
     
     // MARK: - IBAction
+    @IBAction func clickSaveButton(_ sender: Any) {
+        navigationController?.pushViewController(TransmitterContentViewController(), animated: true)
+    }
+    
+    @IBAction func clickUnderstandMoreButton(_ sender: Any) {
+        
+        Alert.showAlertWith(title: "設定高低血糖值", message: "系統會於血糖高於高血糖值或是血糖低於低血糖值時透過通知使用者須進一步處理。通知方式為訊息，鈴聲(可關掉)或電子郵件信箱", vc: self, confirmTitle: "確認")
+        
+    }
+    
     
 }
 

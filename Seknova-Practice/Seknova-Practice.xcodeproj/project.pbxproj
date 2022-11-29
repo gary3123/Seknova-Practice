@@ -16,6 +16,8 @@
 		4E71FBC7292FAFDB00B75F9B /* AudiovisualTeachingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E71FBC5292FAFDB00B75F9B /* AudiovisualTeachingViewController.xib */; };
 		4E71FBCB2930EF4A00B75F9B /* BloodSugarIndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E71FBC92930EF4A00B75F9B /* BloodSugarIndexViewController.swift */; };
 		4E71FBCC2930EF4A00B75F9B /* BloodSugarIndexViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E71FBCA2930EF4A00B75F9B /* BloodSugarIndexViewController.xib */; };
+		4E79782B293258F2009AE72E /* TransmitterContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E797829293258F2009AE72E /* TransmitterContentViewController.swift */; };
+		4E79782C293258F2009AE72E /* TransmitterContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E79782A293258F2009AE72E /* TransmitterContentViewController.xib */; };
 		4E79C97A28F40FCF00F3017B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E79C97928F40FCF00F3017B /* AppDelegate.swift */; };
 		4E79C97C28F40FCF00F3017B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E79C97B28F40FCF00F3017B /* SceneDelegate.swift */; };
 		4E79C98328F40FD100F3017B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E79C98228F40FD100F3017B /* Assets.xcassets */; };
@@ -75,6 +77,8 @@
 		4E71FBC5292FAFDB00B75F9B /* AudiovisualTeachingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudiovisualTeachingViewController.xib; sourceTree = "<group>"; };
 		4E71FBC92930EF4A00B75F9B /* BloodSugarIndexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodSugarIndexViewController.swift; sourceTree = "<group>"; };
 		4E71FBCA2930EF4A00B75F9B /* BloodSugarIndexViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BloodSugarIndexViewController.xib; sourceTree = "<group>"; };
+		4E797829293258F2009AE72E /* TransmitterContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransmitterContentViewController.swift; sourceTree = "<group>"; };
+		4E79782A293258F2009AE72E /* TransmitterContentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransmitterContentViewController.xib; sourceTree = "<group>"; };
 		4E79C97628F40FCF00F3017B /* Seknova-Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Seknova-Practice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E79C97928F40FCF00F3017B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E79C97B28F40FCF00F3017B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +192,15 @@
 				4E71FBCA2930EF4A00B75F9B /* BloodSugarIndexViewController.xib */,
 			);
 			path = BloodSugarIndex;
+			sourceTree = "<group>";
+		};
+		4E79782829324A75009AE72E /* TransmitterContent */ = {
+			isa = PBXGroup;
+			children = (
+				4E79782A293258F2009AE72E /* TransmitterContentViewController.xib */,
+				4E797829293258F2009AE72E /* TransmitterContentViewController.swift */,
+			);
+			path = TransmitterContent;
 			sourceTree = "<group>";
 		};
 		4E79C96D28F40FCF00F3017B = {
@@ -311,6 +324,7 @@
 		4EC6764128F826780027BF79 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4E79782829324A75009AE72E /* TransmitterContent */,
 				4E71FBC82930EF0C00B75F9B /* BloodSugarIndex */,
 				4E71FBC3292FAF6600B75F9B /* AudiovisualTeachingViewController */,
 				4E71FBBE292FAA5400B75F9B /* BodyInformationViewController */,
@@ -469,6 +483,7 @@
 				4EFBDA652923AE8300202B2A /* ContrastPopoverViewController.xib in Resources */,
 				4E79C98328F40FD100F3017B /* Assets.xcassets in Resources */,
 				4E854D7B29026E9B0097D79E /* RegisterViewController.xib in Resources */,
+				4E79782C293258F2009AE72E /* TransmitterContentViewController.xib in Resources */,
 				4EFBDA75292BA17100202B2A /* ForgotPassword.xib in Resources */,
 				4E7F94DD292CD6F000F28F69 /* ResetPasswordViewController.xib in Resources */,
 				4E854D80290270DB0097D79E /* LoginViewController.xib in Resources */,
@@ -610,6 +625,7 @@
 				4E71FBC1292FAAAE00B75F9B /* BodyInformationViewController.swift in Sources */,
 				4E71FBCB2930EF4A00B75F9B /* BloodSugarIndexViewController.swift in Sources */,
 				4E79C97A28F40FCF00F3017B /* AppDelegate.swift in Sources */,
+				4E79782B293258F2009AE72E /* TransmitterContentViewController.swift in Sources */,
 				4E79C97C28F40FCF00F3017B /* SceneDelegate.swift in Sources */,
 				4E854D7A29026E9B0097D79E /* RegisterViewController.swift in Sources */,
 				4E8303C32907D8EF005DBEA5 /* Color+Extensions.swift in Sources */,
@@ -790,6 +806,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S8FBP4YLUA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Seknova-Practice/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -819,6 +836,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S8FBP4YLUA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Seknova-Practice/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -18,7 +18,7 @@ class RecertifictionLeterViewController: BaseViewController {
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.insertSubview(AlphaBackgroundView(imageName: "Background.jpg"), at: 0)
+        view.insertSubview(AlphaBackgroundView(imageName: "Background.jpg", alpha: 0.2), at: 0)
         
     }
     

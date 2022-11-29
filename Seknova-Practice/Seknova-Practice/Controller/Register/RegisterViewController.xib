@@ -21,6 +21,7 @@
                 <outlet property="emailTextfield" destination="RJJ-K5-Tbu" id="nbg-jl-QmB"/>
                 <outlet property="passwordTextfield" destination="2ef-Qh-feh" id="hd4-IS-wq3"/>
                 <outlet property="registerButton" destination="9fs-Vc-Ksf" id="o1Z-qW-AWf"/>
+                <outlet property="registerStackView" destination="uDX-Sb-a9V" id="Arv-GU-3OU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -44,29 +45,50 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uDX-Sb-a9V">
                     <rect key="frame" x="43" y="285" width="344" height="198.66666666666663"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="電子信箱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RJJ-K5-Tbu">
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="電子信箱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RJJ-K5-Tbu">
                             <rect key="frame" x="0.0" y="0.0" width="344" height="66.333333333333329"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                    <integer key="value" value="20"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密碼 (8-16字元,需含大小寫英文與字母" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ef-Qh-feh">
-                            <rect key="frame" x="0.0" y="66.333333333333314" width="344" height="66"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIc-UB-LSH">
+                            <rect key="frame" x="0.0" y="66.333333333333314" width="344" height="0.6666666666666714"/>
+                            <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        </view>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密碼 (8-16字元,需含大小寫英文與字母" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ef-Qh-feh">
+                            <rect key="frame" x="0.0" y="67" width="344" height="66"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="再一次輸入密碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aJO-Go-LbT">
-                            <rect key="frame" x="0.0" y="132.33333333333331" width="344" height="66.333333333333314"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SpP-vU-xVw">
+                            <rect key="frame" x="0.0" y="133" width="344" height="1"/>
+                            <color key="backgroundColor" systemColor="systemGray4Color"/>
+                        </view>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="再一次輸入密碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aJO-Go-LbT">
+                            <rect key="frame" x="0.0" y="134" width="344" height="64.666666666666686"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                         </textField>
                     </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="aJO-Go-LbT" firstAttribute="width" secondItem="uDX-Sb-a9V" secondAttribute="width" id="4C4-tS-eVR"/>
-                        <constraint firstItem="RJJ-K5-Tbu" firstAttribute="height" secondItem="uDX-Sb-a9V" secondAttribute="height" multiplier="0.3333" id="B2L-AW-uUo"/>
-                        <constraint firstItem="aJO-Go-LbT" firstAttribute="height" secondItem="uDX-Sb-a9V" secondAttribute="height" multiplier="0.3334" id="Soe-5J-qz5"/>
+                        <constraint firstAttribute="trailing" secondItem="SpP-vU-xVw" secondAttribute="trailing" id="APO-CT-R9n"/>
+                        <constraint firstItem="RJJ-K5-Tbu" firstAttribute="height" secondItem="uDX-Sb-a9V" secondAttribute="height" multiplier="0.333" id="B2L-AW-uUo"/>
+                        <constraint firstItem="vIc-UB-LSH" firstAttribute="leading" secondItem="uDX-Sb-a9V" secondAttribute="leading" id="NDA-ge-hqU"/>
+                        <constraint firstItem="SpP-vU-xVw" firstAttribute="width" secondItem="uDX-Sb-a9V" secondAttribute="width" id="Uq4-RC-NeW"/>
                         <constraint firstItem="2ef-Qh-feh" firstAttribute="width" secondItem="uDX-Sb-a9V" secondAttribute="width" id="Ydi-8S-61D"/>
-                        <constraint firstItem="2ef-Qh-feh" firstAttribute="height" secondItem="uDX-Sb-a9V" secondAttribute="height" multiplier="0.3333" id="c04-7c-5yR"/>
+                        <constraint firstItem="2ef-Qh-feh" firstAttribute="height" secondItem="uDX-Sb-a9V" secondAttribute="height" multiplier="0.333" id="c04-7c-5yR"/>
+                        <constraint firstItem="vIc-UB-LSH" firstAttribute="height" secondItem="uDX-Sb-a9V" secondAttribute="height" multiplier="0.004" id="e0d-rq-8Rp"/>
+                        <constraint firstItem="SpP-vU-xVw" firstAttribute="leading" secondItem="uDX-Sb-a9V" secondAttribute="leading" id="kF4-3X-xpC"/>
+                        <constraint firstItem="vIc-UB-LSH" firstAttribute="width" secondItem="uDX-Sb-a9V" secondAttribute="width" id="v8v-89-Fmt"/>
+                        <constraint firstItem="SpP-vU-xVw" firstAttribute="height" secondItem="uDX-Sb-a9V" secondAttribute="height" multiplier="0.004" id="vKF-Ho-kpn"/>
                         <constraint firstItem="RJJ-K5-Tbu" firstAttribute="width" secondItem="uDX-Sb-a9V" secondAttribute="width" id="vQE-ZV-PEf"/>
+                        <constraint firstAttribute="trailing" secondItem="vIc-UB-LSH" secondAttribute="trailing" id="zHY-iM-8rC"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
@@ -233,6 +255,12 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

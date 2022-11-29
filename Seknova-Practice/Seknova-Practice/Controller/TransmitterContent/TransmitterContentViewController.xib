@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TransmitterContentViewController" customModule="Seknova_Practice" customModuleProvider="target">
+            <connections>
+                <outlet property="qrCodeButton" destination="08L-VN-DNp" id="Asi-Hb-QS9"/>
+                <outlet property="qrCodeView" destination="QHj-bT-mLX" id="eBS-56-pdp"/>
+                <outlet property="transmitterBImageView" destination="P0x-rK-0PI" id="nEQ-yu-tEU"/>
+                <outlet property="transmitterImageView" destination="dip-Nj-Ajf" id="nsl-jJ-ize"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CGMTransmitter" translatesAutoresizingMaskIntoConstraints="NO" id="dip-Nj-Ajf">
+                    <rect key="frame" x="23.666666666666657" y="121" width="343" height="201"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CGMTransmitterB" translatesAutoresizingMaskIntoConstraints="NO" id="P0x-rK-0PI">
+                    <rect key="frame" x="6.3333333333333428" y="342" width="377.33333333333326" height="221"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Zv-D2-Drw">
+                    <rect key="frame" x="78.666666666666686" y="684" width="233" height="46.666666666666629"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="文字輸入" cornerStyle="capsule">
+                        <backgroundConfiguration key="background" strokeWidth="5">
+                            <color key="strokeColor" name="NavigationBar"/>
+                        </backgroundConfiguration>
+                        <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                        <color key="baseForegroundColor" name="NavigationBar"/>
+                    </buttonConfiguration>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOg-zj-hae">
+                    <rect key="frame" x="78.666666666666686" y="750" width="233" height="46.666666666666629"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="返回" cornerStyle="capsule">
+                        <backgroundConfiguration key="background" strokeWidth="5">
+                            <color key="strokeColor" name="NavigationBar"/>
+                        </backgroundConfiguration>
+                        <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                        <color key="baseForegroundColor" name="NavigationBar"/>
+                    </buttonConfiguration>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08L-VN-DNp">
+                    <rect key="frame" x="78.666666666666686" y="617" width="233" height="46.666666666666629"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="QR 掃描" cornerStyle="capsule">
+                        <backgroundConfiguration key="background" strokeWidth="5">
+                            <color key="strokeColor" name="NavigationBar"/>
+                        </backgroundConfiguration>
+                        <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                        <color key="baseForegroundColor" name="NavigationBar"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="clickQRCodeButton:" destination="-1" eventType="touchUpInside" id="q7P-to-Jqe"/>
+                    </connections>
+                </button>
+                <view hidden="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="QHj-bT-mLX">
+                    <rect key="frame" x="84.666666666666686" y="342" width="221" height="221"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="QHj-bT-mLX" secondAttribute="height" multiplier="1:1" id="Bnh-YN-B9B"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="0Zv-D2-Drw" firstAttribute="top" secondItem="08L-VN-DNp" secondAttribute="bottom" constant="20.333333333333371" id="2AM-fi-Soi"/>
+                <constraint firstItem="P0x-rK-0PI" firstAttribute="top" secondItem="dip-Nj-Ajf" secondAttribute="bottom" constant="20" id="2C0-E5-kJt"/>
+                <constraint firstItem="0Zv-D2-Drw" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="5gq-XO-qNB"/>
+                <constraint firstItem="P0x-rK-0PI" firstAttribute="height" secondItem="dip-Nj-Ajf" secondAttribute="height" multiplier="1.1" id="5ma-xn-Dvd"/>
+                <constraint firstItem="vOg-zj-hae" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0552923" id="5tj-EI-0py"/>
+                <constraint firstItem="dip-Nj-Ajf" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="9sJ-Ct-Lb5"/>
+                <constraint firstItem="08L-VN-DNp" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.597436" id="ARn-8a-Wdp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="vOg-zj-hae" secondAttribute="bottom" constant="13.333333333333371" id="AZ2-yD-m73"/>
+                <constraint firstItem="P0x-rK-0PI" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="F0L-Gy-sMt"/>
+                <constraint firstItem="vOg-zj-hae" firstAttribute="top" secondItem="0Zv-D2-Drw" secondAttribute="bottom" constant="19.333333333333371" id="Kes-wY-gMp"/>
+                <constraint firstItem="vOg-zj-hae" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="OxS-aG-Me6"/>
+                <constraint firstItem="vOg-zj-hae" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.597436" id="R0j-OL-gFN"/>
+                <constraint firstItem="dip-Nj-Ajf" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.151659" constant="73" id="RaX-Ic-v3e"/>
+                <constraint firstItem="QHj-bT-mLX" firstAttribute="bottom" secondItem="P0x-rK-0PI" secondAttribute="bottom" id="Xn0-Wo-Ukw"/>
+                <constraint firstItem="P0x-rK-0PI" firstAttribute="width" secondItem="dip-Nj-Ajf" secondAttribute="width" multiplier="1.1" id="b4x-C7-ptP"/>
+                <constraint firstItem="dip-Nj-Ajf" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.615385" constant="103" id="bdJ-M3-uLR"/>
+                <constraint firstItem="0Zv-D2-Drw" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.597436" id="cbs-hR-35f"/>
+                <constraint firstItem="QHj-bT-mLX" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.289646" id="f8d-Uq-3EH"/>
+                <constraint firstItem="QHj-bT-mLX" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="fsy-mN-Rlt"/>
+                <constraint firstItem="08L-VN-DNp" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="hps-lH-OHD"/>
+                <constraint firstItem="08L-VN-DNp" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0552923" id="krU-BQ-cIR"/>
+                <constraint firstItem="0Zv-D2-Drw" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0552923" id="tzG-Hg-9jc"/>
+                <constraint firstItem="dip-Nj-Ajf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="74" id="yy5-EW-gnm"/>
+            </constraints>
+            <point key="canvasLocation" x="-118.46153846153845" y="20.616113744075829"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="CGMTransmitter" width="224" height="177"/>
+        <image name="CGMTransmitterB" width="214" height="192"/>
+        <namedColor name="NavigationBar">
+            <color red="0.75700002908706665" green="0.059000000357627869" blue="0.14100000262260437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

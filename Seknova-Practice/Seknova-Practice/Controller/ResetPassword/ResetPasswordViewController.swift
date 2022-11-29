@@ -25,7 +25,7 @@ class ResetPasswordViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationbar(backgroundcolor:  .navigationBar)
-        view.insertSubview(AlphaBackgroundView(imageName: "Background.jpg"), at: 0)
+        view.insertSubview(AlphaBackgroundView(imageName: "Background.jpg", alpha: 0.2), at: 0)
         setupUI()
     }
 
@@ -38,25 +38,25 @@ class ResetPasswordViewController: BaseViewController {
     
     private func setupTextField() {
         emailTextField.setTextFieldImage(imageName: "mail",
-                                         imageX: 9 ,
-                                         imageY: 10,
-                                         imageWidth: 30,
-                                         imageheight: 20)
+                                         imageX: 7 ,
+                                         imageY: 11,
+                                         imageWidth: 28,
+                                         imageheight: 18)
        oldPasswordTextField.setTextFieldImage(imageName: "password",
-                                            imageX: 12 ,
-                                            imageY: 3,
-                                            imageWidth: 25,
-                                            imageheight: 30)
+                                            imageX: 10 ,
+                                            imageY: 5,
+                                            imageWidth: 22,
+                                            imageheight: 28)
         newPasswordTextField.setTextFieldImage(imageName: "password",
-                                               imageX: 12 ,
-                                               imageY: 3,
-                                               imageWidth: 25,
-                                               imageheight: 30)
+                                               imageX: 10 ,
+                                               imageY: 5,
+                                               imageWidth: 22,
+                                               imageheight: 28)
         againPasswordTextField.setTextFieldImage(imageName: "password",
-                                                 imageX: 12 ,
-                                                 imageY: 3,
-                                                 imageWidth: 25,
-                                                 imageheight: 30)
+                                                 imageX: 10 ,
+                                                 imageY: 5,
+                                                 imageWidth: 22,
+                                                 imageheight: 28)
         
     }
     

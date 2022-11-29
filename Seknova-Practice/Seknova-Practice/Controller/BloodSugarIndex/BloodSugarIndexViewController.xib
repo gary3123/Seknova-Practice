@@ -14,6 +14,8 @@
             <connections>
                 <outlet property="highSugarPickerView" destination="zq3-Tv-yka" id="J97-fm-i7m"/>
                 <outlet property="lowSugarPickerView" destination="sna-1Z-woh" id="hsH-a0-zPD"/>
+                <outlet property="saveButton" destination="xXv-mQ-szC" id="ccq-il-hLl"/>
+                <outlet property="understandMoreButton" destination="k79-ZN-XIB" id="eXB-PT-pRF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,52 +24,53 @@
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SET UP BLOOD SUGAR INDEX" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSx-ZI-1jl">
-                    <rect key="frame" x="23" y="87" width="344" height="39"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                    <color key="textColor" name="NavigationBar"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="設 定 低 血 糖 值" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B7o-04-1f5">
-                    <rect key="frame" x="109" y="146" width="172" height="26.333333333333343"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                    <color key="textColor" name="NavigationBar"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="設 定 高 血 糖 值" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzM-J1-Hv5">
-                    <rect key="frame" x="109" y="404.33333333333331" width="172" height="26.333333333333314"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                    <color key="textColor" name="NavigationBar"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sna-1Z-woh">
-                    <rect key="frame" x="45" y="202.33333333333337" width="300" height="162"/>
+                    <rect key="frame" x="45" y="221" width="300" height="162"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                            <size key="value" width="0.0" height="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </pickerView>
                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zq3-Tv-yka">
-                    <rect key="frame" x="45" y="457" width="300" height="162"/>
+                    <rect key="frame" x="45" y="449" width="300" height="162"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </pickerView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXv-mQ-szC">
-                    <rect key="frame" x="78.666666666666686" y="649" width="233" height="46.666666666666629"/>
+                    <rect key="frame" x="78.666666666666686" y="641" width="233" height="46.666666666666629"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="儲存" cornerStyle="capsule">
-                        <backgroundConfiguration key="background" strokeWidth="5">
+                        <backgroundConfiguration key="background" strokeWidth="7">
                             <color key="strokeColor" name="NavigationBar"/>
                         </backgroundConfiguration>
                         <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                         <color key="baseForegroundColor" name="NavigationBar"/>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="clickSaveButton:" destination="-1" eventType="touchUpInside" id="l74-Rh-5ni"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k79-ZN-XIB">
-                    <rect key="frame" x="78.666666666666686" y="710.66666666666663" width="233" height="46.666666666666629"/>
+                    <rect key="frame" x="78.666666666666686" y="702.66666666666663" width="233" height="46.666666666666629"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="了解更多" cornerStyle="capsule">
-                        <backgroundConfiguration key="background" strokeWidth="5">
+                        <backgroundConfiguration key="background" strokeWidth="7">
                             <color key="strokeColor" name="NavigationBar"/>
                         </backgroundConfiguration>
                         <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                         <color key="baseForegroundColor" name="NavigationBar"/>
                     </buttonConfiguration>
                 </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LowSugar" translatesAutoresizingMaskIntoConstraints="NO" id="C48-SG-d17">
+                    <rect key="frame" x="99.666666666666686" y="167" width="191" height="44"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HighSugar" translatesAutoresizingMaskIntoConstraints="NO" id="mQJ-8H-HhV">
+                    <rect key="frame" x="99.666666666666686" y="403" width="191" height="41"/>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -75,36 +78,34 @@
                 <constraint firstItem="zq3-Tv-yka" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.769231" id="0XJ-ka-l2N"/>
                 <constraint firstItem="k79-ZN-XIB" firstAttribute="top" secondItem="xXv-mQ-szC" secondAttribute="bottom" constant="15" id="1DY-hu-aGw"/>
                 <constraint firstItem="k79-ZN-XIB" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0552923" id="2Iu-Jw-zfV"/>
+                <constraint firstItem="mQJ-8H-HhV" firstAttribute="top" secondItem="sna-1Z-woh" secondAttribute="bottom" constant="20" id="3OM-Bj-IVQ"/>
                 <constraint firstItem="xXv-mQ-szC" firstAttribute="top" secondItem="zq3-Tv-yka" secondAttribute="bottom" constant="30" id="3ZZ-73-W8k"/>
-                <constraint firstItem="pzM-J1-Hv5" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.441026" id="3nV-X6-nUd"/>
                 <constraint firstItem="k79-ZN-XIB" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.597436" id="5L9-Ts-ZPW"/>
-                <constraint firstItem="pzM-J1-Hv5" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0312006" id="7eY-kk-AVO"/>
-                <constraint firstItem="PSx-ZI-1jl" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0462085" id="8LH-aF-xaA"/>
-                <constraint firstItem="B7o-04-1f5" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0312006" id="8eZ-rU-CGo"/>
+                <constraint firstItem="zq3-Tv-yka" firstAttribute="top" secondItem="mQJ-8H-HhV" secondAttribute="bottom" constant="5" id="B62-KG-yrI"/>
+                <constraint firstItem="mQJ-8H-HhV" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="GgR-zH-rxg"/>
+                <constraint firstItem="mQJ-8H-HhV" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.09" constant="-27.670000000000002" id="I2G-b8-fFg"/>
                 <constraint firstItem="sna-1Z-woh" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="J2i-4E-WP4"/>
-                <constraint firstItem="pzM-J1-Hv5" firstAttribute="top" secondItem="sna-1Z-woh" secondAttribute="bottom" constant="40" id="JZc-6W-xMI"/>
                 <constraint firstItem="zq3-Tv-yka" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.191943" id="OmF-pY-B5n"/>
-                <constraint firstItem="PSx-ZI-1jl" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.882051" id="PA0-OO-k4v"/>
-                <constraint firstItem="sna-1Z-woh" firstAttribute="top" secondItem="B7o-04-1f5" secondAttribute="bottom" constant="30" id="Vbw-oU-TvM"/>
-                <constraint firstItem="B7o-04-1f5" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="ZH7-K0-FLW"/>
-                <constraint firstItem="PSx-ZI-1jl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="Zl9-Ve-xRs"/>
+                <constraint firstItem="mQJ-8H-HhV" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.489744" id="Vl0-aO-D1z"/>
+                <constraint firstItem="C48-SG-d17" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Xjg-WB-a8O"/>
                 <constraint firstItem="xXv-mQ-szC" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.597436" id="aPK-d5-pgK"/>
+                <constraint firstItem="sna-1Z-woh" firstAttribute="top" secondItem="C48-SG-d17" secondAttribute="bottom" constant="10" id="ayI-RT-dSG"/>
                 <constraint firstItem="zq3-Tv-yka" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="ciF-Gi-Pze"/>
-                <constraint firstItem="B7o-04-1f5" firstAttribute="top" secondItem="PSx-ZI-1jl" secondAttribute="bottom" constant="20" id="f3R-bo-bHi"/>
-                <constraint firstItem="zq3-Tv-yka" firstAttribute="top" secondItem="pzM-J1-Hv5" secondAttribute="bottom" constant="26.333333333333371" id="fZl-8R-VLa"/>
                 <constraint firstItem="xXv-mQ-szC" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0552923" id="fdW-uL-jCB"/>
                 <constraint firstItem="k79-ZN-XIB" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="hnK-zi-wwy"/>
                 <constraint firstItem="xXv-mQ-szC" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="ifJ-aF-UVd"/>
-                <constraint firstItem="PSx-ZI-1jl" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="qyk-4X-WeV"/>
-                <constraint firstItem="B7o-04-1f5" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.441026" id="r2N-u4-Y5m"/>
-                <constraint firstItem="pzM-J1-Hv5" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="tPS-gZ-40n"/>
+                <constraint firstItem="C48-SG-d17" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.09" constant="-24.670000000000002" id="mZm-hs-BeO"/>
+                <constraint firstItem="C48-SG-d17" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.489744" id="pvt-m6-WQr"/>
                 <constraint firstItem="sna-1Z-woh" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.769231" id="tY1-gb-j8P"/>
                 <constraint firstItem="sna-1Z-woh" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.191943" id="uU2-Hk-OcF"/>
+                <constraint firstItem="C48-SG-d17" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="120" id="wxM-ca-Naz"/>
             </constraints>
             <point key="canvasLocation" x="-109.23076923076923" y="-12.085308056872037"/>
         </view>
     </objects>
     <resources>
+        <image name="HighSugar" width="1126" height="109"/>
+        <image name="LowSugar" width="1126" height="109"/>
         <namedColor name="NavigationBar">
             <color red="0.75700002908706665" green="0.059000000357627869" blue="0.14100000262260437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

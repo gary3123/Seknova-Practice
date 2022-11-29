@@ -17,7 +17,7 @@ class AlphaBackgroundView: UIView {
     
     // MARK: - LifeCycle
     
-    init(imageName: String) {
+    init(imageName: String , alpha: CGFloat) {
         super.init(frame: CGRect(x: 0, y: 0, width: fullScreenSize.width, height: fullScreenSize.height))
         self.imageView = UIImageView(image: UIImage(named: imageName)) // "Background5.jpg"
         self.imageView.frame = CGRect(x: 0,
@@ -25,7 +25,7 @@ class AlphaBackgroundView: UIView {
                                       width: fullScreenSize.width,
                                       height: fullScreenSize.height)
         self.imageView.contentMode = .scaleAspectFit
-        self.imageView.alpha = 0.2
+        self.imageView.alpha = alpha
         self.addSubview(self.imageView)
         self.insertSubview(self.imageView, at: 0)
     }

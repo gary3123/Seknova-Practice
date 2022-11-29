@@ -24,7 +24,8 @@ class AudiovisualTeachingViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationbar(backgroundcolor: .navigationBar)
-        view.insertSubview(AlphaBackgroundView(imageName: "Background.jpg"), at: 0)
+        view.insertSubview(AlphaBackgroundView(imageName: "Background.jpg", alpha: 0.2), at: 0)
+        navigationController?.navigationBar.isHidden = true
 
         setupUI()
     }
@@ -32,16 +33,16 @@ class AudiovisualTeachingViewController: BaseViewController {
     // MARK: - UI Settings
     
     func setupUI() {
-        setupVedio()
+        setupVideo()
     }
     
-    func setupVedio() {
+    func setupVideo() {
         
         let urlString = "https://www.youtube.com/embed/Tzmisk385aw?loop=1&playlist=Tzmisk385aw"
         
-        let url = NSURL(string: urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
-        let request = NSURLRequest(url: url! as URL)
-        youtubeVedio.load(request as URLRequest)
+        let url = URL(string: urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
+        let request = URLRequest(url: url!)
+        youtubeVedio.load(request)
         youtubeVedio.allowsBackForwardNavigationGestures = true
         
     }
