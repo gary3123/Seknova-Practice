@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PairBlueToothViewController" customModule="Seknova_Practice" customModuleProvider="target">
+            <connections>
+                <outlet property="titleTextField" destination="gBE-KZ-bws" id="jAY-KK-j7g"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PAIR BLUETOOTH" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gBE-KZ-bws">
+                    <rect key="frame" x="62" y="107.99999999999999" width="251" height="43.333333333333329"/>
+                    <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="33"/>
+                    <color key="textColor" name="NavigationBar"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="配   對   藍   芽   裝    置" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="By8-RU-wWx">
+                    <rect key="frame" x="114.33333333333333" y="161.33333333333334" width="146.33333333333337" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" name="NavigationBar"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BLE" translatesAutoresizingMaskIntoConstraints="NO" id="zhq-aK-4aK">
+                    <rect key="frame" x="313" y="103.66666666666669" width="32" height="52"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="zhq-aK-4aK" secondAttribute="height" multiplier="29:47" id="331-sa-dDx"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Phone" translatesAutoresizingMaskIntoConstraints="NO" id="qdZ-Am-FMS">
+                    <rect key="frame" x="7.6666666666666714" y="193" width="125.00000000000001" height="142"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Device" translatesAutoresizingMaskIntoConstraints="NO" id="hcY-gC-tvk">
+                    <rect key="frame" x="242.66666666666663" y="246.66666666666663" width="111" height="35"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dot" translatesAutoresizingMaskIntoConstraints="NO" id="rgc-9A-E44">
+                    <rect key="frame" x="132.66666666666666" y="239" width="110" height="50"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gm9-Bf-PoL">
+                    <rect key="frame" x="71" y="520.33333333333337" width="233" height="46.666666666666629"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="取消" cornerStyle="capsule">
+                        <backgroundConfiguration key="background" strokeWidth="5">
+                            <color key="strokeColor" name="NavigationBar"/>
+                        </backgroundConfiguration>
+                        <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                        <color key="baseForegroundColor" name="NavigationBar"/>
+                    </buttonConfiguration>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sf5-nP-eUs">
+                    <rect key="frame" x="71" y="465.33333333333331" width="233" height="46.666666666666686"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="配對" cornerStyle="capsule">
+                        <backgroundConfiguration key="background" strokeWidth="5">
+                            <color key="strokeColor" name="NavigationBar"/>
+                        </backgroundConfiguration>
+                        <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                        <color key="baseForegroundColor" name="NavigationBar"/>
+                    </buttonConfiguration>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="rgc-9A-E44" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.293333" id="1II-p0-ZOo"/>
+                <constraint firstItem="hcY-gC-tvk" firstAttribute="leading" secondItem="rgc-9A-E44" secondAttribute="trailing" id="6Rh-dD-S0b"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Gm9-Bf-PoL" secondAttribute="bottom" constant="100" id="Ari-Z6-umS"/>
+                <constraint firstItem="qdZ-Am-FMS" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.333333" id="Bkd-mt-Ed6"/>
+                <constraint firstItem="rgc-9A-E44" firstAttribute="leading" secondItem="qdZ-Am-FMS" secondAttribute="trailing" id="CaJ-xv-RLy"/>
+                <constraint firstItem="rgc-9A-E44" firstAttribute="top" secondItem="By8-RU-wWx" secondAttribute="bottom" constant="60.666666666666657" id="Dzp-di-8df"/>
+                <constraint firstItem="Gm9-Bf-PoL" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.069965" id="Jbs-MD-3jL"/>
+                <constraint firstItem="Gm9-Bf-PoL" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.621333" id="KnZ-8f-Msz"/>
+                <constraint firstItem="zhq-aK-4aK" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.0853333" id="LAW-ZM-4Ta"/>
+                <constraint firstItem="zhq-aK-4aK" firstAttribute="leading" secondItem="gBE-KZ-bws" secondAttribute="trailing" id="M7P-JU-SSg"/>
+                <constraint firstItem="gBE-KZ-bws" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="61" id="OQf-bA-Kq2"/>
+                <constraint firstItem="Sf5-nP-eUs" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.069965" id="Ow0-sP-oc5"/>
+                <constraint firstItem="By8-RU-wWx" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Q7p-e0-izD"/>
+                <constraint firstItem="hcY-gC-tvk" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0524738" id="RV5-If-98x"/>
+                <constraint firstItem="Gm9-Bf-PoL" firstAttribute="top" secondItem="Sf5-nP-eUs" secondAttribute="bottom" constant="8.3333333333333712" id="SEn-7k-mcw"/>
+                <constraint firstItem="rgc-9A-E44" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="UOa-eg-sT3"/>
+                <constraint firstItem="gBE-KZ-bws" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.67" id="aUp-4K-itg"/>
+                <constraint firstItem="qdZ-Am-FMS" firstAttribute="centerY" secondItem="rgc-9A-E44" secondAttribute="centerY" id="aZX-J2-RXH"/>
+                <constraint firstItem="hcY-gC-tvk" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.296" id="bbe-iY-CLv"/>
+                <constraint firstItem="By8-RU-wWx" firstAttribute="top" secondItem="gBE-KZ-bws" secondAttribute="bottom" constant="10" id="dSa-pr-YY7"/>
+                <constraint firstItem="gBE-KZ-bws" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="enZ-NM-Wa7"/>
+                <constraint firstItem="zhq-aK-4aK" firstAttribute="centerY" secondItem="gBE-KZ-bws" secondAttribute="centerY" id="frz-MX-Nb3"/>
+                <constraint firstItem="rgc-9A-E44" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0749625" id="gYQ-jf-jvq"/>
+                <constraint firstItem="hcY-gC-tvk" firstAttribute="centerY" secondItem="rgc-9A-E44" secondAttribute="centerY" id="geG-rE-WlD"/>
+                <constraint firstItem="Sf5-nP-eUs" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.621333" id="iOf-Kc-plD"/>
+                <constraint firstItem="qdZ-Am-FMS" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.212894" id="l5g-vt-Jc4"/>
+                <constraint firstItem="gBE-KZ-bws" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.07" id="mtx-et-XW8"/>
+                <constraint firstItem="Sf5-nP-eUs" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="n8v-95-Kfx"/>
+                <constraint firstItem="Gm9-Bf-PoL" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="vRO-4g-RY1"/>
+            </constraints>
+            <point key="canvasLocation" x="118.46153846153845" y="20.616113744075829"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="BLE" width="86" height="131"/>
+        <image name="Device" width="181" height="121"/>
+        <image name="Dot" width="334" height="13"/>
+        <image name="Phone" width="435" height="493"/>
+        <namedColor name="NavigationBar">
+            <color red="0.75700002908706665" green="0.059000000357627869" blue="0.14100000262260437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

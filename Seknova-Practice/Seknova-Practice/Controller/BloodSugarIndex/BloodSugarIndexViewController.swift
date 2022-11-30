@@ -38,9 +38,10 @@ class BloodSugarIndexViewController: BaseViewController {
     func setupPickerView() {
         lowSugarPickerView.dataSource = self
         lowSugarPickerView.delegate = self
-        lowSugarPickerView.layer.shadowOpacity = 0.5
+        lowSugarPickerView.selectRow(5, inComponent: 0, animated: true)
         highSugarPickerView.dataSource = self
         highSugarPickerView.delegate = self
+        highSugarPickerView.selectRow(50, inComponent: 0, animated: true)
         
     }
     
@@ -50,15 +51,22 @@ class BloodSugarIndexViewController: BaseViewController {
     }
     
     @IBAction func clickUnderstandMoreButton(_ sender: Any) {
-        
-        Alert.showAlertWith(title: "設定高低血糖值", message: "系統會於血糖高於高血糖值或是血糖低於低血糖值時透過通知使用者須進一步處理。通知方式為訊息，鈴聲(可關掉)或電子郵件信箱", vc: self, confirmTitle: "確認")
+        // 設定及 popover
+        let pop = UnderstandMoreViewController()
+        pop.modalPresentationStyle = .popover
+        pop.modalPresentationStyle = .popover
+        pop.popoverPresentationController?.delegate = self
+        pop.popoverPresentationController?.sourceView = understandMoreButton
+        pop.popoverPresentationController?.sourceRect = understandMoreButton.bounds
+        pop.preferredContentSize = CGSize(width: 300, height: 150)
+        present(pop, animated: true)
         
     }
     
     
 }
 
-// MARK: - Extensions
+// MARK: - PickerView Extensions
 extension BloodSugarIndexViewController: UIPickerViewDelegate , UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -78,11 +86,26 @@ extension BloodSugarIndexViewController: UIPickerViewDelegate , UIPickerViewData
             return "\(highSugar[row])"
         }
     }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        // 將資料儲存到 UserDefault
+        if pickerView == lowSugarPickerView {
+            UserPreferences.shared.lowBloodSugar = lowSugar[row]
+        } else {
+            UserPreferences.shared.highBloodSugar = highSugar[row]
+        }
+    }
     
     
 }
 
-
+// MARK: - Popover Etension
+extension BloodSugarIndexViewController: UIPopoverPresentationControllerDelegate {
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+    }
+    
+}
 
 // MARK: - Protocol
 

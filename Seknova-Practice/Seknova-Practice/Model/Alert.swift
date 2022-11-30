@@ -8,18 +8,23 @@
 import UIKit
 
 class Alert {
-   
+    
     static func showAlertWith(title: String,
                               message: String,
                               vc: UIViewController,
                               confirmTitle: String,
                               confirm: (() -> Void)? = nil) {
         DispatchQueue.main.async {
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let alertController = UIAlertController(title: title,
+                                                    message: message,
+                                                    preferredStyle: .alert)
+            
             let confirmAction = UIAlertAction(title: confirmTitle, style: .default) { action in
                 confirm?()
             }
+            
             alertController.addAction(confirmAction)
+            
             vc.present(alertController, animated: true)
         }
     }
@@ -32,15 +37,49 @@ class Alert {
                               confirm: (() -> Void)? = nil,
                               cancel: (() -> Void)? = nil) {
         DispatchQueue.main.async {
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let alertController = UIAlertController(title: title,
+                                                    message: message,
+                                                    preferredStyle: .alert)
+            
             let confirmAction = UIAlertAction(title: confirmTitle, style: .default) { action in
                 confirm?()
             }
             let cancelAction = UIAlertAction(title: cancelTitle, style: .cancel) { action in
                 cancel?()
             }
+            
             alertController.addAction(confirmAction)
             alertController.addAction(cancelAction)
+            
+            vc.present(alertController, animated: true)
+        }
+    }
+    
+    static func showTextField(title: String,
+                              message: String,
+                              vc: UIViewController ,
+                              confirmtitle: String,
+                              canceltitle: String,
+                              setTextField: ((UITextField) -> Void)?,
+                              confirm: ((UITextField) -> Void)?) {
+        DispatchQueue.main.async {
+            let alertController = UIAlertController(title: title,
+                                                    message: message,
+                                                    preferredStyle: .alert)
+            alertController.addTextField { textfield in
+                setTextField?(textfield)
+            }
+            
+            let confirmAction = UIAlertAction(title: confirmtitle, style: .default) { action in
+                let textField = (alertController.textFields?.first)! as UITextField
+                confirm?(textField)
+            }
+            
+            let cancel = UIAlertAction(title: canceltitle, style: .default)
+            
+            alertController.addAction(cancel)
+            alertController.addAction(confirmAction)
+            
             vc.present(alertController, animated: true)
         }
     }

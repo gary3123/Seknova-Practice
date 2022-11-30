@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UnderstandMoreViewController" customModule="Seknova_Practice" customModuleProvider="target">
+            <connections>
+                <outlet property="contentTextfield" destination="Rt1-2n-V5l" id="t0d-L0-vZB"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="設定高低血糖值" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIx-g0-Y6X">
+                    <rect key="frame" x="78.666666666666686" y="0.0" width="143" height="23.666666666666668"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rt1-2n-V5l">
+                    <rect key="frame" x="16" y="23.666666666666664" width="268" height="101.66666666666669"/>
+                    <string key="text">設定高低血糖值，系統會於血糖高
+於高血糖值或是血糖低於低血糖值時透過通知使用者須進一步處理。通知方式為訊息，鈴聲(可關掉)或電子郵件信箱</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Rt1-2n-V5l" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.677778" id="ANL-OC-ww6"/>
+                <constraint firstItem="Rt1-2n-V5l" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.893333" id="Jn9-IH-pkZ"/>
+                <constraint firstItem="xIx-g0-Y6X" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="KV8-9I-pNV"/>
+                <constraint firstItem="Rt1-2n-V5l" firstAttribute="top" secondItem="xIx-g0-Y6X" secondAttribute="bottom" id="LmI-IM-JGp"/>
+                <constraint firstItem="xIx-g0-Y6X" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="PJg-b2-W0i"/>
+                <constraint firstItem="Rt1-2n-V5l" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QfY-Wt-lVP"/>
+                <constraint firstItem="xIx-g0-Y6X" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.476667" id="ag0-9S-MIv"/>
+                <constraint firstItem="xIx-g0-Y6X" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.156863" id="flb-wo-8hD"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+            <point key="canvasLocation" x="21.538461538461537" y="22.748815165876778"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -25,7 +25,6 @@ class AudiovisualTeachingViewController: BaseViewController {
         super.viewDidLoad()
         setNavigationbar(backgroundcolor: .navigationBar)
         view.insertSubview(AlphaBackgroundView(imageName: "Background.jpg", alpha: 0.2), at: 0)
-        navigationController?.navigationBar.isHidden = true
 
         setupUI()
     }

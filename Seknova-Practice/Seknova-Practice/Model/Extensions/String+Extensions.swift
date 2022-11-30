@@ -13,6 +13,7 @@ extension String {
         case email
         case password
         case phone
+        case deviceID
     }
     
     func validate(type: Validate) -> Bool {
@@ -25,6 +26,8 @@ extension String {
             predicateRule = "^(?=.*[a-z])(?=.*\\d)[a-zA-Z\\d]{8,16}$"
         case .phone:
             predicateRule = "[0-9]{9,10}"
+        case .deviceID:
+            predicateRule = "[0-9A-F]{6}"
         }
         
         let predicate = NSPredicate(format: "SELF MATCHES %@", predicateRule)

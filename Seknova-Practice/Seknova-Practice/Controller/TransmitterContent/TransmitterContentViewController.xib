@@ -12,8 +12,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TransmitterContentViewController" customModule="Seknova_Practice" customModuleProvider="target">
             <connections>
+                <outlet property="backButton" destination="vOg-zj-hae" id="zia-Mn-apG"/>
                 <outlet property="qrCodeButton" destination="08L-VN-DNp" id="Asi-Hb-QS9"/>
                 <outlet property="qrCodeView" destination="QHj-bT-mLX" id="eBS-56-pdp"/>
+                <outlet property="textInputButton" destination="0Zv-D2-Drw" id="nHv-JE-1Qz"/>
                 <outlet property="transmitterBImageView" destination="P0x-rK-0PI" id="nEQ-yu-tEU"/>
                 <outlet property="transmitterImageView" destination="dip-Nj-Ajf" id="nsl-jJ-ize"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -40,6 +42,9 @@
                         <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                         <color key="baseForegroundColor" name="NavigationBar"/>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="clickTextInput:" destination="-1" eventType="touchUpInside" id="4LX-Gc-T8U"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOg-zj-hae">
                     <rect key="frame" x="78.666666666666686" y="750" width="233" height="46.666666666666629"/>
@@ -51,6 +56,9 @@
                         <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                         <color key="baseForegroundColor" name="NavigationBar"/>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="clickBackButton:" destination="-1" eventType="touchUpInside" id="zeJ-rm-Qqx"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08L-VN-DNp">
                     <rect key="frame" x="78.666666666666686" y="617" width="233" height="46.666666666666629"/>
@@ -66,11 +74,11 @@
                         <action selector="clickQRCodeButton:" destination="-1" eventType="touchUpInside" id="q7P-to-Jqe"/>
                     </connections>
                 </button>
-                <view hidden="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="QHj-bT-mLX">
-                    <rect key="frame" x="84.666666666666686" y="342" width="221" height="221"/>
+                <view hidden="YES" autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QHj-bT-mLX">
+                    <rect key="frame" x="42.333333333333343" y="258" width="305.33333333333326" height="305"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="QHj-bT-mLX" secondAttribute="height" multiplier="1:1" id="Bnh-YN-B9B"/>
+                        <constraint firstAttribute="width" secondItem="QHj-bT-mLX" secondAttribute="height" multiplier="1:1" id="okM-OW-rKq"/>
                     </constraints>
                 </view>
             </subviews>
@@ -94,10 +102,10 @@
                 <constraint firstItem="P0x-rK-0PI" firstAttribute="width" secondItem="dip-Nj-Ajf" secondAttribute="width" multiplier="1.1" id="b4x-C7-ptP"/>
                 <constraint firstItem="dip-Nj-Ajf" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.615385" constant="103" id="bdJ-M3-uLR"/>
                 <constraint firstItem="0Zv-D2-Drw" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.597436" id="cbs-hR-35f"/>
-                <constraint firstItem="QHj-bT-mLX" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.289646" id="f8d-Uq-3EH"/>
-                <constraint firstItem="QHj-bT-mLX" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="fsy-mN-Rlt"/>
+                <constraint firstItem="QHj-bT-mLX" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.4" id="f8d-Uq-3EH"/>
                 <constraint firstItem="08L-VN-DNp" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="hps-lH-OHD"/>
                 <constraint firstItem="08L-VN-DNp" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0552923" id="krU-BQ-cIR"/>
+                <constraint firstItem="QHj-bT-mLX" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="nQ1-sp-dNr"/>
                 <constraint firstItem="0Zv-D2-Drw" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0552923" id="tzG-Hg-9jc"/>
                 <constraint firstItem="dip-Nj-Ajf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="74" id="yy5-EW-gnm"/>
             </constraints>
