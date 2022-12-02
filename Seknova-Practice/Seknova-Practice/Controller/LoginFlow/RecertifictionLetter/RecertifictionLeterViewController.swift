@@ -31,7 +31,8 @@ class RecertifictionLeterViewController: BaseViewController {
     @IBAction func clickNextStep(_ sender: Any) {
         print("email:\(UserPreferences.shared.email)")
         print("password:\(UserPreferences.shared.password)")
-        navigationController?.popToRootViewController(animated: true)
+        let nextVC = LoginViewController()
+        navigationController?.pushViewController(nextVC, animated: true)
     }
     
     

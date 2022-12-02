@@ -12,44 +12,52 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PairBlueToothViewController" customModule="Seknova_Practice" customModuleProvider="target">
             <connections>
-                <outlet property="titleTextField" destination="gBE-KZ-bws" id="jAY-KK-j7g"/>
+                <outlet property="blueToothImageView" destination="zhq-aK-4aK" id="XBo-Ok-710"/>
+                <outlet property="cancelButton" destination="Gm9-Bf-PoL" id="8tA-1m-jTh"/>
+                <outlet property="deviceImageView" destination="hcY-gC-tvk" id="TZi-h6-xiy"/>
+                <outlet property="dotImageView" destination="rgc-9A-E44" id="J3J-hE-2Oo"/>
+                <outlet property="pairButton" destination="Sf5-nP-eUs" id="Vhg-eX-5g6"/>
+                <outlet property="phoneImageView" destination="qdZ-Am-FMS" id="E2b-QW-Bm0"/>
+                <outlet property="stateImageView" destination="Hhu-8Y-tgB" id="OGA-cl-KCQ"/>
+                <outlet property="titleChineseLabel" destination="By8-RU-wWx" id="WJ8-vU-y9k"/>
+                <outlet property="titleLabel" destination="gBE-KZ-bws" id="jAY-KK-j7g"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PAIR BLUETOOTH" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gBE-KZ-bws">
-                    <rect key="frame" x="62" y="107.99999999999999" width="251" height="43.333333333333329"/>
+                    <rect key="frame" x="64.333333333333343" y="107.99999999999999" width="261.33333333333326" height="53.333333333333329"/>
                     <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="33"/>
                     <color key="textColor" name="NavigationBar"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="配   對   藍   芽   裝    置" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="By8-RU-wWx">
-                    <rect key="frame" x="114.33333333333333" y="161.33333333333334" width="146.33333333333337" height="17"/>
+                    <rect key="frame" x="122" y="171.33333333333334" width="146" height="17"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" name="NavigationBar"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BLE" translatesAutoresizingMaskIntoConstraints="NO" id="zhq-aK-4aK">
-                    <rect key="frame" x="313" y="103.66666666666669" width="32" height="52"/>
+                    <rect key="frame" x="325.66666666666669" y="107.66666666666669" width="33.333333333333314" height="54"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="zhq-aK-4aK" secondAttribute="height" multiplier="29:47" id="331-sa-dDx"/>
                     </constraints>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Phone" translatesAutoresizingMaskIntoConstraints="NO" id="qdZ-Am-FMS">
-                    <rect key="frame" x="7.6666666666666714" y="193" width="125.00000000000001" height="142"/>
+                    <rect key="frame" x="7.6666666666666714" y="191" width="130" height="179.66666666666663"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Device" translatesAutoresizingMaskIntoConstraints="NO" id="hcY-gC-tvk">
-                    <rect key="frame" x="242.66666666666663" y="246.66666666666663" width="111" height="35"/>
+                    <rect key="frame" x="242.33333333333334" y="258.66666666666669" width="115.33333333333334" height="44.333333333333314"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dot" translatesAutoresizingMaskIntoConstraints="NO" id="rgc-9A-E44">
-                    <rect key="frame" x="132.66666666666666" y="239" width="110" height="50"/>
+                    <rect key="frame" x="137.66666666666666" y="249.00000000000003" width="114.66666666666666" height="63.333333333333343"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gm9-Bf-PoL">
-                    <rect key="frame" x="71" y="520.33333333333337" width="233" height="46.666666666666629"/>
+                    <rect key="frame" x="74" y="701" width="242" height="59"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="取消" cornerStyle="capsule">
                         <backgroundConfiguration key="background" strokeWidth="5">
@@ -58,9 +66,12 @@
                         <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                         <color key="baseForegroundColor" name="NavigationBar"/>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="clickCancelButton:" destination="-1" eventType="touchUpInside" id="sYV-My-ogX"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sf5-nP-eUs">
-                    <rect key="frame" x="71" y="465.33333333333331" width="233" height="46.666666666666686"/>
+                    <rect key="frame" x="74" y="633.66666666666663" width="242" height="59"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="配對" cornerStyle="capsule">
                         <backgroundConfiguration key="background" strokeWidth="5">
@@ -69,15 +80,26 @@
                         <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                         <color key="baseForegroundColor" name="NavigationBar"/>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="clickPairButton:" destination="-1" eventType="touchUpInside" id="nHx-Ka-FY1"/>
+                    </connections>
                 </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hhu-8Y-tgB">
+                    <rect key="frame" x="39" y="283.66666666666663" width="312" height="289.66666666666663"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Hhu-8Y-tgB" secondAttribute="height" multiplier="240:223" id="ep7-4E-YAD"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="rgc-9A-E44" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.293333" id="1II-p0-ZOo"/>
-                <constraint firstItem="hcY-gC-tvk" firstAttribute="leading" secondItem="rgc-9A-E44" secondAttribute="trailing" id="6Rh-dD-S0b"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Gm9-Bf-PoL" secondAttribute="bottom" constant="100" id="Ari-Z6-umS"/>
+                <constraint firstItem="hcY-gC-tvk" firstAttribute="leading" secondItem="rgc-9A-E44" secondAttribute="trailing" constant="-10" id="6Rh-dD-S0b"/>
+                <constraint firstItem="Hhu-8Y-tgB" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="6nC-Vg-X3S"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Gm9-Bf-PoL" secondAttribute="bottom" constant="50" id="Ari-Z6-umS"/>
                 <constraint firstItem="qdZ-Am-FMS" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.333333" id="Bkd-mt-Ed6"/>
+                <constraint firstItem="Hhu-8Y-tgB" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.8" id="CE2-Ag-Ghc"/>
                 <constraint firstItem="rgc-9A-E44" firstAttribute="leading" secondItem="qdZ-Am-FMS" secondAttribute="trailing" id="CaJ-xv-RLy"/>
                 <constraint firstItem="rgc-9A-E44" firstAttribute="top" secondItem="By8-RU-wWx" secondAttribute="bottom" constant="60.666666666666657" id="Dzp-di-8df"/>
                 <constraint firstItem="Gm9-Bf-PoL" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.069965" id="Jbs-MD-3jL"/>
@@ -102,6 +124,7 @@
                 <constraint firstItem="qdZ-Am-FMS" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.212894" id="l5g-vt-Jc4"/>
                 <constraint firstItem="gBE-KZ-bws" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.07" id="mtx-et-XW8"/>
                 <constraint firstItem="Sf5-nP-eUs" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="n8v-95-Kfx"/>
+                <constraint firstItem="Hhu-8Y-tgB" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="nTs-5t-jBh"/>
                 <constraint firstItem="Gm9-Bf-PoL" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="vRO-4g-RY1"/>
             </constraints>
             <point key="canvasLocation" x="118.46153846153845" y="20.616113744075829"/>

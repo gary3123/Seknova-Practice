@@ -24,21 +24,26 @@ class LoginViewController: BaseViewController {
     var registerStatus = false
     var firstLoginStatus = false
     
+    var lastPage: LogingLastPage = .recertifictionVC
+    enum LogingLastPage {
+        case qrCodeVC
+        case recertifictionVC
+    }
+    
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.setHidesBackButton(true, animated: false)
         setNavigationbar(backgroundcolor: .navigationBar)
         view.insertSubview(AlphaBackgroundView(imageName: "Background5.jpg", alpha: 0.2), at: 0)
         setupUI()
         self.title = "Login"
+        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        // 如果已經有註冊或登入過帳號的話，會自動把帳密打進 TextField
-        accountTextfield.text = UserPreferences.shared.email
-        passwordTextfield.text = UserPreferences.shared.password
-    }
+    
 
     // MARK: - UI Settings
     
@@ -62,9 +67,21 @@ class LoginViewController: BaseViewController {
         // 設定密碼為黑點
         passwordTextfield.isSecureTextEntry = true
         
-        //
+        //設定 TextField 的樣式
         textfieldStackView.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMaxXMinYCorner,.layerMinXMaxYCorner,.layerMinXMinYCorner]
         textfieldStackView.layer.cornerRadius = 5
+        
+        // 判斷前一頁是由哪裡切進來的，如果是註冊信，則自動填好帳密，如果是 QR code 則清空帳密
+        switch lastPage {
+        case .recertifictionVC:
+            accountTextfield.text = UserPreferences.shared.email
+            passwordTextfield.text = UserPreferences.shared.password
+            print("從註冊信進來")
+        case .qrCodeVC:
+            accountTextfield.text = ""
+            passwordTextfield.text = ""
+            print("從 QR code 掃描頁面進來")
+        }
     }
     
     // MARK: - IBAction

@@ -1,13 +1,13 @@
 //
-//  PrivacyConsentViewController.swift
+//  ScanningSensorViewController.swift
 //  Seknova-Practice
 //
-//  Created by 阿瑋 on 2022/11/23.
+//  Created by 阿瑋 on 2022/12/2.
 //
 
 import UIKit
 
-class PrivacyConsentViewController: UIViewController {
+class ScanningSensorViewController: BaseViewController{
     
     // MARK: - IBOutlet
     
@@ -21,6 +21,7 @@ class PrivacyConsentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.insertSubview(AlphaBackgroundView(imageName: "Background5.jpg", alpha: 0.5), at: 0)
         setupUI()
     }
     

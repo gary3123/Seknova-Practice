@@ -20,10 +20,10 @@ class TransmitterContentViewController: BaseViewController {
     @IBOutlet weak var backButton: UIButton!
     
     // MARK: - Variables
+    
     var AVCsession = AVCaptureSession()
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var qrCodeStatus = false
-    
     
     // MARK: - LifeCycle
     
@@ -82,15 +82,14 @@ class TransmitterContentViewController: BaseViewController {
             qrCodeView.layer.addSublayer(videoPreviewLayer!)
             qrCodeView.layer.borderWidth = 2
             qrCodeView.layer.borderColor = UIColor.navigationBar?.cgColor
-        
+            
         } catch {
             print("error")
         }
-        
     }
     
-    
     // MARK: - IBAction
+    
     @IBAction func clickQRCodeButton(_ sender: Any) {
         qrCodeStatus = !(qrCodeStatus)
         if qrCodeStatus == true {
@@ -98,8 +97,7 @@ class TransmitterContentViewController: BaseViewController {
             transmitterBImageView.isHidden = true
             qrCodeView.isHidden = false
             AVCsession.startRunning()
-            
-        }else {
+        } else {
             self.AVCsession.stopRunning()
             transmitterImageView.isHidden = false
             transmitterBImageView.isHidden = false
@@ -108,7 +106,9 @@ class TransmitterContentViewController: BaseViewController {
     }
     
     @IBAction func clickTextInput(_ sender: Any) {
-        Alert.showTextField(title: "文字輸入",
+        qrCodeStatus = false
+        qrCodeView.isHidden = true
+        Alert.showAlertWith(title: "文字輸入",
                             message: "請輸入裝置ID",
                             vc: self,
                             confirmtitle: "確認",
@@ -116,8 +116,8 @@ class TransmitterContentViewController: BaseViewController {
             // UITextField 樣式設定
             textField.delegate = self
             textField.keyboardType = .asciiCapable
-            // 設定鍵盤第一個字大寫
-            textField.autocapitalizationType = UITextAutocapitalizationType.words
+            // 設定鍵盤每個英文字都大寫
+            textField.autocapitalizationType = UITextAutocapitalizationType.allCharacters
             textField.placeholder = "輸入裝置 ID 後兩碼"
         } confirm: { textField in
             // 按下確認後要做的事
@@ -132,18 +132,17 @@ class TransmitterContentViewController: BaseViewController {
                                     vc: self,
                                     confirmTitle: "確認")
             }
-            
-            
         }
     }
     
     @IBAction func clickBackButton(_ sender: Any) {
+        let loginVC = LoginViewController()
+        loginVC.lastPage = .qrCodeVC  //將切進 Login 的前一頁路徑設為 QR Code
+        navigationController?.pushViewController(loginVC, animated: true)
     }
-    
-    
 }
 
-// MARK: - Extensions
+// MARK: - AVCaptureMetadataOutputObjectsDelegate
 
 extension TransmitterContentViewController: AVCaptureMetadataOutputObjectsDelegate {
     
@@ -176,23 +175,17 @@ extension TransmitterContentViewController: AVCaptureMetadataOutputObjectsDelega
                                             vc: self,
                                             confirmTitle:"確認")
                     }
-                   
-                    
                 }
             }
         }
-        
     }
-    
 }
 
-
-// MARK: - TextFieldDelegate
+// MARK: - UITextFieldDelegate
 
 extension TransmitterContentViewController: UITextFieldDelegate {
     
-    
-    //判斷輸入的字數是否超過 6 是的話則不再進行輸入
+    // 判斷輸入的字數是否超過 6 是的話則不再進行輸入
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let countOfWords = textField.text!.count - range.length + string.count
         
@@ -201,9 +194,7 @@ extension TransmitterContentViewController: UITextFieldDelegate {
         }
         return true
     }
-    
 }
-
 
 // MARK: - Protocol
 

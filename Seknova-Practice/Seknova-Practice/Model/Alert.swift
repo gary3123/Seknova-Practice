@@ -55,7 +55,7 @@ class Alert {
         }
     }
     
-    static func showTextField(title: String,
+    static func showAlertWith(title: String,
                               message: String,
                               vc: UIViewController ,
                               confirmtitle: String,
