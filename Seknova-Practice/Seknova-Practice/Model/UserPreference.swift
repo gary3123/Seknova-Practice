@@ -21,6 +21,7 @@ class UserPreferences {
         case lowBloodSugar
         case highBloodSugar
         case deviceID
+        case sensorID
     }
     
     var email: String {
@@ -49,5 +50,9 @@ class UserPreferences {
     var deviceID: String {
         get { return userPreferance.string( forKey: UserPreference.deviceID.rawValue) ?? ""}
         set { return userPreferance.set( newValue, forKey: UserPreference.deviceID.rawValue)}
+    }
+    var sensorID: String {
+        get { return userPreferance.string( forKey: UserPreference.sensorID.rawValue) ?? ""}
+        set { return userPreferance.set( newValue, forKey: UserPreference.sensorID.rawValue)}
     }
 }

@@ -118,7 +118,7 @@ class TransmitterContentViewController: BaseViewController {
             textField.keyboardType = .asciiCapable
             // 設定鍵盤每個英文字都大寫
             textField.autocapitalizationType = UITextAutocapitalizationType.allCharacters
-            textField.placeholder = "輸入裝置 ID 後兩碼"
+            textField.placeholder = "輸入裝置 ID 後六碼"
         } confirm: { textField in
             // 按下確認後要做的事
             guard let text = textField.text else { return }
