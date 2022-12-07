@@ -23,6 +23,8 @@ class ScanningSensorViewController: BaseViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         view.insertSubview(AlphaBackgroundView(imageName: "Background5.jpg", alpha: 0.5), at: 0)
+        navigationController?.navigationBar.isHidden = false
+        self.navigationItem.setHidesBackButton(true, animated: true)
         self.title = "Scanning Sensor"
         setupUI()
     }
@@ -64,7 +66,14 @@ class ScanningSensorViewController: BaseViewController{
         } confirm: { textfield in
             guard let text = textfield.text else { return }
             if text.validate(type: .deviceID) {
-                UserPreferences.shared.sensorID = textfield.text!
+               
+                Alert.showAlertWith(title: "確認裝置碼", message: "確認裝置碼為 \(text) ?", vc: self, confirmTitle: "確認", cancelTitle: "返回") {
+                    UserPreferences.shared.sensorID = textfield.text!
+                    self.navigationController?.pushViewController(TabBarController(), animated: true)
+                }cancel: {
+                    
+                    textfield.text = ""
+                }
             } else {
                 Alert.showAlertWith(title: "輸入裝置 ID 格式錯誤",
                                     message: "輸入格式錯誤，請重新輸入",
@@ -74,7 +83,9 @@ class ScanningSensorViewController: BaseViewController{
         }
     }
 
-    @IBAction func clickBackButton(_ sender: Any) {
+    @IBAction func clickSkipButton(_ sender: Any) {
+        
+        navigationController?.pushViewController(TabBarController(), animated: true)
         
     }
     

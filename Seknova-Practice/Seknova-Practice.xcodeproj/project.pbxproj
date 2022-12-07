@@ -8,10 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		3374733282785F6644403987 /* Pods_Seknova_Practice_Seknova_PracticeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E53C86D42EB499112CB44D2 /* Pods_Seknova_Practice_Seknova_PracticeUITests.framework */; };
+		4E11253E293A324C00D3BD55 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E11253C293A324C00D3BD55 /* HistoryViewController.swift */; };
+		4E11253F293A324C00D3BD55 /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E11253D293A324C00D3BD55 /* HistoryViewController.xib */; };
+		4E112546293A33C800D3BD55 /* BloodSugarCorrectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E112544293A33C800D3BD55 /* BloodSugarCorrectionViewController.swift */; };
+		4E112547293A33C800D3BD55 /* BloodSugarCorrectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E112545293A33C800D3BD55 /* BloodSugarCorrectionViewController.xib */; };
+		4E11254A293A33EA00D3BD55 /* InstanceBloodSugarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E112548293A33EA00D3BD55 /* InstanceBloodSugarViewController.swift */; };
+		4E11254B293A33EA00D3BD55 /* InstanceBloodSugarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E112549293A33EA00D3BD55 /* InstanceBloodSugarViewController.xib */; };
+		4E11254E293A33FF00D3BD55 /* LifeStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E11254C293A33FF00D3BD55 /* LifeStyleViewController.swift */; };
+		4E11254F293A33FF00D3BD55 /* LifeStyleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E11254D293A33FF00D3BD55 /* LifeStyleViewController.xib */; };
+		4E112552293A341E00D3BD55 /* PersionalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E112550293A341E00D3BD55 /* PersionalInformationViewController.swift */; };
+		4E112553293A341E00D3BD55 /* PersionalInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E112551293A341E00D3BD55 /* PersionalInformationViewController.xib */; };
+		4E112555293A3EB400D3BD55 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E112554293A3EB400D3BD55 /* TabBarController.swift */; };
 		4E2160F72939D5A80021553C /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2160F52939D5A80021553C /* ConnectViewController.swift */; };
 		4E2160F82939D5A80021553C /* ConnectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E2160F62939D5A80021553C /* ConnectViewController.xib */; };
 		4E2E94E02913B7F900E2533F /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2E94DF2913B7F900E2533F /* String+Extensions.swift */; };
 		4E2E94E32913BDE200E2533F /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2E94E22913BDE200E2533F /* Alert.swift */; };
+		4E2EE826293DF856005F9DDD /* BodyInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2EE824293DF856005F9DDD /* BodyInformationTableViewCell.swift */; };
+		4E2EE827293DF856005F9DDD /* BodyInformationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E2EE825293DF856005F9DDD /* BodyInformationTableViewCell.xib */; };
+		4E2EE829293F7E01005F9DDD /* AppDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2EE828293F7E01005F9DDD /* AppDefine.swift */; };
+		4E2EE82C29406650005F9DDD /* BodyInformationArrowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2EE82A29406650005F9DDD /* BodyInformationArrowTableViewCell.swift */; };
+		4E2EE82D29406650005F9DDD /* BodyInformationArrowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E2EE82B29406650005F9DDD /* BodyInformationArrowTableViewCell.xib */; };
 		4E71FBC1292FAAAE00B75F9B /* BodyInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E71FBBF292FAAAE00B75F9B /* BodyInformationViewController.swift */; };
 		4E71FBC2292FAAAE00B75F9B /* BodyInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E71FBC0292FAAAE00B75F9B /* BodyInformationViewController.xib */; };
 		4E71FBC6292FAFDB00B75F9B /* AudiovisualTeachingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E71FBC4292FAFDB00B75F9B /* AudiovisualTeachingViewController.swift */; };
@@ -75,10 +91,26 @@
 		0F46DE910FEBAD4F4DB2D4E6 /* Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig"; path = "Target Support Files/Pods-Seknova-Practice-Seknova-PracticeUITests/Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		24BD3366D14F68E6807C079D /* Pods_Seknova_Practice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Seknova_Practice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35593199C3A17A67170D258B /* Pods_Seknova_PracticeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Seknova_PracticeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E11253C293A324C00D3BD55 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		4E11253D293A324C00D3BD55 /* HistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
+		4E112544293A33C800D3BD55 /* BloodSugarCorrectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodSugarCorrectionViewController.swift; sourceTree = "<group>"; };
+		4E112545293A33C800D3BD55 /* BloodSugarCorrectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BloodSugarCorrectionViewController.xib; sourceTree = "<group>"; };
+		4E112548293A33EA00D3BD55 /* InstanceBloodSugarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceBloodSugarViewController.swift; sourceTree = "<group>"; };
+		4E112549293A33EA00D3BD55 /* InstanceBloodSugarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstanceBloodSugarViewController.xib; sourceTree = "<group>"; };
+		4E11254C293A33FF00D3BD55 /* LifeStyleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeStyleViewController.swift; sourceTree = "<group>"; };
+		4E11254D293A33FF00D3BD55 /* LifeStyleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LifeStyleViewController.xib; sourceTree = "<group>"; };
+		4E112550293A341E00D3BD55 /* PersionalInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersionalInformationViewController.swift; sourceTree = "<group>"; };
+		4E112551293A341E00D3BD55 /* PersionalInformationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersionalInformationViewController.xib; sourceTree = "<group>"; };
+		4E112554293A3EB400D3BD55 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		4E2160F52939D5A80021553C /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
 		4E2160F62939D5A80021553C /* ConnectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConnectViewController.xib; sourceTree = "<group>"; };
 		4E2E94DF2913B7F900E2533F /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		4E2E94E22913BDE200E2533F /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		4E2EE824293DF856005F9DDD /* BodyInformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyInformationTableViewCell.swift; sourceTree = "<group>"; };
+		4E2EE825293DF856005F9DDD /* BodyInformationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BodyInformationTableViewCell.xib; sourceTree = "<group>"; };
+		4E2EE828293F7E01005F9DDD /* AppDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDefine.swift; sourceTree = "<group>"; };
+		4E2EE82A29406650005F9DDD /* BodyInformationArrowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyInformationArrowTableViewCell.swift; sourceTree = "<group>"; };
+		4E2EE82B29406650005F9DDD /* BodyInformationArrowTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BodyInformationArrowTableViewCell.xib; sourceTree = "<group>"; };
 		4E71FBBF292FAAAE00B75F9B /* BodyInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyInformationViewController.swift; sourceTree = "<group>"; };
 		4E71FBC0292FAAAE00B75F9B /* BodyInformationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BodyInformationViewController.xib; sourceTree = "<group>"; };
 		4E71FBC4292FAFDB00B75F9B /* AudiovisualTeachingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudiovisualTeachingViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +202,63 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		4E11253A293A31D900D3BD55 /* MainFlow */ = {
+			isa = PBXGroup;
+			children = (
+				4E112543293A32EF00D3BD55 /* PersionalInformation */,
+				4E112542293A32C800D3BD55 /* LifeStyle */,
+				4E112541293A32A600D3BD55 /* InstanceBloodSugar */,
+				4E112540293A325B00D3BD55 /* BloodSugarCorrection */,
+				4E11253B293A322900D3BD55 /* History */,
+			);
+			path = MainFlow;
+			sourceTree = "<group>";
+		};
+		4E11253B293A322900D3BD55 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				4E11253C293A324C00D3BD55 /* HistoryViewController.swift */,
+				4E11253D293A324C00D3BD55 /* HistoryViewController.xib */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		4E112540293A325B00D3BD55 /* BloodSugarCorrection */ = {
+			isa = PBXGroup;
+			children = (
+				4E112544293A33C800D3BD55 /* BloodSugarCorrectionViewController.swift */,
+				4E112545293A33C800D3BD55 /* BloodSugarCorrectionViewController.xib */,
+			);
+			path = BloodSugarCorrection;
+			sourceTree = "<group>";
+		};
+		4E112541293A32A600D3BD55 /* InstanceBloodSugar */ = {
+			isa = PBXGroup;
+			children = (
+				4E112548293A33EA00D3BD55 /* InstanceBloodSugarViewController.swift */,
+				4E112549293A33EA00D3BD55 /* InstanceBloodSugarViewController.xib */,
+			);
+			path = InstanceBloodSugar;
+			sourceTree = "<group>";
+		};
+		4E112542293A32C800D3BD55 /* LifeStyle */ = {
+			isa = PBXGroup;
+			children = (
+				4E11254C293A33FF00D3BD55 /* LifeStyleViewController.swift */,
+				4E11254D293A33FF00D3BD55 /* LifeStyleViewController.xib */,
+			);
+			path = LifeStyle;
+			sourceTree = "<group>";
+		};
+		4E112543293A32EF00D3BD55 /* PersionalInformation */ = {
+			isa = PBXGroup;
+			children = (
+				4E112550293A341E00D3BD55 /* PersionalInformationViewController.swift */,
+				4E112551293A341E00D3BD55 /* PersionalInformationViewController.xib */,
+			);
+			path = PersionalInformation;
+			sourceTree = "<group>";
+		};
 		4E17A6E02939E964007882A2 /* LoginFlow */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +282,7 @@
 				4E7CD550293791C900F913F4 /* PairBlueTooth */,
 				4E2160F42939D56E0021553C /* ConnectViewController */,
 				4EA71BD42939F266000A1A4C /* ScanningSensor */,
+				4E11253A293A31D900D3BD55 /* MainFlow */,
 			);
 			path = FirstLoginFlow;
 			sourceTree = "<group>";
@@ -220,6 +310,10 @@
 			children = (
 				4E71FBBF292FAAAE00B75F9B /* BodyInformationViewController.swift */,
 				4E71FBC0292FAAAE00B75F9B /* BodyInformationViewController.xib */,
+				4E2EE824293DF856005F9DDD /* BodyInformationTableViewCell.swift */,
+				4E2EE825293DF856005F9DDD /* BodyInformationTableViewCell.xib */,
+				4E2EE82A29406650005F9DDD /* BodyInformationArrowTableViewCell.swift */,
+				4E2EE82B29406650005F9DDD /* BodyInformationArrowTableViewCell.xib */,
 			);
 			path = BodyInformationViewController;
 			sourceTree = "<group>";
@@ -369,6 +463,7 @@
 				4E8303C42907D92A005DBEA5 /* Extensions */,
 				4E2E94E22913BDE200E2533F /* Alert.swift */,
 				4EFBDA6F292B78E400202B2A /* UserPreference.swift */,
+				4E2EE828293F7E01005F9DDD /* AppDefine.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -387,6 +482,7 @@
 				4E8303C02907D559005DBEA5 /* BaseViewController.swift */,
 				4E17A6E02939E964007882A2 /* LoginFlow */,
 				4E17A6E12939EA6A007882A2 /* FirstLoginFlow */,
+				4E112554293A3EB400D3BD55 /* TabBarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -528,7 +624,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E11253F293A324C00D3BD55 /* HistoryViewController.xib in Resources */,
 				4E7CD5542937925900F913F4 /* PairBlueToothViewController.xib in Resources */,
+				4E11254B293A33EA00D3BD55 /* InstanceBloodSugarViewController.xib in Resources */,
 				4E79C98628F40FD100F3017B /* LaunchScreen.storyboard in Resources */,
 				4E71FBC7292FAFDB00B75F9B /* AudiovisualTeachingViewController.xib in Resources */,
 				4E2160F82939D5A80021553C /* ConnectViewController.xib in Resources */,
@@ -541,8 +639,13 @@
 				4EFBDA75292BA17100202B2A /* ForgotPassword.xib in Resources */,
 				4E7F94DD292CD6F000F28F69 /* ResetPasswordViewController.xib in Resources */,
 				4E854D80290270DB0097D79E /* LoginViewController.xib in Resources */,
+				4E112547293A33C800D3BD55 /* BloodSugarCorrectionViewController.xib in Resources */,
+				4E112553293A341E00D3BD55 /* PersionalInformationViewController.xib in Resources */,
+				4E2EE82D29406650005F9DDD /* BodyInformationArrowTableViewCell.xib in Resources */,
+				4E11254F293A33FF00D3BD55 /* LifeStyleViewController.xib in Resources */,
 				4E71FBCC2930EF4A00B75F9B /* BloodSugarIndexViewController.xib in Resources */,
 				4EFBDA6E292666AA00202B2A /* RecertifictionLeterViewController.xib in Resources */,
+				4E2EE827293DF856005F9DDD /* BodyInformationTableViewCell.xib in Resources */,
 				4E71FBC2292FAAAE00B75F9B /* BodyInformationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -673,8 +776,12 @@
 			files = (
 				4E2E94E02913B7F900E2533F /* String+Extensions.swift in Sources */,
 				4E7CD5532937925900F913F4 /* PairBlueToothViewController.swift in Sources */,
+				4E2EE829293F7E01005F9DDD /* AppDefine.swift in Sources */,
+				4E2EE826293DF856005F9DDD /* BodyInformationTableViewCell.swift in Sources */,
+				4E2EE82C29406650005F9DDD /* BodyInformationArrowTableViewCell.swift in Sources */,
 				4E88DB4E290283C9005DCFC9 /* AlphaBackgroundView.swift in Sources */,
 				4EA71BD72939F282000A1A4C /* ScanningSensorViewController.swift in Sources */,
+				4E112552293A341E00D3BD55 /* PersionalInformationViewController.swift in Sources */,
 				4E9BA6BC29090E1700EA71A5 /* TextField+Extensions.swift in Sources */,
 				4E2160F72939D5A80021553C /* ConnectViewController.swift in Sources */,
 				4E7CD54E2935F7A100F913F4 /* UnderstandMoreViewController.swift in Sources */,
@@ -683,16 +790,21 @@
 				4E71FBCB2930EF4A00B75F9B /* BloodSugarIndexViewController.swift in Sources */,
 				4E79C97A28F40FCF00F3017B /* AppDelegate.swift in Sources */,
 				4E79782B293258F2009AE72E /* TransmitterContentViewController.swift in Sources */,
+				4E11253E293A324C00D3BD55 /* HistoryViewController.swift in Sources */,
 				4E79C97C28F40FCF00F3017B /* SceneDelegate.swift in Sources */,
 				4E854D7A29026E9B0097D79E /* RegisterViewController.swift in Sources */,
 				4E8303C32907D8EF005DBEA5 /* Color+Extensions.swift in Sources */,
 				4E854D7F290270DB0097D79E /* LoginViewController.swift in Sources */,
+				4E112546293A33C800D3BD55 /* BloodSugarCorrectionViewController.swift in Sources */,
 				4E2E94E32913BDE200E2533F /* Alert.swift in Sources */,
+				4E11254E293A33FF00D3BD55 /* LifeStyleViewController.swift in Sources */,
 				4EFBDA642923AE8300202B2A /* ContrastPopoverViewController.swift in Sources */,
 				4E71FBC6292FAFDB00B75F9B /* AudiovisualTeachingViewController.swift in Sources */,
+				4E112555293A3EB400D3BD55 /* TabBarController.swift in Sources */,
 				4EFBDA74292BA17100202B2A /* ForgotPassword.swift in Sources */,
 				4E7F94DC292CD6F000F28F69 /* ResetPasswordViewController.swift in Sources */,
 				4EFBDA70292B78E400202B2A /* UserPreference.swift in Sources */,
+				4E11254A293A33EA00D3BD55 /* InstanceBloodSugarViewController.swift in Sources */,
 				4E8303C12907D559005DBEA5 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

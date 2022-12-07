@@ -123,9 +123,15 @@ class TransmitterContentViewController: BaseViewController {
             // 按下確認後要做的事
             guard let text = textField.text else { return }
             if text.validate(type: .deviceID) {
-                UserPreferences.shared.deviceID = textField.text!
-                let pairBlueToothVC = PairBlueToothViewController()
-                self.navigationController?.pushViewController(pairBlueToothVC, animated: true)
+                
+                Alert.showAlertWith(title: "確認裝置碼", message: "確認裝置碼為\(text) ?", vc: self, confirmTitle: "確認", cancelTitle: "返回") {
+                    UserPreferences.shared.deviceID = textField.text!
+                    let pairBlueToothVC = PairBlueToothViewController()
+                    self.navigationController?.pushViewController(pairBlueToothVC, animated: true)
+                } cancel: {
+                    textField.text = ""
+                }
+                
             } else {
                 Alert.showAlertWith(title: "輸入裝置 ID 格式錯誤",
                                     message: "輸入格式錯誤，請重新輸入",
@@ -165,6 +171,7 @@ extension TransmitterContentViewController: AVCaptureMetadataOutputObjectsDelega
                         return
                     }
                     if stringValue.validate(type: .deviceID) {
+                        self.AVCsession.stopRunning()
                         print(stringValue)
                         UserPreferences.shared.deviceID = stringValue
                         let pairBlueToothVC = PairBlueToothViewController()

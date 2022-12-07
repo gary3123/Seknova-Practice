@@ -83,4 +83,47 @@ class Alert {
             vc.present(alertController, animated: true)
         }
     }
+    
+    static func showActionSheet(title: String,
+                         message: String,
+                         canceltitle: String,
+                         vc: UIViewController,
+                         array: [String]) -> String {
+        let alertController = UIAlertController(title: title,
+                                                message: message,
+                                                preferredStyle: .actionSheet)
+        var ans = ""
+        for option in array {
+            let action = UIAlertAction(title: option, style: .default) { action in
+                ans = action.title!
+            }
+            alertController.addAction(action)
+        }
+        let cancelAction = UIAlertAction(title: canceltitle, style: .cancel)
+        alertController.addAction(cancelAction)
+        vc.present(alertController,animated: true)
+        return ans
+    }
+    
+    static func showActionSheet(array: [String],
+                                canceltitle: String,
+                                vc: UIViewController,
+                                confirm: ((Int) -> Void)? = nil) {
+        DispatchQueue.main.async {
+            let alertController = UIAlertController(title: nil,
+                                                    message: nil,
+                                                    preferredStyle: .actionSheet)
+            
+            for option in array {
+                let action = UIAlertAction(title: option, style: .default) { action in
+                    let index = array.firstIndex(of: option)
+                    confirm?(index!)
+                }
+                alertController.addAction(action)
+            }
+            let cancelAction = UIAlertAction(title: canceltitle, style: .cancel)
+            alertController.addAction(cancelAction)
+            vc.present(alertController,animated: true)
+        }
+    }
 }

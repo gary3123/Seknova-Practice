@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,6 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BodyInformationViewController" customModule="Seknova_Practice" customModuleProvider="target">
             <connections>
+                <outlet property="datePicker" destination="RHX-ZX-kUc" id="4ZR-5i-lRo"/>
+                <outlet property="nextStep" destination="0ay-gT-WXd" id="eEK-HS-A8Q"/>
+                <outlet property="tableView" destination="fE9-gL-omi" id="LHX-Ig-HVH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,12 +22,55 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHX-ZX-kUc">
+                    <rect key="frame" x="0.0" y="730" width="390" height="80"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <date key="date" timeIntervalSinceReferenceDate="-3157883331.035109">
+                        <!--1900-12-07 10:11:08 +0000-->
+                    </date>
+                </datePicker>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ay-gT-WXd">
+                    <rect key="frame" x="74" y="743.66666666666663" width="242" height="59"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="下一步" cornerStyle="capsule">
+                        <backgroundConfiguration key="background" strokeWidth="5">
+                            <color key="strokeColor" name="NavigationBar"/>
+                        </backgroundConfiguration>
+                        <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                        <color key="baseForegroundColor" name="NavigationBar"/>
+                    </buttonConfiguration>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="insetGrouped" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fE9-gL-omi">
+                    <rect key="frame" x="0.0" y="47" width="390" height="686.66666666666663"/>
+                    <color key="separatorColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="11" y="21"/>
+            <constraints>
+                <constraint firstItem="RHX-ZX-kUc" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.104849" id="HMb-Nt-xWd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fE9-gL-omi" secondAttribute="trailing" id="HOw-6g-5fD"/>
+                <constraint firstItem="0ay-gT-WXd" firstAttribute="top" secondItem="fE9-gL-omi" secondAttribute="bottom" constant="10" id="IgQ-Lj-uiF"/>
+                <constraint firstItem="fE9-gL-omi" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="MwX-gh-7yB"/>
+                <constraint firstItem="RHX-ZX-kUc" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="RAu-Xd-k5A"/>
+                <constraint firstItem="0ay-gT-WXd" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0699052" id="So8-CZ-8B1"/>
+                <constraint firstItem="fE9-gL-omi" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="XhQ-eO-Pqi"/>
+                <constraint firstItem="RHX-ZX-kUc" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="ZMg-bv-Viu"/>
+                <constraint firstItem="0ay-gT-WXd" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.620513" id="fIm-OH-lSu"/>
+                <constraint firstItem="fE9-gL-omi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="mKU-Uy-0GI"/>
+                <constraint firstItem="RHX-ZX-kUc" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="ql0-f2-HdO"/>
+                <constraint firstItem="fE9-gL-omi" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.9" id="raW-cD-6h7"/>
+                <constraint firstItem="0ay-gT-WXd" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="wgH-8J-FzA"/>
+            </constraints>
+            <point key="canvasLocation" x="150.76923076923077" y="20.616113744075829"/>
         </view>
     </objects>
     <resources>
+        <namedColor name="NavigationBar">
+            <color red="0.75700002908706665" green="0.059000000357627869" blue="0.14100000262260437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

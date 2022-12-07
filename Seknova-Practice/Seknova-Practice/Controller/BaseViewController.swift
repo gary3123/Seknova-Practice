@@ -9,16 +9,16 @@ import UIKit
 
 class BaseViewController: UIViewController {
  
-    //設定 Navigation Bar
+    // 設定 Navigation Bar
     func setNavigationbar(backgroundcolor: UIColor?,
-                          tintColor: UIColor? = .white,
-                          foregroundColor: UIColor? = .white) {
+                          tintColor: UIColor = .white,
+                          foregroundColor: UIColor = .white) {
         let appearence = UINavigationBarAppearance()
         appearence.configureWithOpaqueBackground()
         appearence.backgroundColor = backgroundcolor
         self.navigationController?.navigationBar.tintColor = tintColor
         appearence.titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor : foregroundColor ?? .white
+            NSAttributedString.Key.foregroundColor : foregroundColor
         ]
         
         self.navigationController?.navigationBar.standardAppearance = appearence
@@ -27,8 +27,7 @@ class BaseViewController: UIViewController {
     }
     
     // 點擊螢幕收起鍵盤
-    override  func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
-    
 }

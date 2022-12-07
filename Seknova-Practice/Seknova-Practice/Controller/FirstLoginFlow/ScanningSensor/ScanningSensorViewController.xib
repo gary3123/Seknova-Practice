@@ -45,7 +45,7 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRS-hE-6sU">
                     <rect key="frame" x="78.666666666666686" y="750.33333333333337" width="233" height="46.666666666666629"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="返回" cornerStyle="capsule">
+                    <buttonConfiguration key="configuration" style="plain" title="略過" cornerStyle="capsule">
                         <backgroundConfiguration key="background" strokeWidth="5">
                             <color key="strokeColor" name="NavigationBar"/>
                         </backgroundConfiguration>
