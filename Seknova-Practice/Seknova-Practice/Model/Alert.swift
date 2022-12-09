@@ -119,9 +119,11 @@ class Alert {
                     let index = array.firstIndex(of: option)
                     confirm?(index!)
                 }
+                action.setValue(UIColor.navigationBar!, forKey: "titleTextColor")
                 alertController.addAction(action)
             }
             let cancelAction = UIAlertAction(title: canceltitle, style: .cancel)
+            cancelAction.setValue(UIColor.navigationBar!, forKey: "titleTextColor")
             alertController.addAction(cancelAction)
             vc.present(alertController,animated: true)
         }

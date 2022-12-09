@@ -13,13 +13,16 @@ class BodyInformationViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nextStep: UIButton!
-    @IBOutlet weak var datePicker: UIDatePicker!
-    
+    @IBOutlet weak var birthdayView: UIView!
+    @IBOutlet weak var doneBarbuttonItem: UIBarButtonItem!
+    @IBOutlet weak var cancelBarButtonItem: UIBarButtonItem!
+    @IBOutlet weak var birthdayPicker: UIDatePicker!
+    @IBOutlet weak var toolBar: UIToolbar!
     // MARK: - Variables
 
     var informationAnsArray: [String] = ["", "", "", "", "", "", "", "", "", "", "", ""]
     var datePickerStatus = false
-    
+    let fullScreenSize = UIScreen.main.bounds.size
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
@@ -58,6 +61,7 @@ class BodyInformationViewController: BaseViewController {
     
     func setupUI() {
         setTableView()
+        setBirthDayPicker()
     }
     
     private func setTableView() {
@@ -78,20 +82,36 @@ class BodyInformationViewController: BaseViewController {
         return accessoryView
     }
     
+    func setBirthDayPicker() {
+        birthdayPicker.locale = Locale(identifier: "zh_TW")
+        birthdayPicker.maximumDate = Date()
+        birthdayView.addSubview(birthdayPicker)
+    }
     
-    @objc func datepicker() {
-        if datePickerStatus == true {
-            datePicker.isHidden = false
-            nextStep.isHidden = true
+    
+    func clickDatePicker() {
+        if datePickerStatus == true{
+            birthdayView.isHidden = false
         } else {
-            datePicker.isHidden = true
-            nextStep.isHidden = false
+            birthdayView.isHidden = true
         }
-        
     }
     
     // MARK: - IBAction
     
+    @IBAction func clickDoneBarButtonItem(_ sender: Any) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        datePickerStatus = false
+        birthdayView.isHidden = true
+        informationAnsArray[2] = formatter.string(from: birthdayPicker.date)
+        tableView.reloadData()
+    }
+    
+    @IBAction func clickCancelBarButtomItem(_ sender: Any) {
+        datePickerStatus = false
+        birthdayView.isHidden = true
+    }
 }
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
@@ -133,6 +153,7 @@ extension BodyInformationViewController: UITableViewDelegate, UITableViewDataSou
                 return cell
             case .birthday:
                 let cell = tableView.dequeueReusableCell(withIdentifier: BodyInformationArrowTableViewCell.identifier, for: indexPath) as! BodyInformationArrowTableViewCell
+                cell.ansLabel.text = informationAnsArray[2]
                 cell.optionLabel.text = AppDefine.PersonInformation.allCases[indexPath.row].title
                 cell.accessoryView = setAccessoryImage()
                 return cell
@@ -169,6 +190,7 @@ extension BodyInformationViewController: UITableViewDelegate, UITableViewDataSou
                 let cell = tableView.dequeueReusableCell(withIdentifier: BodyInformationArrowTableViewCell.identifier,
                                                          for: indexPath) as! BodyInformationArrowTableViewCell
                 cell.optionLabel.text = AppDefine.BodyInformation.allCases[indexPath.row].title
+                cell.ansLabel.text = informationAnsArray[6]
                 cell.accessoryView = setAccessoryImage()
                 return cell
             case .height:
@@ -195,19 +217,21 @@ extension BodyInformationViewController: UITableViewDelegate, UITableViewDataSou
                 let cell = tableView.dequeueReusableCell(withIdentifier: BodyInformationArrowTableViewCell.identifier,
                                                     for: indexPath) as! BodyInformationArrowTableViewCell
                 cell.optionLabel.text = AppDefine.BodyInformation.allCases[indexPath.row].title
+                cell.ansLabel.text = informationAnsArray[9]
                 cell.accessoryView = setAccessoryImage()
                 return cell
             case .drink:
                 let cell = tableView.dequeueReusableCell(withIdentifier: BodyInformationArrowTableViewCell.identifier,
                                                          for: indexPath) as! BodyInformationArrowTableViewCell
                 cell.optionLabel.text = AppDefine.BodyInformation.allCases[indexPath.row].title
-               
+                cell.ansLabel.text = informationAnsArray[10]
                 cell.accessoryView = setAccessoryImage()
                 return cell
             case .smoke:
                 let cell = tableView.dequeueReusableCell(withIdentifier: BodyInformationArrowTableViewCell.identifier,
                                                          for: indexPath) as! BodyInformationArrowTableViewCell
                 cell.optionLabel.text = AppDefine.BodyInformation.allCases[indexPath.row].title
+                cell.ansLabel.text = informationAnsArray[11]
                 cell.accessoryView = setAccessoryImage()
                 return cell
             }
@@ -219,31 +243,42 @@ extension BodyInformationViewController: UITableViewDelegate, UITableViewDataSou
         
         if indexPath.section == 0 {
             
+            if indexPath.row == 2 {
+                datePickerStatus.toggle()
+                clickDatePicker()
+            }
+            
         } else if indexPath.section == 1 {
             switch AppDefine.BodyInformation.allCases[indexPath.row] {
             case .sex:
                 Alert.showActionSheet(array: AppDefine.BodyInformation.allCases[indexPath.row].value,
                                       canceltitle: "取消",
-                                      vc: self) { response in
-                    
+                                      vc: self) { [unowned self] response in
+                        informationAnsArray[6] = AppDefine.BodyInformation.sex.value[response]
+                    tableView.reloadData()
+
                 }
             case .race:
                 Alert.showActionSheet(array: AppDefine.BodyInformation.allCases[indexPath.row].value,
                                       canceltitle: "取消",
-                                      vc: self) { response in
+                                      vc: self) { [unowned self] response in
+                    self.informationAnsArray[9] = AppDefine.BodyInformation.race.value[response]
+                    tableView.reloadData()
                     
                 }
             case .drink:
                 Alert.showActionSheet(array: AppDefine.BodyInformation.allCases[indexPath.row].value,
                                       canceltitle: "取消",
-                                      vc: self) { response in
-                    
+                                      vc: self) { [unowned self] response in
+                    self.informationAnsArray[10] = AppDefine.BodyInformation.drink.value[response]
+                    tableView.reloadData()
                 }
             case .smoke:
                 Alert.showActionSheet(array: AppDefine.BodyInformation.allCases[indexPath.row].value,
                                       canceltitle: "取消",
-                                      vc: self) { response in
-                    
+                                      vc: self) { [unowned self] response in
+                    self.informationAnsArray[11] = AppDefine.BodyInformation.smoke.value[response]
+                    tableView.reloadData()
                 }
             default:
                 return

@@ -19,12 +19,12 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssY-gy-0C8">
-                        <rect key="frame" x="16" y="11.666666666666664" width="64" height="21"/>
+                        <rect key="frame" x="16" y="11.666666666666664" width="96" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxH-bL-W1d">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxH-bL-W1d">
                         <rect key="frame" x="208" y="11.666666666666664" width="96" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" name="NavigationBar"/>
@@ -37,7 +37,7 @@
                     <constraint firstAttribute="trailing" secondItem="xxH-bL-W1d" secondAttribute="trailing" constant="16" id="WMB-rL-5t3"/>
                     <constraint firstItem="ssY-gy-0C8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="WtJ-sM-1YH"/>
                     <constraint firstItem="xxH-bL-W1d" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.3" id="eas-rY-UpU"/>
-                    <constraint firstItem="ssY-gy-0C8" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.2" id="mgn-5I-m08"/>
+                    <constraint firstItem="ssY-gy-0C8" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.3" id="mgn-5I-m08"/>
                     <constraint firstItem="ssY-gy-0C8" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="paw-g2-Drj"/>
                     <constraint firstItem="ssY-gy-0C8" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.477273" id="rCR-8v-W3m"/>
                 </constraints>
