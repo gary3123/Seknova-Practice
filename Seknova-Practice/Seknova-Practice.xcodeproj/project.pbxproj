@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		3374733282785F6644403987 /* Pods_Seknova_Practice_Seknova_PracticeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E53C86D42EB499112CB44D2 /* Pods_Seknova_Practice_Seknova_PracticeUITests.framework */; };
+		4E08602529484F5600170A60 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E08602429484F5600170A60 /* ActivityIndicatorView.swift */; };
+		4E086027294862EB00170A60 /* UserInformationTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E086026294862EB00170A60 /* UserInformationTable.swift */; };
+		4E08602929488F8A00170A60 /* RecordsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E08602829488F8A00170A60 /* RecordsTable.swift */; };
+		4E08602B2948966800170A60 /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E08602A2948966800170A60 /* EventData.swift */; };
+		4E08602E294899E700170A60 /* ImageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E08602C294899E700170A60 /* ImageButtonView.swift */; };
+		4E08602F294899E700170A60 /* ImageButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E08602D294899E700170A60 /* ImageButtonView.xib */; };
+		4E0860332948AA2400170A60 /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0860312948AA2300170A60 /* CustomTabBarView.swift */; };
+		4E0860342948AA2400170A60 /* CustomTabBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E0860322948AA2400170A60 /* CustomTabBarView.xib */; };
+		4E0860372949A40700170A60 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0860352949A40700170A60 /* MainViewController.swift */; };
+		4E0860382949A40700170A60 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E0860362949A40700170A60 /* MainViewController.xib */; };
 		4E11253E293A324C00D3BD55 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E11253C293A324C00D3BD55 /* HistoryViewController.swift */; };
 		4E11253F293A324C00D3BD55 /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E11253D293A324C00D3BD55 /* HistoryViewController.xib */; };
 		4E112546293A33C800D3BD55 /* BloodSugarCorrectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E112544293A33C800D3BD55 /* BloodSugarCorrectionViewController.swift */; };
@@ -18,7 +28,6 @@
 		4E11254F293A33FF00D3BD55 /* LifeStyleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E11254D293A33FF00D3BD55 /* LifeStyleViewController.xib */; };
 		4E112552293A341E00D3BD55 /* PersionalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E112550293A341E00D3BD55 /* PersionalInformationViewController.swift */; };
 		4E112553293A341E00D3BD55 /* PersionalInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E112551293A341E00D3BD55 /* PersionalInformationViewController.xib */; };
-		4E112555293A3EB400D3BD55 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E112554293A3EB400D3BD55 /* TabBarController.swift */; };
 		4E2160F72939D5A80021553C /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2160F52939D5A80021553C /* ConnectViewController.swift */; };
 		4E2160F82939D5A80021553C /* ConnectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E2160F62939D5A80021553C /* ConnectViewController.xib */; };
 		4E2E94E02913B7F900E2533F /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2E94DF2913B7F900E2533F /* String+Extensions.swift */; };
@@ -28,7 +37,7 @@
 		4E2EE829293F7E01005F9DDD /* AppDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2EE828293F7E01005F9DDD /* AppDefine.swift */; };
 		4E2EE82C29406650005F9DDD /* BodyInformationArrowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2EE82A29406650005F9DDD /* BodyInformationArrowTableViewCell.swift */; };
 		4E2EE82D29406650005F9DDD /* BodyInformationArrowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E2EE82B29406650005F9DDD /* BodyInformationArrowTableViewCell.xib */; };
-		4E2EE82F29435621005F9DDD /* LocalDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2EE82E29435621005F9DDD /* LocalDataBase.swift */; };
+		4E2EE82F29435621005F9DDD /* LocalDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2EE82E29435621005F9DDD /* LocalDatabase.swift */; };
 		4E71FBC1292FAAAE00B75F9B /* BodyInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E71FBBF292FAAAE00B75F9B /* BodyInformationViewController.swift */; };
 		4E71FBC2292FAAAE00B75F9B /* BodyInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E71FBC0292FAAAE00B75F9B /* BodyInformationViewController.xib */; };
 		4E71FBC6292FAFDB00B75F9B /* AudiovisualTeachingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E71FBC4292FAFDB00B75F9B /* AudiovisualTeachingViewController.swift */; };
@@ -92,6 +101,16 @@
 		0F46DE910FEBAD4F4DB2D4E6 /* Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig"; path = "Target Support Files/Pods-Seknova-Practice-Seknova-PracticeUITests/Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		24BD3366D14F68E6807C079D /* Pods_Seknova_Practice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Seknova_Practice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35593199C3A17A67170D258B /* Pods_Seknova_PracticeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Seknova_PracticeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E08602429484F5600170A60 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		4E086026294862EB00170A60 /* UserInformationTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationTable.swift; sourceTree = "<group>"; };
+		4E08602829488F8A00170A60 /* RecordsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsTable.swift; sourceTree = "<group>"; };
+		4E08602A2948966800170A60 /* EventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
+		4E08602C294899E700170A60 /* ImageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButtonView.swift; sourceTree = "<group>"; };
+		4E08602D294899E700170A60 /* ImageButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageButtonView.xib; sourceTree = "<group>"; };
+		4E0860312948AA2300170A60 /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
+		4E0860322948AA2400170A60 /* CustomTabBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTabBarView.xib; sourceTree = "<group>"; };
+		4E0860352949A40700170A60 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		4E0860362949A40700170A60 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		4E11253C293A324C00D3BD55 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		4E11253D293A324C00D3BD55 /* HistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
 		4E112544293A33C800D3BD55 /* BloodSugarCorrectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodSugarCorrectionViewController.swift; sourceTree = "<group>"; };
@@ -102,7 +121,6 @@
 		4E11254D293A33FF00D3BD55 /* LifeStyleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LifeStyleViewController.xib; sourceTree = "<group>"; };
 		4E112550293A341E00D3BD55 /* PersionalInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersionalInformationViewController.swift; sourceTree = "<group>"; };
 		4E112551293A341E00D3BD55 /* PersionalInformationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersionalInformationViewController.xib; sourceTree = "<group>"; };
-		4E112554293A3EB400D3BD55 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		4E2160F52939D5A80021553C /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
 		4E2160F62939D5A80021553C /* ConnectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConnectViewController.xib; sourceTree = "<group>"; };
 		4E2E94DF2913B7F900E2533F /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
@@ -112,7 +130,7 @@
 		4E2EE828293F7E01005F9DDD /* AppDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDefine.swift; sourceTree = "<group>"; };
 		4E2EE82A29406650005F9DDD /* BodyInformationArrowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyInformationArrowTableViewCell.swift; sourceTree = "<group>"; };
 		4E2EE82B29406650005F9DDD /* BodyInformationArrowTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BodyInformationArrowTableViewCell.xib; sourceTree = "<group>"; };
-		4E2EE82E29435621005F9DDD /* LocalDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataBase.swift; sourceTree = "<group>"; };
+		4E2EE82E29435621005F9DDD /* LocalDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDatabase.swift; sourceTree = "<group>"; };
 		4E71FBBF292FAAAE00B75F9B /* BodyInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyInformationViewController.swift; sourceTree = "<group>"; };
 		4E71FBC0292FAAAE00B75F9B /* BodyInformationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BodyInformationViewController.xib; sourceTree = "<group>"; };
 		4E71FBC4292FAFDB00B75F9B /* AudiovisualTeachingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudiovisualTeachingViewController.swift; sourceTree = "<group>"; };
@@ -204,9 +222,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		4E0860302948A98900170A60 /* CustomTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				4E08602C294899E700170A60 /* ImageButtonView.swift */,
+				4E08602D294899E700170A60 /* ImageButtonView.xib */,
+				4E0860312948AA2300170A60 /* CustomTabBarView.swift */,
+				4E0860322948AA2400170A60 /* CustomTabBarView.xib */,
+			);
+			path = CustomTabBar;
+			sourceTree = "<group>";
+		};
 		4E11253A293A31D900D3BD55 /* MainFlow */ = {
 			isa = PBXGroup;
 			children = (
+				4E0860352949A40700170A60 /* MainViewController.swift */,
+				4E0860362949A40700170A60 /* MainViewController.xib */,
 				4E112543293A32EF00D3BD55 /* PersionalInformation */,
 				4E112542293A32C800D3BD55 /* LifeStyle */,
 				4E112541293A32A600D3BD55 /* InstanceBloodSugar */,
@@ -277,9 +308,9 @@
 			isa = PBXGroup;
 			children = (
 				4E71FBBD292F9D8200B75F9B /* ContrastViewController */,
-				4E71FBBE292FAA5400B75F9B /* BodyInformationViewController */,
 				4E71FBC3292FAF6600B75F9B /* AudiovisualTeachingViewController */,
 				4E71FBC82930EF0C00B75F9B /* BloodSugarIndex */,
+				4E71FBBE292FAA5400B75F9B /* BodyInformationViewController */,
 				4E79782829324A75009AE72E /* TransmitterContent */,
 				4E7CD550293791C900F913F4 /* PairBlueTooth */,
 				4E2160F42939D56E0021553C /* ConnectViewController */,
@@ -462,11 +493,14 @@
 		4EC6763F28F8265D0027BF79 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4E2EE82E29435621005F9DDD /* LocalDataBase.swift */,
+				4E086026294862EB00170A60 /* UserInformationTable.swift */,
+				4E2EE82E29435621005F9DDD /* LocalDatabase.swift */,
+				4E08602829488F8A00170A60 /* RecordsTable.swift */,
 				4E8303C42907D92A005DBEA5 /* Extensions */,
 				4E2E94E22913BDE200E2533F /* Alert.swift */,
 				4EFBDA6F292B78E400202B2A /* UserPreference.swift */,
 				4E2EE828293F7E01005F9DDD /* AppDefine.swift */,
+				4E08602A2948966800170A60 /* EventData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -474,7 +508,9 @@
 		4EC6764028F8266E0027BF79 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4E0860302948A98900170A60 /* CustomTabBar */,
 				4E88DB4D290283C9005DCFC9 /* AlphaBackgroundView.swift */,
+				4E08602429484F5600170A60 /* ActivityIndicatorView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -485,7 +521,6 @@
 				4E8303C02907D559005DBEA5 /* BaseViewController.swift */,
 				4E17A6E02939E964007882A2 /* LoginFlow */,
 				4E17A6E12939EA6A007882A2 /* FirstLoginFlow */,
-				4E112554293A3EB400D3BD55 /* TabBarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -628,11 +663,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E11253F293A324C00D3BD55 /* HistoryViewController.xib in Resources */,
+				4E0860382949A40700170A60 /* MainViewController.xib in Resources */,
 				4E7CD5542937925900F913F4 /* PairBlueToothViewController.xib in Resources */,
 				4E11254B293A33EA00D3BD55 /* InstanceBloodSugarViewController.xib in Resources */,
 				4E79C98628F40FD100F3017B /* LaunchScreen.storyboard in Resources */,
 				4E71FBC7292FAFDB00B75F9B /* AudiovisualTeachingViewController.xib in Resources */,
 				4E2160F82939D5A80021553C /* ConnectViewController.xib in Resources */,
+				4E0860342948AA2400170A60 /* CustomTabBarView.xib in Resources */,
 				4EFBDA652923AE8300202B2A /* ContrastPopoverViewController.xib in Resources */,
 				4E79C98328F40FD100F3017B /* Assets.xcassets in Resources */,
 				4EA71BD82939F282000A1A4C /* ScanningSensorViewController.xib in Resources */,
@@ -641,6 +678,7 @@
 				4E79782C293258F2009AE72E /* TransmitterContentViewController.xib in Resources */,
 				4EFBDA75292BA17100202B2A /* ForgotPassword.xib in Resources */,
 				4E7F94DD292CD6F000F28F69 /* ResetPasswordViewController.xib in Resources */,
+				4E08602F294899E700170A60 /* ImageButtonView.xib in Resources */,
 				4E854D80290270DB0097D79E /* LoginViewController.xib in Resources */,
 				4E112547293A33C800D3BD55 /* BloodSugarCorrectionViewController.xib in Resources */,
 				4E112553293A341E00D3BD55 /* PersionalInformationViewController.xib in Resources */,
@@ -780,7 +818,7 @@
 				4E2E94E02913B7F900E2533F /* String+Extensions.swift in Sources */,
 				4E7CD5532937925900F913F4 /* PairBlueToothViewController.swift in Sources */,
 				4E2EE829293F7E01005F9DDD /* AppDefine.swift in Sources */,
-				4E2EE82F29435621005F9DDD /* LocalDataBase.swift in Sources */,
+				4E2EE82F29435621005F9DDD /* LocalDatabase.swift in Sources */,
 				4E2EE826293DF856005F9DDD /* BodyInformationTableViewCell.swift in Sources */,
 				4E2EE82C29406650005F9DDD /* BodyInformationArrowTableViewCell.swift in Sources */,
 				4E88DB4E290283C9005DCFC9 /* AlphaBackgroundView.swift in Sources */,
@@ -792,24 +830,30 @@
 				4EFBDA6D292666AA00202B2A /* RecertifictionLeterViewController.swift in Sources */,
 				4E71FBC1292FAAAE00B75F9B /* BodyInformationViewController.swift in Sources */,
 				4E71FBCB2930EF4A00B75F9B /* BloodSugarIndexViewController.swift in Sources */,
+				4E086027294862EB00170A60 /* UserInformationTable.swift in Sources */,
 				4E79C97A28F40FCF00F3017B /* AppDelegate.swift in Sources */,
 				4E79782B293258F2009AE72E /* TransmitterContentViewController.swift in Sources */,
 				4E11253E293A324C00D3BD55 /* HistoryViewController.swift in Sources */,
 				4E79C97C28F40FCF00F3017B /* SceneDelegate.swift in Sources */,
 				4E854D7A29026E9B0097D79E /* RegisterViewController.swift in Sources */,
 				4E8303C32907D8EF005DBEA5 /* Color+Extensions.swift in Sources */,
+				4E08602E294899E700170A60 /* ImageButtonView.swift in Sources */,
 				4E854D7F290270DB0097D79E /* LoginViewController.swift in Sources */,
+				4E08602B2948966800170A60 /* EventData.swift in Sources */,
 				4E112546293A33C800D3BD55 /* BloodSugarCorrectionViewController.swift in Sources */,
 				4E2E94E32913BDE200E2533F /* Alert.swift in Sources */,
+				4E0860372949A40700170A60 /* MainViewController.swift in Sources */,
 				4E11254E293A33FF00D3BD55 /* LifeStyleViewController.swift in Sources */,
+				4E0860332948AA2400170A60 /* CustomTabBarView.swift in Sources */,
 				4EFBDA642923AE8300202B2A /* ContrastPopoverViewController.swift in Sources */,
 				4E71FBC6292FAFDB00B75F9B /* AudiovisualTeachingViewController.swift in Sources */,
-				4E112555293A3EB400D3BD55 /* TabBarController.swift in Sources */,
 				4EFBDA74292BA17100202B2A /* ForgotPassword.swift in Sources */,
+				4E08602929488F8A00170A60 /* RecordsTable.swift in Sources */,
 				4E7F94DC292CD6F000F28F69 /* ResetPasswordViewController.swift in Sources */,
 				4EFBDA70292B78E400202B2A /* UserPreference.swift in Sources */,
 				4E11254A293A33EA00D3BD55 /* InstanceBloodSugarViewController.swift in Sources */,
 				4E8303C12907D559005DBEA5 /* BaseViewController.swift in Sources */,
+				4E08602529484F5600170A60 /* ActivityIndicatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

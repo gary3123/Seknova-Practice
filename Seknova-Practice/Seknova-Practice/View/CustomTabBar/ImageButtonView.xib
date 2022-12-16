@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageButtonView" customModule="Seknova_Practice" customModuleProvider="target">
+            <connections>
+                <outlet property="button" destination="yak-se-2b6" id="BJN-s3-d1v"/>
+                <outlet property="imageView" destination="589-2N-IPE" id="EeD-wP-OU1"/>
+                <outlet property="label" destination="Il2-ff-4w5" id="tKh-4u-hL7"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Il2-ff-4w5">
+                    <rect key="frame" x="0.0" y="215" width="300" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="P15-qH-1SY"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="589-2N-IPE">
+                    <rect key="frame" x="79.666666666666686" y="90" width="141" height="120"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yak-se-2b6">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <connections>
+                        <action selector="btnClicked:" destination="-1" eventType="touchUpInside" id="vfE-Nn-Gdu"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="589-2N-IPE" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="4Rq-2j-vJ8"/>
+                <constraint firstItem="Il2-ff-4w5" firstAttribute="top" secondItem="589-2N-IPE" secondAttribute="bottom" constant="5" id="8Fj-Cy-D6b"/>
+                <constraint firstItem="589-2N-IPE" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Gy8-9a-0lF"/>
+                <constraint firstItem="yak-se-2b6" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="OdA-eR-aX1"/>
+                <constraint firstItem="yak-se-2b6" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Vfc-1e-aP5"/>
+                <constraint firstItem="yak-se-2b6" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="cWi-jh-Trv"/>
+                <constraint firstItem="589-2N-IPE" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.47" id="f84-a1-WV4"/>
+                <constraint firstItem="589-2N-IPE" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.4" id="gps-ff-bLs"/>
+                <constraint firstItem="Il2-ff-4w5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="llN-65-Mpu"/>
+                <constraint firstItem="yak-se-2b6" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="mSq-1w-cHe"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Il2-ff-4w5" secondAttribute="trailing" id="wQu-hU-UJj"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="36" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

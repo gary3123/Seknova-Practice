@@ -32,9 +32,11 @@ class PairBlueToothViewController: BaseViewController {
         super.viewDidLoad()
         titleLabel.sizeToFit()
         view.insertSubview(AlphaBackgroundView(imageName: "Background.jpg", alpha: 0.5), at: 0)
-        self.navigationController?.navigationBar.isHidden = true
+        setNavigationbar(backgroundcolor: .navigationBar!)
+        self.navigationController?.isNavigationBarHidden = false
         self.navigationItem.setHidesBackButton(true, animated: false)
         
+        self.title = "Pair Bluetooth"
         setupUI()
     }
     

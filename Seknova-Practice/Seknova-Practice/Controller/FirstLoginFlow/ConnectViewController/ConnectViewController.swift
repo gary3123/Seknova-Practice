@@ -26,7 +26,7 @@ class ConnectViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.insertSubview(AlphaBackgroundView(imageName: "Background.jpg", alpha: 0.5), at: 0)
-
+        navigationController?.isNavigationBarHidden = true
         self.navigationItem.setHidesBackButton(true, animated: false)
         
         setupUI()

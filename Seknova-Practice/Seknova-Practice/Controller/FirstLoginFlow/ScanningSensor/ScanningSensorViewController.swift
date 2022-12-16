@@ -69,7 +69,7 @@ class ScanningSensorViewController: BaseViewController{
                
                 Alert.showAlertWith(title: "確認裝置碼", message: "確認裝置碼為 \(text) ?", vc: self, confirmTitle: "確認", cancelTitle: "返回") {
                     UserPreferences.shared.sensorID = textfield.text!
-                    self.navigationController?.pushViewController(TabBarController(), animated: true)
+                    self.navigationController?.pushViewController(MainViewController(), animated: true)
                 }cancel: {
                     
                     textfield.text = ""
@@ -84,9 +84,8 @@ class ScanningSensorViewController: BaseViewController{
     }
 
     @IBAction func clickSkipButton(_ sender: Any) {
-        
-        navigationController?.pushViewController(TabBarController(), animated: true)
-        
+        let nextVC = MainViewController()
+        navigationController?.pushViewController(nextVC, animated: true)
     }
     
 }

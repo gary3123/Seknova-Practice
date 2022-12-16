@@ -1,21 +1,83 @@
 //
-//  LocalDataBase.swift
+//  LocalDatabase.swift
 //  Seknova-Practice
 //
 //  Created by 阿瑋 on 2022/12/9.
 //
 
 import Foundation
-import UIKit
 import RealmSwift
+
+class LocalDatabase: NSObject {
+    
+    static let shared = LocalDatabase()
+    
+    func addEvenData(eventData: EventDataTable) {
+        let realm = try! Realm()
+        
+        let eventDataTable = EventData()
+        eventDataTable.id = eventData.id
+        eventDataTable.dateTime = eventData.dateTime
+        eventDataTable.displayTime = eventData.displayTime
+        eventDataTable.eventId = eventData.eventId
+        eventDataTable.eventValue = eventData.eventValue
+        eventDataTable.note = eventData.note
+        eventDataTable.check = eventData.check
+    }
+    
+    func addRecords(records: RecordsTable) {
+        let realm = try! Realm()
+        
+        let recordsTable = Records()
+        recordsTable.count = records.count
+        recordsTable.recordTime = records.recordTime
+        recordsTable.displayTime = records.displayTime
+        recordsTable.tempertaute = records.tempertaute
+        recordsTable.adc1 = records.adc1
+        recordsTable.battery = records.battery
+        recordsTable.check = records.check
+        recordsTable.calibrated = records.calibrated
+    }
+    
+    func addUserInformation(userInformation: UserInformationTable) {
+        let realm = try! Realm()
+        
+        let userInformationTable = UserInformation()
+        userInformationTable.userId = userInformation.userId
+        userInformationTable.firstName = userInformation.firstName
+        userInformationTable.lastName = userInformation.lastName
+        userInformationTable.birthday = userInformation.birthady
+        userInformationTable.email = userInformation.email
+        userInformationTable.phone = userInformation.phone
+        userInformationTable.address = userInformation.address
+        userInformationTable.gender = userInformation.gender
+        userInformationTable.height = userInformation.height
+        userInformationTable.weight = userInformation.weight
+        userInformationTable.race = userInformation.race
+        userInformationTable.liquor = userInformation.liquor
+        userInformationTable.smoke = userInformation.smoke
+        userInformationTable.check = userInformation.check
+        userInformationTable.phone_Verified = userInformation.phone_Verified
+        
+        do {
+            try! realm.write {
+                realm.add(userInformationTable)
+                print("Realm.Add Success fileURL:\(realm.configuration.fileURL)")
+            }
+        } catch {
+            print("Realm.Add Fail, Error:\(error.localizedDescription)")
+        }
+    }
+    
+    
+}
 
 class Records: Object {
     @Persisted var count: Int = 0
-    @Persisted var recordTime: String = ""
-    @Persisted var displayTime: String = ""
+    @Persisted var recordTime: String = "" // UTC+0
+    @Persisted var displayTime: String = "" // UTC+8
     @Persisted var tempertaute: Int = 0
     @Persisted var adc1: Int = 0
-    @Persisted var adc2: Int = 0
     @Persisted var battery: Int = 0
     @Persisted var check: Bool = false
     @Persisted var calibrated: Bool = false
@@ -25,17 +87,15 @@ class Records: Object {
                      displayTime: String,
                      tempertaute: Int,
                      adc1: Int,
-                     adc2: Int,
                      battery: Int,
                      check: Bool,
                      calibrated: Bool) {
-        self.init();
+        self.init()
         self.count = count
         self.recordTime = recordTime
         self.displayTime = displayTime
         self.tempertaute = tempertaute
         self.adc1 = adc1
-        self.adc2 = adc2
         self.battery = battery
         self.check = check
         self.calibrated = calibrated
@@ -45,8 +105,8 @@ class Records: Object {
 
 class EventData: Object {
     @Persisted var id: Int = 0
-    @Persisted var dateTime: String = ""
-    @Persisted var displayTime: String = ""
+    @Persisted var dateTime: String = ""  //UTC+0
+    @Persisted var displayTime: String = "" //UTC+8
     @Persisted var eventId: Int = 0
     @Persisted var eventValue: Int = 0
     @Persisted var note: String = ""
@@ -59,7 +119,7 @@ class EventData: Object {
                      eventValue: Int,
                      note: String,
                      check: Bool) {
-        self.init();
+        self.init()
         self.id = id
         self.dateTime = dateTime
         self.displayTime = displayTime
@@ -77,19 +137,14 @@ class UserInformation: Object {
     @Persisted var email: String = ""
     @Persisted var phone: String = ""
     @Persisted var address: String = ""
-    @Persisted var gender: Int = 0
+    @Persisted var gender: String = ""
     @Persisted var height: Int = 0
     @Persisted var weight: Int = 0
-    @Persisted var race: Int = 0
-    @Persisted var liquor: Int = 0
+    @Persisted var race: String = ""
+    @Persisted var liquor: String = ""
     @Persisted var smoke: Bool = false
     @Persisted var check: Bool = false
     @Persisted var phone_Verified: Bool = false
-    @Persisted var finishCalibrateTime: Int64 = 0
-    @Persisted var nextCalibrateInterval: Int64 = 0
-    @Persisted var lastRecordCount: String = "00000000"
-    @Persisted var firstRecordCount: String = "00000000"
-    @Persisted var resetCount: Int = 0
     
     convenience init(userId: String,
                      firstName: String,
@@ -98,19 +153,14 @@ class UserInformation: Object {
                      email: String,
                      phone: String,
                      address: String,
-                     gender: Int,
+                     gender: String,
                      height: Int,
                      weight: Int,
-                     race: Int,
-                     liquor: Int,
+                     race: String,
+                     liquor: String,
                      smoke: Bool,
                      check: Bool,
-                     phone_Verified: Bool,
-                     finishCalibrateTime: Int64,
-                     nextCalibrateInterval: Int64,
-                     lastRecordCount: String,
-                     firstRecordCount: String,
-                     resetCount: Int) {
+                     phone_Verified: Bool) {
         self.init()
         self.userId = userId
         self.firstName = firstName
@@ -127,11 +177,6 @@ class UserInformation: Object {
         self.smoke = smoke
         self.check = check
         self.phone_Verified = phone_Verified
-        self.finishCalibrateTime = finishCalibrateTime
-        self.nextCalibrateInterval = nextCalibrateInterval
-        self.lastRecordCount = lastRecordCount
-        self.firstRecordCount = firstRecordCount
-        self.resetCount = resetCount
     }
 }
 

@@ -84,27 +84,6 @@ class Alert {
         }
     }
     
-    static func showActionSheet(title: String,
-                         message: String,
-                         canceltitle: String,
-                         vc: UIViewController,
-                         array: [String]) -> String {
-        let alertController = UIAlertController(title: title,
-                                                message: message,
-                                                preferredStyle: .actionSheet)
-        var ans = ""
-        for option in array {
-            let action = UIAlertAction(title: option, style: .default) { action in
-                ans = action.title!
-            }
-            alertController.addAction(action)
-        }
-        let cancelAction = UIAlertAction(title: canceltitle, style: .cancel)
-        alertController.addAction(cancelAction)
-        vc.present(alertController,animated: true)
-        return ans
-    }
-    
     static func showActionSheet(array: [String],
                                 canceltitle: String,
                                 vc: UIViewController,

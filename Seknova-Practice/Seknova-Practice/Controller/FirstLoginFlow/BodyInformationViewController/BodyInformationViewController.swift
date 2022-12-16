@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class BodyInformationViewController: BaseViewController {
     
@@ -18,11 +19,13 @@ class BodyInformationViewController: BaseViewController {
     @IBOutlet weak var cancelBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var birthdayPicker: UIDatePicker!
     @IBOutlet weak var toolBar: UIToolbar!
+    
     // MARK: - Variables
-
+    
     var informationAnsArray: [String] = ["", "", "", "", "", "", "", "", "", "", "", ""]
     var datePickerStatus = false
     let fullScreenSize = UIScreen.main.bounds.size
+    
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
@@ -112,6 +115,35 @@ class BodyInformationViewController: BaseViewController {
         datePickerStatus = false
         birthdayView.isHidden = true
     }
+    
+    @IBAction func clickNextStep(_ sender: Any) {
+        var smokeData: Bool
+        if (informationAnsArray[11] == "有") {
+            smokeData = true
+        } else {
+            smokeData = false
+        }
+        let addData = UserInformationTable(userId: informationAnsArray[3],
+                                       firstName: informationAnsArray[0],
+                                       lastName: informationAnsArray[1],
+                                       birthady: informationAnsArray[2],
+                                       email: informationAnsArray[3],
+                                       phone: informationAnsArray[4],
+                                       address: informationAnsArray[5],
+                                       gender: informationAnsArray[6],
+                                       height: Int(informationAnsArray[7])!,
+                                       weight: Int(informationAnsArray[8])!,
+                                       race: informationAnsArray[9],
+                                       liquor: informationAnsArray[10],
+                                       smoke: smokeData,
+                                       check: false,
+                                       phone_Verified: false)
+        LocalDatabase.shared.addUserInformation(userInformation: addData)
+        
+        let nextVC = TransmitterContentViewController()
+        navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
 }
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
@@ -139,7 +171,6 @@ extension BodyInformationViewController: UITableViewDelegate, UITableViewDataSou
                 cell.optionsLabel.text = AppDefine.PersonInformation.allCases[indexPath.row].title
                 cell.textField.tag = indexPath.row
                 cell.textField.placeholder = "點擊進行編輯"
-                cell.textField.text = informationAnsArray[indexPath.row]
                 cell.textField.delegate = self
                 return cell
             case .lastName:
@@ -148,11 +179,11 @@ extension BodyInformationViewController: UITableViewDelegate, UITableViewDataSou
                 cell.optionsLabel.text = AppDefine.PersonInformation.allCases[indexPath.row].title
                 cell.textField.tag = indexPath.row
                 cell.textField.placeholder = "點擊進行編輯"
-                cell.textField.text = informationAnsArray[indexPath.row]
                 cell.textField.delegate = self
                 return cell
             case .birthday:
-                let cell = tableView.dequeueReusableCell(withIdentifier: BodyInformationArrowTableViewCell.identifier, for: indexPath) as! BodyInformationArrowTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: BodyInformationArrowTableViewCell.identifier,
+                                                         for: indexPath) as! BodyInformationArrowTableViewCell
                 cell.ansLabel.text = informationAnsArray[2]
                 cell.optionLabel.text = AppDefine.PersonInformation.allCases[indexPath.row].title
                 cell.accessoryView = setAccessoryImage()
@@ -170,7 +201,6 @@ extension BodyInformationViewController: UITableViewDelegate, UITableViewDataSou
                 cell.optionsLabel.text = AppDefine.PersonInformation.allCases[indexPath.row].title
                 cell.textField.tag = indexPath.row
                 cell.textField.placeholder = "點擊進行編輯"
-                cell.textField.text = informationAnsArray[indexPath.row]
                 cell.textField.keyboardType = .numberPad
                 cell.textField.delegate = self
                 return cell
@@ -180,7 +210,6 @@ extension BodyInformationViewController: UITableViewDelegate, UITableViewDataSou
                 cell.optionsLabel.text = AppDefine.PersonInformation.allCases[indexPath.row].title
                 cell.textField.tag = indexPath.row
                 cell.textField.placeholder = "點擊進行編輯"
-                cell.textField.text = informationAnsArray[indexPath.row]
                 cell.textField.delegate = self
                 return cell
             }
@@ -199,7 +228,6 @@ extension BodyInformationViewController: UITableViewDelegate, UITableViewDataSou
                 cell.optionsLabel.text = AppDefine.BodyInformation.allCases[indexPath.row].title
                 cell.textField.tag = indexPath.row + 6
                 cell.textField.placeholder = "點擊進行編輯"
-                cell.textField.text = informationAnsArray[indexPath.row + 6]
                 cell.textField.keyboardType = .numberPad
                 cell.textField.delegate = self
                 return cell
@@ -209,13 +237,12 @@ extension BodyInformationViewController: UITableViewDelegate, UITableViewDataSou
                 cell.optionsLabel.text = AppDefine.BodyInformation.allCases[indexPath.row].title
                 cell.textField.tag = indexPath.row + 6
                 cell.textField.placeholder = "點擊進行編輯"
-                cell.textField.text = informationAnsArray[indexPath.row + 6]
                 cell.textField.keyboardType = .numberPad
                 cell.textField.delegate = self
                 return cell
             case .race:
                 let cell = tableView.dequeueReusableCell(withIdentifier: BodyInformationArrowTableViewCell.identifier,
-                                                    for: indexPath) as! BodyInformationArrowTableViewCell
+                                                         for: indexPath) as! BodyInformationArrowTableViewCell
                 cell.optionLabel.text = AppDefine.BodyInformation.allCases[indexPath.row].title
                 cell.ansLabel.text = informationAnsArray[9]
                 cell.accessoryView = setAccessoryImage()
@@ -254,9 +281,9 @@ extension BodyInformationViewController: UITableViewDelegate, UITableViewDataSou
                 Alert.showActionSheet(array: AppDefine.BodyInformation.allCases[indexPath.row].value,
                                       canceltitle: "取消",
                                       vc: self) { [unowned self] response in
-                        informationAnsArray[6] = AppDefine.BodyInformation.sex.value[response]
+                    informationAnsArray[6] = AppDefine.BodyInformation.sex.value[response]
                     tableView.reloadData()
-
+                    
                 }
             case .race:
                 Alert.showActionSheet(array: AppDefine.BodyInformation.allCases[indexPath.row].value,

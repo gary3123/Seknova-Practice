@@ -47,7 +47,8 @@ class BloodSugarIndexViewController: BaseViewController {
     
     // MARK: - IBAction
     @IBAction func clickSaveButton(_ sender: Any) {
-        navigationController?.pushViewController(BodyInformationViewController(), animated: true)
+        let nextVC = BodyInformationViewController()
+        navigationController?.pushViewController(nextVC, animated: true)
     }
     
     @IBAction func clickUnderstandMoreButton(_ sender: Any) {
