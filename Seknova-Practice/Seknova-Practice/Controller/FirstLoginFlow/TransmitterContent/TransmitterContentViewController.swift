@@ -93,16 +93,44 @@ class TransmitterContentViewController: BaseViewController {
     @IBAction func clickQRCodeButton(_ sender: Any) {
         qrCodeStatus = !(qrCodeStatus)
         if qrCodeStatus == true {
-            transmitterImageView.isHidden = true
-            transmitterBImageView.isHidden = true
-            qrCodeView.isHidden = false
-            AVCsession.startRunning()
+            // 判斷者是否開起相機權限
+            switch AVCaptureDevice.authorizationStatus(for: .video) {
+            case .notDetermined: //系統第一次詢問會跳到這裡
+                AVCaptureDevice.requestAccess(for: .video) { sessus in
+                    if sessus { // 如果成功取得，會顯示掃描的 View 並啟用掃描功能
+                        DispatchQueue.main.async {
+                            self.transmitterImageView.isHidden = true
+                            self.transmitterBImageView.isHidden = true
+                            self.qrCodeView.isHidden = false
+                            self.AVCsession.startRunning()
+                        }
+                    }
+                }
+            case .denied, .restricted: // 若使用者錯過第一次系統詢問的權限取得視窗，就會執行這裡
+                Alert.showAlertWith(title: "相機存取權",
+                                    message: "請至裝置的「設定」> 「Seknova」，允許 Seknova 存取相機",
+                                    vc: self,
+                                    confirmTitle: "設定", cancelTitle: "取消") {
+                    self.openURLToSetting() // call 跳到設定權限路徑的 func
+                } cancel: {
+                    //
+                }
+            case .authorized:
+                self.transmitterImageView.isHidden = true
+                self.transmitterBImageView.isHidden = true
+                self.qrCodeView.isHidden = false
+                self.AVCsession.startRunning()
+            }
+            
         } else {
             self.AVCsession.stopRunning()
             transmitterImageView.isHidden = false
             transmitterBImageView.isHidden = false
             qrCodeView.isHidden = true
         }
+        
+        
+    
     }
     
     @IBAction func clickTextInput(_ sender: Any) {
@@ -146,6 +174,18 @@ class TransmitterContentViewController: BaseViewController {
         loginVC.lastPage = .qrCodeVC  //將切進 Login 的前一頁路徑設為 QR Code
         navigationController?.pushViewController(loginVC, animated: true)
     }
+    // MARK: -
+    
+    func openURLToSetting() {
+        guard let settingUrl = URL(string: UIApplication.openSettingsURLString) else {return}
+        guard UIApplication.shared.canOpenURL(settingUrl) else {return}
+        DispatchQueue.main.async {
+            UIApplication.shared.open(settingUrl)
+        }
+    }
+    
+    
+    
 }
 
 // MARK: - AVCaptureMetadataOutputObjectsDelegate
