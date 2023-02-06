@@ -72,4 +72,85 @@ class AppDefine {
     enum BodyInformationOption: Int, CaseIterable {
         case sex = 0, race, drink, smoke
     }
+    
+    enum NormalsettingOption: Int, CaseIterable {
+        case alertSetting = 0, unitSwitching, bloodSugarWarning, dataSynchronize, warmUpStatus, eventLog, firmwareVersion, appVersion
+        
+        var title: String {
+            switch self {
+            case .alertSetting:
+                return "警示設定"
+            case .unitSwitching:
+                return "單位切換(mmol/L)"
+            case .bloodSugarWarning:
+                return "超出高低血糖警示"
+            case .dataSynchronize:
+                return "資料同步"
+            case .warmUpStatus:
+                return "暖機狀態"
+            case .eventLog:
+                return "韌體版本"
+            case .firmwareVersion:
+                return "韌體版本"
+            case .appVersion:
+                return "App 版本"
+            }
+        }
+    }
+    
+    enum DevelopsettingOption: Int, CaseIterable {
+        case alertSetting = 0, calibrationmode, ADCInitialValue, xAxisTimeInterval, yAxisLimit, unitSwitching, showNumericalInformation, showRSSI, uploadCloud, bloodSugarWarning, dataSynchronize, warmUpStatus, eventLog, firmwareVersion, appVersion
+        
+        var title: String {
+            switch self {
+            case .alertSetting:
+                return "警示設定"
+            case .unitSwitching:
+                return "單位切換(mmol/L)"
+            case .bloodSugarWarning:
+                return "超出高低血糖警示"
+            case .dataSynchronize:
+                return "資料同步"
+            case .warmUpStatus:
+                return "暖機狀態"
+            case .eventLog:
+                return "上傳事件日誌"
+            case .firmwareVersion:
+                return "韌體版本"
+            case .appVersion:
+                return "App 版本"
+            case .calibrationmode:
+                return "校正模式"
+            case .ADCInitialValue:
+                return "設定ADC初始值"
+            case .xAxisTimeInterval:
+                return "設定X軸時間間距 (per/s)"
+            case .yAxisLimit:
+                return "設定y軸上下限"
+            case .showNumericalInformation:
+                return "顯示數值資訊"
+            case .showRSSI:
+                return "顯示 RSSI"
+            case .uploadCloud:
+                return "上傳雲端"
+            }
+        }
+    }
+    
+    enum SettingAlert: Int, CaseIterable {
+        case highAlerts = 0, lowAlerts, rateAlerts, audio
+        
+        var title: String {
+            switch self {
+            case .highAlerts:
+                return "High Alerts"
+            case .lowAlerts:
+                return "Low Alerts"
+            case .rateAlerts:
+                return "Rate Alerts"
+            case .audio:
+                return "Audio"
+            }
+        }
+    }
 }

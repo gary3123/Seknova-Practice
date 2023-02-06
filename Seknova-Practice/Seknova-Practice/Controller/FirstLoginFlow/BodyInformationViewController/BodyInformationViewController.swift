@@ -117,6 +117,31 @@ class BodyInformationViewController: BaseViewController {
     }
     
     @IBAction func clickNextStep(_ sender: Any) {
+        //判斷資料是否填寫完整，地址及電話號碼則不是必須填的
+        var dataCompleted = false
+        for i in 0...11 {
+            if(informationAnsArray[i] == "") {
+                if i == 4 || i == 5 {
+                } else {
+                    dataCompleted = false
+                    break
+                }
+            } else {
+                    dataCompleted = true
+            }
+        }
+        if( dataCompleted == true ) {
+            addData() //呼叫新增資料的 func
+            let nextVC = TransmitterContentViewController()
+            navigationController?.pushViewController(nextVC, animated: true)
+        } else {
+            Alert.showAlertWith(title: "資料填寫不完整", message: "", vc: self, confirmTitle: "確認")
+        }
+    }
+    
+    // MARK: - addData
+    
+    func addData() {
         var smokeData: Bool
         if (informationAnsArray[11] == "有") {
             smokeData = true
@@ -131,7 +156,7 @@ class BodyInformationViewController: BaseViewController {
                                        phone: informationAnsArray[4],
                                        address: informationAnsArray[5],
                                        gender: informationAnsArray[6],
-                                       height: Int(informationAnsArray[7])!,
+                                    height: Int(informationAnsArray[7])!,
                                        weight: Int(informationAnsArray[8])!,
                                        race: informationAnsArray[9],
                                        liquor: informationAnsArray[10],
@@ -139,10 +164,8 @@ class BodyInformationViewController: BaseViewController {
                                        check: false,
                                        phone_Verified: false)
         LocalDatabase.shared.addUserInformation(userInformation: addData)
-        
-        let nextVC = TransmitterContentViewController()
-        navigationController?.pushViewController(nextVC, animated: true)
     }
+    
     
 }
 

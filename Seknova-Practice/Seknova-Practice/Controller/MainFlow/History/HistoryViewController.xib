@@ -1,13 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HistoryViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HistoryViewController" customModule="Seknova_Practice" customModuleProvider="target">
             <connections>
+                <outlet property="enlargeButton" destination="4G3-bj-ftI" id="iAf-cc-PNr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,8 +19,68 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <subviews>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JJo-2c-5Fj">
+                    <rect key="frame" x="15" y="631" width="279" height="32"/>
+                    <segments>
+                        <segment title="1 hr" width="66"/>
+                        <segment title="3 hr"/>
+                        <segment title="6 hr"/>
+                        <segment title="12 hr"/>
+                        <segment title="24 hr"/>
+                    </segments>
+                </segmentedControl>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4G3-bj-ftI" customClass="ResizeImage" customModule="Seknova_Practice" customModuleProvider="target">
+                    <rect key="frame" x="294" y="631" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="4G3-bj-ftI" secondAttribute="height" multiplier="1:1" id="z56-By-TbA"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="zoomall">
+                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="17"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="topInsets">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="leftInsets">
+                            <nil key="value"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p69-2u-7FS">
+                    <rect key="frame" x="328" y="631" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="p69-2u-7FS" secondAttribute="height" multiplier="1:1" id="bTp-p2-0rF"/>
+                    </constraints>
+                    <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Button" image="arrow_r">
+                        <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="p69-2u-7FS" secondAttribute="trailing" constant="15" id="3l0-aI-vyG"/>
+                <constraint firstItem="p69-2u-7FS" firstAttribute="bottom" secondItem="4G3-bj-ftI" secondAttribute="bottom" id="6Ld-rj-ZHB"/>
+                <constraint firstItem="JJo-2c-5Fj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="HNL-5f-KjU"/>
+                <constraint firstItem="JJo-2c-5Fj" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.744" id="KyL-DY-LBd"/>
+                <constraint firstItem="p69-2u-7FS" firstAttribute="leading" secondItem="4G3-bj-ftI" secondAttribute="trailing" constant="2" id="LZu-1z-64o"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="JJo-2c-5Fj" secondAttribute="bottom" constant="5" id="S1f-Ke-lZJ"/>
+                <constraint firstItem="JJo-2c-5Fj" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0464768" id="Wbf-bf-u8g"/>
+                <constraint firstItem="4G3-bj-ftI" firstAttribute="bottom" secondItem="JJo-2c-5Fj" secondAttribute="bottom" constant="1" id="twm-jx-X24"/>
+                <constraint firstItem="4G3-bj-ftI" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.0853333" id="uKv-kt-Mbq"/>
+                <constraint firstItem="p69-2u-7FS" firstAttribute="width" secondItem="4G3-bj-ftI" secondAttribute="width" id="wEs-uR-lYd"/>
+            </constraints>
+            <point key="canvasLocation" x="37.404580152671755" y="0.0"/>
         </view>
     </objects>
+    <resources>
+        <image name="arrow_r" width="512" height="512"/>
+        <image name="zoomall" width="128" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

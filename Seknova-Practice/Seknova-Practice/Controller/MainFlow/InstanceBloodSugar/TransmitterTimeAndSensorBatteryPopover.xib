@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TransmitterTimeAndSensorBatteryPopover" customModule="Seknova_Practice" customModuleProvider="target">
+            <connections>
+                <outlet property="batteryIcon" destination="vWB-Mo-Dwu" id="0jU-gi-tsa"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vWB-Mo-Dwu" customClass="BatteryIcon" customModule="Seknova_Practice" customModuleProvider="target">
+                    <rect key="frame" x="50" y="79.666666666666686" width="100" height="100"/>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blood" translatesAutoresizingMaskIntoConstraints="NO" id="3Gh-Y6-pX3">
+                    <rect key="frame" x="24" y="140.66666666666666" width="38" height="37"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="deadline" translatesAutoresizingMaskIntoConstraints="NO" id="akd-4O-lYW">
+                    <rect key="frame" x="131" y="74.666666666666671" width="37" height="40"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctG-mK-e1X">
+                    <rect key="frame" x="105.33333333333333" y="44.333333333333336" width="62.666666666666671" height="25.333333333333336"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calibrated Now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O92-nZ-ic5">
+                    <rect key="frame" x="24" y="187.66666666666666" width="159.33333333333334" height="28.666666666666657"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="O92-nZ-ic5" firstAttribute="top" secondItem="3Gh-Y6-pX3" secondAttribute="bottom" constant="10" id="0fz-Vz-zOz"/>
+                <constraint firstItem="O92-nZ-ic5" firstAttribute="leading" secondItem="3Gh-Y6-pX3" secondAttribute="leading" id="36y-XC-yPH"/>
+                <constraint firstItem="ctG-mK-e1X" firstAttribute="trailing" secondItem="akd-4O-lYW" secondAttribute="trailing" id="6FR-6N-xRs"/>
+                <constraint firstItem="akd-4O-lYW" firstAttribute="top" secondItem="ctG-mK-e1X" secondAttribute="bottom" constant="5" id="9DL-6G-ELE"/>
+                <constraint firstItem="vWB-Mo-Dwu" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.5" id="IUi-4G-q38"/>
+                <constraint firstItem="vWB-Mo-Dwu" firstAttribute="leading" secondItem="3Gh-Y6-pX3" secondAttribute="trailing" constant="-12" id="UJL-SH-JJl"/>
+                <constraint firstItem="3Gh-Y6-pX3" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.185" id="VK0-TP-Jey"/>
+                <constraint firstItem="akd-4O-lYW" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.2" id="ZOO-WS-Y2J"/>
+                <constraint firstItem="vWB-Mo-Dwu" firstAttribute="top" secondItem="akd-4O-lYW" secondAttribute="bottom" constant="-35" id="f6s-43-afs"/>
+                <constraint firstItem="vWB-Mo-Dwu" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="h6A-fO-Oln"/>
+                <constraint firstItem="3Gh-Y6-pX3" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.19" id="hD8-NO-vcj"/>
+                <constraint firstItem="vWB-Mo-Dwu" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="sRs-gm-wgV"/>
+                <constraint firstItem="akd-4O-lYW" firstAttribute="leading" secondItem="vWB-Mo-Dwu" secondAttribute="trailing" constant="-19" id="szo-W2-SJ6"/>
+                <constraint firstItem="3Gh-Y6-pX3" firstAttribute="top" secondItem="vWB-Mo-Dwu" secondAttribute="bottom" constant="-39" id="t1C-kc-hLU"/>
+                <constraint firstItem="akd-4O-lYW" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.185" id="uSC-pv-8OO"/>
+                <constraint firstItem="vWB-Mo-Dwu" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="z2J-fT-2pz"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-48.854961832061065" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="blood" width="512" height="512"/>
+        <image name="deadline" width="512" height="512"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

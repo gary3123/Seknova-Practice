@@ -9,10 +9,35 @@ import UIKit
 
 class HistoryViewController: UIViewController {
 
+    // MARK: - IBOutlet
+    @IBOutlet weak var enlargeButton: UIButton!
+    
+    
+    // MARK: - Variables
+
+    
+    // MARK: - LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("這是歷史紀錄頁面")
     }
-
+    
+    
+    // MARK: - UI Settings
+    
+   
+    
+    // MARK: - randomProduce
+    
+   
+    
+    // MARK: - IBAction
+   
 }
+
+// MARK: - Extensions
+
+// MARK: - Protocol
+
+

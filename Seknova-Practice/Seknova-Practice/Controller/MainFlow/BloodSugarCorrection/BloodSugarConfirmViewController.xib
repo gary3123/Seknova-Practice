@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BloodSugarConfirmViewController" customModule="Seknova_Practice" customModuleProvider="target">
+            <connections>
+                <outlet property="backButton" destination="5Xi-vc-Wci" id="iBY-a3-cCm"/>
+                <outlet property="confirmButton" destination="QrA-6N-AAS" id="B1f-o6-ObK"/>
+                <outlet property="indexLabel" destination="eyD-pj-HbZ" id="hug-Pz-JnO"/>
+                <outlet property="timeLabel" destination="Ryb-QF-MdD" id="GmE-e6-lUU"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyD-pj-HbZ">
+                    <rect key="frame" x="56.333333333333343" y="182.66666666666666" width="262.33333333333326" height="61"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="75"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mg/dL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cl-ss-33e">
+                    <rect key="frame" x="132" y="263.66666666666669" width="111" height="48"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ryb-QF-MdD">
+                    <rect key="frame" x="93.666666666666671" y="361.66666666666669" width="187.66666666666663" height="42"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QrA-6N-AAS">
+                    <rect key="frame" x="71" y="463.66666666666669" width="233" height="55.333333333333314"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="確認" cornerStyle="capsule">
+                        <backgroundConfiguration key="background" strokeWidth="5">
+                            <color key="strokeColor" name="NavigationBar"/>
+                        </backgroundConfiguration>
+                        <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                        <color key="baseForegroundColor" name="NavigationBar"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="clickConfirmButton:" destination="-2" eventType="touchUpInside" id="jHx-x7-iZt"/>
+                        <action selector="clickUnderstandMoreButton:" destination="-2" eventType="touchUpInside" id="vFg-di-9ZY"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Xi-vc-Wci">
+                    <rect key="frame" x="71" y="529" width="233" height="55.333333333333371"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="更正" cornerStyle="capsule">
+                        <backgroundConfiguration key="background" strokeWidth="5">
+                            <color key="strokeColor" name="NavigationBar"/>
+                        </backgroundConfiguration>
+                        <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                        <color key="baseForegroundColor" name="NavigationBar"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="clickBackButton:" destination="-2" eventType="touchUpInside" id="yI2-yY-uQV"/>
+                        <action selector="clickUnderstandMoreButton:" destination="-2" eventType="touchUpInside" id="rbx-L6-mRd"/>
+                    </connections>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000298023224" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Seknova" translatesAutoresizingMaskIntoConstraints="NO" id="Jg5-RA-rJW">
+                    <rect key="frame" x="262" y="642" width="113" height="25"/>
+                </imageView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Jg5-RA-rJW" secondAttribute="bottom" id="040-bW-a3h"/>
+                <constraint firstItem="eyD-pj-HbZ" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="-150" id="1qL-HZ-GCc"/>
+                <constraint firstItem="0cl-ss-33e" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.071964" id="4qA-oJ-KaW"/>
+                <constraint firstItem="Ryb-QF-MdD" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="9Je-3c-CdY"/>
+                <constraint firstItem="QrA-6N-AAS" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.621333" id="Cdf-hJ-F32"/>
+                <constraint firstItem="Jg5-RA-rJW" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0374813" id="Cf8-bv-UUi"/>
+                <constraint firstItem="eyD-pj-HbZ" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.7" id="FE8-t2-zzF"/>
+                <constraint firstItem="Jg5-RA-rJW" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.301333" id="HEz-qP-YzT"/>
+                <constraint firstItem="5Xi-vc-Wci" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.083" id="LBS-CN-MM1"/>
+                <constraint firstItem="Ryb-QF-MdD" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0629685" id="LGJ-2W-0rq"/>
+                <constraint firstItem="0cl-ss-33e" firstAttribute="top" secondItem="eyD-pj-HbZ" secondAttribute="bottom" constant="20" id="M47-U5-CeV"/>
+                <constraint firstItem="QrA-6N-AAS" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="MfO-Rf-bla"/>
+                <constraint firstItem="5Xi-vc-Wci" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.621333" id="Ptt-MG-Ek0"/>
+                <constraint firstItem="eyD-pj-HbZ" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Q9Z-6U-5WN"/>
+                <constraint firstItem="QrA-6N-AAS" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.083" id="TUu-ce-3L7"/>
+                <constraint firstItem="Ryb-QF-MdD" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="aM8-ja-1xR"/>
+                <constraint firstItem="Ryb-QF-MdD" firstAttribute="top" secondItem="0cl-ss-33e" secondAttribute="bottom" constant="50" id="bwC-Sh-e5O"/>
+                <constraint firstItem="QrA-6N-AAS" firstAttribute="top" secondItem="Ryb-QF-MdD" secondAttribute="bottom" constant="60" id="e2y-lW-mCI"/>
+                <constraint firstItem="5Xi-vc-Wci" firstAttribute="top" secondItem="QrA-6N-AAS" secondAttribute="bottom" constant="10" id="f8f-bt-Reb"/>
+                <constraint firstItem="5Xi-vc-Wci" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="hQy-lw-Rfp"/>
+                <constraint firstItem="Jg5-RA-rJW" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="lAD-kI-IFV"/>
+                <constraint firstItem="0cl-ss-33e" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.296" id="qkZ-hj-4MS"/>
+                <constraint firstItem="eyD-pj-HbZ" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0914543" id="tky-3H-V2A"/>
+                <constraint firstItem="0cl-ss-33e" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="uoX-nu-Y1N"/>
+            </constraints>
+            <point key="canvasLocation" x="58" y="0.0"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Seknova" width="467" height="72"/>
+        <namedColor name="NavigationBar">
+            <color red="0.75700002908706665" green="0.059000000357627869" blue="0.14100000262260437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

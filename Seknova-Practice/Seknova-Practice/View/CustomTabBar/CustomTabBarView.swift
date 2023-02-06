@@ -10,7 +10,7 @@ import UIKit
 class CustomTabBarView: UIView {
 
     // MARK: - IBOutlet
-    
+    // 將需要繼承剛剛建立客製化按鈕的 class 宣告
     @IBOutlet weak var history: ImageButtonView!
     @IBOutlet weak var bloodSugarCorrection: ImageButtonView!
     @IBOutlet weak var instanceBloodSugar: ImageButtonView!
@@ -36,7 +36,7 @@ class CustomTabBarView: UIView {
     }
     
     // MARK: - UI Settings
-    
+    // 呼叫 ImageButtonView 的初始化 func
     func setInit() {
         history.setInit(imageName: "history",
                         labelText: vcTitleArray[0],
@@ -88,6 +88,7 @@ fileprivate extension CustomTabBarView {
 
 extension CustomTabBarView: ImageButtonViewDelegate {
     
+    // 把點選的值放進 onItemsTapped 閉包中
     func imageButtonView(didClickAt index: Int) {
         onItemsTapped?(index)
     }

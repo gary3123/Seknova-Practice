@@ -12,6 +12,7 @@ class LocalDatabase: NSObject {
     
     static let shared = LocalDatabase()
     
+// MARK: Add - Fuction
     func addEvenData(eventData: EventDataTable) {
         let realm = try! Realm()
         
@@ -68,6 +69,38 @@ class LocalDatabase: NSObject {
             print("Realm.Add Fail, Error:\(error.localizedDescription)")
         }
     }
+    
+    func addCalibrationModeData(calibrationModeData: CalibrationModeDataTable) {
+        let realm = try! Realm()
+        let calibrationModeDataTable = CalibrationModeData()
+        calibrationModeDataTable.modeID = calibrationModeData.modeID
+        calibrationModeDataTable.rawData2BGBias = calibrationModeData.rawData2BGBias
+        calibrationModeDataTable.BGBias = calibrationModeData.BGBias
+        calibrationModeDataTable.BGLow = calibrationModeData.BGLow
+        calibrationModeDataTable.mapRate = calibrationModeData.mapRate
+        calibrationModeDataTable.thresholdRise = calibrationModeData.thresholdRise
+        calibrationModeDataTable.thresholdFall = calibrationModeData.thresholdFall
+        calibrationModeDataTable.riseRate = calibrationModeData.riseRate
+        calibrationModeDataTable.fallenRate = calibrationModeData.fallenRate
+        
+        do {
+            try! realm.write {
+                realm.add(calibrationModeDataTable)
+                print("Realm.Add Success fileURL:\(realm.configuration.fileURL)")
+            }
+        } catch {
+            print("Realm.Add Fail, Error:\(error.localizedDescription)")
+        }
+    }
+    
+// MARK: Find - Function
+    
+//    func findUserInformationData(userinformation: UserInformationTable,
+//                                 filter: String) -> [String] {
+//        let realm = try! Realm()
+//        let results = realm.objects(UserInformation.self).filter(filter)
+//        
+//    }
     
     
 }

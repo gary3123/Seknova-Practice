@@ -59,7 +59,6 @@ class TransmitterContentViewController: BaseViewController {
     }
     
     func setQRcode() {
-        
         //取得預設的相機裝置（後鏡頭）
         let AVCdevice = AVCaptureDevice.default(for: .video)
         do {

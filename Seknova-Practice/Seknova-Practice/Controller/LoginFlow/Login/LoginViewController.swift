@@ -28,6 +28,7 @@ class LoginViewController: BaseViewController {
     enum LogingLastPage {
         case qrCodeVC
         case recertifictionVC
+        case persionalInformationVC
     }
     
     // MARK: - LifeCycle
@@ -81,6 +82,10 @@ class LoginViewController: BaseViewController {
             accountTextfield.text = ""
             passwordTextfield.text = ""
             print("從 QR code 掃描頁面進來")
+        case .persionalInformationVC:
+            accountTextfield.text = ""
+            passwordTextfield.text = ""
+            print("從 PersionalInformation 頁面進來")
         }
     }
     
@@ -104,9 +109,27 @@ class LoginViewController: BaseViewController {
                self.loadingActivity.stopAnimating()
                 if UserPreferences.shared.firstLogin == true {
                     UserPreferences.shared.firstLogin = false
-                    self.navigationController?.pushViewController(ContrastPopoverViewController(), animated: true)
+                    let nextVC = ContrastPopoverViewController()
+                    self.navigationController?.pushViewController(nextVC, animated: true)
+                } else {
+                    let nextVC = MainViewController()
+                    self.navigationController?.pushViewController(nextVC, animated: true)
                 }
             }
+            // 登入之後先建立校正模式的 Realm 表，以及設定的預設值
+            UserPreferences.shared.showNumericalInformation = true
+            UserPreferences.shared.uploadCloud = true
+            let addData = CalibrationModeDataTable(modeID: 0,
+                                                   rawData2BGBias: 100,
+                                                   BGBias: 100,
+                                                   BGLow: 40,
+                                                   BGHigh: 400,
+                                                   mapRate: 1,
+                                                   thresholdRise: 50,
+                                                   thresholdFall: 50,
+                                                   riseRate: 100,
+                                                   fallenRate: 100)
+            LocalDatabase.shared.addCalibrationModeData(calibrationModeData: addData)
         } else {
             Alert.showAlertWith(title: "帳號或密碼錯誤",
                                 message: "您輸入的帳號或密碼有誤\n請重新輸入",

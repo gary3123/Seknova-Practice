@@ -1,22 +1,134 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BloodSugarCorrectionViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BloodSugarCorrectionViewController" customModule="Seknova_Practice" customModuleProvider="target">
             <connections>
+                <outlet property="addIndexButton" destination="O8S-qg-RVz" id="njk-tc-htG"/>
+                <outlet property="indexTextField" destination="wz6-jX-srh" id="TEq-Y7-zUd"/>
+                <outlet property="minusIndexButton" destination="Eeg-VP-sbD" id="GBg-kO-gT0"/>
+                <outlet property="save" destination="XIV-qq-pvk" id="L08-M6-eC2"/>
+                <outlet property="understandMoreButton" destination="WPz-FV-eIa" id="uYB-8D-qUm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wz6-jX-srh">
+                    <rect key="frame" x="86.666666666666686" y="244.66666666666666" width="220" height="127.66666666666666"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                            <size key="value" width="0.0" height="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8S-qg-RVz">
+                    <rect key="frame" x="313.66666666666669" y="273.66666666666669" width="49" height="40"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="SetUp"/>
+                    <connections>
+                        <action selector="clickAddIndexButton" destination="-2" eventType="touchUpInside" id="tbk-Hb-6mt"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eeg-VP-sbD">
+                    <rect key="frame" x="313.66666666666669" y="304" width="49" height="39"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="SetDown"/>
+                    <connections>
+                        <action selector="clickMinusIndexButton" destination="-2" eventType="touchUpInside" id="BgZ-kv-UZX"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mg/dL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EHO-N7-xKc">
+                    <rect key="frame" x="141" y="392.33333333333331" width="111" height="48"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WPz-FV-eIa">
+                    <rect key="frame" x="80" y="538.66666666666663" width="233" height="59.666666666666629"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="了解更多" cornerStyle="capsule">
+                        <backgroundConfiguration key="background" strokeWidth="5">
+                            <color key="strokeColor" name="NavigationBar"/>
+                        </backgroundConfiguration>
+                        <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                        <color key="baseForegroundColor" name="NavigationBar"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="clickUnderstandMoreButton:" destination="-2" eventType="touchUpInside" id="9Ij-9Z-5c6"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XIV-qq-pvk">
+                    <rect key="frame" x="80" y="608.33333333333337" width="233" height="59.666666666666629"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="儲存" cornerStyle="capsule">
+                        <backgroundConfiguration key="background" strokeWidth="5">
+                            <color key="strokeColor" name="NavigationBar"/>
+                        </backgroundConfiguration>
+                        <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                        <color key="baseForegroundColor" name="NavigationBar"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="clickSaveButton:" destination="-1" eventType="touchUpInside" id="gDD-qf-Zzu"/>
+                    </connections>
+                </button>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="O8S-qg-RVz" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.124682" id="2Hf-mS-5Mq"/>
+                <constraint firstItem="XIV-qq-pvk" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="3UH-3s-oFl"/>
+                <constraint firstItem="Eeg-VP-sbD" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.0513834" id="56v-zq-8Qb"/>
+                <constraint firstItem="wz6-jX-srh" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="7RJ-Rc-xLX"/>
+                <constraint firstItem="WPz-FV-eIa" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.592875" id="9Us-4f-iOo"/>
+                <constraint firstItem="EHO-N7-xKc" firstAttribute="top" secondItem="wz6-jX-srh" secondAttribute="bottom" constant="20" id="ALV-ZN-R2H"/>
+                <constraint firstItem="Eeg-VP-sbD" firstAttribute="centerY" secondItem="wz6-jX-srh" secondAttribute="centerY" constant="15" id="AzK-q7-4cf"/>
+                <constraint firstItem="Eeg-VP-sbD" firstAttribute="leading" secondItem="O8S-qg-RVz" secondAttribute="leading" id="DwI-GU-BfN"/>
+                <constraint firstItem="XIV-qq-pvk" firstAttribute="top" secondItem="WPz-FV-eIa" secondAttribute="bottom" constant="10" id="O9X-bn-SSx"/>
+                <constraint firstItem="EHO-N7-xKc" firstAttribute="centerX" secondItem="wz6-jX-srh" secondAttribute="centerX" id="QHD-SI-hMc"/>
+                <constraint firstItem="WPz-FV-eIa" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="130" id="UYw-Eb-4pg"/>
+                <constraint firstItem="WPz-FV-eIa" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="UnG-A1-NMG"/>
+                <constraint firstItem="WPz-FV-eIa" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.07" id="Vi7-gc-OFc"/>
+                <constraint firstItem="Eeg-VP-sbD" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.124682" id="ZBS-dW-9El"/>
+                <constraint firstItem="O8S-qg-RVz" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.0527009" id="aUd-Yi-MtU"/>
+                <constraint firstItem="wz6-jX-srh" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.15" id="bUv-o2-Z1d"/>
+                <constraint firstItem="XIV-qq-pvk" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.07" id="dTf-Im-8zz"/>
+                <constraint firstItem="wz6-jX-srh" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.559796" id="gyg-wj-Ymu"/>
+                <constraint firstItem="wz6-jX-srh" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="-130" id="hHq-H3-fZI"/>
+                <constraint firstItem="O8S-qg-RVz" firstAttribute="leading" secondItem="wz6-jX-srh" secondAttribute="trailing" constant="7" id="jug-wf-XSF"/>
+                <constraint firstItem="XIV-qq-pvk" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.592875" id="rXK-FD-Pm4"/>
+                <constraint firstItem="O8S-qg-RVz" firstAttribute="centerY" secondItem="wz6-jX-srh" secondAttribute="centerY" constant="-15" id="xx9-sU-xYx"/>
+            </constraints>
+            <point key="canvasLocation" x="57.251908396946561" y="0.0"/>
         </view>
     </objects>
+    <resources>
+        <image name="SetDown" width="25" height="25"/>
+        <image name="SetUp" width="25" height="26"/>
+        <namedColor name="NavigationBar">
+            <color red="0.75700002908706665" green="0.059000000357627869" blue="0.14100000262260437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

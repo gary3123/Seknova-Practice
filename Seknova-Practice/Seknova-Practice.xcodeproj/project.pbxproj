@@ -11,7 +11,7 @@
 		4E08602529484F5600170A60 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E08602429484F5600170A60 /* ActivityIndicatorView.swift */; };
 		4E086027294862EB00170A60 /* UserInformationTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E086026294862EB00170A60 /* UserInformationTable.swift */; };
 		4E08602929488F8A00170A60 /* RecordsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E08602829488F8A00170A60 /* RecordsTable.swift */; };
-		4E08602B2948966800170A60 /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E08602A2948966800170A60 /* EventData.swift */; };
+		4E08602B2948966800170A60 /* EventDataTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E08602A2948966800170A60 /* EventDataTable.swift */; };
 		4E08602E294899E700170A60 /* ImageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E08602C294899E700170A60 /* ImageButtonView.swift */; };
 		4E08602F294899E700170A60 /* ImageButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E08602D294899E700170A60 /* ImageButtonView.xib */; };
 		4E0860332948AA2400170A60 /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0860312948AA2300170A60 /* CustomTabBarView.swift */; };
@@ -28,6 +28,10 @@
 		4E11254F293A33FF00D3BD55 /* LifeStyleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E11254D293A33FF00D3BD55 /* LifeStyleViewController.xib */; };
 		4E112552293A341E00D3BD55 /* PersionalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E112550293A341E00D3BD55 /* PersionalInformationViewController.swift */; };
 		4E112553293A341E00D3BD55 /* PersionalInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E112551293A341E00D3BD55 /* PersionalInformationViewController.xib */; };
+		4E1DB0B7298CBF4200CA1C8C /* SettingAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1DB0B5298CBF4200CA1C8C /* SettingAlertViewController.swift */; };
+		4E1DB0B8298CBF4200CA1C8C /* SettingAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E1DB0B6298CBF4200CA1C8C /* SettingAlertViewController.xib */; };
+		4E1DB0BB298CC38000CA1C8C /* SettingAlertTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1DB0B9298CC38000CA1C8C /* SettingAlertTableViewCell.swift */; };
+		4E1DB0BC298CC38000CA1C8C /* SettingAlertTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E1DB0BA298CC38000CA1C8C /* SettingAlertTableViewCell.xib */; };
 		4E2160F72939D5A80021553C /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2160F52939D5A80021553C /* ConnectViewController.swift */; };
 		4E2160F82939D5A80021553C /* ConnectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E2160F62939D5A80021553C /* ConnectViewController.xib */; };
 		4E2E94E02913B7F900E2533F /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2E94DF2913B7F900E2533F /* String+Extensions.swift */; };
@@ -38,6 +42,9 @@
 		4E2EE82C29406650005F9DDD /* BodyInformationArrowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2EE82A29406650005F9DDD /* BodyInformationArrowTableViewCell.swift */; };
 		4E2EE82D29406650005F9DDD /* BodyInformationArrowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E2EE82B29406650005F9DDD /* BodyInformationArrowTableViewCell.xib */; };
 		4E2EE82F29435621005F9DDD /* LocalDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2EE82E29435621005F9DDD /* LocalDatabase.swift */; };
+		4E48CAAF295491C500CC9855 /* ChartXAxisFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E48CAAE295491C500CC9855 /* ChartXAxisFormatter.swift */; };
+		4E48CAB62958771E00CC9855 /* ConnectPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E48CAB42958771E00CC9855 /* ConnectPopoverViewController.swift */; };
+		4E48CAB72958771E00CC9855 /* ConnectPopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E48CAB52958771E00CC9855 /* ConnectPopoverViewController.xib */; };
 		4E71FBC1292FAAAE00B75F9B /* BodyInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E71FBBF292FAAAE00B75F9B /* BodyInformationViewController.swift */; };
 		4E71FBC2292FAAAE00B75F9B /* BodyInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E71FBC0292FAAAE00B75F9B /* BodyInformationViewController.xib */; };
 		4E71FBC6292FAFDB00B75F9B /* AudiovisualTeachingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E71FBC4292FAFDB00B75F9B /* AudiovisualTeachingViewController.swift */; };
@@ -65,10 +72,38 @@
 		4E854D7B29026E9B0097D79E /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E854D7929026E9B0097D79E /* RegisterViewController.xib */; };
 		4E854D7F290270DB0097D79E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E854D7D290270DA0097D79E /* LoginViewController.swift */; };
 		4E854D80290270DB0097D79E /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E854D7E290270DB0097D79E /* LoginViewController.xib */; };
+		4E8669A7298B7C7300A38D1A /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8669A5298B7C7300A38D1A /* SettingViewController.swift */; };
+		4E8669A8298B7C7300A38D1A /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E8669A6298B7C7300A38D1A /* SettingViewController.xib */; };
+		4E8669AB298B8EB200A38D1A /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8669A9298B8EB200A38D1A /* TextTableViewCell.swift */; };
+		4E8669AC298B8EB200A38D1A /* TextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E8669AA298B8EB200A38D1A /* TextTableViewCell.xib */; };
+		4E8669AF298BA29E00A38D1A /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8669AD298BA29E00A38D1A /* SwitchTableViewCell.swift */; };
+		4E8669B0298BA29E00A38D1A /* SwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E8669AE298BA29E00A38D1A /* SwitchTableViewCell.xib */; };
+		4E8669B3298BB01500A38D1A /* RightArrowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8669B1298BB01500A38D1A /* RightArrowTableViewCell.swift */; };
+		4E8669B4298BB01500A38D1A /* RightArrowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E8669B2298BB01500A38D1A /* RightArrowTableViewCell.xib */; };
+		4E8669B7298BD5E500A38D1A /* ReloadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8669B5298BD5E500A38D1A /* ReloadTableViewCell.swift */; };
+		4E8669B8298BD5E500A38D1A /* ReloadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E8669B6298BD5E500A38D1A /* ReloadTableViewCell.xib */; };
 		4E88DB4E290283C9005DCFC9 /* AlphaBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88DB4D290283C9005DCFC9 /* AlphaBackgroundView.swift */; };
 		4E9BA6BC29090E1700EA71A5 /* TextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BA6BB29090E1700EA71A5 /* TextField+Extensions.swift */; };
+		4EA0FA2A297522AF00D135B5 /* BatteryIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0FA29297522AF00D135B5 /* BatteryIcon.swift */; };
+		4EA0FA2C2975231300D135B5 /* BatteryIcon.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA0FA2B2975231300D135B5 /* BatteryIcon.xib */; };
+		4EA0FA2E297525BD00D135B5 /* UIViewToUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0FA2D297525BD00D135B5 /* UIViewToUIImage.swift */; };
+		4EA0FA3129768FCF00D135B5 /* PersionalInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0FA2F29768FCF00D135B5 /* PersionalInformationTableViewCell.swift */; };
+		4EA0FA3229768FCF00D135B5 /* PersionalInformationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA0FA3029768FCF00D135B5 /* PersionalInformationTableViewCell.xib */; };
+		4EA0FA3529768FEB00D135B5 /* LogOutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0FA3329768FEB00D135B5 /* LogOutTableViewCell.swift */; };
+		4EA0FA3629768FEB00D135B5 /* LogOutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA0FA3429768FEB00D135B5 /* LogOutTableViewCell.xib */; };
 		4EA71BD72939F282000A1A4C /* ScanningSensorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA71BD52939F282000A1A4C /* ScanningSensorViewController.swift */; };
 		4EA71BD82939F282000A1A4C /* ScanningSensorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA71BD62939F282000A1A4C /* ScanningSensorViewController.xib */; };
+		4EB1D6FC2958B57900ABA352 /* BloodSugarUnderstandMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB1D6FA2958B57900ABA352 /* BloodSugarUnderstandMoreViewController.swift */; };
+		4EB1D6FD2958B57900ABA352 /* BloodSugarUnderstandMoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EB1D6FB2958B57900ABA352 /* BloodSugarUnderstandMoreViewController.xib */; };
+		4EB1D7002958B82900ABA352 /* BloodSugarConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB1D6FE2958B82900ABA352 /* BloodSugarConfirmViewController.swift */; };
+		4EB1D7012958B82900ABA352 /* BloodSugarConfirmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EB1D6FF2958B82900ABA352 /* BloodSugarConfirmViewController.xib */; };
+		4EB1D705295C767600ABA352 /* BarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB1D704295C767600ABA352 /* BarButtonItem+Extensions.swift */; };
+		4EB1D707295ED91F00ABA352 /* NSNotification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB1D706295ED91F00ABA352 /* NSNotification+Extensions.swift */; };
+		4EB1D70A295EDC9F00ABA352 /* TransmitterTimeAndSensorBatteryPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB1D708295EDC9F00ABA352 /* TransmitterTimeAndSensorBatteryPopover.swift */; };
+		4EB1D70B295EDC9F00ABA352 /* TransmitterTimeAndSensorBatteryPopover.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EB1D709295EDC9F00ABA352 /* TransmitterTimeAndSensorBatteryPopover.xib */; };
+		4EB1D70D295EF70D00ABA352 /* CommandBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB1D70C295EF70D00ABA352 /* CommandBase.swift */; };
+		4EB468992986B03800820F92 /* AccountSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB468972986B03800820F92 /* AccountSectionTableViewCell.swift */; };
+		4EB4689A2986B03800820F92 /* AccountSectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EB468982986B03800820F92 /* AccountSectionTableViewCell.xib */; };
 		4EFBDA642923AE8300202B2A /* ContrastPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFBDA622923AE8300202B2A /* ContrastPopoverViewController.swift */; };
 		4EFBDA652923AE8300202B2A /* ContrastPopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EFBDA632923AE8300202B2A /* ContrastPopoverViewController.xib */; };
 		4EFBDA6D292666AA00202B2A /* RecertifictionLeterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFBDA6B292666AA00202B2A /* RecertifictionLeterViewController.swift */; };
@@ -76,6 +111,11 @@
 		4EFBDA70292B78E400202B2A /* UserPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFBDA6F292B78E400202B2A /* UserPreference.swift */; };
 		4EFBDA74292BA17100202B2A /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFBDA72292BA17100202B2A /* ForgotPassword.swift */; };
 		4EFBDA75292BA17100202B2A /* ForgotPassword.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EFBDA73292BA17100202B2A /* ForgotPassword.xib */; };
+		4EFF5F902990054700BF00D5 /* SettingCalibrationModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF5F8E2990054700BF00D5 /* SettingCalibrationModeViewController.swift */; };
+		4EFF5F912990054700BF00D5 /* SettingCalibrationModeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EFF5F8F2990054700BF00D5 /* SettingCalibrationModeViewController.xib */; };
+		4EFF5F942990117600BF00D5 /* CalibrationModeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF5F922990117600BF00D5 /* CalibrationModeTableViewCell.swift */; };
+		4EFF5F952990117600BF00D5 /* CalibrationModeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EFF5F932990117600BF00D5 /* CalibrationModeTableViewCell.xib */; };
+		4EFF5F98299015BA00BF00D5 /* CalibrationModeDataTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF5F97299015BA00BF00D5 /* CalibrationModeDataTable.swift */; };
 		9F0797D51F2F439D88BA34B4 /* Pods_Seknova_Practice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24BD3366D14F68E6807C079D /* Pods_Seknova_Practice.framework */; };
 		AB7E72BFEFD88A0C57D46B13 /* Pods_Seknova_PracticeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35593199C3A17A67170D258B /* Pods_Seknova_PracticeTests.framework */; };
 /* End PBXBuildFile section */
@@ -104,7 +144,7 @@
 		4E08602429484F5600170A60 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		4E086026294862EB00170A60 /* UserInformationTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationTable.swift; sourceTree = "<group>"; };
 		4E08602829488F8A00170A60 /* RecordsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsTable.swift; sourceTree = "<group>"; };
-		4E08602A2948966800170A60 /* EventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
+		4E08602A2948966800170A60 /* EventDataTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataTable.swift; sourceTree = "<group>"; };
 		4E08602C294899E700170A60 /* ImageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButtonView.swift; sourceTree = "<group>"; };
 		4E08602D294899E700170A60 /* ImageButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageButtonView.xib; sourceTree = "<group>"; };
 		4E0860312948AA2300170A60 /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
@@ -121,6 +161,10 @@
 		4E11254D293A33FF00D3BD55 /* LifeStyleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LifeStyleViewController.xib; sourceTree = "<group>"; };
 		4E112550293A341E00D3BD55 /* PersionalInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersionalInformationViewController.swift; sourceTree = "<group>"; };
 		4E112551293A341E00D3BD55 /* PersionalInformationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersionalInformationViewController.xib; sourceTree = "<group>"; };
+		4E1DB0B5298CBF4200CA1C8C /* SettingAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingAlertViewController.swift; sourceTree = "<group>"; };
+		4E1DB0B6298CBF4200CA1C8C /* SettingAlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingAlertViewController.xib; sourceTree = "<group>"; };
+		4E1DB0B9298CC38000CA1C8C /* SettingAlertTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingAlertTableViewCell.swift; sourceTree = "<group>"; };
+		4E1DB0BA298CC38000CA1C8C /* SettingAlertTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingAlertTableViewCell.xib; sourceTree = "<group>"; };
 		4E2160F52939D5A80021553C /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
 		4E2160F62939D5A80021553C /* ConnectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConnectViewController.xib; sourceTree = "<group>"; };
 		4E2E94DF2913B7F900E2533F /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
@@ -131,6 +175,9 @@
 		4E2EE82A29406650005F9DDD /* BodyInformationArrowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyInformationArrowTableViewCell.swift; sourceTree = "<group>"; };
 		4E2EE82B29406650005F9DDD /* BodyInformationArrowTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BodyInformationArrowTableViewCell.xib; sourceTree = "<group>"; };
 		4E2EE82E29435621005F9DDD /* LocalDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDatabase.swift; sourceTree = "<group>"; };
+		4E48CAAE295491C500CC9855 /* ChartXAxisFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartXAxisFormatter.swift; sourceTree = "<group>"; };
+		4E48CAB42958771E00CC9855 /* ConnectPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectPopoverViewController.swift; sourceTree = "<group>"; };
+		4E48CAB52958771E00CC9855 /* ConnectPopoverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConnectPopoverViewController.xib; sourceTree = "<group>"; };
 		4E71FBBF292FAAAE00B75F9B /* BodyInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyInformationViewController.swift; sourceTree = "<group>"; };
 		4E71FBC0292FAAAE00B75F9B /* BodyInformationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BodyInformationViewController.xib; sourceTree = "<group>"; };
 		4E71FBC4292FAFDB00B75F9B /* AudiovisualTeachingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudiovisualTeachingViewController.swift; sourceTree = "<group>"; };
@@ -162,10 +209,38 @@
 		4E854D7929026E9B0097D79E /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		4E854D7D290270DA0097D79E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4E854D7E290270DB0097D79E /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		4E8669A5298B7C7300A38D1A /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		4E8669A6298B7C7300A38D1A /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		4E8669A9298B8EB200A38D1A /* TextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTableViewCell.swift; sourceTree = "<group>"; };
+		4E8669AA298B8EB200A38D1A /* TextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextTableViewCell.xib; sourceTree = "<group>"; };
+		4E8669AD298BA29E00A38D1A /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
+		4E8669AE298BA29E00A38D1A /* SwitchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchTableViewCell.xib; sourceTree = "<group>"; };
+		4E8669B1298BB01500A38D1A /* RightArrowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightArrowTableViewCell.swift; sourceTree = "<group>"; };
+		4E8669B2298BB01500A38D1A /* RightArrowTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RightArrowTableViewCell.xib; sourceTree = "<group>"; };
+		4E8669B5298BD5E500A38D1A /* ReloadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadTableViewCell.swift; sourceTree = "<group>"; };
+		4E8669B6298BD5E500A38D1A /* ReloadTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReloadTableViewCell.xib; sourceTree = "<group>"; };
 		4E88DB4D290283C9005DCFC9 /* AlphaBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaBackgroundView.swift; sourceTree = "<group>"; };
 		4E9BA6BB29090E1700EA71A5 /* TextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extensions.swift"; sourceTree = "<group>"; };
+		4EA0FA29297522AF00D135B5 /* BatteryIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryIcon.swift; sourceTree = "<group>"; };
+		4EA0FA2B2975231300D135B5 /* BatteryIcon.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BatteryIcon.xib; sourceTree = "<group>"; };
+		4EA0FA2D297525BD00D135B5 /* UIViewToUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewToUIImage.swift; sourceTree = "<group>"; };
+		4EA0FA2F29768FCF00D135B5 /* PersionalInformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersionalInformationTableViewCell.swift; sourceTree = "<group>"; };
+		4EA0FA3029768FCF00D135B5 /* PersionalInformationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersionalInformationTableViewCell.xib; sourceTree = "<group>"; };
+		4EA0FA3329768FEB00D135B5 /* LogOutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutTableViewCell.swift; sourceTree = "<group>"; };
+		4EA0FA3429768FEB00D135B5 /* LogOutTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogOutTableViewCell.xib; sourceTree = "<group>"; };
 		4EA71BD52939F282000A1A4C /* ScanningSensorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanningSensorViewController.swift; sourceTree = "<group>"; };
 		4EA71BD62939F282000A1A4C /* ScanningSensorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanningSensorViewController.xib; sourceTree = "<group>"; };
+		4EB1D6FA2958B57900ABA352 /* BloodSugarUnderstandMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodSugarUnderstandMoreViewController.swift; sourceTree = "<group>"; };
+		4EB1D6FB2958B57900ABA352 /* BloodSugarUnderstandMoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BloodSugarUnderstandMoreViewController.xib; sourceTree = "<group>"; };
+		4EB1D6FE2958B82900ABA352 /* BloodSugarConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodSugarConfirmViewController.swift; sourceTree = "<group>"; };
+		4EB1D6FF2958B82900ABA352 /* BloodSugarConfirmViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BloodSugarConfirmViewController.xib; sourceTree = "<group>"; };
+		4EB1D704295C767600ABA352 /* BarButtonItem+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
+		4EB1D706295ED91F00ABA352 /* NSNotification+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+Extensions.swift"; sourceTree = "<group>"; };
+		4EB1D708295EDC9F00ABA352 /* TransmitterTimeAndSensorBatteryPopover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransmitterTimeAndSensorBatteryPopover.swift; sourceTree = "<group>"; };
+		4EB1D709295EDC9F00ABA352 /* TransmitterTimeAndSensorBatteryPopover.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransmitterTimeAndSensorBatteryPopover.xib; sourceTree = "<group>"; };
+		4EB1D70C295EF70D00ABA352 /* CommandBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandBase.swift; sourceTree = "<group>"; };
+		4EB468972986B03800820F92 /* AccountSectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSectionTableViewCell.swift; sourceTree = "<group>"; };
+		4EB468982986B03800820F92 /* AccountSectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSectionTableViewCell.xib; sourceTree = "<group>"; };
 		4EFBDA622923AE8300202B2A /* ContrastPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContrastPopoverViewController.swift; sourceTree = "<group>"; };
 		4EFBDA632923AE8300202B2A /* ContrastPopoverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContrastPopoverViewController.xib; sourceTree = "<group>"; };
 		4EFBDA6B292666AA00202B2A /* RecertifictionLeterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecertifictionLeterViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +248,11 @@
 		4EFBDA6F292B78E400202B2A /* UserPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreference.swift; sourceTree = "<group>"; };
 		4EFBDA72292BA17100202B2A /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
 		4EFBDA73292BA17100202B2A /* ForgotPassword.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPassword.xib; sourceTree = "<group>"; };
+		4EFF5F8E2990054700BF00D5 /* SettingCalibrationModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCalibrationModeViewController.swift; sourceTree = "<group>"; };
+		4EFF5F8F2990054700BF00D5 /* SettingCalibrationModeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingCalibrationModeViewController.xib; sourceTree = "<group>"; };
+		4EFF5F922990117600BF00D5 /* CalibrationModeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationModeTableViewCell.swift; sourceTree = "<group>"; };
+		4EFF5F932990117600BF00D5 /* CalibrationModeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalibrationModeTableViewCell.xib; sourceTree = "<group>"; };
+		4EFF5F97299015BA00BF00D5 /* CalibrationModeDataTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationModeDataTable.swift; sourceTree = "<group>"; };
 		5E53C86D42EB499112CB44D2 /* Pods_Seknova_Practice_Seknova_PracticeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Seknova_Practice_Seknova_PracticeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66AB2B0F508E9F55A2DC51EB /* Pods-Seknova-PracticeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-PracticeTests.debug.xcconfig"; path = "Target Support Files/Pods-Seknova-PracticeTests/Pods-Seknova-PracticeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		73B98C0961C0E0B99FCF814F /* Pods-Seknova-Practice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-Practice.debug.xcconfig"; path = "Target Support Files/Pods-Seknova-Practice/Pods-Seknova-Practice.debug.xcconfig"; sourceTree = "<group>"; };
@@ -236,6 +316,7 @@
 		4E11253A293A31D900D3BD55 /* MainFlow */ = {
 			isa = PBXGroup;
 			children = (
+				4E8669A4298B7C4200A38D1A /* Setting */,
 				4E0860352949A40700170A60 /* MainViewController.swift */,
 				4E0860362949A40700170A60 /* MainViewController.xib */,
 				4E112543293A32EF00D3BD55 /* PersionalInformation */,
@@ -261,6 +342,10 @@
 			children = (
 				4E112544293A33C800D3BD55 /* BloodSugarCorrectionViewController.swift */,
 				4E112545293A33C800D3BD55 /* BloodSugarCorrectionViewController.xib */,
+				4EB1D6FA2958B57900ABA352 /* BloodSugarUnderstandMoreViewController.swift */,
+				4EB1D6FB2958B57900ABA352 /* BloodSugarUnderstandMoreViewController.xib */,
+				4EB1D6FE2958B82900ABA352 /* BloodSugarConfirmViewController.swift */,
+				4EB1D6FF2958B82900ABA352 /* BloodSugarConfirmViewController.xib */,
 			);
 			path = BloodSugarCorrection;
 			sourceTree = "<group>";
@@ -268,8 +353,12 @@
 		4E112541293A32A600D3BD55 /* InstanceBloodSugar */ = {
 			isa = PBXGroup;
 			children = (
+				4E48CAB42958771E00CC9855 /* ConnectPopoverViewController.swift */,
+				4E48CAB52958771E00CC9855 /* ConnectPopoverViewController.xib */,
 				4E112548293A33EA00D3BD55 /* InstanceBloodSugarViewController.swift */,
 				4E112549293A33EA00D3BD55 /* InstanceBloodSugarViewController.xib */,
+				4EB1D708295EDC9F00ABA352 /* TransmitterTimeAndSensorBatteryPopover.swift */,
+				4EB1D709295EDC9F00ABA352 /* TransmitterTimeAndSensorBatteryPopover.xib */,
 			);
 			path = InstanceBloodSugar;
 			sourceTree = "<group>";
@@ -288,6 +377,12 @@
 			children = (
 				4E112550293A341E00D3BD55 /* PersionalInformationViewController.swift */,
 				4E112551293A341E00D3BD55 /* PersionalInformationViewController.xib */,
+				4EA0FA2F29768FCF00D135B5 /* PersionalInformationTableViewCell.swift */,
+				4EA0FA3029768FCF00D135B5 /* PersionalInformationTableViewCell.xib */,
+				4EA0FA3329768FEB00D135B5 /* LogOutTableViewCell.swift */,
+				4EA0FA3429768FEB00D135B5 /* LogOutTableViewCell.xib */,
+				4EB468972986B03800820F92 /* AccountSectionTableViewCell.swift */,
+				4EB468982986B03800820F92 /* AccountSectionTableViewCell.xib */,
 			);
 			path = PersionalInformation;
 			sourceTree = "<group>";
@@ -319,6 +414,17 @@
 			path = FirstLoginFlow;
 			sourceTree = "<group>";
 		};
+		4E1DB0B4298CBEF300CA1C8C /* SettingAlert */ = {
+			isa = PBXGroup;
+			children = (
+				4E1DB0B5298CBF4200CA1C8C /* SettingAlertViewController.swift */,
+				4E1DB0B6298CBF4200CA1C8C /* SettingAlertViewController.xib */,
+				4E1DB0B9298CC38000CA1C8C /* SettingAlertTableViewCell.swift */,
+				4E1DB0BA298CC38000CA1C8C /* SettingAlertTableViewCell.xib */,
+			);
+			path = SettingAlert;
+			sourceTree = "<group>";
+		};
 		4E2160F42939D56E0021553C /* ConnectViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,6 +432,28 @@
 				4E2160F62939D5A80021553C /* ConnectViewController.xib */,
 			);
 			path = ConnectViewController;
+			sourceTree = "<group>";
+		};
+		4E48CAAC2954911100CC9855 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				4E2EE82E29435621005F9DDD /* LocalDatabase.swift */,
+				4E08602829488F8A00170A60 /* RecordsTable.swift */,
+				4E08602A2948966800170A60 /* EventDataTable.swift */,
+				4E086026294862EB00170A60 /* UserInformationTable.swift */,
+				4EFF5F97299015BA00BF00D5 /* CalibrationModeDataTable.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		4E48CAAD2954915D00CC9855 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4E48CAAE295491C500CC9855 /* ChartXAxisFormatter.swift */,
+				4EB1D70C295EF70D00ABA352 /* CommandBase.swift */,
+				4EA0FA2D297525BD00D135B5 /* UIViewToUIImage.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		4E71FBBD292F9D8200B75F9B /* ContrastViewController */ = {
@@ -458,6 +586,8 @@
 				4E8303C22907D8EF005DBEA5 /* Color+Extensions.swift */,
 				4E9BA6BB29090E1700EA71A5 /* TextField+Extensions.swift */,
 				4E2E94DF2913B7F900E2533F /* String+Extensions.swift */,
+				4EB1D704295C767600ABA352 /* BarButtonItem+Extensions.swift */,
+				4EB1D706295ED91F00ABA352 /* NSNotification+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -480,6 +610,25 @@
 			path = Register;
 			sourceTree = "<group>";
 		};
+		4E8669A4298B7C4200A38D1A /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				4EFF5F8D299004DF00BF00D5 /* SettingCalibrationMode */,
+				4E1DB0B4298CBEF300CA1C8C /* SettingAlert */,
+				4E8669A5298B7C7300A38D1A /* SettingViewController.swift */,
+				4E8669A6298B7C7300A38D1A /* SettingViewController.xib */,
+				4E8669A9298B8EB200A38D1A /* TextTableViewCell.swift */,
+				4E8669AA298B8EB200A38D1A /* TextTableViewCell.xib */,
+				4E8669AD298BA29E00A38D1A /* SwitchTableViewCell.swift */,
+				4E8669AE298BA29E00A38D1A /* SwitchTableViewCell.xib */,
+				4E8669B1298BB01500A38D1A /* RightArrowTableViewCell.swift */,
+				4E8669B2298BB01500A38D1A /* RightArrowTableViewCell.xib */,
+				4E8669B5298BD5E500A38D1A /* ReloadTableViewCell.swift */,
+				4E8669B6298BD5E500A38D1A /* ReloadTableViewCell.xib */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		4EA71BD42939F266000A1A4C /* ScanningSensor */ = {
 			isa = PBXGroup;
 			children = (
@@ -492,14 +641,12 @@
 		4EC6763F28F8265D0027BF79 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4E086026294862EB00170A60 /* UserInformationTable.swift */,
-				4E2EE82E29435621005F9DDD /* LocalDatabase.swift */,
-				4E08602829488F8A00170A60 /* RecordsTable.swift */,
-				4E8303C42907D92A005DBEA5 /* Extensions */,
 				4E2E94E22913BDE200E2533F /* Alert.swift */,
-				4EFBDA6F292B78E400202B2A /* UserPreference.swift */,
 				4E2EE828293F7E01005F9DDD /* AppDefine.swift */,
-				4E08602A2948966800170A60 /* EventData.swift */,
+				4EFBDA6F292B78E400202B2A /* UserPreference.swift */,
+				4E48CAAC2954911100CC9855 /* Database */,
+				4E8303C42907D92A005DBEA5 /* Extensions */,
+				4E48CAAD2954915D00CC9855 /* Utilities */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -510,6 +657,8 @@
 				4E0860302948A98900170A60 /* CustomTabBar */,
 				4E88DB4D290283C9005DCFC9 /* AlphaBackgroundView.swift */,
 				4E08602429484F5600170A60 /* ActivityIndicatorView.swift */,
+				4EA0FA29297522AF00D135B5 /* BatteryIcon.swift */,
+				4EA0FA2B2975231300D135B5 /* BatteryIcon.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -541,6 +690,17 @@
 				4EFBDA73292BA17100202B2A /* ForgotPassword.xib */,
 			);
 			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		4EFF5F8D299004DF00BF00D5 /* SettingCalibrationMode */ = {
+			isa = PBXGroup;
+			children = (
+				4EFF5F8E2990054700BF00D5 /* SettingCalibrationModeViewController.swift */,
+				4EFF5F8F2990054700BF00D5 /* SettingCalibrationModeViewController.xib */,
+				4EFF5F922990117600BF00D5 /* CalibrationModeTableViewCell.swift */,
+				4EFF5F932990117600BF00D5 /* CalibrationModeTableViewCell.xib */,
+			);
+			path = SettingCalibrationMode;
 			sourceTree = "<group>";
 		};
 		7F5928064439FBD21B1E663B /* Frameworks */ = {
@@ -665,29 +825,46 @@
 				4E11253F293A324C00D3BD55 /* HistoryViewController.xib in Resources */,
 				4E0860382949A40700170A60 /* MainViewController.xib in Resources */,
 				4E7CD5542937925900F913F4 /* PairBlueToothViewController.xib in Resources */,
+				4E8669B0298BA29E00A38D1A /* SwitchTableViewCell.xib in Resources */,
 				4E11254B293A33EA00D3BD55 /* InstanceBloodSugarViewController.xib in Resources */,
 				4E79C98628F40FD100F3017B /* LaunchScreen.storyboard in Resources */,
 				4E71FBC7292FAFDB00B75F9B /* AudiovisualTeachingViewController.xib in Resources */,
 				4E2160F82939D5A80021553C /* ConnectViewController.xib in Resources */,
+				4EB4689A2986B03800820F92 /* AccountSectionTableViewCell.xib in Resources */,
 				4E0860342948AA2400170A60 /* CustomTabBarView.xib in Resources */,
 				4EFBDA652923AE8300202B2A /* ContrastPopoverViewController.xib in Resources */,
 				4E79C98328F40FD100F3017B /* Assets.xcassets in Resources */,
 				4EA71BD82939F282000A1A4C /* ScanningSensorViewController.xib in Resources */,
+				4EB1D7012958B82900ABA352 /* BloodSugarConfirmViewController.xib in Resources */,
+				4EA0FA3229768FCF00D135B5 /* PersionalInformationTableViewCell.xib in Resources */,
+				4EB1D6FD2958B57900ABA352 /* BloodSugarUnderstandMoreViewController.xib in Resources */,
 				4E854D7B29026E9B0097D79E /* RegisterViewController.xib in Resources */,
 				4E7CD54F2935F7A100F913F4 /* UnderstandMoreViewController.xib in Resources */,
 				4E79782C293258F2009AE72E /* TransmitterContentViewController.xib in Resources */,
+				4E8669B4298BB01500A38D1A /* RightArrowTableViewCell.xib in Resources */,
+				4EFF5F952990117600BF00D5 /* CalibrationModeTableViewCell.xib in Resources */,
+				4E1DB0B8298CBF4200CA1C8C /* SettingAlertViewController.xib in Resources */,
 				4EFBDA75292BA17100202B2A /* ForgotPassword.xib in Resources */,
 				4E7F94DD292CD6F000F28F69 /* ResetPasswordViewController.xib in Resources */,
+				4EA0FA3629768FEB00D135B5 /* LogOutTableViewCell.xib in Resources */,
+				4E8669A8298B7C7300A38D1A /* SettingViewController.xib in Resources */,
+				4E48CAB72958771E00CC9855 /* ConnectPopoverViewController.xib in Resources */,
 				4E08602F294899E700170A60 /* ImageButtonView.xib in Resources */,
 				4E854D80290270DB0097D79E /* LoginViewController.xib in Resources */,
+				4EA0FA2C2975231300D135B5 /* BatteryIcon.xib in Resources */,
+				4EFF5F912990054700BF00D5 /* SettingCalibrationModeViewController.xib in Resources */,
+				4E8669AC298B8EB200A38D1A /* TextTableViewCell.xib in Resources */,
 				4E112547293A33C800D3BD55 /* BloodSugarCorrectionViewController.xib in Resources */,
+				4E8669B8298BD5E500A38D1A /* ReloadTableViewCell.xib in Resources */,
 				4E112553293A341E00D3BD55 /* PersionalInformationViewController.xib in Resources */,
 				4E2EE82D29406650005F9DDD /* BodyInformationArrowTableViewCell.xib in Resources */,
+				4EB1D70B295EDC9F00ABA352 /* TransmitterTimeAndSensorBatteryPopover.xib in Resources */,
 				4E11254F293A33FF00D3BD55 /* LifeStyleViewController.xib in Resources */,
 				4E71FBCC2930EF4A00B75F9B /* BloodSugarIndexViewController.xib in Resources */,
 				4EFBDA6E292666AA00202B2A /* RecertifictionLeterViewController.xib in Resources */,
 				4E2EE827293DF856005F9DDD /* BodyInformationTableViewCell.xib in Resources */,
 				4E71FBC2292FAAAE00B75F9B /* BodyInformationViewController.xib in Resources */,
+				4E1DB0BC298CC38000CA1C8C /* SettingAlertTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -815,23 +992,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E48CAB62958771E00CC9855 /* ConnectPopoverViewController.swift in Sources */,
 				4E2E94E02913B7F900E2533F /* String+Extensions.swift in Sources */,
+				4E8669AF298BA29E00A38D1A /* SwitchTableViewCell.swift in Sources */,
 				4E7CD5532937925900F913F4 /* PairBlueToothViewController.swift in Sources */,
+				4EB468992986B03800820F92 /* AccountSectionTableViewCell.swift in Sources */,
 				4E2EE829293F7E01005F9DDD /* AppDefine.swift in Sources */,
 				4E2EE82F29435621005F9DDD /* LocalDatabase.swift in Sources */,
+				4E1DB0BB298CC38000CA1C8C /* SettingAlertTableViewCell.swift in Sources */,
 				4E2EE826293DF856005F9DDD /* BodyInformationTableViewCell.swift in Sources */,
+				4EB1D70D295EF70D00ABA352 /* CommandBase.swift in Sources */,
 				4E2EE82C29406650005F9DDD /* BodyInformationArrowTableViewCell.swift in Sources */,
+				4EB1D7002958B82900ABA352 /* BloodSugarConfirmViewController.swift in Sources */,
 				4E88DB4E290283C9005DCFC9 /* AlphaBackgroundView.swift in Sources */,
 				4EA71BD72939F282000A1A4C /* ScanningSensorViewController.swift in Sources */,
+				4EB1D70A295EDC9F00ABA352 /* TransmitterTimeAndSensorBatteryPopover.swift in Sources */,
 				4E112552293A341E00D3BD55 /* PersionalInformationViewController.swift in Sources */,
 				4E9BA6BC29090E1700EA71A5 /* TextField+Extensions.swift in Sources */,
 				4E2160F72939D5A80021553C /* ConnectViewController.swift in Sources */,
 				4E7CD54E2935F7A100F913F4 /* UnderstandMoreViewController.swift in Sources */,
+				4EA0FA2A297522AF00D135B5 /* BatteryIcon.swift in Sources */,
+				4E8669AB298B8EB200A38D1A /* TextTableViewCell.swift in Sources */,
+				4EFF5F942990117600BF00D5 /* CalibrationModeTableViewCell.swift in Sources */,
 				4EFBDA6D292666AA00202B2A /* RecertifictionLeterViewController.swift in Sources */,
 				4E71FBC1292FAAAE00B75F9B /* BodyInformationViewController.swift in Sources */,
 				4E71FBCB2930EF4A00B75F9B /* BloodSugarIndexViewController.swift in Sources */,
+				4EFF5F98299015BA00BF00D5 /* CalibrationModeDataTable.swift in Sources */,
+				4EB1D705295C767600ABA352 /* BarButtonItem+Extensions.swift in Sources */,
 				4E086027294862EB00170A60 /* UserInformationTable.swift in Sources */,
 				4E79C97A28F40FCF00F3017B /* AppDelegate.swift in Sources */,
+				4EFF5F902990054700BF00D5 /* SettingCalibrationModeViewController.swift in Sources */,
+				4EB1D707295ED91F00ABA352 /* NSNotification+Extensions.swift in Sources */,
 				4E79782B293258F2009AE72E /* TransmitterContentViewController.swift in Sources */,
 				4E11253E293A324C00D3BD55 /* HistoryViewController.swift in Sources */,
 				4E79C97C28F40FCF00F3017B /* SceneDelegate.swift in Sources */,
@@ -839,14 +1030,22 @@
 				4E8303C32907D8EF005DBEA5 /* Color+Extensions.swift in Sources */,
 				4E08602E294899E700170A60 /* ImageButtonView.swift in Sources */,
 				4E854D7F290270DB0097D79E /* LoginViewController.swift in Sources */,
-				4E08602B2948966800170A60 /* EventData.swift in Sources */,
+				4E08602B2948966800170A60 /* EventDataTable.swift in Sources */,
 				4E112546293A33C800D3BD55 /* BloodSugarCorrectionViewController.swift in Sources */,
 				4E2E94E32913BDE200E2533F /* Alert.swift in Sources */,
 				4E0860372949A40700170A60 /* MainViewController.swift in Sources */,
 				4E11254E293A33FF00D3BD55 /* LifeStyleViewController.swift in Sources */,
 				4E0860332948AA2400170A60 /* CustomTabBarView.swift in Sources */,
+				4EA0FA2E297525BD00D135B5 /* UIViewToUIImage.swift in Sources */,
 				4EFBDA642923AE8300202B2A /* ContrastPopoverViewController.swift in Sources */,
+				4E8669B7298BD5E500A38D1A /* ReloadTableViewCell.swift in Sources */,
+				4EB1D6FC2958B57900ABA352 /* BloodSugarUnderstandMoreViewController.swift in Sources */,
+				4E8669A7298B7C7300A38D1A /* SettingViewController.swift in Sources */,
+				4EA0FA3129768FCF00D135B5 /* PersionalInformationTableViewCell.swift in Sources */,
 				4E71FBC6292FAFDB00B75F9B /* AudiovisualTeachingViewController.swift in Sources */,
+				4EA0FA3529768FEB00D135B5 /* LogOutTableViewCell.swift in Sources */,
+				4E1DB0B7298CBF4200CA1C8C /* SettingAlertViewController.swift in Sources */,
+				4E8669B3298BB01500A38D1A /* RightArrowTableViewCell.swift in Sources */,
 				4EFBDA74292BA17100202B2A /* ForgotPassword.swift in Sources */,
 				4E08602929488F8A00170A60 /* RecordsTable.swift in Sources */,
 				4E7F94DC292CD6F000F28F69 /* ResetPasswordViewController.swift in Sources */,
@@ -854,6 +1053,7 @@
 				4E11254A293A33EA00D3BD55 /* InstanceBloodSugarViewController.swift in Sources */,
 				4E8303C12907D559005DBEA5 /* BaseViewController.swift in Sources */,
 				4E08602529484F5600170A60 /* ActivityIndicatorView.swift in Sources */,
+				4E48CAAF295491C500CC9855 /* ChartXAxisFormatter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

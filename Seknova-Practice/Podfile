@@ -9,6 +9,7 @@ target 'Seknova-Practice' do
   pod 'RealmSwift', '10.30.0'
   pod 'Charts' , '4.1.0'
   pod 'IQKeyboardManagerSwift', '6.5.10'
+  pod 'BatteryView', '1.3.9'
   
   
   target 'Seknova-PracticeTests' do
