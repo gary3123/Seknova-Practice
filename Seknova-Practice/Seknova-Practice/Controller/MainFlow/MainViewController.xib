@@ -40,6 +40,9 @@
                                     <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="報表"/>
+                                    <connections>
+                                        <action selector="clickReportForm" destination="-2" eventType="touchUpInside" id="Pbt-zN-Pcz"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jya-PF-9Tb">
                                     <rect key="frame" x="0.0" y="59" width="145" height="58.666666666666657"/>
@@ -53,7 +56,7 @@
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="設定"/>
                                     <connections>
-                                        <action selector="pressSettingButton" destination="-2" eventType="touchUpInside" id="Ecr-qZ-1Ne"/>
+                                        <action selector="clickSettingButton" destination="-2" eventType="touchUpInside" id="Ecr-qZ-1Ne"/>
                                     </connections>
                                 </button>
                             </subviews>

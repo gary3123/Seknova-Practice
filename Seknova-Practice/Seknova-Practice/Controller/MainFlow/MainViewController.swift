@@ -131,15 +131,16 @@ class MainViewController: BaseViewController {
     
     //設定裝置電量以及感測器電量的 barButtonItem
     func setBatteryButtonItem() {
-        let deviceButtonItem = UIButton(type: .custom)
-        let batteryIconView = BatteryIcon()
-        let batteryIconImage = UIImage.imageWithView(view: BatteryIcon())
-        deviceButtonItem.setImage(batteryIconImage, for: .normal)
-        deviceButtonItem.setTitle("Logs", for: .normal)
-        deviceButtonItem.addTarget(self, action: #selector(callTimeAndBattery), for: .touchUpInside)
+        let deviceButtonItem = UIView()
+        DispatchQueue.main.async {
+            CommandBase.sharedInstance.drawCircle(in: deviceButtonItem)
+        }
+        let tap = UITapGestureRecognizer(target: self, action: #selector(callTimeAndBattery))
+        tap.numberOfTapsRequired = 1
+        deviceButtonItem.addGestureRecognizer(tap)
         deviceButtonView = UIBarButtonItem(customView: deviceButtonItem)
         // 設定寬
-        let deviceButtonViewWidth = deviceButtonView.customView?.widthAnchor.constraint(equalToConstant: 50)
+        let deviceButtonViewWidth = deviceButtonView.customView?.widthAnchor.constraint(equalToConstant: 55)
         deviceButtonViewWidth?.isActive = true
         // 設定高
         let deviceButtonViewHeight = deviceButtonView.customView?.heightAnchor.constraint(equalToConstant: 24)
@@ -176,7 +177,7 @@ class MainViewController: BaseViewController {
         pop.modalPresentationStyle = .popover
         pop.popoverPresentationController?.delegate = self
         pop.popoverPresentationController?.sourceView = deviceButtonView.customView!
-        pop.popoverPresentationController?.sourceRect = CGRect(x: deviceButtonView.width + 15,
+        pop.popoverPresentationController?.sourceRect = CGRect(x: deviceButtonView.width + 40,
                                                                y: 30,
                                                                width: 0,
                                                                height: 0)
@@ -186,7 +187,14 @@ class MainViewController: BaseViewController {
     
     // MARK: - IBAction
     
-    @IBAction func pressSettingButton() {
+    
+    @IBAction func clickReportForm() {
+        let nextVC = ReportFormViewController()
+        navigationItem.backButtonTitle = "返回"
+        navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+    @IBAction func clickSettingButton() {
         
         let nextVC = SettingViewController()
         navigationItem.backButtonTitle = "返回"

@@ -12,4 +12,6 @@ extension UIColor {
     static var navigationBar = UIColor(named: "NavigationBar")
     
     static var facebook = UIColor(named: "Facebook")
+    
+    static var eventTitle = UIColor(named: "EventTitle")
 }

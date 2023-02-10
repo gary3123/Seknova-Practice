@@ -405,11 +405,11 @@ extension PersionalInformationViewController: UITableViewDelegate, UITableViewDa
             }
         } else if indexPath.section == 2 {
             if indexPath.row == 2 {
-                var nextVC = ResetPasswordViewController()
+                let nextVC = ResetPasswordViewController()
                 navigationController?.pushViewController(nextVC, animated: true)
             }
         } else {
-            var nextVC = LoginViewController()
+            let nextVC = LoginViewController()
             nextVC.lastPage = .persionalInformationVC
             navigationController?.pushViewController(nextVC, animated: true)
         }

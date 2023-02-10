@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="RateAlertsTableViewCell" customModule="Seknova_Practice" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iO3-V8-bt2">
+                        <rect key="frame" x="16" y="11.666666666666664" width="192" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KDz-20-aFM">
+                        <rect key="frame" x="257" y="6.6666666666666679" width="49" height="31.000000000000004"/>
+                    </switch>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="KDz-20-aFM" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.704545" id="0Nt-Ef-Ub7"/>
+                    <constraint firstItem="iO3-V8-bt2" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.6" id="6sB-nb-kpj"/>
+                    <constraint firstItem="iO3-V8-bt2" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.477273" id="XlS-xb-ITD"/>
+                    <constraint firstItem="iO3-V8-bt2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="fPM-lO-yFK"/>
+                    <constraint firstAttribute="trailing" secondItem="KDz-20-aFM" secondAttribute="trailing" constant="16" id="nTa-fW-PVd"/>
+                    <constraint firstItem="KDz-20-aFM" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.146875" id="pPM-jG-2WT"/>
+                    <constraint firstItem="iO3-V8-bt2" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="tdY-Oc-90l"/>
+                    <constraint firstItem="KDz-20-aFM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="wev-KR-ynr"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="optionsLabel" destination="iO3-V8-bt2" id="oJV-f7-1pb"/>
+                <outlet property="switchButton" destination="KDz-20-aFM" id="fJw-7S-IVH"/>
+            </connections>
+            <point key="canvasLocation" x="87" y="20"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -55,7 +55,7 @@ class SettingCalibrationModeViewController: UIViewController {
     
     func setNavigation() {
         self.title = "設定校正模式"
-        let upDataBarButtonItem = UIBarButtonItem(title: "更新", style: .plain, target: self, action: #selector(clickUpDataBarButtonItem))
+        let upDataBarButtonItem = UIBarButtonItem(title: "儲存", style: .plain, target: self, action: #selector(clickUpDataBarButtonItem))
         navigationItem.setRightBarButton(upDataBarButtonItem, animated: true)
     }
     

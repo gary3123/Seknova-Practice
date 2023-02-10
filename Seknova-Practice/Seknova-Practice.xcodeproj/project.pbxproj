@@ -42,9 +42,29 @@
 		4E2EE82C29406650005F9DDD /* BodyInformationArrowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2EE82A29406650005F9DDD /* BodyInformationArrowTableViewCell.swift */; };
 		4E2EE82D29406650005F9DDD /* BodyInformationArrowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E2EE82B29406650005F9DDD /* BodyInformationArrowTableViewCell.xib */; };
 		4E2EE82F29435621005F9DDD /* LocalDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2EE82E29435621005F9DDD /* LocalDatabase.swift */; };
+		4E37FCB72992229600405DCB /* HighSugarAlertsLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E37FCB52992229600405DCB /* HighSugarAlertsLabelTableViewCell.swift */; };
+		4E37FCB82992229600405DCB /* HighSugarAlertsLabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E37FCB62992229600405DCB /* HighSugarAlertsLabelTableViewCell.xib */; };
+		4E37FCBC2992448D00405DCB /* LowSugarAlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E37FCBA2992448D00405DCB /* LowSugarAlertsViewController.swift */; };
+		4E37FCBD2992448D00405DCB /* LowSugarAlertsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E37FCBB2992448D00405DCB /* LowSugarAlertsViewController.xib */; };
+		4E37FCC0299244FF00405DCB /* LowSugarAlertsSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E37FCBE299244FF00405DCB /* LowSugarAlertsSwitchTableViewCell.swift */; };
+		4E37FCC1299244FF00405DCB /* LowSugarAlertsSwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E37FCBF299244FF00405DCB /* LowSugarAlertsSwitchTableViewCell.xib */; };
+		4E37FCC42992454E00405DCB /* LowSugarAlertsLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E37FCC22992454E00405DCB /* LowSugarAlertsLabelTableViewCell.swift */; };
+		4E37FCC52992454E00405DCB /* LowSugarAlertsLabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E37FCC32992454E00405DCB /* LowSugarAlertsLabelTableViewCell.xib */; };
+		4E37FCC8299245E400405DCB /* LowSugarAlertsPickerViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E37FCC6299245E400405DCB /* LowSugarAlertsPickerViewTableViewCell.swift */; };
+		4E37FCC9299245E400405DCB /* LowSugarAlertsPickerViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E37FCC7299245E400405DCB /* LowSugarAlertsPickerViewTableViewCell.xib */; };
+		4E37FCCD29934A3800405DCB /* RateAlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E37FCCB29934A3800405DCB /* RateAlertsViewController.swift */; };
+		4E37FCCE29934A3800405DCB /* RateAlertsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E37FCCC29934A3800405DCB /* RateAlertsViewController.xib */; };
+		4E37FCD129934A8B00405DCB /* RateAlertsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E37FCCF29934A8B00405DCB /* RateAlertsTableViewCell.swift */; };
+		4E37FCD229934A8B00405DCB /* RateAlertsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E37FCD029934A8B00405DCB /* RateAlertsTableViewCell.xib */; };
 		4E48CAAF295491C500CC9855 /* ChartXAxisFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E48CAAE295491C500CC9855 /* ChartXAxisFormatter.swift */; };
 		4E48CAB62958771E00CC9855 /* ConnectPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E48CAB42958771E00CC9855 /* ConnectPopoverViewController.swift */; };
 		4E48CAB72958771E00CC9855 /* ConnectPopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E48CAB52958771E00CC9855 /* ConnectPopoverViewController.xib */; };
+		4E567A0D29960106001D6262 /* LifeStyleTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E567A0B29960106001D6262 /* LifeStyleTextFieldTableViewCell.swift */; };
+		4E567A0E29960106001D6262 /* LifeStyleTextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E567A0C29960106001D6262 /* LifeStyleTextFieldTableViewCell.xib */; };
+		4E567A1129960220001D6262 /* LifeStyleLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E567A0F29960220001D6262 /* LifeStyleLabelTableViewCell.swift */; };
+		4E567A1229960220001D6262 /* LifeStyleLabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E567A1029960220001D6262 /* LifeStyleLabelTableViewCell.xib */; };
+		4E567A15299602F5001D6262 /* LifeStyleNoteTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E567A13299602F5001D6262 /* LifeStyleNoteTextFieldTableViewCell.swift */; };
+		4E567A16299602F5001D6262 /* LifeStyleNoteTextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E567A14299602F5001D6262 /* LifeStyleNoteTextFieldTableViewCell.xib */; };
 		4E71FBC1292FAAAE00B75F9B /* BodyInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E71FBBF292FAAAE00B75F9B /* BodyInformationViewController.swift */; };
 		4E71FBC2292FAAAE00B75F9B /* BodyInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E71FBC0292FAAAE00B75F9B /* BodyInformationViewController.xib */; };
 		4E71FBC6292FAFDB00B75F9B /* AudiovisualTeachingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E71FBC4292FAFDB00B75F9B /* AudiovisualTeachingViewController.swift */; };
@@ -83,6 +103,18 @@
 		4E8669B7298BD5E500A38D1A /* ReloadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8669B5298BD5E500A38D1A /* ReloadTableViewCell.swift */; };
 		4E8669B8298BD5E500A38D1A /* ReloadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E8669B6298BD5E500A38D1A /* ReloadTableViewCell.xib */; };
 		4E88DB4E290283C9005DCFC9 /* AlphaBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E88DB4D290283C9005DCFC9 /* AlphaBackgroundView.swift */; };
+		4E8A4E2C29936E480078BBCC /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A4E2A29936E480078BBCC /* AudioViewController.swift */; };
+		4E8A4E2D29936E480078BBCC /* AudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E8A4E2B29936E480078BBCC /* AudioViewController.xib */; };
+		4E8A4E302993767A0078BBCC /* AudioSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A4E2E2993767A0078BBCC /* AudioSwitchTableViewCell.swift */; };
+		4E8A4E312993767A0078BBCC /* AudioSwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E8A4E2F2993767A0078BBCC /* AudioSwitchTableViewCell.xib */; };
+		4E8A4E34299376DD0078BBCC /* AudioLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A4E32299376DD0078BBCC /* AudioLabelTableViewCell.swift */; };
+		4E8A4E35299376DD0078BBCC /* AudioLabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E8A4E33299376DD0078BBCC /* AudioLabelTableViewCell.xib */; };
+		4E8A4E38299377370078BBCC /* AudioPickerViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A4E36299377370078BBCC /* AudioPickerViewTableViewCell.swift */; };
+		4E8A4E39299377370078BBCC /* AudioPickerViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E8A4E37299377370078BBCC /* AudioPickerViewTableViewCell.xib */; };
+		4E8A4E3D2994911B0078BBCC /* ReportFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A4E3B2994911B0078BBCC /* ReportFormViewController.swift */; };
+		4E8A4E3E2994911B0078BBCC /* ReportFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E8A4E3C2994911B0078BBCC /* ReportFormViewController.xib */; };
+		4E8A4E412994A9D20078BBCC /* EventTitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A4E3F2994A9D10078BBCC /* EventTitleCollectionViewCell.swift */; };
+		4E8A4E422994A9D20078BBCC /* EventTitleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E8A4E402994A9D10078BBCC /* EventTitleCollectionViewCell.xib */; };
 		4E9BA6BC29090E1700EA71A5 /* TextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9BA6BB29090E1700EA71A5 /* TextField+Extensions.swift */; };
 		4EA0FA2A297522AF00D135B5 /* BatteryIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0FA29297522AF00D135B5 /* BatteryIcon.swift */; };
 		4EA0FA2C2975231300D135B5 /* BatteryIcon.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA0FA2B2975231300D135B5 /* BatteryIcon.xib */; };
@@ -91,6 +123,8 @@
 		4EA0FA3229768FCF00D135B5 /* PersionalInformationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA0FA3029768FCF00D135B5 /* PersionalInformationTableViewCell.xib */; };
 		4EA0FA3529768FEB00D135B5 /* LogOutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA0FA3329768FEB00D135B5 /* LogOutTableViewCell.swift */; };
 		4EA0FA3629768FEB00D135B5 /* LogOutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA0FA3429768FEB00D135B5 /* LogOutTableViewCell.xib */; };
+		4EA5A6042994E49B005D57D1 /* EventSubtitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA5A6022994E49B005D57D1 /* EventSubtitleCollectionViewCell.swift */; };
+		4EA5A6052994E49B005D57D1 /* EventSubtitleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA5A6032994E49B005D57D1 /* EventSubtitleCollectionViewCell.xib */; };
 		4EA71BD72939F282000A1A4C /* ScanningSensorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA71BD52939F282000A1A4C /* ScanningSensorViewController.swift */; };
 		4EA71BD82939F282000A1A4C /* ScanningSensorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EA71BD62939F282000A1A4C /* ScanningSensorViewController.xib */; };
 		4EB1D6FC2958B57900ABA352 /* BloodSugarUnderstandMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB1D6FA2958B57900ABA352 /* BloodSugarUnderstandMoreViewController.swift */; };
@@ -116,6 +150,12 @@
 		4EFF5F942990117600BF00D5 /* CalibrationModeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF5F922990117600BF00D5 /* CalibrationModeTableViewCell.swift */; };
 		4EFF5F952990117600BF00D5 /* CalibrationModeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EFF5F932990117600BF00D5 /* CalibrationModeTableViewCell.xib */; };
 		4EFF5F98299015BA00BF00D5 /* CalibrationModeDataTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF5F97299015BA00BF00D5 /* CalibrationModeDataTable.swift */; };
+		4EFF5F9C2992125300BF00D5 /* HighSugarAlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF5F9A2992125300BF00D5 /* HighSugarAlertsViewController.swift */; };
+		4EFF5F9D2992125300BF00D5 /* HighSugarAlertsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EFF5F9B2992125300BF00D5 /* HighSugarAlertsViewController.xib */; };
+		4EFF5FA02992152B00BF00D5 /* HighSugarAlertsSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF5F9E2992152B00BF00D5 /* HighSugarAlertsSwitchTableViewCell.swift */; };
+		4EFF5FA12992152B00BF00D5 /* HighSugarAlertsSwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EFF5F9F2992152B00BF00D5 /* HighSugarAlertsSwitchTableViewCell.xib */; };
+		4EFF5FA429921DED00BF00D5 /* HighSugarAlertsPickerViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF5FA229921DED00BF00D5 /* HighSugarAlertsPickerViewTableViewCell.swift */; };
+		4EFF5FA529921DED00BF00D5 /* HighSugarAlertsPickerViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EFF5FA329921DED00BF00D5 /* HighSugarAlertsPickerViewTableViewCell.xib */; };
 		9F0797D51F2F439D88BA34B4 /* Pods_Seknova_Practice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24BD3366D14F68E6807C079D /* Pods_Seknova_Practice.framework */; };
 		AB7E72BFEFD88A0C57D46B13 /* Pods_Seknova_PracticeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35593199C3A17A67170D258B /* Pods_Seknova_PracticeTests.framework */; };
 /* End PBXBuildFile section */
@@ -175,9 +215,29 @@
 		4E2EE82A29406650005F9DDD /* BodyInformationArrowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyInformationArrowTableViewCell.swift; sourceTree = "<group>"; };
 		4E2EE82B29406650005F9DDD /* BodyInformationArrowTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BodyInformationArrowTableViewCell.xib; sourceTree = "<group>"; };
 		4E2EE82E29435621005F9DDD /* LocalDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDatabase.swift; sourceTree = "<group>"; };
+		4E37FCB52992229600405DCB /* HighSugarAlertsLabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighSugarAlertsLabelTableViewCell.swift; sourceTree = "<group>"; };
+		4E37FCB62992229600405DCB /* HighSugarAlertsLabelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HighSugarAlertsLabelTableViewCell.xib; sourceTree = "<group>"; };
+		4E37FCBA2992448D00405DCB /* LowSugarAlertsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowSugarAlertsViewController.swift; sourceTree = "<group>"; };
+		4E37FCBB2992448D00405DCB /* LowSugarAlertsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LowSugarAlertsViewController.xib; sourceTree = "<group>"; };
+		4E37FCBE299244FF00405DCB /* LowSugarAlertsSwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowSugarAlertsSwitchTableViewCell.swift; sourceTree = "<group>"; };
+		4E37FCBF299244FF00405DCB /* LowSugarAlertsSwitchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LowSugarAlertsSwitchTableViewCell.xib; sourceTree = "<group>"; };
+		4E37FCC22992454E00405DCB /* LowSugarAlertsLabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowSugarAlertsLabelTableViewCell.swift; sourceTree = "<group>"; };
+		4E37FCC32992454E00405DCB /* LowSugarAlertsLabelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LowSugarAlertsLabelTableViewCell.xib; sourceTree = "<group>"; };
+		4E37FCC6299245E400405DCB /* LowSugarAlertsPickerViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowSugarAlertsPickerViewTableViewCell.swift; sourceTree = "<group>"; };
+		4E37FCC7299245E400405DCB /* LowSugarAlertsPickerViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LowSugarAlertsPickerViewTableViewCell.xib; sourceTree = "<group>"; };
+		4E37FCCB29934A3800405DCB /* RateAlertsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateAlertsViewController.swift; sourceTree = "<group>"; };
+		4E37FCCC29934A3800405DCB /* RateAlertsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateAlertsViewController.xib; sourceTree = "<group>"; };
+		4E37FCCF29934A8B00405DCB /* RateAlertsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateAlertsTableViewCell.swift; sourceTree = "<group>"; };
+		4E37FCD029934A8B00405DCB /* RateAlertsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateAlertsTableViewCell.xib; sourceTree = "<group>"; };
 		4E48CAAE295491C500CC9855 /* ChartXAxisFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartXAxisFormatter.swift; sourceTree = "<group>"; };
 		4E48CAB42958771E00CC9855 /* ConnectPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectPopoverViewController.swift; sourceTree = "<group>"; };
 		4E48CAB52958771E00CC9855 /* ConnectPopoverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConnectPopoverViewController.xib; sourceTree = "<group>"; };
+		4E567A0B29960106001D6262 /* LifeStyleTextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeStyleTextFieldTableViewCell.swift; sourceTree = "<group>"; };
+		4E567A0C29960106001D6262 /* LifeStyleTextFieldTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LifeStyleTextFieldTableViewCell.xib; sourceTree = "<group>"; };
+		4E567A0F29960220001D6262 /* LifeStyleLabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeStyleLabelTableViewCell.swift; sourceTree = "<group>"; };
+		4E567A1029960220001D6262 /* LifeStyleLabelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LifeStyleLabelTableViewCell.xib; sourceTree = "<group>"; };
+		4E567A13299602F5001D6262 /* LifeStyleNoteTextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeStyleNoteTextFieldTableViewCell.swift; sourceTree = "<group>"; };
+		4E567A14299602F5001D6262 /* LifeStyleNoteTextFieldTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LifeStyleNoteTextFieldTableViewCell.xib; sourceTree = "<group>"; };
 		4E71FBBF292FAAAE00B75F9B /* BodyInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyInformationViewController.swift; sourceTree = "<group>"; };
 		4E71FBC0292FAAAE00B75F9B /* BodyInformationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BodyInformationViewController.xib; sourceTree = "<group>"; };
 		4E71FBC4292FAFDB00B75F9B /* AudiovisualTeachingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudiovisualTeachingViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +280,18 @@
 		4E8669B5298BD5E500A38D1A /* ReloadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadTableViewCell.swift; sourceTree = "<group>"; };
 		4E8669B6298BD5E500A38D1A /* ReloadTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReloadTableViewCell.xib; sourceTree = "<group>"; };
 		4E88DB4D290283C9005DCFC9 /* AlphaBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaBackgroundView.swift; sourceTree = "<group>"; };
+		4E8A4E2A29936E480078BBCC /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
+		4E8A4E2B29936E480078BBCC /* AudioViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioViewController.xib; sourceTree = "<group>"; };
+		4E8A4E2E2993767A0078BBCC /* AudioSwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSwitchTableViewCell.swift; sourceTree = "<group>"; };
+		4E8A4E2F2993767A0078BBCC /* AudioSwitchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioSwitchTableViewCell.xib; sourceTree = "<group>"; };
+		4E8A4E32299376DD0078BBCC /* AudioLabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioLabelTableViewCell.swift; sourceTree = "<group>"; };
+		4E8A4E33299376DD0078BBCC /* AudioLabelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioLabelTableViewCell.xib; sourceTree = "<group>"; };
+		4E8A4E36299377370078BBCC /* AudioPickerViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPickerViewTableViewCell.swift; sourceTree = "<group>"; };
+		4E8A4E37299377370078BBCC /* AudioPickerViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioPickerViewTableViewCell.xib; sourceTree = "<group>"; };
+		4E8A4E3B2994911B0078BBCC /* ReportFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportFormViewController.swift; sourceTree = "<group>"; };
+		4E8A4E3C2994911B0078BBCC /* ReportFormViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportFormViewController.xib; sourceTree = "<group>"; };
+		4E8A4E3F2994A9D10078BBCC /* EventTitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTitleCollectionViewCell.swift; sourceTree = "<group>"; };
+		4E8A4E402994A9D10078BBCC /* EventTitleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventTitleCollectionViewCell.xib; sourceTree = "<group>"; };
 		4E9BA6BB29090E1700EA71A5 /* TextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extensions.swift"; sourceTree = "<group>"; };
 		4EA0FA29297522AF00D135B5 /* BatteryIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryIcon.swift; sourceTree = "<group>"; };
 		4EA0FA2B2975231300D135B5 /* BatteryIcon.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BatteryIcon.xib; sourceTree = "<group>"; };
@@ -228,6 +300,8 @@
 		4EA0FA3029768FCF00D135B5 /* PersionalInformationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersionalInformationTableViewCell.xib; sourceTree = "<group>"; };
 		4EA0FA3329768FEB00D135B5 /* LogOutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutTableViewCell.swift; sourceTree = "<group>"; };
 		4EA0FA3429768FEB00D135B5 /* LogOutTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogOutTableViewCell.xib; sourceTree = "<group>"; };
+		4EA5A6022994E49B005D57D1 /* EventSubtitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSubtitleCollectionViewCell.swift; sourceTree = "<group>"; };
+		4EA5A6032994E49B005D57D1 /* EventSubtitleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventSubtitleCollectionViewCell.xib; sourceTree = "<group>"; };
 		4EA71BD52939F282000A1A4C /* ScanningSensorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanningSensorViewController.swift; sourceTree = "<group>"; };
 		4EA71BD62939F282000A1A4C /* ScanningSensorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanningSensorViewController.xib; sourceTree = "<group>"; };
 		4EB1D6FA2958B57900ABA352 /* BloodSugarUnderstandMoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodSugarUnderstandMoreViewController.swift; sourceTree = "<group>"; };
@@ -253,6 +327,12 @@
 		4EFF5F922990117600BF00D5 /* CalibrationModeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationModeTableViewCell.swift; sourceTree = "<group>"; };
 		4EFF5F932990117600BF00D5 /* CalibrationModeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalibrationModeTableViewCell.xib; sourceTree = "<group>"; };
 		4EFF5F97299015BA00BF00D5 /* CalibrationModeDataTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationModeDataTable.swift; sourceTree = "<group>"; };
+		4EFF5F9A2992125300BF00D5 /* HighSugarAlertsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighSugarAlertsViewController.swift; sourceTree = "<group>"; };
+		4EFF5F9B2992125300BF00D5 /* HighSugarAlertsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HighSugarAlertsViewController.xib; sourceTree = "<group>"; };
+		4EFF5F9E2992152B00BF00D5 /* HighSugarAlertsSwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighSugarAlertsSwitchTableViewCell.swift; sourceTree = "<group>"; };
+		4EFF5F9F2992152B00BF00D5 /* HighSugarAlertsSwitchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HighSugarAlertsSwitchTableViewCell.xib; sourceTree = "<group>"; };
+		4EFF5FA229921DED00BF00D5 /* HighSugarAlertsPickerViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighSugarAlertsPickerViewTableViewCell.swift; sourceTree = "<group>"; };
+		4EFF5FA329921DED00BF00D5 /* HighSugarAlertsPickerViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HighSugarAlertsPickerViewTableViewCell.xib; sourceTree = "<group>"; };
 		5E53C86D42EB499112CB44D2 /* Pods_Seknova_Practice_Seknova_PracticeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Seknova_Practice_Seknova_PracticeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66AB2B0F508E9F55A2DC51EB /* Pods-Seknova-PracticeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-PracticeTests.debug.xcconfig"; path = "Target Support Files/Pods-Seknova-PracticeTests/Pods-Seknova-PracticeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		73B98C0961C0E0B99FCF814F /* Pods-Seknova-Practice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-Practice.debug.xcconfig"; path = "Target Support Files/Pods-Seknova-Practice/Pods-Seknova-Practice.debug.xcconfig"; sourceTree = "<group>"; };
@@ -316,6 +396,7 @@
 		4E11253A293A31D900D3BD55 /* MainFlow */ = {
 			isa = PBXGroup;
 			children = (
+				4E8A4E3A299490F20078BBCC /* ReportForm */,
 				4E8669A4298B7C4200A38D1A /* Setting */,
 				4E0860352949A40700170A60 /* MainViewController.swift */,
 				4E0860362949A40700170A60 /* MainViewController.xib */,
@@ -368,6 +449,16 @@
 			children = (
 				4E11254C293A33FF00D3BD55 /* LifeStyleViewController.swift */,
 				4E11254D293A33FF00D3BD55 /* LifeStyleViewController.xib */,
+				4E8A4E3F2994A9D10078BBCC /* EventTitleCollectionViewCell.swift */,
+				4E8A4E402994A9D10078BBCC /* EventTitleCollectionViewCell.xib */,
+				4EA5A6022994E49B005D57D1 /* EventSubtitleCollectionViewCell.swift */,
+				4EA5A6032994E49B005D57D1 /* EventSubtitleCollectionViewCell.xib */,
+				4E567A0B29960106001D6262 /* LifeStyleTextFieldTableViewCell.swift */,
+				4E567A0C29960106001D6262 /* LifeStyleTextFieldTableViewCell.xib */,
+				4E567A0F29960220001D6262 /* LifeStyleLabelTableViewCell.swift */,
+				4E567A1029960220001D6262 /* LifeStyleLabelTableViewCell.xib */,
+				4E567A13299602F5001D6262 /* LifeStyleNoteTextFieldTableViewCell.swift */,
+				4E567A14299602F5001D6262 /* LifeStyleNoteTextFieldTableViewCell.xib */,
 			);
 			path = LifeStyle;
 			sourceTree = "<group>";
@@ -417,6 +508,10 @@
 		4E1DB0B4298CBEF300CA1C8C /* SettingAlert */ = {
 			isa = PBXGroup;
 			children = (
+				4E8A4E2929936E080078BBCC /* Audio */,
+				4E37FCCA29933BA600405DCB /* RateAlerts */,
+				4E37FCB92992445400405DCB /* LowSugarAlerts */,
+				4EFF5F99299211CD00BF00D5 /* HighSugarAlerts */,
 				4E1DB0B5298CBF4200CA1C8C /* SettingAlertViewController.swift */,
 				4E1DB0B6298CBF4200CA1C8C /* SettingAlertViewController.xib */,
 				4E1DB0B9298CC38000CA1C8C /* SettingAlertTableViewCell.swift */,
@@ -432,6 +527,32 @@
 				4E2160F62939D5A80021553C /* ConnectViewController.xib */,
 			);
 			path = ConnectViewController;
+			sourceTree = "<group>";
+		};
+		4E37FCB92992445400405DCB /* LowSugarAlerts */ = {
+			isa = PBXGroup;
+			children = (
+				4E37FCBA2992448D00405DCB /* LowSugarAlertsViewController.swift */,
+				4E37FCBB2992448D00405DCB /* LowSugarAlertsViewController.xib */,
+				4E37FCBE299244FF00405DCB /* LowSugarAlertsSwitchTableViewCell.swift */,
+				4E37FCBF299244FF00405DCB /* LowSugarAlertsSwitchTableViewCell.xib */,
+				4E37FCC22992454E00405DCB /* LowSugarAlertsLabelTableViewCell.swift */,
+				4E37FCC32992454E00405DCB /* LowSugarAlertsLabelTableViewCell.xib */,
+				4E37FCC6299245E400405DCB /* LowSugarAlertsPickerViewTableViewCell.swift */,
+				4E37FCC7299245E400405DCB /* LowSugarAlertsPickerViewTableViewCell.xib */,
+			);
+			path = LowSugarAlerts;
+			sourceTree = "<group>";
+		};
+		4E37FCCA29933BA600405DCB /* RateAlerts */ = {
+			isa = PBXGroup;
+			children = (
+				4E37FCCB29934A3800405DCB /* RateAlertsViewController.swift */,
+				4E37FCCC29934A3800405DCB /* RateAlertsViewController.xib */,
+				4E37FCCF29934A8B00405DCB /* RateAlertsTableViewCell.swift */,
+				4E37FCD029934A8B00405DCB /* RateAlertsTableViewCell.xib */,
+			);
+			path = RateAlerts;
 			sourceTree = "<group>";
 		};
 		4E48CAAC2954911100CC9855 /* Database */ = {
@@ -629,6 +750,30 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		4E8A4E2929936E080078BBCC /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				4E8A4E2A29936E480078BBCC /* AudioViewController.swift */,
+				4E8A4E2B29936E480078BBCC /* AudioViewController.xib */,
+				4E8A4E2E2993767A0078BBCC /* AudioSwitchTableViewCell.swift */,
+				4E8A4E2F2993767A0078BBCC /* AudioSwitchTableViewCell.xib */,
+				4E8A4E32299376DD0078BBCC /* AudioLabelTableViewCell.swift */,
+				4E8A4E33299376DD0078BBCC /* AudioLabelTableViewCell.xib */,
+				4E8A4E36299377370078BBCC /* AudioPickerViewTableViewCell.swift */,
+				4E8A4E37299377370078BBCC /* AudioPickerViewTableViewCell.xib */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		4E8A4E3A299490F20078BBCC /* ReportForm */ = {
+			isa = PBXGroup;
+			children = (
+				4E8A4E3B2994911B0078BBCC /* ReportFormViewController.swift */,
+				4E8A4E3C2994911B0078BBCC /* ReportFormViewController.xib */,
+			);
+			path = ReportForm;
+			sourceTree = "<group>";
+		};
 		4EA71BD42939F266000A1A4C /* ScanningSensor */ = {
 			isa = PBXGroup;
 			children = (
@@ -701,6 +846,21 @@
 				4EFF5F932990117600BF00D5 /* CalibrationModeTableViewCell.xib */,
 			);
 			path = SettingCalibrationMode;
+			sourceTree = "<group>";
+		};
+		4EFF5F99299211CD00BF00D5 /* HighSugarAlerts */ = {
+			isa = PBXGroup;
+			children = (
+				4EFF5F9A2992125300BF00D5 /* HighSugarAlertsViewController.swift */,
+				4EFF5F9B2992125300BF00D5 /* HighSugarAlertsViewController.xib */,
+				4EFF5F9E2992152B00BF00D5 /* HighSugarAlertsSwitchTableViewCell.swift */,
+				4EFF5F9F2992152B00BF00D5 /* HighSugarAlertsSwitchTableViewCell.xib */,
+				4EFF5FA229921DED00BF00D5 /* HighSugarAlertsPickerViewTableViewCell.swift */,
+				4EFF5FA329921DED00BF00D5 /* HighSugarAlertsPickerViewTableViewCell.xib */,
+				4E37FCB52992229600405DCB /* HighSugarAlertsLabelTableViewCell.swift */,
+				4E37FCB62992229600405DCB /* HighSugarAlertsLabelTableViewCell.xib */,
+			);
+			path = HighSugarAlerts;
 			sourceTree = "<group>";
 		};
 		7F5928064439FBD21B1E663B /* Frameworks */ = {
@@ -822,34 +982,52 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E8A4E39299377370078BBCC /* AudioPickerViewTableViewCell.xib in Resources */,
 				4E11253F293A324C00D3BD55 /* HistoryViewController.xib in Resources */,
 				4E0860382949A40700170A60 /* MainViewController.xib in Resources */,
 				4E7CD5542937925900F913F4 /* PairBlueToothViewController.xib in Resources */,
+				4E37FCD229934A8B00405DCB /* RateAlertsTableViewCell.xib in Resources */,
 				4E8669B0298BA29E00A38D1A /* SwitchTableViewCell.xib in Resources */,
 				4E11254B293A33EA00D3BD55 /* InstanceBloodSugarViewController.xib in Resources */,
+				4EFF5FA12992152B00BF00D5 /* HighSugarAlertsSwitchTableViewCell.xib in Resources */,
 				4E79C98628F40FD100F3017B /* LaunchScreen.storyboard in Resources */,
+				4E37FCCE29934A3800405DCB /* RateAlertsViewController.xib in Resources */,
+				4EFF5FA529921DED00BF00D5 /* HighSugarAlertsPickerViewTableViewCell.xib in Resources */,
 				4E71FBC7292FAFDB00B75F9B /* AudiovisualTeachingViewController.xib in Resources */,
+				4E37FCC1299244FF00405DCB /* LowSugarAlertsSwitchTableViewCell.xib in Resources */,
 				4E2160F82939D5A80021553C /* ConnectViewController.xib in Resources */,
 				4EB4689A2986B03800820F92 /* AccountSectionTableViewCell.xib in Resources */,
 				4E0860342948AA2400170A60 /* CustomTabBarView.xib in Resources */,
 				4EFBDA652923AE8300202B2A /* ContrastPopoverViewController.xib in Resources */,
+				4EA5A6052994E49B005D57D1 /* EventSubtitleCollectionViewCell.xib in Resources */,
 				4E79C98328F40FD100F3017B /* Assets.xcassets in Resources */,
 				4EA71BD82939F282000A1A4C /* ScanningSensorViewController.xib in Resources */,
 				4EB1D7012958B82900ABA352 /* BloodSugarConfirmViewController.xib in Resources */,
+				4E37FCB82992229600405DCB /* HighSugarAlertsLabelTableViewCell.xib in Resources */,
+				4EFF5F9D2992125300BF00D5 /* HighSugarAlertsViewController.xib in Resources */,
+				4E37FCC52992454E00405DCB /* LowSugarAlertsLabelTableViewCell.xib in Resources */,
 				4EA0FA3229768FCF00D135B5 /* PersionalInformationTableViewCell.xib in Resources */,
+				4E567A16299602F5001D6262 /* LifeStyleNoteTextFieldTableViewCell.xib in Resources */,
 				4EB1D6FD2958B57900ABA352 /* BloodSugarUnderstandMoreViewController.xib in Resources */,
 				4E854D7B29026E9B0097D79E /* RegisterViewController.xib in Resources */,
 				4E7CD54F2935F7A100F913F4 /* UnderstandMoreViewController.xib in Resources */,
 				4E79782C293258F2009AE72E /* TransmitterContentViewController.xib in Resources */,
+				4E8A4E2D29936E480078BBCC /* AudioViewController.xib in Resources */,
+				4E8A4E422994A9D20078BBCC /* EventTitleCollectionViewCell.xib in Resources */,
 				4E8669B4298BB01500A38D1A /* RightArrowTableViewCell.xib in Resources */,
 				4EFF5F952990117600BF00D5 /* CalibrationModeTableViewCell.xib in Resources */,
 				4E1DB0B8298CBF4200CA1C8C /* SettingAlertViewController.xib in Resources */,
 				4EFBDA75292BA17100202B2A /* ForgotPassword.xib in Resources */,
+				4E8A4E312993767A0078BBCC /* AudioSwitchTableViewCell.xib in Resources */,
+				4E8A4E3E2994911B0078BBCC /* ReportFormViewController.xib in Resources */,
+				4E8A4E35299376DD0078BBCC /* AudioLabelTableViewCell.xib in Resources */,
 				4E7F94DD292CD6F000F28F69 /* ResetPasswordViewController.xib in Resources */,
 				4EA0FA3629768FEB00D135B5 /* LogOutTableViewCell.xib in Resources */,
 				4E8669A8298B7C7300A38D1A /* SettingViewController.xib in Resources */,
+				4E37FCBD2992448D00405DCB /* LowSugarAlertsViewController.xib in Resources */,
 				4E48CAB72958771E00CC9855 /* ConnectPopoverViewController.xib in Resources */,
 				4E08602F294899E700170A60 /* ImageButtonView.xib in Resources */,
+				4E567A1229960220001D6262 /* LifeStyleLabelTableViewCell.xib in Resources */,
 				4E854D80290270DB0097D79E /* LoginViewController.xib in Resources */,
 				4EA0FA2C2975231300D135B5 /* BatteryIcon.xib in Resources */,
 				4EFF5F912990054700BF00D5 /* SettingCalibrationModeViewController.xib in Resources */,
@@ -858,10 +1036,12 @@
 				4E8669B8298BD5E500A38D1A /* ReloadTableViewCell.xib in Resources */,
 				4E112553293A341E00D3BD55 /* PersionalInformationViewController.xib in Resources */,
 				4E2EE82D29406650005F9DDD /* BodyInformationArrowTableViewCell.xib in Resources */,
+				4E37FCC9299245E400405DCB /* LowSugarAlertsPickerViewTableViewCell.xib in Resources */,
 				4EB1D70B295EDC9F00ABA352 /* TransmitterTimeAndSensorBatteryPopover.xib in Resources */,
 				4E11254F293A33FF00D3BD55 /* LifeStyleViewController.xib in Resources */,
 				4E71FBCC2930EF4A00B75F9B /* BloodSugarIndexViewController.xib in Resources */,
 				4EFBDA6E292666AA00202B2A /* RecertifictionLeterViewController.xib in Resources */,
+				4E567A0E29960106001D6262 /* LifeStyleTextFieldTableViewCell.xib in Resources */,
 				4E2EE827293DF856005F9DDD /* BodyInformationTableViewCell.xib in Resources */,
 				4E71FBC2292FAAAE00B75F9B /* BodyInformationViewController.xib in Resources */,
 				4E1DB0BC298CC38000CA1C8C /* SettingAlertTableViewCell.xib in Resources */,
@@ -992,9 +1172,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E8A4E412994A9D20078BBCC /* EventTitleCollectionViewCell.swift in Sources */,
+				4E37FCCD29934A3800405DCB /* RateAlertsViewController.swift in Sources */,
 				4E48CAB62958771E00CC9855 /* ConnectPopoverViewController.swift in Sources */,
 				4E2E94E02913B7F900E2533F /* String+Extensions.swift in Sources */,
 				4E8669AF298BA29E00A38D1A /* SwitchTableViewCell.swift in Sources */,
+				4E8A4E2C29936E480078BBCC /* AudioViewController.swift in Sources */,
 				4E7CD5532937925900F913F4 /* PairBlueToothViewController.swift in Sources */,
 				4EB468992986B03800820F92 /* AccountSectionTableViewCell.swift in Sources */,
 				4E2EE829293F7E01005F9DDD /* AppDefine.swift in Sources */,
@@ -1002,38 +1185,54 @@
 				4E1DB0BB298CC38000CA1C8C /* SettingAlertTableViewCell.swift in Sources */,
 				4E2EE826293DF856005F9DDD /* BodyInformationTableViewCell.swift in Sources */,
 				4EB1D70D295EF70D00ABA352 /* CommandBase.swift in Sources */,
+				4E37FCB72992229600405DCB /* HighSugarAlertsLabelTableViewCell.swift in Sources */,
+				4E37FCC0299244FF00405DCB /* LowSugarAlertsSwitchTableViewCell.swift in Sources */,
 				4E2EE82C29406650005F9DDD /* BodyInformationArrowTableViewCell.swift in Sources */,
 				4EB1D7002958B82900ABA352 /* BloodSugarConfirmViewController.swift in Sources */,
 				4E88DB4E290283C9005DCFC9 /* AlphaBackgroundView.swift in Sources */,
 				4EA71BD72939F282000A1A4C /* ScanningSensorViewController.swift in Sources */,
+				4EFF5FA429921DED00BF00D5 /* HighSugarAlertsPickerViewTableViewCell.swift in Sources */,
 				4EB1D70A295EDC9F00ABA352 /* TransmitterTimeAndSensorBatteryPopover.swift in Sources */,
+				4E567A1129960220001D6262 /* LifeStyleLabelTableViewCell.swift in Sources */,
 				4E112552293A341E00D3BD55 /* PersionalInformationViewController.swift in Sources */,
 				4E9BA6BC29090E1700EA71A5 /* TextField+Extensions.swift in Sources */,
 				4E2160F72939D5A80021553C /* ConnectViewController.swift in Sources */,
 				4E7CD54E2935F7A100F913F4 /* UnderstandMoreViewController.swift in Sources */,
 				4EA0FA2A297522AF00D135B5 /* BatteryIcon.swift in Sources */,
+				4E8A4E3D2994911B0078BBCC /* ReportFormViewController.swift in Sources */,
 				4E8669AB298B8EB200A38D1A /* TextTableViewCell.swift in Sources */,
 				4EFF5F942990117600BF00D5 /* CalibrationModeTableViewCell.swift in Sources */,
+				4E567A0D29960106001D6262 /* LifeStyleTextFieldTableViewCell.swift in Sources */,
 				4EFBDA6D292666AA00202B2A /* RecertifictionLeterViewController.swift in Sources */,
 				4E71FBC1292FAAAE00B75F9B /* BodyInformationViewController.swift in Sources */,
+				4E37FCC8299245E400405DCB /* LowSugarAlertsPickerViewTableViewCell.swift in Sources */,
 				4E71FBCB2930EF4A00B75F9B /* BloodSugarIndexViewController.swift in Sources */,
 				4EFF5F98299015BA00BF00D5 /* CalibrationModeDataTable.swift in Sources */,
 				4EB1D705295C767600ABA352 /* BarButtonItem+Extensions.swift in Sources */,
 				4E086027294862EB00170A60 /* UserInformationTable.swift in Sources */,
+				4E8A4E302993767A0078BBCC /* AudioSwitchTableViewCell.swift in Sources */,
 				4E79C97A28F40FCF00F3017B /* AppDelegate.swift in Sources */,
 				4EFF5F902990054700BF00D5 /* SettingCalibrationModeViewController.swift in Sources */,
 				4EB1D707295ED91F00ABA352 /* NSNotification+Extensions.swift in Sources */,
 				4E79782B293258F2009AE72E /* TransmitterContentViewController.swift in Sources */,
+				4EA5A6042994E49B005D57D1 /* EventSubtitleCollectionViewCell.swift in Sources */,
+				4E567A15299602F5001D6262 /* LifeStyleNoteTextFieldTableViewCell.swift in Sources */,
 				4E11253E293A324C00D3BD55 /* HistoryViewController.swift in Sources */,
 				4E79C97C28F40FCF00F3017B /* SceneDelegate.swift in Sources */,
 				4E854D7A29026E9B0097D79E /* RegisterViewController.swift in Sources */,
 				4E8303C32907D8EF005DBEA5 /* Color+Extensions.swift in Sources */,
+				4E8A4E34299376DD0078BBCC /* AudioLabelTableViewCell.swift in Sources */,
 				4E08602E294899E700170A60 /* ImageButtonView.swift in Sources */,
+				4E37FCD129934A8B00405DCB /* RateAlertsTableViewCell.swift in Sources */,
+				4EFF5FA02992152B00BF00D5 /* HighSugarAlertsSwitchTableViewCell.swift in Sources */,
 				4E854D7F290270DB0097D79E /* LoginViewController.swift in Sources */,
 				4E08602B2948966800170A60 /* EventDataTable.swift in Sources */,
+				4E37FCBC2992448D00405DCB /* LowSugarAlertsViewController.swift in Sources */,
+				4EFF5F9C2992125300BF00D5 /* HighSugarAlertsViewController.swift in Sources */,
 				4E112546293A33C800D3BD55 /* BloodSugarCorrectionViewController.swift in Sources */,
 				4E2E94E32913BDE200E2533F /* Alert.swift in Sources */,
 				4E0860372949A40700170A60 /* MainViewController.swift in Sources */,
+				4E37FCC42992454E00405DCB /* LowSugarAlertsLabelTableViewCell.swift in Sources */,
 				4E11254E293A33FF00D3BD55 /* LifeStyleViewController.swift in Sources */,
 				4E0860332948AA2400170A60 /* CustomTabBarView.swift in Sources */,
 				4EA0FA2E297525BD00D135B5 /* UIViewToUIImage.swift in Sources */,
@@ -1042,6 +1241,7 @@
 				4EB1D6FC2958B57900ABA352 /* BloodSugarUnderstandMoreViewController.swift in Sources */,
 				4E8669A7298B7C7300A38D1A /* SettingViewController.swift in Sources */,
 				4EA0FA3129768FCF00D135B5 /* PersionalInformationTableViewCell.swift in Sources */,
+				4E8A4E38299377370078BBCC /* AudioPickerViewTableViewCell.swift in Sources */,
 				4E71FBC6292FAFDB00B75F9B /* AudiovisualTeachingViewController.swift in Sources */,
 				4EA0FA3529768FEB00D135B5 /* LogOutTableViewCell.swift in Sources */,
 				4E1DB0B7298CBF4200CA1C8C /* SettingAlertViewController.swift in Sources */,

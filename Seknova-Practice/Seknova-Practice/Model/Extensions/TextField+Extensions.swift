@@ -36,4 +36,19 @@ extension UITextField {
         self.layer.shadowOpacity = 1
         self.layer.shadowRadius = 0
     }
+    
+    func setTextFieldRightView(SystemImageName: String,
+                               color: UIColor,
+                               imageX: CGFloat,
+                               imageY: CGFloat,
+                               rightViewMode: UITextField.ViewMode) {
+        let view = UIView(frame: CGRect(x: 0, y: 0 , width: 20, height: 20))
+        
+        let imageView = UIImageView(image: UIImage(systemName: "SystemImageName", withConfiguration: UIImage.SymbolConfiguration(paletteColors: [.lightGray])))
+        imageView.frame.origin.x = imageX
+        imageView.frame.origin.y = imageY
+        view.addSubview(imageView)
+        self.rightView = view
+        self.rightViewMode = rightViewMode
+    }
 }

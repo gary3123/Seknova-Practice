@@ -146,7 +146,7 @@ extension SettingViewController: UITableViewDelegate,UITableViewDataSource {
                 let cell = tableView.dequeueReusableCell(withIdentifier: TextTableViewCell.identifier, for: indexPath) as! TextTableViewCell
                 cell.optionsLabel.text = AppDefine.DevelopsettingOption.allCases[indexPath.row].title
                 cell.textField.tag = indexPath.row
-                cell.textField.keyboardType = .numberPad
+                cell.textField.keyboardType = .numbersAndPunctuation
                 cell.textField.delegate = self
                 if UserPreferences.shared.xAxisTimeInterval == 0 {
                     UserPreferences.shared.xAxisTimeInterval = 3600

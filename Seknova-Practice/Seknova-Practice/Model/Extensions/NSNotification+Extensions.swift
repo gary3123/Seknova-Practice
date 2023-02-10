@@ -11,4 +11,5 @@ extension NSNotification.Name {
     
     static let goInstanceBloodSugarVC = Notification.Name("goInstanceBloodSugarVC")
     static let updatePersionalInformation = Notification.Name("updatePersionalInformation")
+    static let updateAlertsSetting = Notification.Name("updateAlertsSetting")
 }

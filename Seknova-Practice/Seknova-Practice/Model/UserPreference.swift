@@ -32,9 +32,13 @@ class UserPreferences {
         case uploadCloud
         case bloodSugarWarning
         case warmUpStatus
-        case highAlerts
-        case lowAlerts
-        case rateAlerts
+        case highSugarAlertsData
+        case highSugarAlertSwitch
+        case lowSugarAlertsData
+        case lowSugarAlertSwitch
+        case riseAlert
+        case fallAlert
+        case alertAudioOverride
         case alertAudio
         case SettingDevelopStatus
     }
@@ -121,19 +125,38 @@ class UserPreferences {
         set {return userPreferance.set( newValue, forKey: UserPreference.warmUpStatus.rawValue)}
     }
     
-    var highAlert: String {
-        get { return userPreferance.string( forKey: UserPreference.highAlerts.rawValue) ?? "none"}
-        set { return userPreferance.set( newValue, forKey: UserPreference.highAlerts.rawValue)}
+    var highSugarAlertsData: Int {
+        get { return userPreferance.integer( forKey: UserPreference.highSugarAlertsData.rawValue)}
+        set { return userPreferance.set( newValue, forKey: UserPreference.highSugarAlertsData.rawValue)}
     }
     
-    var lowAlerts: String {
-        get { return userPreferance.string( forKey: UserPreference.lowAlerts.rawValue) ?? "none"}
-        set { return userPreferance.set( newValue, forKey: UserPreference.lowAlerts.rawValue)}
+    var highSugarAlertSwitch: Bool {
+        get{return userPreferance.bool(forKey: UserPreference.highSugarAlertSwitch.rawValue)}
+        set{return userPreferance.set(newValue, forKey: UserPreference.highSugarAlertSwitch.rawValue)}
     }
     
-    var rateAlerts: String {
-        get { return userPreferance.string( forKey: UserPreference.rateAlerts.rawValue) ?? "none"}
-        set { return userPreferance.set( newValue, forKey: UserPreference.rateAlerts.rawValue)}
+    var lowSugarAlertsData: Int {
+        get { return userPreferance.integer( forKey: UserPreference.lowSugarAlertsData.rawValue)}
+        set { return userPreferance.set( newValue, forKey: UserPreference.lowSugarAlertsData.rawValue)}
+    }
+    var lowSugarAlertSwitch: Bool {
+        get{return userPreferance.bool(forKey: UserPreference.lowSugarAlertSwitch.rawValue)}
+        set{return userPreferance.set(newValue, forKey: UserPreference.lowSugarAlertSwitch.rawValue)}
+    }
+    
+    var riseAlert: Bool {
+        get{return userPreferance.bool(forKey: UserPreference.riseAlert.rawValue)}
+        set{return userPreferance.set(newValue, forKey: UserPreference.riseAlert.rawValue)}
+    }
+    
+    var fallAlert: Bool {
+        get{return userPreferance.bool(forKey: UserPreference.fallAlert.rawValue)}
+        set{return userPreferance.set(newValue, forKey: UserPreference.fallAlert.rawValue)}
+    }
+    
+    var alertAudioOverride: Bool {
+        get { return userPreferance.bool( forKey: UserPreference.alertAudioOverride.rawValue)}
+        set { return userPreferance.set( newValue, forKey: UserPreference.alertAudioOverride.rawValue)}
     }
     
     var alertAudio: String {
