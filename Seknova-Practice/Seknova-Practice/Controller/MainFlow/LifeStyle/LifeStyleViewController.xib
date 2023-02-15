@@ -74,6 +74,9 @@
                         <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                         <color key="baseForegroundColor" name="NavigationBar"/>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="clickAddButton" destination="-2" eventType="touchUpInside" id="rUb-aH-p3H"/>
+                    </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KW9-ZN-NjO">
                     <rect key="frame" x="0.0" y="58.999999999999986" width="393" height="189.66666666666663"/>
@@ -163,7 +166,7 @@
                             <rect key="frame" x="35.333333333333343" y="69" width="322.33333333333326" height="213"/>
                         </datePicker>
                         <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kb8-y2-Bvq">
-                            <rect key="frame" x="35" y="69" width="323" height="213"/>
+                            <rect key="frame" x="35.333333333333343" y="69" width="322.33333333333326" height="213"/>
                         </pickerView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>

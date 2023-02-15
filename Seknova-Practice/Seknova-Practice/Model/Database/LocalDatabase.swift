@@ -22,8 +22,20 @@ class LocalDatabase: NSObject {
         eventDataTable.displayTime = eventData.displayTime
         eventDataTable.eventId = eventData.eventId
         eventDataTable.eventValue = eventData.eventValue
+        eventData.eventAttribute.forEach { attribute in
+            eventDataTable.eventAttribute.append(attribute)
+        }
         eventDataTable.note = eventData.note
         eventDataTable.check = eventData.check
+        
+        do {
+            try! realm.write {
+                realm.add(eventDataTable)
+                print("Realm.Add Success fileURL:\(realm.configuration.fileURL)")
+            }
+        } catch {
+            print("Realm.Add Fail, Error:\(error.localizedDescription)")
+        }
     }
     
     func addRecords(records: RecordsTable) {

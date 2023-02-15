@@ -154,7 +154,7 @@ class AppDefine {
         }
     }
     
-    enum EventID: Int {
+    enum EventID: Int, CaseIterable {
         case Meal = 2       //用餐
         case Exercise = 3   //運動
         case Sleep = 4      //睡覺
@@ -236,11 +236,11 @@ class AppDefine {
         var value: EventType {
             switch self {
             case .Getup:
-                return (.GetUp, 0, NSLocalizedString("Sleep", comment: ""))
+                return (.GetUp, 10, NSLocalizedString("Getup", comment: ""))
             case .Bath:
-                return (.Bath, 1, NSLocalizedString("Nap", comment: ""))
+                return (.Bath, 10, NSLocalizedString("Bath", comment: ""))
             case .Other:
-                return (.Other, 2, NSLocalizedString("Rest", comment: ""))
+                return (.Other, 0, NSLocalizedString("Others", comment: ""))
             }
         }
     }

@@ -37,12 +37,13 @@ class LifeStyleViewController: UIViewController {
     var selectedEvenSubtitle = 0
     var isEverTapOfEventSubTitle = false
     let date = Date()
-    let dateAndTimeFormatter = DateFormatter()
+    let dateTimeFormatter = DateFormatter()
+    let displayTimeFormatter = DateFormatter()
     let durationFormatter = DateFormatter()
     var mealReplyArray = ["","",""]
     var exerciseReplyArray = ["","00:30",""]
     var sleepReplyArray = ["00:30",""]
-    var insulinRelyArray = ["",""]
+    var insulinReplyArray = ["",""]
     var getUpReplayArray = [""]
     var bathReplayArray = [""]
     var otherReplayArray = [""]
@@ -69,9 +70,9 @@ class LifeStyleViewController: UIViewController {
     }
     
     func setupRecordTime() {
-        dateAndTimeFormatter.dateFormat = "yyyy/MM/dd EEEE a h:m"
-        dateAndTimeFormatter.locale = Locale(identifier: "zh_TW")
-        recordTimeLabel.text = dateAndTimeFormatter.string(from: Date())
+        dateTimeFormatter.dateFormat = "yyyy/MM/dd EEEE a h:m"
+        dateTimeFormatter.locale = Locale(identifier: "zh_TW")
+        recordTimeLabel.text = dateTimeFormatter.string(from: Date())
         let tap = UITapGestureRecognizer(target: self, action: #selector(clickRecordTime))
         recordTimeView.addGestureRecognizer(tap)
         datePicker.locale = Locale(identifier: "zh_TW")
@@ -124,6 +125,143 @@ class LifeStyleViewController: UIViewController {
     
     // MARK: - IBAction
     
+    @IBAction func clickAddButton() {
+        if isEverTapOfEventSubTitle == true {
+            switch AppDefine.EventID.allCases[selectedEvenTitle] {
+            case .Meal:
+                switch AppDefine.MealEventValue.allCases[selectedEvenSubtitle] {
+                case .Breakfast:
+                    addDataToRealm(eventId: AppDefine.MealEventValue.Breakfast.value.eventID.rawValue,
+                                   eventValue: AppDefine.MealEventValue.Breakfast.value.eventValue,
+                                   eventValueData: AppDefine.MealEventValue.Breakfast.value.eventValueData,
+                                   replyArray: mealReplyArray)
+                case .Lunch:
+                    addDataToRealm(eventId: AppDefine.MealEventValue.Lunch.value.eventID.rawValue,
+                                   eventValue: AppDefine.MealEventValue.Lunch.value.eventValue,
+                                   eventValueData: AppDefine.MealEventValue.Lunch.value.eventValueData,
+                                   replyArray: mealReplyArray)
+                case .Dinner:
+                    addDataToRealm(eventId: AppDefine.MealEventValue.Dinner.value.eventID.rawValue,
+                                   eventValue: AppDefine.MealEventValue.Dinner.value.eventValue,
+                                   eventValueData: AppDefine.MealEventValue.Dinner.value.eventValueData,
+                                   replyArray: mealReplyArray)
+                case .Snack:
+                    addDataToRealm(eventId: AppDefine.MealEventValue.Snack.value.eventID.rawValue,
+                                   eventValue: AppDefine.MealEventValue.Snack.value.eventValue,
+                                   eventValueData: AppDefine.MealEventValue.Snack.value.eventValueData,
+                                   replyArray: mealReplyArray)
+                case .Drink:
+                    addDataToRealm(eventId: AppDefine.MealEventValue.Drink.value.eventID.rawValue,
+                                   eventValue: AppDefine.MealEventValue.Drink.value.eventValue,
+                                   eventValueData: AppDefine.MealEventValue.Drink.value.eventValueData,
+                                   replyArray: mealReplyArray)
+                }
+            case .Exercise:
+                switch AppDefine.ExerciseEventValue.allCases[selectedEvenSubtitle] {
+                case .High:
+                    addDataToRealm(eventId: AppDefine.ExerciseEventValue.High.value.eventID.rawValue,
+                                   eventValue: AppDefine.ExerciseEventValue.High.value.eventValue,
+                                   eventValueData: AppDefine.ExerciseEventValue.High.value.eventValueData,
+                                   replyArray: exerciseReplyArray)
+                case .Medium:
+                    addDataToRealm(eventId: AppDefine.ExerciseEventValue.Medium.value.eventID.rawValue,
+                                   eventValue: AppDefine.ExerciseEventValue.Medium.value.eventValue,
+                                   eventValueData: AppDefine.ExerciseEventValue.Medium.value.eventValueData,
+                                   replyArray: exerciseReplyArray)
+                case .Low:
+                    addDataToRealm(eventId: AppDefine.ExerciseEventValue.Low.value.eventID.rawValue,
+                                   eventValue: AppDefine.ExerciseEventValue.Low.value.eventValue,
+                                   eventValueData: AppDefine.ExerciseEventValue.Low.value.eventValueData,
+                                   replyArray: exerciseReplyArray)
+                }
+            case .Sleep:
+                switch AppDefine.SleepEventValue.allCases[selectedEvenSubtitle] {
+                case .Sleep:
+                    addDataToRealm(eventId: AppDefine.SleepEventValue.Sleep.value.eventID.rawValue,
+                                   eventValue: AppDefine.SleepEventValue.Sleep.value.eventValue,
+                                   eventValueData: AppDefine.SleepEventValue.Sleep.value.eventValueData,
+                                   replyArray: sleepReplyArray)
+                case .Nap:
+                    addDataToRealm(eventId: AppDefine.SleepEventValue.Nap.value.eventID.rawValue,
+                                   eventValue: AppDefine.SleepEventValue.Nap.value.eventValue,
+                                   eventValueData: AppDefine.SleepEventValue.Nap.value.eventValueData,
+                                   replyArray: sleepReplyArray)
+                case .Rest:
+                    addDataToRealm(eventId: AppDefine.SleepEventValue.Rest.value.eventID.rawValue,
+                                   eventValue: AppDefine.SleepEventValue.Rest.value.eventValue,
+                                   eventValueData: AppDefine.SleepEventValue.Rest.value.eventValueData,
+                                   replyArray: sleepReplyArray)
+                case .RelaxTime:
+                    addDataToRealm(eventId: AppDefine.SleepEventValue.RelaxTime.value.eventID.rawValue,
+                                   eventValue: AppDefine.SleepEventValue.RelaxTime.value.eventValue,
+                                   eventValueData: AppDefine.SleepEventValue.RelaxTime.value.eventValueData,
+                                   replyArray: sleepReplyArray)
+                }
+            case .Insulin:
+                switch AppDefine.InsulinEventValue.allCases[selectedEvenSubtitle] {
+                case .Rapid:
+                    addDataToRealm(eventId: AppDefine.InsulinEventValue.Rapid.value.eventID.rawValue,
+                                   eventValue: AppDefine.InsulinEventValue.Rapid.value.eventValue,
+                                   eventValueData: AppDefine.InsulinEventValue.Rapid.value.eventValueData,
+                                   replyArray: insulinReplyArray)
+                case .Long:
+                    addDataToRealm(eventId: AppDefine.InsulinEventValue.Long.value.eventID.rawValue,
+                                   eventValue: AppDefine.InsulinEventValue.Long.value.eventValue,
+                                   eventValueData: AppDefine.InsulinEventValue.Long.value.eventValueData,
+                                   replyArray: insulinReplyArray)
+                case .Unspecified:
+                    addDataToRealm(eventId: AppDefine.InsulinEventValue.Unspecified.value.eventID.rawValue,
+                                   eventValue: AppDefine.InsulinEventValue.Unspecified.value.eventValue,
+                                   eventValueData: AppDefine.InsulinEventValue.Unspecified.value.eventValueData,
+                                   replyArray: insulinReplyArray)
+                }
+            case .GetUp:
+                addDataToRealm(eventId: AppDefine.Other.Getup.value.eventID.rawValue,
+                               eventValue: AppDefine.Other.Getup.value.eventValue,
+                               eventValueData: AppDefine.Other.Getup.value.eventValueData,
+                               replyArray: getUpReplayArray)
+            case .Bath:
+                addDataToRealm(eventId: AppDefine.Other.Bath.value.eventID.rawValue,
+                               eventValue: AppDefine.Other.Bath.value.eventValue,
+                               eventValueData: AppDefine.Other.Bath.value.eventValueData,
+                               replyArray: bathReplayArray)
+            case .Other:
+                addDataToRealm(eventId: AppDefine.Other.Other.value.eventID.rawValue,
+                               eventValue: AppDefine.Other.Other.value.eventValue,
+                               eventValueData: AppDefine.Other.Other.value.eventValueData,
+                               replyArray: otherReplayArray)
+            }
+            Alert.showAlertWith(title: "已新增事件", message: "", vc: self, confirmTitle: "確認")
+        } else {
+            Alert.showAlertWith(title: "請點選副類型", message: "", vc: self, confirmTitle: "確認")
+        }
+        
+    }
+    
+    func addDataToRealm(eventId: Int, eventValue: Int, eventValueData: String, replyArray: [String]) {
+       
+        var eventValueDataArray: [String] = []
+        eventValueDataArray.append(eventValueData)
+        eventValueDataArray += replyArray
+        var eventAttribute: [String] = []
+        for i in 0 ..< eventValueDataArray.count {
+            eventAttribute.append(eventValueDataArray[i])
+        }
+        displayTimeFormatter.dateFormat = "yyyy/MM/dd EEEE a h:m"
+        displayTimeFormatter.locale = Locale(identifier: "zh_TW")
+        displayTimeFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        
+        let eventDataTable = EventDataTable(id: 0,
+                                            dateTime: recordTimeLabel.text!,
+                                            displayTime: displayTimeFormatter.string(from: dateTimeFormatter.date(from: recordTimeLabel.text!)!),
+                                            eventAttribute: eventAttribute,
+                                            eventId: eventId,
+                                            eventValue: eventValue,
+                                            note: replyArray.last!,
+                                            check: false)
+        LocalDatabase.shared.addEvenData(eventData: eventDataTable)
+    }
+    
     @objc func clickRecordTime() {
         datePicker.datePickerMode = .dateAndTime
         if timeView.isHidden == true {
@@ -137,7 +275,7 @@ class LifeStyleViewController: UIViewController {
     
     @IBAction func clickDoneButtonInTimeView() {
         if datePicker.isHidden == false {
-            recordTimeLabel.text = dateAndTimeFormatter.string(from: datePicker.date)
+            recordTimeLabel.text = dateTimeFormatter.string(from: datePicker.date)
         } else {
             if selectedEvenTitle == 1 {
                 exerciseReplyArray[1] = countDownData
@@ -151,12 +289,12 @@ class LifeStyleViewController: UIViewController {
     
     @IBAction func clickCancelButtonInTimeView() {
         if datePicker.datePickerMode == .dateAndTime {
-            datePicker.date = dateAndTimeFormatter.date(from: recordTimeLabel.text!)!
+            datePicker.date = dateTimeFormatter.date(from: recordTimeLabel.text!)!
         } else {
             if selectedEvenTitle == 1 {
-                datePicker.date = dateAndTimeFormatter.date(from: exerciseReplyArray[1])!
+                datePicker.date = dateTimeFormatter.date(from: exerciseReplyArray[1])!
             } else {
-                datePicker.date = dateAndTimeFormatter.date(from: sleepReplyArray[0])!
+                datePicker.date = dateTimeFormatter.date(from: sleepReplyArray[0])!
             }
         }
         timeView.isHidden = true
@@ -575,7 +713,7 @@ extension LifeStyleViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.textField.rightViewMode = .always
                 cell.optionsLabel.text = "劑量"
                 cell.textField.placeholder = "---"
-                cell.textField.text = insulinRelyArray[0]
+                cell.textField.text = insulinReplyArray[0]
                 cell.textField.tag = 30 + indexPath.row
                 cell.textField.delegate = self
                 cell.textField.keyboardType = .numberPad
@@ -583,7 +721,7 @@ extension LifeStyleViewController: UITableViewDelegate, UITableViewDataSource {
             default:
                 let cell = tableView.dequeueReusableCell(withIdentifier: LifeStyleNoteTextFieldTableViewCell.identifier, for: indexPath) as! LifeStyleNoteTextFieldTableViewCell
                 cell.optionsLabel.text = "註記"
-                cell.replyTextField.text = insulinRelyArray[1]
+                cell.replyTextField.text = insulinReplyArray[1]
                 cell.replyTextField.tag = 30 + indexPath.row
                 cell.replyTextField.delegate = self
                 cell.replyTextField.placeholder = "Additional notes"
@@ -747,9 +885,9 @@ extension LifeStyleViewController: UITextFieldDelegate {
         case 21:
             sleepReplyArray[1] = text
         case 30:
-            insulinRelyArray[0] = text
+            insulinReplyArray[0] = text
         case 31:
-            insulinRelyArray[1] = text
+            insulinReplyArray[1] = text
         case 40:
             getUpReplayArray[0] = text
         case 50:
