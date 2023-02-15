@@ -153,4 +153,95 @@ class AppDefine {
             }
         }
     }
+    
+    enum EventID: Int {
+        case Meal = 2       //用餐
+        case Exercise = 3   //運動
+        case Sleep = 4      //睡覺
+        case Insulin = 5    //胰島素
+        case GetUp = 6      //起床
+        case Bath = 7       //洗澡
+        case Other = 8      //其他
+    }
+    
+    typealias EventType = (eventID: EventID, eventValue: Int, eventValueData: String)
+    enum MealEventValue: Int, CaseIterable {
+        case Breakfast = 0, Lunch, Dinner, Snack, Drink
+        
+        var value: EventType {
+            switch self {
+            case .Breakfast:
+                return (.Meal, 0, NSLocalizedString("Breakfast", comment: ""))
+            case .Lunch:
+                return (.Meal, 1, NSLocalizedString("Lunch", comment: ""))
+            case .Dinner:
+                return (.Meal, 2, NSLocalizedString("Dinner", comment: ""))
+            case .Snack:
+                return (.Meal, 3, NSLocalizedString("Snack", comment: ""))
+            case .Drink:
+                return (.Meal, 4, NSLocalizedString("Drink", comment: ""))
+            }
+        }
+    }
+    
+    enum ExerciseEventValue: Int, CaseIterable {
+        case High = 0, Medium, Low
+        
+        var value: EventType {
+            switch self {
+            case .High:
+                return (.Exercise, 0, NSLocalizedString("High", comment: ""))
+            case .Medium:
+                return (.Exercise, 1, NSLocalizedString("Medium", comment: ""))
+            case .Low:
+                return (.Exercise, 2, NSLocalizedString("Low", comment: ""))
+            }
+        }
+    }
+    
+    enum InsulinEventValue: Int, CaseIterable {
+        case Rapid = 0, Long, Unspecified
+        
+        var value: EventType {
+            switch self {
+            case .Rapid:
+                return (.Insulin, 0, NSLocalizedString("Rapid", comment: ""))
+            case .Long:
+                return (.Insulin, 1, NSLocalizedString("Long", comment: ""))
+            case .Unspecified:
+                return (.Insulin, 2, NSLocalizedString("Unspecified", comment: ""))
+            }
+        }
+    }
+    
+    enum SleepEventValue: Int, CaseIterable {
+        case Sleep = 0, Nap, Rest, RelaxTime
+        
+        var value: EventType {
+            switch self {
+            case .Sleep:
+                return (.Sleep, 0, NSLocalizedString("Sleep", comment: ""))
+            case .Nap:
+                return (.Sleep, 1, NSLocalizedString("Nap", comment: ""))
+            case .Rest:
+                return (.Sleep, 2, NSLocalizedString("Rest", comment: ""))
+            case .RelaxTime:
+                return (.Sleep, 3, NSLocalizedString("RelaxTime", comment: ""))
+            }
+        }
+    }
+    
+    enum Other: Int, CaseIterable {
+        case Getup = 0, Bath, Other
+        var value: EventType {
+            switch self {
+            case .Getup:
+                return (.GetUp, 0, NSLocalizedString("Sleep", comment: ""))
+            case .Bath:
+                return (.Bath, 1, NSLocalizedString("Nap", comment: ""))
+            case .Other:
+                return (.Other, 2, NSLocalizedString("Rest", comment: ""))
+            }
+        }
+    }
 }

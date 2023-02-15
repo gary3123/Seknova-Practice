@@ -10,6 +10,7 @@ struct EventDataTable{
     var id: Int
     var dateTime: String
     var displayTime: String
+    var eventAttribute: [String]
     var eventId: Int
     var eventValue: Int
     var note: String

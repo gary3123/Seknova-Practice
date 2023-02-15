@@ -246,6 +246,7 @@ extension SettingViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             let nextVC = SettingAlertViewController()
+            print("\(UserPreferences.shared.highSugarAlertsData)、\(UserPreferences.shared.lowSugarAlertsData)")
             navigationController?.pushViewController(nextVC, animated: true)
         } else if indexPath.row == 1 && UserPreferences.shared.SettingDevelopStatus == true {
             let nextVC = SettingCalibrationModeViewController()

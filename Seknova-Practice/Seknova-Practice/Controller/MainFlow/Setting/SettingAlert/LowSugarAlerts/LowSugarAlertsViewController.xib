@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LowSugarAlertsViewController" customModule="Seknova_Practice" customModuleProvider="target">
             <connections>
-                <outlet property="tableView" destination="9nj-R7-o7n" id="Kby-5w-ank"/>
+                <outlet property="tableView" destination="9nj-R7-o7n" id="2Dm-NU-Y5b"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

@@ -140,6 +140,7 @@ class EventData: Object {
     @Persisted var id: Int = 0
     @Persisted var dateTime: String = ""  //UTC+0
     @Persisted var displayTime: String = "" //UTC+8
+    @Persisted var eventAttribute: List<String>
     @Persisted var eventId: Int = 0
     @Persisted var eventValue: Int = 0
     @Persisted var note: String = ""
@@ -148,6 +149,7 @@ class EventData: Object {
     convenience init(id: Int,
                      dateTime: String,
                      displayTime: String,
+                     eventAttribute: List<String>,
                      eventId: Int,
                      eventValue: Int,
                      note: String,
@@ -156,6 +158,7 @@ class EventData: Object {
         self.id = id
         self.dateTime = dateTime
         self.displayTime = displayTime
+        self.eventAttribute = eventAttribute
         self.eventId = eventId
         self.eventValue = eventValue
         self.check = check
