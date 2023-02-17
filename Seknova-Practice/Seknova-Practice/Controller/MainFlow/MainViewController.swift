@@ -81,6 +81,9 @@ class MainViewController: BaseViewController {
         if index == 4 {
             navigationItem.setRightBarButtonItems(nil, animated: true)
             setupdateButtonItem()
+        } else if index == 3 {
+            navigationItem.setRightBarButtonItems(nil, animated: true)
+            setupEeventRecordButtonItem()
         } else {
             setBatteryButtonItem()
         }
@@ -162,6 +165,20 @@ class MainViewController: BaseViewController {
         navigationItem.rightBarButtonItem = updateButtonView
     }
     
+    func setupEeventRecordButtonItem() {
+        let updateButtonItem = UIButton(type: .custom)
+        updateButtonItem.setTitle("事件記錄", for: .normal)
+        updateButtonItem.addTarget(self, action: #selector(clickEventRecordBarButtonItem), for: .touchUpInside)
+        updateButtonView = UIBarButtonItem(customView: updateButtonItem)
+        // 設定寬
+        let updateButtonViewWidth = updateButtonView.customView?.widthAnchor.constraint(equalToConstant: 80)
+        updateButtonViewWidth?.isActive = true
+        // 設定高
+        let updateButtonViewHeight = updateButtonView.customView?.heightAnchor.constraint(equalToConstant: 24)
+        updateButtonViewHeight?.isActive = true
+        navigationItem.rightBarButtonItem = updateButtonView
+    }
+    
     
     // MARK: - completeBloodSugarCorrection
     
@@ -187,6 +204,12 @@ class MainViewController: BaseViewController {
     
     // MARK: - IBAction
     
+    
+    @objc func clickEventRecordBarButtonItem() {
+        let nextVC = EventRecordViewController()
+        navigationItem.backButtonTitle = ""
+        navigationController?.pushViewController(nextVC, animated: true)
+    }
     
     @IBAction func clickReportForm() {
         let nextVC = ReportFormViewController()

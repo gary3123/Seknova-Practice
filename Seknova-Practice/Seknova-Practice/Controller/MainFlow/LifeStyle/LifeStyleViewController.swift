@@ -16,7 +16,7 @@ class LifeStyleViewController: UIViewController {
     @IBOutlet weak var eventSubtitleCollectionView: UICollectionView!
     @IBOutlet weak var recordTimeView: UIView!
     @IBOutlet weak var shadowView: UIView!
-    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var addBution: UIButton!
     @IBOutlet weak var timeView: UIView!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var recordTimeLabel: UILabel!
@@ -24,8 +24,8 @@ class LifeStyleViewController: UIViewController {
     // MARK: - Variables
     let eventTitleImage = ["meal","exercise","sleep","insulin","awaken","bath","other"]
     let eventTitleLabel = ["用餐","運動","睡眠","胰島素","起床","洗澡","其他"]
-    let mealSubtitleImage = ["breakfast","dinner","lunch","snacks","drinks"]
-    let mealSubtitleLabel = ["早餐","晚餐","午餐","點心","飲料"]
+    let mealSubtitleImage = ["breakfast","lunch","dinner","snacks","drinks"]
+    let mealSubtitleLabel = ["早餐","午餐","晚餐","點心","飲料"]
     let exerciseSubtitleImage = ["high_motion","mid_motion","low_motion"]
     let exerciseSubtitleLabel = ["高強度","中強度","低強度"]
     let sleepSubtitleImage = ["sleep","sleepy","nap","relax"]
@@ -33,6 +33,7 @@ class LifeStyleViewController: UIViewController {
     let insulinSubtitleImage = ["insulin","insulin","insulin",]
     let insulinSubtitleLabel = ["速效型","長效型","未指定",]
     var isHideEventSubTitle = true
+    var isExpandTextField = false
     var selectedEvenTitle = 0
     var selectedEvenSubtitle = 0
     var isEverTapOfEventSubTitle = false
@@ -70,7 +71,7 @@ class LifeStyleViewController: UIViewController {
     }
     
     func setupRecordTime() {
-        dateTimeFormatter.dateFormat = "yyyy/MM/dd EEEE a h:m"
+        dateTimeFormatter.dateFormat = "yyyy/MM/dd EEEE a hh:mm"
         dateTimeFormatter.locale = Locale(identifier: "zh_TW")
         recordTimeLabel.text = dateTimeFormatter.string(from: Date())
         let tap = UITapGestureRecognizer(target: self, action: #selector(clickRecordTime))
@@ -247,7 +248,7 @@ class LifeStyleViewController: UIViewController {
         for i in 0 ..< eventValueDataArray.count {
             eventAttribute.append(eventValueDataArray[i])
         }
-        displayTimeFormatter.dateFormat = "yyyy/MM/dd EEEE a h:m"
+        displayTimeFormatter.dateFormat = "yyyy/MM/dd EEEE a hh:mm:ss"
         displayTimeFormatter.locale = Locale(identifier: "zh_TW")
         displayTimeFormatter.timeZone = TimeZone(abbreviation: "UTC")
         
@@ -550,10 +551,21 @@ extension LifeStyleViewController: UICollectionViewDelegate, UICollectionViewDat
                         UIView.animate(withDuration: 0.2) {
                             self.eventSubtitleView.transform = CGAffineTransform(translationX: 0, y: 0)
                             self.tableView.transform = CGAffineTransform(translationX: 0,
-                                                                         y: self.eventSubtitleView.frame.height + self.tableView.frame.height + self.saveButton.frame.height - self.eventSubtitleView.frame.height)
+                                                                         y: self.eventSubtitleView.frame.height + self.tableView.frame.height + self.addBution.frame.height - self.eventSubtitleView.frame.height)
                         }
                     }
                     isHideEventSubTitle = true
+                } else {
+                    if isExpandTextField == false {
+                        DispatchQueue.main.async {
+                            UIView.animate(withDuration: 0.2) {
+                                self.eventSubtitleView.transform = CGAffineTransform(translationX: 0, y: 0)
+                                self.tableView.transform = CGAffineTransform(translationX: 0,
+                                                                             y: self.addBution.frame.height + self.tableView.frame.height)
+                            }
+                        }
+                        isExpandTextField = true
+                    }
                 }
                 
             } else {
@@ -561,8 +573,8 @@ extension LifeStyleViewController: UICollectionViewDelegate, UICollectionViewDat
                     DispatchQueue.main.async {
                         UIView.animate(withDuration: 0.2) {
                             self.eventSubtitleView.transform = CGAffineTransform(translationX: 0, y:  self.eventSubtitleView.frame.height)
-                            self.tableView.transform = CGAffineTransform(translationX: 0, y: self.eventSubtitleView.frame.height + self.tableView.frame.height + self.saveButton.frame.height)
-                            self.saveButton.transform = CGAffineTransform(translationX: 0, y: self.view.bounds.height - self.eventTitleCollectionView.frame.height -  self.recordTimeView.frame.height - 10)
+                            self.tableView.transform = CGAffineTransform(translationX: 0, y: self.eventSubtitleView.frame.height + self.tableView.frame.height + self.addBution.frame.height)
+                            self.addBution.transform = CGAffineTransform(translationX: 0, y: self.view.bounds.height - self.eventTitleCollectionView.frame.height -  self.recordTimeView.frame.height - 10)
                         }
                     }
                     isHideEventSubTitle = false

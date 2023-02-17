@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LifeStyleViewController" customModule="Seknova_Practice" customModuleProvider="target">
             <connections>
+                <outlet property="addBution" destination="5mh-bu-s4w" id="Gd4-ye-Uv6"/>
                 <outlet property="countDownPickerView" destination="Kb8-y2-Bvq" id="fzU-NX-YBv"/>
                 <outlet property="datePicker" destination="mEz-NG-RWW" id="RTN-Q7-fZt"/>
                 <outlet property="eventSubtitleCollectionView" destination="cWx-Wi-4bK" id="tyT-L8-CgK"/>
@@ -19,7 +20,6 @@
                 <outlet property="eventTitleCollectionView" destination="4DC-WK-ctq" id="BFL-el-cxv"/>
                 <outlet property="recordTimeLabel" destination="Xr4-qg-tWe" id="SUK-z9-pK6"/>
                 <outlet property="recordTimeView" destination="dPl-lo-vJ7" id="0ai-jl-zaZ"/>
-                <outlet property="saveButton" destination="5mh-bu-s4w" id="Gd4-ye-Uv6"/>
                 <outlet property="shadowView" destination="ReL-gX-tCu" id="aMP-LC-fKX"/>
                 <outlet property="tableView" destination="GBW-YZ-XrN" id="sev-hA-LMn"/>
                 <outlet property="timeView" destination="E1d-Uf-rp1" id="DcM-3K-B8r"/>
@@ -78,6 +78,9 @@
                         <action selector="clickAddButton" destination="-2" eventType="touchUpInside" id="rUb-aH-p3H"/>
                     </connections>
                 </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Seknova" translatesAutoresizingMaskIntoConstraints="NO" id="OiY-k7-DWc">
+                    <rect key="frame" x="302.66666666666669" y="792.33333333333337" width="90.333333333333314" height="25.666666666666629"/>
+                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KW9-ZN-NjO">
                     <rect key="frame" x="0.0" y="58.999999999999986" width="393" height="189.66666666666663"/>
                     <subviews>
@@ -193,12 +196,15 @@
             <constraints>
                 <constraint firstItem="zie-op-x3p" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="1DO-8p-Zar"/>
                 <constraint firstItem="E1d-Uf-rp1" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="2oK-gP-Jh4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="OiY-k7-DWc" secondAttribute="bottom" id="Bny-cm-Ipl"/>
                 <constraint firstItem="5mh-bu-s4w" firstAttribute="bottom" secondItem="KW9-ZN-NjO" secondAttribute="bottom" id="Ccg-VG-aew"/>
                 <constraint firstItem="zie-op-x3p" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.14" id="Jje-84-2jP"/>
                 <constraint firstItem="KW9-ZN-NjO" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Pnl-jG-Wg6"/>
                 <constraint firstItem="E1d-Uf-rp1" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="WcO-Wt-4SY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OiY-k7-DWc" secondAttribute="trailing" id="XLa-Ez-8AE"/>
                 <constraint firstItem="5mh-bu-s4w" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.592875" id="Xhj-Fb-F68"/>
                 <constraint firstItem="E1d-Uf-rp1" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.436019" id="ZSm-VR-9Xr"/>
+                <constraint firstItem="OiY-k7-DWc" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.23" id="a2e-44-UiR"/>
                 <constraint firstItem="GBW-YZ-XrN" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.62" id="heW-SY-IFo"/>
                 <constraint firstItem="5mh-bu-s4w" firstAttribute="top" secondItem="GBW-YZ-XrN" secondAttribute="bottom" id="huT-cy-1uN"/>
                 <constraint firstItem="5mh-bu-s4w" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.08" id="lpW-js-GfW"/>
@@ -206,6 +212,7 @@
                 <constraint firstItem="KW9-ZN-NjO" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.25" id="pkH-0F-z16"/>
                 <constraint firstItem="KW9-ZN-NjO" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="q6b-yh-G0S"/>
                 <constraint firstItem="zie-op-x3p" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="ssL-Ma-jYz"/>
+                <constraint firstItem="OiY-k7-DWc" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.03" id="uHj-fh-Jcf"/>
                 <constraint firstItem="GBW-YZ-XrN" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="uWU-dU-1mK"/>
                 <constraint firstItem="5mh-bu-s4w" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="uqp-ya-Vsp"/>
                 <constraint firstItem="E1d-Uf-rp1" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="vgJ-aQ-quL"/>
@@ -217,6 +224,7 @@
     </objects>
     <resources>
         <image name="ArrowDown2" width="512" height="512"/>
+        <image name="Seknova" width="467" height="72"/>
         <namedColor name="NavigationBar">
             <color red="0.75700002908706665" green="0.059000000357627869" blue="0.14100000262260437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

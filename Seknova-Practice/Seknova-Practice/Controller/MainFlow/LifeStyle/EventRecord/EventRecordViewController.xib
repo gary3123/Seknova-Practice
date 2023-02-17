@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EventRecordViewController" customModule="Seknova_Practice" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="73k-Qg-ewN" id="C8Y-Xf-4Si"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000298023224" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Seknova" translatesAutoresizingMaskIntoConstraints="NO" id="Khd-b0-va8">
+                    <rect key="frame" x="257.33333333333331" y="627.66666666666663" width="117.66666666666669" height="39.333333333333371"/>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="73k-Qg-ewN">
+                    <rect key="frame" x="0.0" y="59" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="73k-Qg-ewN" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="6Em-HP-qrP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="73k-Qg-ewN" secondAttribute="top" id="CPa-xy-H2y"/>
+                <constraint firstItem="73k-Qg-ewN" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="N7I-Vg-7U8"/>
+                <constraint firstItem="Khd-b0-va8" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.313778" id="Ye7-sg-OtF"/>
+                <constraint firstItem="73k-Qg-ewN" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="Zrf-Oa-ihl"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Khd-b0-va8" secondAttribute="trailing" id="jdK-Wh-3zk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Khd-b0-va8" secondAttribute="bottom" id="rO5-EN-xOs"/>
+                <constraint firstItem="Khd-b0-va8" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0589705" id="tKq-RU-aWW"/>
+            </constraints>
+            <point key="canvasLocation" x="38" y="21"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Seknova" width="467" height="72"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

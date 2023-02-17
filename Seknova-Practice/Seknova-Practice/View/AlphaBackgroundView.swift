@@ -18,7 +18,9 @@ class AlphaBackgroundView: UIView {
     // MARK: - LifeCycle
     
     init(imageName: String , alpha: CGFloat) {
-        super.init(frame: CGRect(x: 0, y: 0, width: fullScreenSize.width, height: fullScreenSize.height))
+        super.init(frame: CGRect(x: 0, y: 0,
+                                 width: fullScreenSize.width,
+                                 height: fullScreenSize.height))
         self.imageView = UIImageView(image: UIImage(named: imageName)) // "Background5.jpg"
         self.imageView.frame = CGRect(x: 0,
                                       y: 0,
