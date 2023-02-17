@@ -21,6 +21,8 @@ class EventRecordViewController: UIViewController {
     var selectOneRow = [1,-1]
     let realm = try! Realm()
     var tableViewCellType = 0
+    var DeleteStatus = true
+    let deleteButtonItem = UIButton(type: .custom) // NavigationBar 的刪除鍵
     
     
     // MARK: - LifeCycle
@@ -51,10 +53,9 @@ class EventRecordViewController: UIViewController {
     
     
     func setupNavigationBar() {
-        let buttonItem = UIButton(type: .custom)
-        buttonItem.setTitle("刪除", for: .normal)
-        buttonItem.addTarget(self, action: #selector(clickDeleteBarButtonItem), for: .touchUpInside)
-        let buttonView = UIBarButtonItem(customView: buttonItem)
+        deleteButtonItem.setTitle("刪除", for: .normal)
+        deleteButtonItem.addTarget(self, action: #selector(clickDeleteBarButtonItem), for: .touchUpInside)
+        let buttonView = UIBarButtonItem(customView: deleteButtonItem)
         // 設定寬
         let buttonViewWidth = buttonView.customView?.widthAnchor.constraint(equalToConstant: 40)
         buttonViewWidth?.isActive = true
@@ -169,6 +170,14 @@ class EventRecordViewController: UIViewController {
     
     // MARK: - IBAction
     @objc func clickDeleteBarButtonItem() {
+        if DeleteStatus == true {
+            deleteButtonItem.setTitle("編輯", for: .normal)
+            DeleteStatus.toggle()
+        } else {
+            deleteButtonItem.setTitle("刪除", for: .normal)
+            DeleteStatus.toggle()
+        }
+        tableView.reloadData()
     }
     
 }
@@ -241,9 +250,15 @@ extension EventRecordViewController: UITableViewDelegate, UITableViewDataSource 
                 cell.nameReplyLabel.text = todayEventTable[indexPath.row].eventAttribute[1]
                 cell.quantityReplyLabel.text = todayEventTable[indexPath.row].eventAttribute[2]
                 cell.noteReplyLabel.text = todayEventTable[indexPath.row].note
+                
+                if DeleteStatus == false {
+                    cell.editAndDeleteButton.setImage(UIImage(named: "waste"), for: .normal)
+                } else {
+                    cell.editAndDeleteButton.setImage(UIImage(named: "edit"), for: .normal)
+                }
+                
                 if selectZeroRow ==  [indexPath.section,indexPath.row] {
                     cell.expand()
-
                 } else {
                     cell.close()
                 }
@@ -258,9 +273,15 @@ extension EventRecordViewController: UITableViewDelegate, UITableViewDataSource 
                 cell.typeReplyLabel.text = todayEventTable[indexPath.row].eventAttribute[1]
                 cell.durationReplyLabel.text = todayEventTable[indexPath.row].eventAttribute[2]
                 cell.noteReplyLabel.text = todayEventTable[indexPath.row].note
+                
+                if DeleteStatus == false {
+                    cell.editAndDeleteButton.setImage(UIImage(named: "waste"), for: .normal)
+                } else {
+                    cell.editAndDeleteButton.setImage(UIImage(named: "edit"), for: .normal)
+                }
+                
                 if selectZeroRow ==  [indexPath.section,indexPath.row] {
                     cell.expand()
-
                 } else {
                     cell.close()
                 }
@@ -274,9 +295,15 @@ extension EventRecordViewController: UITableViewDelegate, UITableViewDataSource 
                 cell.eventSubtitleLabel.text = eventValue
                 cell.durationReplyLabel.text = todayEventTable[indexPath.row].eventAttribute[1]
                 cell.noteReplyLabel.text = todayEventTable[indexPath.row].note
+                
+                if DeleteStatus == false {
+                    cell.editAndDeleteButton.setImage(UIImage(named: "waste"), for: .normal)
+                } else {
+                    cell.editAndDeleteButton.setImage(UIImage(named: "edit"), for: .normal)
+                }
+                
                 if selectZeroRow ==  [indexPath.section,indexPath.row] {
                     cell.expand()
-
                 } else {
                     cell.close()
                 }
@@ -290,9 +317,15 @@ extension EventRecordViewController: UITableViewDelegate, UITableViewDataSource 
                 cell.eventSubtitleLabel.text = eventValue
                 cell.doseReplyLabel.text = todayEventTable[indexPath.row].eventAttribute[1]
                 cell.noteReplyLabel.text = todayEventTable[indexPath.row].note
+                
+                if DeleteStatus == false {
+                    cell.editAndDeleteButton.setImage(UIImage(named: "waste"), for: .normal)
+                } else {
+                    cell.editAndDeleteButton.setImage(UIImage(named: "edit"), for: .normal)
+                }
+                
                 if selectZeroRow ==  [indexPath.section,indexPath.row] {
                     cell.expand()
-                    
                 } else {
                     cell.close()
                 }
@@ -305,9 +338,15 @@ extension EventRecordViewController: UITableViewDelegate, UITableViewDataSource 
                 let cellYesterdayDisplayTime = cellDisplayTimeFormatter.string(from:  realmDateTimeFormatter.date(from: yesterdayEventTable[indexPath.row].dateTime)!)
                 cell.dateTimeLabel.text = cellYesterdayDisplayTime
                 cell.noteReplyLabel.text = yesterdayEventTable[indexPath.row].note
+                
+                if DeleteStatus == false {
+                    cell.editAndDeleteButton.setImage(UIImage(named: "waste"), for: .normal)
+                } else {
+                    cell.editAndDeleteButton.setImage(UIImage(named: "edit"), for: .normal)
+                }
+                
                 if selectZeroRow ==  [indexPath.section,indexPath.row] {
                     cell.expand()
-                    
                 } else {
                     cell.close()
                 }
@@ -326,6 +365,13 @@ extension EventRecordViewController: UITableViewDelegate, UITableViewDataSource 
                 cell.nameReplyLabel.text = yesterdayEventTable[indexPath.row].eventAttribute[1]
                 cell.quantityReplyLabel.text = yesterdayEventTable[indexPath.row].eventAttribute[2]
                 cell.noteReplyLabel.text = yesterdayEventTable[indexPath.row].note
+                
+                if DeleteStatus == false {
+                    cell.editAndDeleteButton.setImage(UIImage(named: "waste"), for: .normal)
+                } else {
+                    cell.editAndDeleteButton.setImage(UIImage(named: "edit"), for: .normal)
+                }
+                
                 if selectOneRow ==  [indexPath.section,indexPath.row] {
                     cell.expand()
                 } else {
@@ -342,6 +388,13 @@ extension EventRecordViewController: UITableViewDelegate, UITableViewDataSource 
                 cell.typeReplyLabel.text = yesterdayEventTable[indexPath.row].eventAttribute[1]
                 cell.durationReplyLabel.text = yesterdayEventTable[indexPath.row].eventAttribute[2]
                 cell.noteReplyLabel.text = yesterdayEventTable[indexPath.row].note
+                
+                if DeleteStatus == false {
+                    cell.editAndDeleteButton.setImage(UIImage(named: "waste"), for: .normal)
+                } else {
+                    cell.editAndDeleteButton.setImage(UIImage(named: "edit"), for: .normal)
+                }
+                
                 if selectOneRow ==  [indexPath.section,indexPath.row] {
                     cell.expand()
                 } else {
@@ -357,6 +410,13 @@ extension EventRecordViewController: UITableViewDelegate, UITableViewDataSource 
                 cell.eventSubtitleLabel.text = eventValue
                 cell.durationReplyLabel.text = yesterdayEventTable[indexPath.row].eventAttribute[1]
                 cell.noteReplyLabel.text = yesterdayEventTable[indexPath.row].note
+                
+                if DeleteStatus == false {
+                    cell.editAndDeleteButton.setImage(UIImage(named: "waste"), for: .normal)
+                } else {
+                    cell.editAndDeleteButton.setImage(UIImage(named: "edit"), for: .normal)
+                }
+                
                 if selectOneRow ==  [indexPath.section,indexPath.row] {
                     cell.expand()
                 } else {
@@ -370,8 +430,15 @@ extension EventRecordViewController: UITableViewDelegate, UITableViewDataSource 
                 let cellYesterdayDisplayTime = cellDisplayTimeFormatter.string(from:  realmDateTimeFormatter.date(from: yesterdayEventTable[indexPath.row].dateTime)!)
                 cell.dateTimeLabel.text = cellYesterdayDisplayTime
                 cell.eventSubtitleLabel.text = eventValue
-                cell.doseLabel.text = yesterdayEventTable[indexPath.row].eventAttribute[1]
+                cell.doseReplyLabel.text = yesterdayEventTable[indexPath.row].eventAttribute[1]
                 cell.noteReplyLabel.text = yesterdayEventTable[indexPath.row].note
+                
+                if DeleteStatus == false {
+                    cell.editAndDeleteButton.setImage(UIImage(named: "waste"), for: .normal)
+                } else {
+                    cell.editAndDeleteButton.setImage(UIImage(named: "edit"), for: .normal)
+                }
+                
                 if selectOneRow ==  [indexPath.section,indexPath.row] {
                     cell.expand()
                 } else {
@@ -386,6 +453,13 @@ extension EventRecordViewController: UITableViewDelegate, UITableViewDataSource 
                 let cellYesterdayDisplayTime = cellDisplayTimeFormatter.string(from:  realmDateTimeFormatter.date(from: yesterdayEventTable[indexPath.row].dateTime)!)
                 cell.dateTimeLabel.text = cellYesterdayDisplayTime
                 cell.noteReplyLabel.text = yesterdayEventTable[indexPath.row].note
+                
+                if DeleteStatus == false {
+                    cell.editAndDeleteButton.setImage(UIImage(named: "waste"), for: .normal)
+                } else {
+                    cell.editAndDeleteButton.setImage(UIImage(named: "edit"), for: .normal)
+                }
+                
                 if selectOneRow ==  [indexPath.section,indexPath.row] {
                     cell.expand()
                 } else {
