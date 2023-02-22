@@ -16,7 +16,7 @@ class LifeStyleViewController: UIViewController {
     @IBOutlet weak var eventSubtitleCollectionView: UICollectionView!
     @IBOutlet weak var recordTimeView: UIView!
     @IBOutlet weak var shadowView: UIView!
-    @IBOutlet weak var addBution: UIButton!
+    @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var timeView: UIView!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var recordTimeLabel: UILabel!
@@ -53,14 +53,67 @@ class LifeStyleViewController: UIViewController {
     var countDownData = "00:30"
     var hr = "00"
     var min = "00"
+    var alterStatus = false
+    var alterRowValue = -1
+    var alterEventId: Int = 0
+    var alterEventValue: Int = 0
+    var alterDateTime: String = ""
+    var alterAttribute: [String] = []
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        if alterStatus == true {
+            addButton.titleLabel?.text = "更新"
+            setupAlterStatus()
+        } //判斷是否由 “編輯” 功能進來的
     }
     
     // MARK: - UI Settings
+    
+    func setupAlterStatus() {
+        recordTimeLabel.text = alterDateTime
+        datePicker.date = dateTimeFormatter.date(from: alterDateTime)!
+        isHideEventSubTitle = false
+        selectedEvenTitle = alterEventId - 2
+        selectedEvenSubtitle = alterEventValue
+        isEverTapOfEventSubTitle = true
+        if selectedEvenTitle == 4 ||  selectedEvenTitle == 5 ||  selectedEvenTitle == 6 {
+            DispatchQueue.main.async {
+                UIView.animate(withDuration: 0.2) {
+                    self.eventSubtitleView.transform = CGAffineTransform(translationX: 0, y: 0)
+                    self.tableView.transform = CGAffineTransform(translationX: 0,
+                                                                 y: self.eventSubtitleView.frame.height + self.tableView.frame.height + self.addButton.frame.height - self.eventSubtitleView.frame.height)
+                }
+            }
+        } else {
+            DispatchQueue.main.async {
+                UIView.animate(withDuration: 0.2) {
+                    self.eventSubtitleView.transform = CGAffineTransform(translationX: 0, y:  self.eventSubtitleView.frame.height)
+                    self.tableView.transform = CGAffineTransform(translationX: 0, y: self.eventSubtitleView.frame.height + self.tableView.frame.height + self.addButton.frame.height)
+                    self.addButton.transform = CGAffineTransform(translationX: 0, y: self.view.bounds.height - self.eventTitleCollectionView.frame.height -  self.recordTimeView.frame.height - 10)
+                }
+            }
+        }
+        switch selectedEvenTitle {
+        case 0:
+            mealReplyArray = [alterAttribute[1], alterAttribute[2], alterAttribute[3]]
+        case 1:
+            exerciseReplyArray = [alterAttribute[1], alterAttribute[2], alterAttribute[3]]
+        case 2:
+            sleepReplyArray = [alterAttribute[1], alterAttribute[2]]
+        case 3:
+            insulinReplyArray = [alterAttribute[1], alterAttribute[2]]
+        case 4:
+            getUpReplayArray = [alterAttribute[1]]
+        case 5:
+            bathReplayArray = [alterAttribute[1]]
+        default:
+            otherReplayArray = [alterAttribute[1]]
+        }
+        tableView.reloadData()
+    }
     
     func setupUI() {
         setupEventTitleCollectionView()
@@ -127,119 +180,234 @@ class LifeStyleViewController: UIViewController {
     // MARK: - IBAction
     
     @IBAction func clickAddButton() {
-        if isEverTapOfEventSubTitle == true {
-            switch AppDefine.EventID.allCases[selectedEvenTitle] {
-            case .Meal:
-                switch AppDefine.MealEventValue.allCases[selectedEvenSubtitle] {
-                case .Breakfast:
-                    addDataToRealm(eventId: AppDefine.MealEventValue.Breakfast.value.eventID.rawValue,
-                                   eventValue: AppDefine.MealEventValue.Breakfast.value.eventValue,
-                                   eventValueData: AppDefine.MealEventValue.Breakfast.value.eventValueData,
-                                   replyArray: mealReplyArray)
-                case .Lunch:
-                    addDataToRealm(eventId: AppDefine.MealEventValue.Lunch.value.eventID.rawValue,
-                                   eventValue: AppDefine.MealEventValue.Lunch.value.eventValue,
-                                   eventValueData: AppDefine.MealEventValue.Lunch.value.eventValueData,
-                                   replyArray: mealReplyArray)
-                case .Dinner:
-                    addDataToRealm(eventId: AppDefine.MealEventValue.Dinner.value.eventID.rawValue,
-                                   eventValue: AppDefine.MealEventValue.Dinner.value.eventValue,
-                                   eventValueData: AppDefine.MealEventValue.Dinner.value.eventValueData,
-                                   replyArray: mealReplyArray)
-                case .Snack:
-                    addDataToRealm(eventId: AppDefine.MealEventValue.Snack.value.eventID.rawValue,
-                                   eventValue: AppDefine.MealEventValue.Snack.value.eventValue,
-                                   eventValueData: AppDefine.MealEventValue.Snack.value.eventValueData,
-                                   replyArray: mealReplyArray)
-                case .Drink:
-                    addDataToRealm(eventId: AppDefine.MealEventValue.Drink.value.eventID.rawValue,
-                                   eventValue: AppDefine.MealEventValue.Drink.value.eventValue,
-                                   eventValueData: AppDefine.MealEventValue.Drink.value.eventValueData,
-                                   replyArray: mealReplyArray)
-                }
-            case .Exercise:
-                switch AppDefine.ExerciseEventValue.allCases[selectedEvenSubtitle] {
-                case .High:
-                    addDataToRealm(eventId: AppDefine.ExerciseEventValue.High.value.eventID.rawValue,
-                                   eventValue: AppDefine.ExerciseEventValue.High.value.eventValue,
-                                   eventValueData: AppDefine.ExerciseEventValue.High.value.eventValueData,
-                                   replyArray: exerciseReplyArray)
-                case .Medium:
-                    addDataToRealm(eventId: AppDefine.ExerciseEventValue.Medium.value.eventID.rawValue,
-                                   eventValue: AppDefine.ExerciseEventValue.Medium.value.eventValue,
-                                   eventValueData: AppDefine.ExerciseEventValue.Medium.value.eventValueData,
-                                   replyArray: exerciseReplyArray)
-                case .Low:
-                    addDataToRealm(eventId: AppDefine.ExerciseEventValue.Low.value.eventID.rawValue,
-                                   eventValue: AppDefine.ExerciseEventValue.Low.value.eventValue,
-                                   eventValueData: AppDefine.ExerciseEventValue.Low.value.eventValueData,
-                                   replyArray: exerciseReplyArray)
-                }
-            case .Sleep:
-                switch AppDefine.SleepEventValue.allCases[selectedEvenSubtitle] {
+        if alterStatus == true {
+            if isEverTapOfEventSubTitle == true || selectedEvenTitle == 4 || selectedEvenTitle == 5 || selectedEvenTitle == 6 {
+                switch AppDefine.EventID.allCases[selectedEvenTitle] {
+                case .Meal:
+                    switch AppDefine.MealEventValue.allCases[selectedEvenSubtitle] {
+                    case .Breakfast:
+                        addOrUpdateDataToRealm(eventId: AppDefine.MealEventValue.Breakfast.value.eventID.rawValue,
+                                       eventValue: AppDefine.MealEventValue.Breakfast.value.eventValue,
+                                       eventValueData: AppDefine.MealEventValue.Breakfast.value.eventValueData,
+                                       replyArray: mealReplyArray)
+                    case .Lunch:
+                        addOrUpdateDataToRealm(eventId: AppDefine.MealEventValue.Lunch.value.eventID.rawValue,
+                                       eventValue: AppDefine.MealEventValue.Lunch.value.eventValue,
+                                       eventValueData: AppDefine.MealEventValue.Lunch.value.eventValueData,
+                                       replyArray: mealReplyArray)
+                    case .Dinner:
+                        addOrUpdateDataToRealm(eventId: AppDefine.MealEventValue.Dinner.value.eventID.rawValue,
+                                       eventValue: AppDefine.MealEventValue.Dinner.value.eventValue,
+                                       eventValueData: AppDefine.MealEventValue.Dinner.value.eventValueData,
+                                       replyArray: mealReplyArray)
+                    case .Snack:
+                        addOrUpdateDataToRealm(eventId: AppDefine.MealEventValue.Snack.value.eventID.rawValue,
+                                       eventValue: AppDefine.MealEventValue.Snack.value.eventValue,
+                                       eventValueData: AppDefine.MealEventValue.Snack.value.eventValueData,
+                                       replyArray: mealReplyArray)
+                    case .Drink:
+                        addOrUpdateDataToRealm(eventId: AppDefine.MealEventValue.Drink.value.eventID.rawValue,
+                                       eventValue: AppDefine.MealEventValue.Drink.value.eventValue,
+                                       eventValueData: AppDefine.MealEventValue.Drink.value.eventValueData,
+                                       replyArray: mealReplyArray)
+                    }
+                case .Exercise:
+                    switch AppDefine.ExerciseEventValue.allCases[selectedEvenSubtitle] {
+                    case .High:
+                        addOrUpdateDataToRealm(eventId: AppDefine.ExerciseEventValue.High.value.eventID.rawValue,
+                                       eventValue: AppDefine.ExerciseEventValue.High.value.eventValue,
+                                       eventValueData: AppDefine.ExerciseEventValue.High.value.eventValueData,
+                                       replyArray: exerciseReplyArray)
+                    case .Medium:
+                        addOrUpdateDataToRealm(eventId: AppDefine.ExerciseEventValue.Medium.value.eventID.rawValue,
+                                       eventValue: AppDefine.ExerciseEventValue.Medium.value.eventValue,
+                                       eventValueData: AppDefine.ExerciseEventValue.Medium.value.eventValueData,
+                                       replyArray: exerciseReplyArray)
+                    case .Low:
+                        addOrUpdateDataToRealm(eventId: AppDefine.ExerciseEventValue.Low.value.eventID.rawValue,
+                                       eventValue: AppDefine.ExerciseEventValue.Low.value.eventValue,
+                                       eventValueData: AppDefine.ExerciseEventValue.Low.value.eventValueData,
+                                       replyArray: exerciseReplyArray)
+                    }
                 case .Sleep:
-                    addDataToRealm(eventId: AppDefine.SleepEventValue.Sleep.value.eventID.rawValue,
-                                   eventValue: AppDefine.SleepEventValue.Sleep.value.eventValue,
-                                   eventValueData: AppDefine.SleepEventValue.Sleep.value.eventValueData,
-                                   replyArray: sleepReplyArray)
-                case .Nap:
-                    addDataToRealm(eventId: AppDefine.SleepEventValue.Nap.value.eventID.rawValue,
-                                   eventValue: AppDefine.SleepEventValue.Nap.value.eventValue,
-                                   eventValueData: AppDefine.SleepEventValue.Nap.value.eventValueData,
-                                   replyArray: sleepReplyArray)
-                case .Rest:
-                    addDataToRealm(eventId: AppDefine.SleepEventValue.Rest.value.eventID.rawValue,
-                                   eventValue: AppDefine.SleepEventValue.Rest.value.eventValue,
-                                   eventValueData: AppDefine.SleepEventValue.Rest.value.eventValueData,
-                                   replyArray: sleepReplyArray)
-                case .RelaxTime:
-                    addDataToRealm(eventId: AppDefine.SleepEventValue.RelaxTime.value.eventID.rawValue,
-                                   eventValue: AppDefine.SleepEventValue.RelaxTime.value.eventValue,
-                                   eventValueData: AppDefine.SleepEventValue.RelaxTime.value.eventValueData,
-                                   replyArray: sleepReplyArray)
+                    switch AppDefine.SleepEventValue.allCases[selectedEvenSubtitle] {
+                    case .Sleep:
+                        addOrUpdateDataToRealm(eventId: AppDefine.SleepEventValue.Sleep.value.eventID.rawValue,
+                                       eventValue: AppDefine.SleepEventValue.Sleep.value.eventValue,
+                                       eventValueData: AppDefine.SleepEventValue.Sleep.value.eventValueData,
+                                       replyArray: sleepReplyArray)
+                    case .Nap:
+                        addOrUpdateDataToRealm(eventId: AppDefine.SleepEventValue.Nap.value.eventID.rawValue,
+                                       eventValue: AppDefine.SleepEventValue.Nap.value.eventValue,
+                                       eventValueData: AppDefine.SleepEventValue.Nap.value.eventValueData,
+                                       replyArray: sleepReplyArray)
+                    case .Rest:
+                        addOrUpdateDataToRealm(eventId: AppDefine.SleepEventValue.Rest.value.eventID.rawValue,
+                                       eventValue: AppDefine.SleepEventValue.Rest.value.eventValue,
+                                       eventValueData: AppDefine.SleepEventValue.Rest.value.eventValueData,
+                                       replyArray: sleepReplyArray)
+                    case .RelaxTime:
+                        addOrUpdateDataToRealm(eventId: AppDefine.SleepEventValue.RelaxTime.value.eventID.rawValue,
+                                       eventValue: AppDefine.SleepEventValue.RelaxTime.value.eventValue,
+                                       eventValueData: AppDefine.SleepEventValue.RelaxTime.value.eventValueData,
+                                       replyArray: sleepReplyArray)
+                    }
+                case .Insulin:
+                    switch AppDefine.InsulinEventValue.allCases[selectedEvenSubtitle] {
+                    case .Rapid:
+                        addOrUpdateDataToRealm(eventId: AppDefine.InsulinEventValue.Rapid.value.eventID.rawValue,
+                                       eventValue: AppDefine.InsulinEventValue.Rapid.value.eventValue,
+                                       eventValueData: AppDefine.InsulinEventValue.Rapid.value.eventValueData,
+                                       replyArray: insulinReplyArray)
+                    case .Long:
+                        addOrUpdateDataToRealm(eventId: AppDefine.InsulinEventValue.Long.value.eventID.rawValue,
+                                       eventValue: AppDefine.InsulinEventValue.Long.value.eventValue,
+                                       eventValueData: AppDefine.InsulinEventValue.Long.value.eventValueData,
+                                       replyArray: insulinReplyArray)
+                    case .Unspecified:
+                        addOrUpdateDataToRealm(eventId: AppDefine.InsulinEventValue.Unspecified.value.eventID.rawValue,
+                                       eventValue: AppDefine.InsulinEventValue.Unspecified.value.eventValue,
+                                       eventValueData: AppDefine.InsulinEventValue.Unspecified.value.eventValueData,
+                                       replyArray: insulinReplyArray)
+                    }
+                case .GetUp:
+                    addOrUpdateDataToRealm(eventId: AppDefine.Other.Getup.value.eventID.rawValue,
+                                   eventValue: AppDefine.Other.Getup.value.eventValue,
+                                   eventValueData: AppDefine.Other.Getup.value.eventValueData,
+                                   replyArray: getUpReplayArray)
+                case .Bath:
+                    addOrUpdateDataToRealm(eventId: AppDefine.Other.Bath.value.eventID.rawValue,
+                                   eventValue: AppDefine.Other.Bath.value.eventValue,
+                                   eventValueData: AppDefine.Other.Bath.value.eventValueData,
+                                   replyArray: bathReplayArray)
+                case .Other:
+                    addOrUpdateDataToRealm(eventId: AppDefine.Other.Other.value.eventID.rawValue,
+                                   eventValue: AppDefine.Other.Other.value.eventValue,
+                                   eventValueData: AppDefine.Other.Other.value.eventValueData,
+                                   replyArray: otherReplayArray)
                 }
-            case .Insulin:
-                switch AppDefine.InsulinEventValue.allCases[selectedEvenSubtitle] {
-                case .Rapid:
-                    addDataToRealm(eventId: AppDefine.InsulinEventValue.Rapid.value.eventID.rawValue,
-                                   eventValue: AppDefine.InsulinEventValue.Rapid.value.eventValue,
-                                   eventValueData: AppDefine.InsulinEventValue.Rapid.value.eventValueData,
-                                   replyArray: insulinReplyArray)
-                case .Long:
-                    addDataToRealm(eventId: AppDefine.InsulinEventValue.Long.value.eventID.rawValue,
-                                   eventValue: AppDefine.InsulinEventValue.Long.value.eventValue,
-                                   eventValueData: AppDefine.InsulinEventValue.Long.value.eventValueData,
-                                   replyArray: insulinReplyArray)
-                case .Unspecified:
-                    addDataToRealm(eventId: AppDefine.InsulinEventValue.Unspecified.value.eventID.rawValue,
-                                   eventValue: AppDefine.InsulinEventValue.Unspecified.value.eventValue,
-                                   eventValueData: AppDefine.InsulinEventValue.Unspecified.value.eventValueData,
-                                   replyArray: insulinReplyArray)
-                }
-            case .GetUp:
-                addDataToRealm(eventId: AppDefine.Other.Getup.value.eventID.rawValue,
-                               eventValue: AppDefine.Other.Getup.value.eventValue,
-                               eventValueData: AppDefine.Other.Getup.value.eventValueData,
-                               replyArray: getUpReplayArray)
-            case .Bath:
-                addDataToRealm(eventId: AppDefine.Other.Bath.value.eventID.rawValue,
-                               eventValue: AppDefine.Other.Bath.value.eventValue,
-                               eventValueData: AppDefine.Other.Bath.value.eventValueData,
-                               replyArray: bathReplayArray)
-            case .Other:
-                addDataToRealm(eventId: AppDefine.Other.Other.value.eventID.rawValue,
-                               eventValue: AppDefine.Other.Other.value.eventValue,
-                               eventValueData: AppDefine.Other.Other.value.eventValueData,
-                               replyArray: otherReplayArray)
+                
+                navigationController?.popViewController(animated: true)
+            } else {
+                Alert.showAlertWith(title: "請點選副類型", message: "", vc: self, confirmTitle: "確認")
             }
-            Alert.showAlertWith(title: "已新增事件", message: "", vc: self, confirmTitle: "確認")
+            
         } else {
-            Alert.showAlertWith(title: "請點選副類型", message: "", vc: self, confirmTitle: "確認")
+            if isEverTapOfEventSubTitle == true || selectedEvenTitle == 4 || selectedEvenTitle == 5 || selectedEvenTitle == 6 {
+                switch AppDefine.EventID.allCases[selectedEvenTitle] {
+                case .Meal:
+                    switch AppDefine.MealEventValue.allCases[selectedEvenSubtitle] {
+                    case .Breakfast:
+                        addOrUpdateDataToRealm(eventId: AppDefine.MealEventValue.Breakfast.value.eventID.rawValue,
+                                       eventValue: AppDefine.MealEventValue.Breakfast.value.eventValue,
+                                       eventValueData: AppDefine.MealEventValue.Breakfast.value.eventValueData,
+                                       replyArray: mealReplyArray)
+                    case .Lunch:
+                        addOrUpdateDataToRealm(eventId: AppDefine.MealEventValue.Lunch.value.eventID.rawValue,
+                                       eventValue: AppDefine.MealEventValue.Lunch.value.eventValue,
+                                       eventValueData: AppDefine.MealEventValue.Lunch.value.eventValueData,
+                                       replyArray: mealReplyArray)
+                    case .Dinner:
+                        addOrUpdateDataToRealm(eventId: AppDefine.MealEventValue.Dinner.value.eventID.rawValue,
+                                       eventValue: AppDefine.MealEventValue.Dinner.value.eventValue,
+                                       eventValueData: AppDefine.MealEventValue.Dinner.value.eventValueData,
+                                       replyArray: mealReplyArray)
+                    case .Snack:
+                        addOrUpdateDataToRealm(eventId: AppDefine.MealEventValue.Snack.value.eventID.rawValue,
+                                       eventValue: AppDefine.MealEventValue.Snack.value.eventValue,
+                                       eventValueData: AppDefine.MealEventValue.Snack.value.eventValueData,
+                                       replyArray: mealReplyArray)
+                    case .Drink:
+                        addOrUpdateDataToRealm(eventId: AppDefine.MealEventValue.Drink.value.eventID.rawValue,
+                                       eventValue: AppDefine.MealEventValue.Drink.value.eventValue,
+                                       eventValueData: AppDefine.MealEventValue.Drink.value.eventValueData,
+                                       replyArray: mealReplyArray)
+                    }
+                case .Exercise:
+                    switch AppDefine.ExerciseEventValue.allCases[selectedEvenSubtitle] {
+                    case .High:
+                        addOrUpdateDataToRealm(eventId: AppDefine.ExerciseEventValue.High.value.eventID.rawValue,
+                                       eventValue: AppDefine.ExerciseEventValue.High.value.eventValue,
+                                       eventValueData: AppDefine.ExerciseEventValue.High.value.eventValueData,
+                                       replyArray: exerciseReplyArray)
+                    case .Medium:
+                        addOrUpdateDataToRealm(eventId: AppDefine.ExerciseEventValue.Medium.value.eventID.rawValue,
+                                       eventValue: AppDefine.ExerciseEventValue.Medium.value.eventValue,
+                                       eventValueData: AppDefine.ExerciseEventValue.Medium.value.eventValueData,
+                                       replyArray: exerciseReplyArray)
+                    case .Low:
+                        addOrUpdateDataToRealm(eventId: AppDefine.ExerciseEventValue.Low.value.eventID.rawValue,
+                                       eventValue: AppDefine.ExerciseEventValue.Low.value.eventValue,
+                                       eventValueData: AppDefine.ExerciseEventValue.Low.value.eventValueData,
+                                       replyArray: exerciseReplyArray)
+                    }
+                case .Sleep:
+                    switch AppDefine.SleepEventValue.allCases[selectedEvenSubtitle] {
+                    case .Sleep:
+                        addOrUpdateDataToRealm(eventId: AppDefine.SleepEventValue.Sleep.value.eventID.rawValue,
+                                       eventValue: AppDefine.SleepEventValue.Sleep.value.eventValue,
+                                       eventValueData: AppDefine.SleepEventValue.Sleep.value.eventValueData,
+                                       replyArray: sleepReplyArray)
+                    case .Nap:
+                        addOrUpdateDataToRealm(eventId: AppDefine.SleepEventValue.Nap.value.eventID.rawValue,
+                                       eventValue: AppDefine.SleepEventValue.Nap.value.eventValue,
+                                       eventValueData: AppDefine.SleepEventValue.Nap.value.eventValueData,
+                                       replyArray: sleepReplyArray)
+                    case .Rest:
+                        addOrUpdateDataToRealm(eventId: AppDefine.SleepEventValue.Rest.value.eventID.rawValue,
+                                       eventValue: AppDefine.SleepEventValue.Rest.value.eventValue,
+                                       eventValueData: AppDefine.SleepEventValue.Rest.value.eventValueData,
+                                       replyArray: sleepReplyArray)
+                    case .RelaxTime:
+                        addOrUpdateDataToRealm(eventId: AppDefine.SleepEventValue.RelaxTime.value.eventID.rawValue,
+                                       eventValue: AppDefine.SleepEventValue.RelaxTime.value.eventValue,
+                                       eventValueData: AppDefine.SleepEventValue.RelaxTime.value.eventValueData,
+                                       replyArray: sleepReplyArray)
+                    }
+                case .Insulin:
+                    switch AppDefine.InsulinEventValue.allCases[selectedEvenSubtitle] {
+                    case .Rapid:
+                        addOrUpdateDataToRealm(eventId: AppDefine.InsulinEventValue.Rapid.value.eventID.rawValue,
+                                       eventValue: AppDefine.InsulinEventValue.Rapid.value.eventValue,
+                                       eventValueData: AppDefine.InsulinEventValue.Rapid.value.eventValueData,
+                                       replyArray: insulinReplyArray)
+                    case .Long:
+                        addOrUpdateDataToRealm(eventId: AppDefine.InsulinEventValue.Long.value.eventID.rawValue,
+                                       eventValue: AppDefine.InsulinEventValue.Long.value.eventValue,
+                                       eventValueData: AppDefine.InsulinEventValue.Long.value.eventValueData,
+                                       replyArray: insulinReplyArray)
+                    case .Unspecified:
+                        addOrUpdateDataToRealm(eventId: AppDefine.InsulinEventValue.Unspecified.value.eventID.rawValue,
+                                       eventValue: AppDefine.InsulinEventValue.Unspecified.value.eventValue,
+                                       eventValueData: AppDefine.InsulinEventValue.Unspecified.value.eventValueData,
+                                       replyArray: insulinReplyArray)
+                    }
+                case .GetUp:
+                    addOrUpdateDataToRealm(eventId: AppDefine.Other.Getup.value.eventID.rawValue,
+                                   eventValue: AppDefine.Other.Getup.value.eventValue,
+                                   eventValueData: AppDefine.Other.Getup.value.eventValueData,
+                                   replyArray: getUpReplayArray)
+                case .Bath:
+                    addOrUpdateDataToRealm(eventId: AppDefine.Other.Bath.value.eventID.rawValue,
+                                   eventValue: AppDefine.Other.Bath.value.eventValue,
+                                   eventValueData: AppDefine.Other.Bath.value.eventValueData,
+                                   replyArray: bathReplayArray)
+                case .Other:
+                    addOrUpdateDataToRealm(eventId: AppDefine.Other.Other.value.eventID.rawValue,
+                                   eventValue: AppDefine.Other.Other.value.eventValue,
+                                   eventValueData: AppDefine.Other.Other.value.eventValueData,
+                                   replyArray: otherReplayArray)
+                }
+                let nextVC = EventRecordViewController()
+                navigationController?.pushViewController(nextVC, animated: true)
+            } else {
+                Alert.showAlertWith(title: "請點選副類型", message: "", vc: self, confirmTitle: "確認")
+            }
         }
-        
     }
     
-    func addDataToRealm(eventId: Int, eventValue: Int, eventValueData: String, replyArray: [String]) {
+    
+    func addOrUpdateDataToRealm(eventId: Int, eventValue: Int, eventValueData: String, replyArray: [String]) {
        
         var eventValueDataArray: [String] = []
         eventValueDataArray.append(eventValueData)
@@ -252,7 +420,7 @@ class LifeStyleViewController: UIViewController {
         displayTimeFormatter.locale = Locale(identifier: "zh_TW")
         displayTimeFormatter.timeZone = TimeZone(abbreviation: "UTC")
         
-        let eventDataTable = EventDataTable(id: 0,
+        let eventData = EventDataTable(id: 0,
                                             dateTime: recordTimeLabel.text!,
                                             displayTime: displayTimeFormatter.string(from: dateTimeFormatter.date(from: recordTimeLabel.text!)!),
                                             eventAttribute: eventAttribute,
@@ -260,7 +428,17 @@ class LifeStyleViewController: UIViewController {
                                             eventValue: eventValue,
                                             note: replyArray.last!,
                                             check: false)
-        LocalDatabase.shared.addEvenData(eventData: eventDataTable)
+        if alterStatus == true {
+            let alterDateFormatter = DateFormatter()
+            alterDateFormatter.locale = Locale(identifier: "zh_TW")
+            alterDateFormatter.dateFormat = "MM/dd"
+            let alterDate = alterDateFormatter.string(from: dateTimeFormatter.date(from: alterDateTime)!)
+            LocalDatabase.shared.UpdateEvenData(eventData: eventData,
+                                                filter: "dateTime CONTAINS '\(alterDate)'",
+                                                rowValue: alterRowValue)
+        } else {
+            LocalDatabase.shared.addEvenData(eventData: eventData)
+        }
     }
     
     @objc func clickRecordTime() {
@@ -551,7 +729,7 @@ extension LifeStyleViewController: UICollectionViewDelegate, UICollectionViewDat
                         UIView.animate(withDuration: 0.2) {
                             self.eventSubtitleView.transform = CGAffineTransform(translationX: 0, y: 0)
                             self.tableView.transform = CGAffineTransform(translationX: 0,
-                                                                         y: self.eventSubtitleView.frame.height + self.tableView.frame.height + self.addBution.frame.height - self.eventSubtitleView.frame.height)
+                                                                         y: self.eventSubtitleView.frame.height + self.tableView.frame.height + self.addButton.frame.height - self.eventSubtitleView.frame.height)
                         }
                     }
                     isHideEventSubTitle = true
@@ -561,7 +739,8 @@ extension LifeStyleViewController: UICollectionViewDelegate, UICollectionViewDat
                             UIView.animate(withDuration: 0.2) {
                                 self.eventSubtitleView.transform = CGAffineTransform(translationX: 0, y: 0)
                                 self.tableView.transform = CGAffineTransform(translationX: 0,
-                                                                             y: self.addBution.frame.height + self.tableView.frame.height)
+                                                                             y: self.addButton.frame.height + self.tableView.frame.height)
+                                self.addButton.transform = CGAffineTransform(translationX: 0, y: self.view.bounds.height - self.eventTitleCollectionView.frame.height -  self.recordTimeView.frame.height - 10)
                             }
                         }
                         isExpandTextField = true
@@ -573,8 +752,8 @@ extension LifeStyleViewController: UICollectionViewDelegate, UICollectionViewDat
                     DispatchQueue.main.async {
                         UIView.animate(withDuration: 0.2) {
                             self.eventSubtitleView.transform = CGAffineTransform(translationX: 0, y:  self.eventSubtitleView.frame.height)
-                            self.tableView.transform = CGAffineTransform(translationX: 0, y: self.eventSubtitleView.frame.height + self.tableView.frame.height + self.addBution.frame.height)
-                            self.addBution.transform = CGAffineTransform(translationX: 0, y: self.view.bounds.height - self.eventTitleCollectionView.frame.height -  self.recordTimeView.frame.height - 10)
+                            self.tableView.transform = CGAffineTransform(translationX: 0, y: self.eventSubtitleView.frame.height + self.tableView.frame.height + self.addButton.frame.height)
+                            self.addButton.transform = CGAffineTransform(translationX: 0, y: self.view.bounds.height - self.eventTitleCollectionView.frame.height -  self.recordTimeView.frame.height - 10)
                         }
                     }
                     isHideEventSubTitle = false
@@ -909,6 +1088,7 @@ extension LifeStyleViewController: UITextFieldDelegate {
         }
     }
 }
+
 
 // MARK: - Protocol
 

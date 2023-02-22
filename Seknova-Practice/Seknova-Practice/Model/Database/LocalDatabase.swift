@@ -105,16 +105,33 @@ class LocalDatabase: NSObject {
         }
     }
     
-// MARK: Find - Function
+// MARK: Update - Function
     
-//    func findUserInformationData(userinformation: UserInformationTable,
-//                                 filter: String) -> [String] {
-//        let realm = try! Realm()
-//        let results = realm.objects(UserInformation.self).filter(filter)
-//        
-//    }
-    
-    
+    func UpdateEvenData(eventData: EventDataTable, filter: String, rowValue: Int) {
+        let realm = try! Realm()
+        let deleteEventDataTable = realm.objects(EventData.self).filter(filter)
+        try! realm.write{
+            realm.delete(deleteEventDataTable[rowValue])
+        }
+        
+        let addEventDataTable = EventData()
+        addEventDataTable.id = eventData.id
+        addEventDataTable.dateTime = eventData.dateTime
+        addEventDataTable.displayTime = eventData.displayTime
+        addEventDataTable.eventId = eventData.eventId
+        addEventDataTable.eventValue = eventData.eventValue
+        addEventDataTable.eventAttribute.removeAll()
+        eventData.eventAttribute.forEach { attribute in
+            addEventDataTable.eventAttribute.append(attribute)
+        }
+        addEventDataTable.note = eventData.note
+        addEventDataTable.check = eventData.check
+        
+        try! realm.write {
+            realm.add(addEventDataTable)
+            print("Realm.Add Success fileURL:\(realm.configuration.fileURL)")
+        }
+    }
 }
 
 class Records: Object {

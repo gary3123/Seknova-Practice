@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LifeStyleViewController" customModule="Seknova_Practice" customModuleProvider="target">
             <connections>
-                <outlet property="addBution" destination="5mh-bu-s4w" id="Gd4-ye-Uv6"/>
+                <outlet property="addButton" destination="5mh-bu-s4w" id="Gd4-ye-Uv6"/>
                 <outlet property="countDownPickerView" destination="Kb8-y2-Bvq" id="fzU-NX-YBv"/>
                 <outlet property="datePicker" destination="mEz-NG-RWW" id="RTN-Q7-fZt"/>
                 <outlet property="eventSubtitleCollectionView" destination="cWx-Wi-4bK" id="tyT-L8-CgK"/>
