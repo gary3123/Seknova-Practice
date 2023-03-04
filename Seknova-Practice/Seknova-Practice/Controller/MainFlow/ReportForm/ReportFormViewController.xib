@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,6 +12,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReportFormViewController" customModule="Seknova_Practice" customModuleProvider="target">
             <connections>
+                <outlet property="barChartView" destination="ldL-sv-x0I" id="TmG-hH-de5"/>
+                <outlet property="lineChartView" destination="NjL-DC-mJy" id="zDd-V7-LZU"/>
+                <outlet property="reportFormSegmentedControl" destination="v7u-mA-kEx" id="6jz-AE-x84"/>
+                <outlet property="showDateLabel" destination="tTJ-Rv-A5o" id="aiM-ra-wE3"/>
+                <outlet property="timeIntervalLabel" destination="Nve-70-pao" id="aON-H3-D3H"/>
+                <outlet property="timeIntervalSegmentedControl" destination="dJV-KQ-31m" id="unY-zh-gmF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -25,6 +32,9 @@
                         <segment title="Daily Patterns"/>
                         <segment title="Time in Target"/>
                     </segments>
+                    <connections>
+                        <action selector="clickReportFormSegmentedControl" destination="-2" eventType="valueChanged" id="pXh-as-uiI"/>
+                    </connections>
                 </segmentedControl>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yRt-Tb-u0w">
                     <rect key="frame" x="0.0" y="59" width="393" height="51"/>
@@ -44,23 +54,30 @@
                         <constraint firstItem="tTJ-Rv-A5o" firstAttribute="centerX" secondItem="yRt-Tb-u0w" secondAttribute="centerX" id="dXJ-FL-dnM"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NjL-DC-mJy">
-                    <rect key="frame" x="25.666666666666657" y="213.33333333333337" width="342" height="477"/>
-                    <color key="backgroundColor" systemColor="systemGray2Color"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NjL-DC-mJy" customClass="LineChartView" customModule="Charts">
+                    <rect key="frame" x="25.666666666666657" y="213.33333333333337" width="342" height="511"/>
+                    <color key="backgroundColor" name="Color"/>
+                </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ldL-sv-x0I" customClass="BarChartView" customModule="Charts">
+                    <rect key="frame" x="-43" y="213.33333333333337" width="479" height="511"/>
+                    <color key="backgroundColor" name="Color"/>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nve-70-pao">
-                    <rect key="frame" x="59" y="722.33333333333337" width="275" height="21"/>
+                    <rect key="frame" x="59" y="744.33333333333337" width="275" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" systemColor="systemGrayColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dJV-KQ-31m">
-                    <rect key="frame" x="78.666666666666671" y="765.33333333333337" width="235.66666666666663" height="52"/>
+                    <rect key="frame" x="78.666666666666671" y="787.33333333333337" width="235.66666666666663" height="52.333333333333371"/>
                     <segments>
                         <segment title="7 DAYS" width="66"/>
                         <segment title="14 DAYS"/>
                         <segment title="30 DAYS"/>
                     </segments>
+                    <connections>
+                        <action selector="clickTimeIntervalSegmentedControl" destination="-2" eventType="valueChanged" id="xhg-zb-iLL"/>
+                    </connections>
                 </segmentedControl>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -70,7 +87,8 @@
                 <constraint firstItem="v7u-mA-kEx" firstAttribute="top" secondItem="yRt-Tb-u0w" secondAttribute="bottom" constant="26" id="3Md-b2-0U6"/>
                 <constraint firstItem="Nve-70-pao" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="6BJ-uM-Ynn"/>
                 <constraint firstItem="NjL-DC-mJy" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.870229" id="GeV-by-zDj"/>
-                <constraint firstItem="NjL-DC-mJy" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.559859" id="JgO-YX-Ppi"/>
+                <constraint firstItem="ldL-sv-x0I" firstAttribute="centerY" secondItem="NjL-DC-mJy" secondAttribute="centerY" id="HVo-D5-Xo7"/>
+                <constraint firstItem="NjL-DC-mJy" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.6" id="JgO-YX-Ppi"/>
                 <constraint firstItem="NjL-DC-mJy" firstAttribute="top" secondItem="v7u-mA-kEx" secondAttribute="bottom" constant="26" id="KXk-9n-r7u"/>
                 <constraint firstItem="Nve-70-pao" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.0246479" id="McY-Fk-yIx"/>
                 <constraint firstItem="dJV-KQ-31m" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.6" id="TQn-Ru-l0J"/>
@@ -79,23 +97,26 @@
                 <constraint firstItem="yRt-Tb-u0w" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.06" id="WOL-qJ-g1t"/>
                 <constraint firstItem="dJV-KQ-31m" firstAttribute="top" secondItem="Nve-70-pao" secondAttribute="bottom" constant="22" id="afO-bn-vbe"/>
                 <constraint firstItem="yRt-Tb-u0w" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="cLK-Rc-bvP"/>
+                <constraint firstItem="ldL-sv-x0I" firstAttribute="width" secondItem="NjL-DC-mJy" secondAttribute="width" multiplier="1.4" id="egz-NA-Gni"/>
                 <constraint firstItem="dJV-KQ-31m" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="hht-Tl-Rqh"/>
                 <constraint firstItem="Nve-70-pao" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.7" id="ieJ-qA-4cJ"/>
                 <constraint firstItem="yRt-Tb-u0w" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="jLG-vR-5qy"/>
                 <constraint firstItem="dJV-KQ-31m" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.06" id="msb-D6-WbB"/>
                 <constraint firstItem="v7u-mA-kEx" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.63" id="nd5-b9-7LW"/>
-                <constraint firstItem="Nve-70-pao" firstAttribute="top" secondItem="NjL-DC-mJy" secondAttribute="bottom" constant="32" id="o4f-Ia-iKk"/>
+                <constraint firstItem="Nve-70-pao" firstAttribute="top" secondItem="NjL-DC-mJy" secondAttribute="bottom" constant="20" id="o4f-Ia-iKk"/>
+                <constraint firstItem="ldL-sv-x0I" firstAttribute="height" secondItem="NjL-DC-mJy" secondAttribute="height" id="pC4-wQ-zoP"/>
                 <constraint firstItem="yRt-Tb-u0w" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="sCS-T1-hHd"/>
+                <constraint firstItem="ldL-sv-x0I" firstAttribute="centerX" secondItem="NjL-DC-mJy" secondAttribute="centerX" id="txl-Yo-vPi"/>
             </constraints>
             <point key="canvasLocation" x="87.786259541984734" y="19.718309859154932"/>
         </view>
     </objects>
     <resources>
+        <namedColor name="Color">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

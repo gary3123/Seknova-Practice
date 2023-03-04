@@ -46,6 +46,7 @@
 		4E1EF36B299F692A0091F91B /* InsulinTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E1EF369299F692A0091F91B /* InsulinTableViewCell.xib */; };
 		4E2160F72939D5A80021553C /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2160F52939D5A80021553C /* ConnectViewController.swift */; };
 		4E2160F82939D5A80021553C /* ConnectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E2160F62939D5A80021553C /* ConnectViewController.xib */; };
+		4E29EDBD29AE00A400B84FED /* CustomLineChartRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29EDBC29AE00A400B84FED /* CustomLineChartRenderer.swift */; };
 		4E2E94E02913B7F900E2533F /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2E94DF2913B7F900E2533F /* String+Extensions.swift */; };
 		4E2E94E32913BDE200E2533F /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2E94E22913BDE200E2533F /* Alert.swift */; };
 		4E2EE826293DF856005F9DDD /* BodyInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2EE824293DF856005F9DDD /* BodyInformationTableViewCell.swift */; };
@@ -231,6 +232,7 @@
 		4E1EF369299F692A0091F91B /* InsulinTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsulinTableViewCell.xib; sourceTree = "<group>"; };
 		4E2160F52939D5A80021553C /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
 		4E2160F62939D5A80021553C /* ConnectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConnectViewController.xib; sourceTree = "<group>"; };
+		4E29EDBC29AE00A400B84FED /* CustomLineChartRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLineChartRenderer.swift; sourceTree = "<group>"; };
 		4E2E94DF2913B7F900E2533F /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		4E2E94E22913BDE200E2533F /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		4E2EE824293DF856005F9DDD /* BodyInformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyInformationTableViewCell.swift; sourceTree = "<group>"; };
@@ -617,6 +619,7 @@
 				4E48CAAE295491C500CC9855 /* ChartXAxisFormatter.swift */,
 				4EB1D70C295EF70D00ABA352 /* CommandBase.swift */,
 				4EA0FA2D297525BD00D135B5 /* UIViewToUIImage.swift */,
+				4E29EDBC29AE00A400B84FED /* CustomLineChartRenderer.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -1230,6 +1233,7 @@
 				4E8A4E2C29936E480078BBCC /* AudioViewController.swift in Sources */,
 				4E7CD5532937925900F913F4 /* PairBlueToothViewController.swift in Sources */,
 				4EB468992986B03800820F92 /* AccountSectionTableViewCell.swift in Sources */,
+				4E29EDBD29AE00A400B84FED /* CustomLineChartRenderer.swift in Sources */,
 				4E2EE829293F7E01005F9DDD /* AppDefine.swift in Sources */,
 				4E1EF35E299F5CCF0091F91B /* MealTableViewCell.swift in Sources */,
 				4E2EE82F29435621005F9DDD /* LocalDatabase.swift in Sources */,

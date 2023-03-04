@@ -29,8 +29,6 @@ class InstanceBloodSugarViewController: BaseViewController {
         super.viewDidLoad()
         view.insertSubview(AlphaBackgroundView(imageName: "Background5.jpg", alpha: 0.2), at: 0)
         print("這是即時血糖頁面")
-        UserPreferences.shared.lowBloodSugar = 55
-        UserPreferences.shared.highBloodSugar = 200
         
         setupUI()
         
@@ -55,13 +53,8 @@ class InstanceBloodSugarViewController: BaseViewController {
     }
     
     private func setupLineChartView() {
-        
-        
-        
         dateformatter.dateFormat = "HH:mm"
-        
-       
-        
+
     }
     
     
@@ -91,10 +84,10 @@ class InstanceBloodSugarViewController: BaseViewController {
         chartView.leftAxis.drawLimitLinesBehindDataEnabled = true
         chartView.xAxis.avoidFirstLastClippingEnabled = true
         chartView.xAxis.forceLabelsEnabled = true
-        
+        chartView.rightAxis.drawGridLinesEnabled = false
         
         bloodSugarIndex.append(Int.random(in:55...400))
-        bloodSugarIndexLabel.text = "\(bloodSugarIndex[bloodSugarIndex.count-1])"
+        bloodSugarIndexLabel.text = "\(bloodSugarIndex[bloodSugarIndex.count - 1])"
         var entry = ChartDataEntry(x: Date().timeIntervalSince1970 ,
                                    y: Double(bloodSugarIndex[bloodSugarIndex.count-1]))
         bloodSugarEntry.append(entry)
@@ -116,6 +109,7 @@ class InstanceBloodSugarViewController: BaseViewController {
     
     
     // MARK: - IBAction
+    
     
 }
 

@@ -63,6 +63,7 @@ class LifeStyleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        datePicker.maximumDate = Date()
         setupUI()
         if alterStatus == true {
             addButton.titleLabel?.text = "更新"

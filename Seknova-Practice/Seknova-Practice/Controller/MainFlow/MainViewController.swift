@@ -78,13 +78,12 @@ class MainViewController: BaseViewController {
         // 將中間的 container 替換成閉包, delegate 帶進來的值
         containerView.addSubview(vc[index].view)
         setMainBarButtonItem()
+        navigationItem.setRightBarButtonItems(nil, animated: true)
         if index == 4 {
-            navigationItem.setRightBarButtonItems(nil, animated: true)
             setupdateButtonItem()
         } else if index == 3 {
-            navigationItem.setRightBarButtonItems(nil, animated: true)
             setupEeventRecordButtonItem()
-        } else {
+        } else if index == 2 {
             setBatteryButtonItem()
         }
     }

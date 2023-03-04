@@ -21,7 +21,7 @@ class BloodSugarCorrectionViewController: BaseViewController {
     
     // MARK: - Variables
     var count = 0
-
+    var timer  = Timer()
     
     // MARK: - LifeCycle
     
@@ -32,7 +32,10 @@ class BloodSugarCorrectionViewController: BaseViewController {
         addIndexButton.tag = 0
         minusIndexButton.tag = 1
         
-       
+        let addLongPressd = UILongPressGestureRecognizer(target: self, action: #selector(longPressToAddAction))
+        let minusLongPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressToMinusAction))
+        addIndexButton.addGestureRecognizer(addLongPressd)
+        minusIndexButton.addGestureRecognizer(minusLongPress)
     }
     
     
@@ -46,25 +49,41 @@ class BloodSugarCorrectionViewController: BaseViewController {
     
     // MARK: - IBAction
     
-    @objc func longPressAction() {
-        DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
-            self.count += 1
-            print(self.count)
+    @objc func longPressToAddAction( recognizer: UILongPressGestureRecognizer ) {
+        if recognizer.state == .began {
+            timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in
+                if self.indexTextField.text == "" {
+                    self.indexTextField.text = "1"
+                } else if Int(self.indexTextField.text!)! < 400 {
+                    self.indexTextField.text = "\(Int(self.indexTextField.text!)! + 1)"
+                }
+            }
+        } else if recognizer.state == .ended {
+            timer.invalidate()
         }
-       
+    }
+    
+    @objc func longPressToMinusAction( recognizer: UILongPressGestureRecognizer ) {
+        if recognizer.state == .began {
+            timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in
+                if self.indexTextField.text == "" {
+                    self.indexTextField.text = "0"
+                } else if Int(self.indexTextField.text!)! > 0 {
+                    self.indexTextField.text = "\(Int(self.indexTextField.text!)! - 1)"
+                }
+            }
+        } else if recognizer.state == .ended {
+            timer.invalidate()
+        }
     }
     
     
     @IBAction func clickAddIndexButton() {
-        let longPressd = UILongPressGestureRecognizer(target: self, action: #selector(longPressAction))
-        addIndexButton.addGestureRecognizer(longPressd)
         if indexTextField.text == "" {
             indexTextField.text = "1"
         } else {
             indexTextField.text = "\(Int(indexTextField.text!)! + 1)"
         }
-        
-        
     }
     
     @IBAction func clickMinusIndexButton() {

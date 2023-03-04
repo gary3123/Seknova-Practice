@@ -17,8 +17,8 @@ class EventRecordViewController: UIViewController {
     
     // MARK: - Variables
     var isExpand = false
-    var selectZeroRow = [0,9]
-    var selectOneRow = [1,9]
+    var selectZeroRow = [0,-1]
+    var selectOneRow = [1,-1]
     let realm = try! Realm()
     var tableViewCellType = 0
     var deleteStatus = false
@@ -577,10 +577,10 @@ extension EventRecordViewController: UITableViewDelegate, UITableViewDataSource 
         
         if indexPath.section == 0 {
             selectZeroRow = [0,indexPath.row]
-            selectOneRow = [1,9]
+            selectOneRow = [1,-1]
         } else {
             selectOneRow = [1,indexPath.row]
-            selectZeroRow = [0,9]
+            selectZeroRow = [0,-1]
         }
         tableView.reloadData()
         
