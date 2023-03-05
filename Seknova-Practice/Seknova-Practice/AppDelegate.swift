@@ -11,7 +11,26 @@ import IQKeyboardManagerSwift
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    //当前界面支持的方向（默认情况下只能竖屏，不能横屏显示）
+    var interfaceOrientations: UIInterfaceOrientationMask = .portrait{
+            didSet{
+                //强制设置成竖屏
+                if interfaceOrientations == .portrait{
+                    UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue,
+                                              forKey: "orientation")
+                }
+                //强制设置成横屏
+                else if !interfaceOrientations.contains(.portrait){
+                    UIDevice.current.setValue(UIInterfaceOrientation.landscapeLeft.rawValue,
+                                              forKey: "orientation")
+                }
+            }
+        }
+    
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor
+           window: UIWindow?)-> UIInterfaceOrientationMask {
+           return interfaceOrientations
+       }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

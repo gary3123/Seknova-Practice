@@ -32,6 +32,7 @@ class MainViewController: BaseViewController {
     var sensorView = UIBarButtonItem() // Sensor 狀態，迴紋針
     var deviceButtonView = UIBarButtonItem() // 電池圖
     var updateButtonView = UIBarButtonItem() // 更新
+    var reloadChartViewButton = UIButton() // 更新歷史紀錄頁面的 ChartView
     var connectStatus: Bool = false
     
     enum ContentPage {
@@ -85,6 +86,9 @@ class MainViewController: BaseViewController {
             setupEeventRecordButtonItem()
         } else if index == 2 {
             setBatteryButtonItem()
+        } else if index == 0 {
+            setupReloadHistoryChartViewDataButton()
+            navigationItem.backButtonTitle = ""
         }
     }
     
@@ -92,6 +96,20 @@ class MainViewController: BaseViewController {
         navigationController?.isNavigationBarHidden = false
         navigationItem.setHidesBackButton(true, animated: false)
         setNavigationbar(backgroundcolor: .navigationBar!)
+    }
+    
+    func  setupReloadHistoryChartViewDataButton() {
+        reloadChartViewButton = UIButton(type: .custom)
+        reloadChartViewButton.setImage(UIImage(named: "reload"), for: .normal)
+        reloadChartViewButton.addTarget(self, action: #selector(reloadHistoryChartView), for: .touchUpInside)
+        let reloadChartViewButtonView = UIBarButtonItem(customView: reloadChartViewButton)
+        // 設定寬
+        let reloadChartViewButtonViewWidth = reloadChartViewButtonView.customView?.widthAnchor.constraint(equalToConstant: 24)
+        reloadChartViewButtonViewWidth!.isActive = true
+        // 設定高
+        let reloadChartViewButtonViewHeight = reloadChartViewButtonView.customView?.heightAnchor.constraint(equalToConstant: 24)
+        reloadChartViewButtonViewHeight!.isActive = true
+        navigationItem.rightBarButtonItem = reloadChartViewButtonView
     }
     
     func setMainBarButtonItem() {
@@ -217,9 +235,14 @@ class MainViewController: BaseViewController {
     }
     
     @IBAction func clickSettingButton() {
-        
         let nextVC = SettingViewController()
         navigationItem.backButtonTitle = "返回"
+        navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+    @IBAction func clickLogsButton() {
+        let nextVC = LogViewController()
+        navigationItem.backButtonTitle = ""
         navigationController?.pushViewController(nextVC, animated: true)
     }
     
@@ -232,6 +255,7 @@ class MainViewController: BaseViewController {
         selectStatus.toggle()
         DispatchQueue.main.async {
             if self.selectStatus == true {
+                self.optionView.isHidden = false
                 UIView.animate(withDuration: 0.5) {
                     self.optionView.transform = CGAffineTransform(translationX: 145, y: 0)
                 }
@@ -241,6 +265,10 @@ class MainViewController: BaseViewController {
                 }
             }
         }
+    }
+    
+    @objc func reloadHistoryChartView() {
+        NotificationCenter.default.post(name: .reloadHistoryChartViewData, object: nil)
     }
     
     @objc func connectPopover() {

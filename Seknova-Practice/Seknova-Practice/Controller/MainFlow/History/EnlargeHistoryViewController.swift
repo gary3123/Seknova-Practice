@@ -1,14 +1,15 @@
 //
-//  HistoryViewController.swift
+//  EnlargeHistoryViewController.swift
 //  Seknova-Practice
 //
-//  Created by 阿瑋 on 2022/12/2.
+//  Created by Gary on 2023/3/5.
 //
+
 import RealmSwift
 import Charts
 import UIKit
 
-class HistoryViewController: UIViewController {
+class EnlargeHistoryViewController: UIViewController {
     
     // MARK: - IBOutlet
     @IBOutlet weak var enlargeButton: UIButton!
@@ -18,6 +19,7 @@ class HistoryViewController: UIViewController {
     @IBOutlet weak var eventValueLabel: UILabel!
     @IBOutlet weak var dateTimeLabel: UILabel!
     @IBOutlet weak var remarkLabel: UILabel!
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     // MARK: - Variables
     enum TimeWidth {
@@ -38,20 +40,36 @@ class HistoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "歷史紀錄"
         Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(randonProduce), userInfo: nil, repeats: true)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(reloadHistoryChartView),
-                                               name: .reloadHistoryChartViewData,
-                                               object: nil)
         setupUI()
-        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        appDelegate.interfaceOrientations = .portrait
     }
     
     
     // MARK: - UI Settings
     func setupUI() {
+        appDelegate.interfaceOrientations = .landscape
         setChartView()
         setupEventValueDetailView()
+        setupNavigation()
+    }
+    
+    func setupNavigation() {
+        let reloadChartViewButton = UIButton(type: .custom)
+        reloadChartViewButton.setImage(UIImage(named: "reload"), for: .normal)
+        reloadChartViewButton.addTarget(self, action: #selector(reloadHistoryChartView), for: .touchUpInside)
+        let reloadChartViewButtonView = UIBarButtonItem(customView: reloadChartViewButton)
+        // 設定寬
+        let reloadChartViewButtonViewWidth = reloadChartViewButtonView.customView?.widthAnchor.constraint(equalToConstant: 24)
+        reloadChartViewButtonViewWidth!.isActive = true
+        // 設定高
+        let reloadChartViewButtonViewHeight = reloadChartViewButtonView.customView?.heightAnchor.constraint(equalToConstant: 24)
+        reloadChartViewButtonViewHeight!.isActive = true
+        navigationItem.rightBarButtonItem = reloadChartViewButtonView
     }
     
     func setChartView() {
@@ -99,7 +117,7 @@ class HistoryViewController: UIViewController {
         
         
         if bloodSugarIndex.count != 0 {
-            let entry = ChartDataEntry(x: Date().timeIntervalSince1970,
+            var entry = ChartDataEntry(x: Date().timeIntervalSince1970,
                                        y: Double(bloodSugarIndex[bloodSugarIndex.count - 1]))
             bloodSugarEntry.append(entry)
         }
@@ -280,19 +298,13 @@ class HistoryViewController: UIViewController {
         chartView.moveViewToX(time)
     }
     
-    @IBAction func clickEnlargeButton() {
-        let nextVC = EnlargeHistoryViewController()
-        navigationController?.pushViewController(nextVC, animated: true)
-    }
-    
     @objc func reloadHistoryChartView() {
         setChartView()
     }
-     
 }
 
 // MARK: - Extensions
-extension HistoryViewController: ChartViewDelegate {
+extension EnlargeHistoryViewController: ChartViewDelegate {
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         let eventDataTable = realm.objects(EventData.self)
         eventValueDetailView.isHidden = false
@@ -356,5 +368,3 @@ extension HistoryViewController: ChartViewDelegate {
     }
 }
 // MARK: - Protocol
-
-

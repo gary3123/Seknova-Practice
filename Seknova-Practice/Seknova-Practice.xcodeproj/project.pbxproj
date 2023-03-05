@@ -47,6 +47,8 @@
 		4E2160F72939D5A80021553C /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2160F52939D5A80021553C /* ConnectViewController.swift */; };
 		4E2160F82939D5A80021553C /* ConnectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E2160F62939D5A80021553C /* ConnectViewController.xib */; };
 		4E29EDBD29AE00A400B84FED /* CustomLineChartRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29EDBC29AE00A400B84FED /* CustomLineChartRenderer.swift */; };
+		4E29EDC029B4E88900B84FED /* EnlargeHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E29EDBE29B4E88900B84FED /* EnlargeHistoryViewController.swift */; };
+		4E29EDC129B4E88900B84FED /* EnlargeHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E29EDBF29B4E88900B84FED /* EnlargeHistoryViewController.xib */; };
 		4E2E94E02913B7F900E2533F /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2E94DF2913B7F900E2533F /* String+Extensions.swift */; };
 		4E2E94E32913BDE200E2533F /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2E94E22913BDE200E2533F /* Alert.swift */; };
 		4E2EE826293DF856005F9DDD /* BodyInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2EE824293DF856005F9DDD /* BodyInformationTableViewCell.swift */; };
@@ -151,6 +153,8 @@
 		4EB1D70D295EF70D00ABA352 /* CommandBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB1D70C295EF70D00ABA352 /* CommandBase.swift */; };
 		4EB468992986B03800820F92 /* AccountSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB468972986B03800820F92 /* AccountSectionTableViewCell.swift */; };
 		4EB4689A2986B03800820F92 /* AccountSectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EB468982986B03800820F92 /* AccountSectionTableViewCell.xib */; };
+		4EB6B59A29B502B300554E36 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6B59829B502B300554E36 /* LogViewController.swift */; };
+		4EB6B59B29B502B300554E36 /* LogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EB6B59929B502B300554E36 /* LogViewController.xib */; };
 		4EFBDA642923AE8300202B2A /* ContrastPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFBDA622923AE8300202B2A /* ContrastPopoverViewController.swift */; };
 		4EFBDA652923AE8300202B2A /* ContrastPopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EFBDA632923AE8300202B2A /* ContrastPopoverViewController.xib */; };
 		4EFBDA6D292666AA00202B2A /* RecertifictionLeterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFBDA6B292666AA00202B2A /* RecertifictionLeterViewController.swift */; };
@@ -233,6 +237,8 @@
 		4E2160F52939D5A80021553C /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
 		4E2160F62939D5A80021553C /* ConnectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConnectViewController.xib; sourceTree = "<group>"; };
 		4E29EDBC29AE00A400B84FED /* CustomLineChartRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLineChartRenderer.swift; sourceTree = "<group>"; };
+		4E29EDBE29B4E88900B84FED /* EnlargeHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnlargeHistoryViewController.swift; sourceTree = "<group>"; };
+		4E29EDBF29B4E88900B84FED /* EnlargeHistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnlargeHistoryViewController.xib; sourceTree = "<group>"; };
 		4E2E94DF2913B7F900E2533F /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		4E2E94E22913BDE200E2533F /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		4E2EE824293DF856005F9DDD /* BodyInformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyInformationTableViewCell.swift; sourceTree = "<group>"; };
@@ -341,6 +347,8 @@
 		4EB1D70C295EF70D00ABA352 /* CommandBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandBase.swift; sourceTree = "<group>"; };
 		4EB468972986B03800820F92 /* AccountSectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSectionTableViewCell.swift; sourceTree = "<group>"; };
 		4EB468982986B03800820F92 /* AccountSectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSectionTableViewCell.xib; sourceTree = "<group>"; };
+		4EB6B59829B502B300554E36 /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
+		4EB6B59929B502B300554E36 /* LogViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogViewController.xib; sourceTree = "<group>"; };
 		4EFBDA622923AE8300202B2A /* ContrastPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContrastPopoverViewController.swift; sourceTree = "<group>"; };
 		4EFBDA632923AE8300202B2A /* ContrastPopoverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContrastPopoverViewController.xib; sourceTree = "<group>"; };
 		4EFBDA6B292666AA00202B2A /* RecertifictionLeterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecertifictionLeterViewController.swift; sourceTree = "<group>"; };
@@ -422,6 +430,7 @@
 		4E11253A293A31D900D3BD55 /* MainFlow */ = {
 			isa = PBXGroup;
 			children = (
+				4EB6B59729B502A200554E36 /* Log */,
 				4E8A4E3A299490F20078BBCC /* ReportForm */,
 				4E8669A4298B7C4200A38D1A /* Setting */,
 				4E0860352949A40700170A60 /* MainViewController.swift */,
@@ -440,6 +449,8 @@
 			children = (
 				4E11253C293A324C00D3BD55 /* HistoryViewController.swift */,
 				4E11253D293A324C00D3BD55 /* HistoryViewController.xib */,
+				4E29EDBE29B4E88900B84FED /* EnlargeHistoryViewController.swift */,
+				4E29EDBF29B4E88900B84FED /* EnlargeHistoryViewController.xib */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -830,6 +841,15 @@
 			path = ScanningSensor;
 			sourceTree = "<group>";
 		};
+		4EB6B59729B502A200554E36 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				4EB6B59829B502B300554E36 /* LogViewController.swift */,
+				4EB6B59929B502B300554E36 /* LogViewController.xib */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
 		4EC6763F28F8265D0027BF79 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -1043,8 +1063,10 @@
 				4E37FCCE29934A3800405DCB /* RateAlertsViewController.xib in Resources */,
 				4EFF5FA529921DED00BF00D5 /* HighSugarAlertsPickerViewTableViewCell.xib in Resources */,
 				4E71FBC7292FAFDB00B75F9B /* AudiovisualTeachingViewController.xib in Resources */,
+				4E29EDC129B4E88900B84FED /* EnlargeHistoryViewController.xib in Resources */,
 				4E37FCC1299244FF00405DCB /* LowSugarAlertsSwitchTableViewCell.xib in Resources */,
 				4E2160F82939D5A80021553C /* ConnectViewController.xib in Resources */,
+				4EB6B59B29B502B300554E36 /* LogViewController.xib in Resources */,
 				4EB4689A2986B03800820F92 /* AccountSectionTableViewCell.xib in Resources */,
 				4E0860342948AA2400170A60 /* CustomTabBarView.xib in Resources */,
 				4EFBDA652923AE8300202B2A /* ContrastPopoverViewController.xib in Resources */,
@@ -1261,6 +1283,7 @@
 				4EFF5F942990117600BF00D5 /* CalibrationModeTableViewCell.swift in Sources */,
 				4E567A0D29960106001D6262 /* LifeStyleTextFieldTableViewCell.swift in Sources */,
 				4EFBDA6D292666AA00202B2A /* RecertifictionLeterViewController.swift in Sources */,
+				4E29EDC029B4E88900B84FED /* EnlargeHistoryViewController.swift in Sources */,
 				4E71FBC1292FAAAE00B75F9B /* BodyInformationViewController.swift in Sources */,
 				4E37FCC8299245E400405DCB /* LowSugarAlertsPickerViewTableViewCell.swift in Sources */,
 				4E71FBCB2930EF4A00B75F9B /* BloodSugarIndexViewController.swift in Sources */,
@@ -1292,6 +1315,7 @@
 				4E1EF35A299E061C0091F91B /* OtherEventTableViewCell.swift in Sources */,
 				4E0860372949A40700170A60 /* MainViewController.swift in Sources */,
 				4E37FCC42992454E00405DCB /* LowSugarAlertsLabelTableViewCell.swift in Sources */,
+				4EB6B59A29B502B300554E36 /* LogViewController.swift in Sources */,
 				4E1EF36A299F692A0091F91B /* InsulinTableViewCell.swift in Sources */,
 				4E11254E293A33FF00D3BD55 /* LifeStyleViewController.swift in Sources */,
 				4E0860332948AA2400170A60 /* CustomTabBarView.swift in Sources */,

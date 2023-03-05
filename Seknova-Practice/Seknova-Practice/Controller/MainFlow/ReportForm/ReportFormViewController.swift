@@ -47,20 +47,31 @@ class ReportFormViewController: UIViewController {
     var oneHundredEightyToTwoHundredForty = 0
     var seventyTooneHundredEighty = 0
     var lessThanseventy = 0
-   
+    var chartDataReloadStatus = false
+    var barChartDataSet = BarChartDataSet()
+    let labelTimeFormatter = DateFormatter()
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "報表"
         setupUI()
     }
     
     // MARK: - UI Settings
     
     func setupUI() {
+        setupLabelOfTime()
         setupRandomData()
         setupLineChartView()
         setupBarChartView()
+    }
+    
+    func setupLabelOfTime() {
+        timeIntervalLabel.text = "Date available for 7 of 30 days"
+        labelTimeFormatter.locale = Locale(identifier: "en_US")
+        labelTimeFormatter.dateFormat = "MMMM dd, yyyy"
+        showDateLabel.text = "\(labelTimeFormatter.string(from: Date())) - \(labelTimeFormatter.string(from: Date.init(timeInterval: -24 * 60 * 60 * 7, since: Date())))"
     }
     
     func setupRandomData() {
@@ -84,7 +95,9 @@ class ReportFormViewController: UIViewController {
     }
     
     func setupLineChartView() {
+        
         let xAxisNumberFormatter = ChartXAxisFormatter()
+        
         xAxisNumberFormatter.whichPageToUse = .reportFormLineChartView
         lineChartView.xAxis.valueFormatter = xAxisNumberFormatter
         
@@ -101,7 +114,7 @@ class ReportFormViewController: UIViewController {
 
         lineChartView.legendRenderer.legend?.form = .none
         
-        var timeFormatter = DateFormatter()
+        let timeFormatter = DateFormatter()
         timeFormatter.locale = Locale(identifier: "en_US")
         timeFormatter.dateFormat = "ha"
         lineChartView.xAxis.axisMaximum = timeFormatter.date(from: "12AM")!.timeIntervalSince1970 + 3600 * 24
@@ -112,39 +125,54 @@ class ReportFormViewController: UIViewController {
         lineChartView.xAxis.forceLabelsEnabled = true
         lineChartView.rightAxis.drawGridLinesEnabled = false
         lineChartView.xAxis.drawGridLinesEnabled = false
+        let limitLine1 = ChartLimitLine(limit: Double(UserPreferences.shared.highBloodSugar), label: "")
+        limitLine1.lineColor = .seventyTooneHundredEighty!
+        lineChartView.xAxis.addLimitLine(limitLine1)
+        let limitLine2 = ChartLimitLine(limit: Double(UserPreferences.shared.lowBloodSugar), label: "")
+        limitLine1.lineColor = .seventyTooneHundredEighty!
+        lineChartView.xAxis.addLimitLine(limitLine2)
     
         timeFormatter.dateFormat = "H"
+        
+        if chartDataReloadStatus == true {
+            let emptyData =  ChartDataEntry()
+            firstDataEntry = [emptyData]
+            secondDataEntry = [emptyData]
+            thirdDataEntry = [emptyData]
+            fourthDataEntry = [emptyData]
+            fifthDataEntry = [emptyData]
+        }
+        
         for i in 0 ... 7 {
-            
             if firstRandomData[i][0] == 0 {
                 firstData = ChartDataEntry(x: timeFormatter.date(from: "0")!.timeIntervalSince1970,
                                            y: firstRandomData[i][1])
             } else if secondRandomData[i][0] == 0 {
-                firstData = ChartDataEntry(x: timeFormatter.date(from: "0")!.timeIntervalSince1970,
+                secondData = ChartDataEntry(x: timeFormatter.date(from: "0")!.timeIntervalSince1970,
                                            y: secondRandomData[i][1])
             } else if thirdRandomData[i][0] == 0 {
-                firstData = ChartDataEntry(x: timeFormatter.date(from: "0")!.timeIntervalSince1970,
+                thirdData = ChartDataEntry(x: timeFormatter.date(from: "0")!.timeIntervalSince1970,
                                            y: thirdRandomData[i][1])
             } else if fourthRandomData[i][0] == 0 {
-                firstData = ChartDataEntry(x: timeFormatter.date(from: "0")!.timeIntervalSince1970,
+                fourthData = ChartDataEntry(x: timeFormatter.date(from: "0")!.timeIntervalSince1970,
                                            y: fourthRandomData[i][1])
             } else if fifthRandomData[i][0] == 0 {
-                firstData = ChartDataEntry(x: timeFormatter.date(from: "0")!.timeIntervalSince1970,
+                fifthData = ChartDataEntry(x: timeFormatter.date(from: "0")!.timeIntervalSince1970,
                                            y: fifthRandomData[i][1])
             } else if firstRandomData[i][0] == 24{
                 firstData = ChartDataEntry(x: timeFormatter.date(from: "0")!.timeIntervalSince1970 + 3600,
                                            y: firstRandomData[i][1])
             } else if secondRandomData[i][0] == 24 {
-                firstData = ChartDataEntry(x: timeFormatter.date(from: "23")!.timeIntervalSince1970 + 3600,
+                secondData = ChartDataEntry(x: timeFormatter.date(from: "23")!.timeIntervalSince1970 + 3600,
                                            y: secondRandomData[i][1])
             } else if thirdRandomData[i][0] == 24 {
-                firstData = ChartDataEntry(x: timeFormatter.date(from: "23")!.timeIntervalSince1970 + 3600,
+                thirdData = ChartDataEntry(x: timeFormatter.date(from: "23")!.timeIntervalSince1970 + 3600,
                                            y: thirdRandomData[i][1])
             } else if fourthRandomData[i][0] == 24 {
-                firstData = ChartDataEntry(x: timeFormatter.date(from: "23")!.timeIntervalSince1970 + 3600,
+                fourthData = ChartDataEntry(x: timeFormatter.date(from: "23")!.timeIntervalSince1970 + 3600,
                                            y: fourthRandomData[i][1])
             } else if fifthRandomData[i][0] == 24 {
-                firstData = ChartDataEntry(x: timeFormatter.date(from: "23")!.timeIntervalSince1970 + 3600,
+                fifthData = ChartDataEntry(x: timeFormatter.date(from: "23")!.timeIntervalSince1970 + 3600,
                                            y: fifthRandomData[i][1])
             } else {
                 firstData = ChartDataEntry(x:  timeFormatter.date(from: "\(Int( firstRandomData[i][0] ))")!.timeIntervalSince1970,
@@ -158,7 +186,6 @@ class ReportFormViewController: UIViewController {
                 fifthData = ChartDataEntry(x: timeFormatter.date(from: "\(Int( fifthRandomData[i][0] ))")!.timeIntervalSince1970 ,
                                            y: fifthRandomData[i][1])
             }
-            
             firstDataEntry.append(firstData)
             secondDataEntry.append(secondData)
             thirdDataEntry.append(thirdData)
@@ -218,6 +245,7 @@ class ReportFormViewController: UIViewController {
     }
     
     func setupBarChartView() {
+        barChartView.clear()
         let xAxisNumberFormatter = ChartXAxisFormatter()
         xAxisNumberFormatter.whichPageToUse = .reportFormBarChartView
         barChartView.xAxis.valueFormatter = xAxisNumberFormatter
@@ -254,40 +282,81 @@ class ReportFormViewController: UIViewController {
 
         let formatter = NumberFormatter()
         formatter.positivePrefix = "%"
+        barChartDataSet.valueFormatter = DefaultValueFormatter(formatter: formatter)
         var dataEntries = [BarChartDataEntry]()
-        for i in 0 ... 5 {
-            switch i {
-            case 0:
-                let entry = BarChartDataEntry(x: Double(i), y: 0)
-                dataEntries.append(entry)
-            case 1:
-                let entry = BarChartDataEntry(x: Double(i), y: (Double(upperThenTwoHundredForty) / 40) * 100 )
-                dataEntries.append(entry)
-            case 2:
-                let entry = BarChartDataEntry(x: Double(i), y: (Double(oneHundredEightyToTwoHundredForty) / 40) * 100)
-                dataEntries.append(entry)
-            case 3:
-                let entry = BarChartDataEntry(x: Double(i), y: (Double(seventyTooneHundredEighty) / 40) * 100)
-                dataEntries.append(entry)
-            case 4:
-                let entry = BarChartDataEntry(x: Double(i), y: (Double(lessThanseventy) / 40) * 100)
-                dataEntries.append(entry)
-            default:
-                let entry = BarChartDataEntry(x: Double(i), y: 0)
-                dataEntries.append(entry)
+        if chartDataReloadStatus == true {
+            barChartDataSet.drawValuesEnabled = false //需要先將數值顯示關掉，否則重置資料時，會把0也放上去
+            upperThenTwoHundredForty = 0
+            oneHundredEightyToTwoHundredForty = 0
+            seventyTooneHundredEighty = 0
+            lessThanseventy = 0
+            //資料重置完畢
+            countBarChartViewData(data: firstRandomData)
+            countBarChartViewData(data: secondRandomData)
+            countBarChartViewData(data: thirdRandomData)
+            countBarChartViewData(data: fourthRandomData)
+            countBarChartViewData(data: fifthRandomData)
+            
+            
+            for i in 0 ... 5 {
+                switch i {
+                case 0:
+                    let entry = BarChartDataEntry(x: Double(i), y: 0)
+                    dataEntries.append(entry)
+                case 1:
+                    let entry = BarChartDataEntry(x: Double(i), y: (Double(upperThenTwoHundredForty) / 40) * 100 )
+                    dataEntries.append(entry)
+                case 2:
+                    let entry = BarChartDataEntry(x: Double(i), y: (Double(oneHundredEightyToTwoHundredForty) / 40) * 100)
+                    dataEntries.append(entry)
+                case 3:
+                    let entry = BarChartDataEntry(x: Double(i), y: (Double(seventyTooneHundredEighty) / 40) * 100)
+                    dataEntries.append(entry)
+                case 4:
+                    let entry = BarChartDataEntry(x: Double(i), y: (Double(lessThanseventy) / 40) * 100)
+                    dataEntries.append(entry)
+                default:
+                    let entry = BarChartDataEntry(x: Double(i), y: 0)
+                    dataEntries.append(entry)
+                }
+            }
+            
+        } else {
+            for i in 0 ... 5 {
+                switch i {
+                case 0:
+                    let entry = BarChartDataEntry(x: Double(i), y: 0)
+                    dataEntries.append(entry)
+                case 1:
+                    let entry = BarChartDataEntry(x: Double(i), y: (Double(upperThenTwoHundredForty) / 40) * 100 )
+                    dataEntries.append(entry)
+                case 2:
+                    let entry = BarChartDataEntry(x: Double(i), y: (Double(oneHundredEightyToTwoHundredForty) / 40) * 100)
+                    dataEntries.append(entry)
+                case 3:
+                    let entry = BarChartDataEntry(x: Double(i), y: (Double(seventyTooneHundredEighty) / 40) * 100)
+                    dataEntries.append(entry)
+                case 4:
+                    let entry = BarChartDataEntry(x: Double(i), y: (Double(lessThanseventy) / 40) * 100)
+                    dataEntries.append(entry)
+                default:
+                    let entry = BarChartDataEntry(x: Double(i), y: 0)
+                    dataEntries.append(entry)
+                }
             }
         }
-        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "")
-        chartDataSet.valueFormatter = DefaultValueFormatter(formatter: formatter)
-        chartDataSet.colors = [.clear,
+        
+        barChartDataSet = BarChartDataSet(entries: dataEntries, label: "")
+        barChartDataSet.valueFormatter = DefaultValueFormatter(formatter: formatter)
+        barChartDataSet.colors = [.clear,
                                .upperThanTwoHundredFourty!,
                                .oneHundredEightyToTwoHundredForty!,
                                .seventyTooneHundredEighty!,
                                .lessThanseventy!,
                                .clear]
-        chartDataSet.highlightEnabled = false
-        chartDataSet.valueFont = UIFont.systemFont(ofSize: 15)
-        let chartData = BarChartData(dataSet: chartDataSet)
+        barChartDataSet.highlightEnabled = false
+        barChartDataSet.valueFont = UIFont.systemFont(ofSize: 15)
+        let chartData = BarChartData(dataSet: barChartDataSet)
         chartData.barWidth = 0.7
         
         
@@ -314,12 +383,21 @@ class ReportFormViewController: UIViewController {
     
     // MARK: - IBAction
     @IBAction func clickTimeIntervalSegmentedControl() {
-//        let emptyEntry = [ChartDataEntry]()
-//        let emptyDataSet = LineChartDataSet(entries: emptyEntry, label: "")
-//        chartData = LineChartData(dataSets: [emptyDataSet])
+        chartDataReloadStatus = true
         setupRandomData()
         setupLineChartView()
         setupBarChartView()
+        switch timeIntervalSegmentedControl.selectedSegmentIndex {
+        case 0:
+            timeIntervalLabel.text = "Date available for 7 of 30 days"
+            showDateLabel.text = "\(labelTimeFormatter.string(from: Date())) - \(labelTimeFormatter.string(from: Date.init(timeInterval: -24 * 60 * 60 * 7, since: Date())))"
+        case 1:
+            timeIntervalLabel.text = "Date available for 14 of 30 days"
+            showDateLabel.text = "\(labelTimeFormatter.string(from: Date())) - \(labelTimeFormatter.string(from: Date.init(timeInterval: -24 * 60 * 60 * 14, since: Date())))"
+        default:
+            timeIntervalLabel.text = "Date available for 30 of 30 days"
+            showDateLabel.text = "\(labelTimeFormatter.string(from: Date())) - \(labelTimeFormatter.string(from: Date.init(timeInterval: -24 * 60 * 60 * 30, since: Date())))"
+        }
     }
     
     @IBAction func clickReportFormSegmentedControl() {
