@@ -217,6 +217,8 @@ extension BodyInformationViewController: UITableViewDelegate, UITableViewDataSou
                 cell.optionsLabel.text = AppDefine.PersonInformation.allCases[indexPath.row].title
                 cell.textField.tag = indexPath.row
                 cell.textField.text = informationAnsArray[indexPath.row]
+                cell.textField.isEnabled = false
+                cell.selectionStyle = .none
                 return cell
             case .phone:
                 let cell = tableView.dequeueReusableCell(withIdentifier: BodyInformationTableViewCell.identifier,

@@ -215,7 +215,6 @@ class EnlargeHistoryViewController: UIViewController {
             default:
                 break
             }
-           
         }
         let imageChartDataSet = LineChartDataSet(entries: imageChartDataEntryArray, label: "")
         imageChartDataSet.colors = [.clear]
@@ -365,6 +364,10 @@ extension EnlargeHistoryViewController: ChartViewDelegate {
         dateTimeLabel.text = showDateTimeFormatter.string(from: realmDateTimeFormatter.date(from: eventDataTable[dataIndex!].dateTime)!)
         remarkLabel.text = eventDataTable[dataIndex!].note
         
+    }
+    
+    func chartValueNothingSelected(_ chartView: ChartViewBase) {
+        eventValueDetailView.isHidden = true
     }
 }
 // MARK: - Protocol

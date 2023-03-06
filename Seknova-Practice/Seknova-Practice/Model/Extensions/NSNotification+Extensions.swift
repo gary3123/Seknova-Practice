@@ -13,4 +13,5 @@ extension NSNotification.Name {
     static let updatePersionalInformation = Notification.Name("updatePersionalInformation")
     static let updateAlertsSetting = Notification.Name("updateAlertsSetting")
     static let reloadHistoryChartViewData = Notification.Name("reloadHistoryChartViewData")
+    static let reloadPersionalInformationVC = Notification.Name("reloadPersionalInformationVC")
 }

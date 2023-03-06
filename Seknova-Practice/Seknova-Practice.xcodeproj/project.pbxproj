@@ -155,6 +155,8 @@
 		4EB4689A2986B03800820F92 /* AccountSectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EB468982986B03800820F92 /* AccountSectionTableViewCell.xib */; };
 		4EB6B59A29B502B300554E36 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6B59829B502B300554E36 /* LogViewController.swift */; };
 		4EB6B59B29B502B300554E36 /* LogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EB6B59929B502B300554E36 /* LogViewController.xib */; };
+		4EB6B59F29B5C34E00554E36 /* PhoneVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB6B59D29B5C34E00554E36 /* PhoneVerificationViewController.swift */; };
+		4EB6B5A029B5C34E00554E36 /* PhoneVerificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EB6B59E29B5C34E00554E36 /* PhoneVerificationViewController.xib */; };
 		4EFBDA642923AE8300202B2A /* ContrastPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFBDA622923AE8300202B2A /* ContrastPopoverViewController.swift */; };
 		4EFBDA652923AE8300202B2A /* ContrastPopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EFBDA632923AE8300202B2A /* ContrastPopoverViewController.xib */; };
 		4EFBDA6D292666AA00202B2A /* RecertifictionLeterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFBDA6B292666AA00202B2A /* RecertifictionLeterViewController.swift */; };
@@ -349,6 +351,8 @@
 		4EB468982986B03800820F92 /* AccountSectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSectionTableViewCell.xib; sourceTree = "<group>"; };
 		4EB6B59829B502B300554E36 /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		4EB6B59929B502B300554E36 /* LogViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogViewController.xib; sourceTree = "<group>"; };
+		4EB6B59D29B5C34E00554E36 /* PhoneVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationViewController.swift; sourceTree = "<group>"; };
+		4EB6B59E29B5C34E00554E36 /* PhoneVerificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneVerificationViewController.xib; sourceTree = "<group>"; };
 		4EFBDA622923AE8300202B2A /* ContrastPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContrastPopoverViewController.swift; sourceTree = "<group>"; };
 		4EFBDA632923AE8300202B2A /* ContrastPopoverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContrastPopoverViewController.xib; sourceTree = "<group>"; };
 		4EFBDA6B292666AA00202B2A /* RecertifictionLeterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecertifictionLeterViewController.swift; sourceTree = "<group>"; };
@@ -504,6 +508,7 @@
 		4E112543293A32EF00D3BD55 /* PersionalInformation */ = {
 			isa = PBXGroup;
 			children = (
+				4EB6B59C29B5C31500554E36 /* PhoneVerification */,
 				4E112550293A341E00D3BD55 /* PersionalInformationViewController.swift */,
 				4E112551293A341E00D3BD55 /* PersionalInformationViewController.xib */,
 				4EA0FA2F29768FCF00D135B5 /* PersionalInformationTableViewCell.swift */,
@@ -850,6 +855,15 @@
 			path = Log;
 			sourceTree = "<group>";
 		};
+		4EB6B59C29B5C31500554E36 /* PhoneVerification */ = {
+			isa = PBXGroup;
+			children = (
+				4EB6B59D29B5C34E00554E36 /* PhoneVerificationViewController.swift */,
+				4EB6B59E29B5C34E00554E36 /* PhoneVerificationViewController.xib */,
+			);
+			path = PhoneVerification;
+			sourceTree = "<group>";
+		};
 		4EC6763F28F8265D0027BF79 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -1049,6 +1063,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EB6B5A029B5C34E00554E36 /* PhoneVerificationViewController.xib in Resources */,
 				4E8A4E39299377370078BBCC /* AudioPickerViewTableViewCell.xib in Resources */,
 				4E11253F293A324C00D3BD55 /* HistoryViewController.xib in Resources */,
 				4E0860382949A40700170A60 /* MainViewController.xib in Resources */,
@@ -1271,6 +1286,7 @@
 				4E88DB4E290283C9005DCFC9 /* AlphaBackgroundView.swift in Sources */,
 				4EA71BD72939F282000A1A4C /* ScanningSensorViewController.swift in Sources */,
 				4EFF5FA429921DED00BF00D5 /* HighSugarAlertsPickerViewTableViewCell.swift in Sources */,
+				4EB6B59F29B5C34E00554E36 /* PhoneVerificationViewController.swift in Sources */,
 				4EB1D70A295EDC9F00ABA352 /* TransmitterTimeAndSensorBatteryPopover.swift in Sources */,
 				4E567A1129960220001D6262 /* LifeStyleLabelTableViewCell.swift in Sources */,
 				4E112552293A341E00D3BD55 /* PersionalInformationViewController.swift in Sources */,

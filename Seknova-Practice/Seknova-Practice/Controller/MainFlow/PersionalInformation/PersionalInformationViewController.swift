@@ -21,7 +21,7 @@ class PersionalInformationViewController: UIViewController {
     
     // MARK: - Variables
     
-    var informationAnsArray: [String] = ["", "", "", "", "", "", "", "", "", "", "", ""]
+    var informationAnsArray: [String] = ["", "", "", "", "", "", "", "", "", "", "", "",""]
     let accountoptionLabel: [String] = ["發射器裝置", "感測器裝置", "修改密碼"]
     var datePickerStatus = false
     let fullScreenSize = UIScreen.main.bounds.size
@@ -31,7 +31,6 @@ class PersionalInformationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         informationAnsArray[AppDefine.PersonInformation.email.rawValue] = UserPreferences.shared.email
-        
         tableView.isPrefetchingEnabled = false
         tableView.sectionHeaderTopPadding = 0
         NotificationCenter.default.addObserver(self, selector: #selector(upadtePersionalInformationToRealm), name: .updatePersionalInformation, object: nil)
@@ -81,7 +80,7 @@ class PersionalInformationViewController: UIViewController {
         birthdayView.addSubview(birthdayPicker)
     }
     
-    func setDefaultArray() {
+    private func setDefaultArray() {
         let realm = try! Realm()
         let userinformationTable = realm.objects(UserInformation.self).filter("userId = '\(UserPreferences.shared.email)'")
         informationAnsArray[0] = userinformationTable[0].firstName
@@ -100,6 +99,13 @@ class PersionalInformationViewController: UIViewController {
         } else {
             informationAnsArray[11] = "否"
         }
+        
+        if userinformationTable[0].phone_Verified == true {
+            informationAnsArray[12] = "是"
+        } else {
+            informationAnsArray[12] = "否"
+        }
+        tableView.reloadData()
     }
     
     
@@ -200,6 +206,32 @@ class PersionalInformationViewController: UIViewController {
                                        phone_Verified: false)
         LocalDatabase.shared.addUserInformation(userInformation: addData)
     }
+ // MARK: - resizeImage
+    func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage? {
+        let size = image.size
+        
+        let widthRatio  = targetSize.width  / size.width
+        let heightRatio = targetSize.height / size.height
+        
+        // Figure out what our orientation is, and use that to form the rectangle
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+        } else {
+            newSize = CGSize(width: size.width * widthRatio, height: size.height * widthRatio)
+        }
+        
+        // This is the rect that we've calculated out and this is what is actually used below
+        let rect = CGRect(origin: .zero, size: newSize)
+        
+        // Actually do the resizing to the rect using the ImageContext stuff
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage
+    }
     
     
 }
@@ -256,6 +288,8 @@ extension PersionalInformationViewController: UITableViewDelegate, UITableViewDa
                 cell.optionsLabel.text = AppDefine.PersonInformation.allCases[indexPath.row].title
                 cell.textField.tag = indexPath.row
                 cell.textField.text = informationAnsArray[3]
+                cell.textField.isEnabled = false
+                cell.selectionStyle = .none
                 return cell
             case .phone:
                 let cell = tableView.dequeueReusableCell(withIdentifier: PersionalInformationTableViewCell.identifier,
@@ -264,8 +298,29 @@ extension PersionalInformationViewController: UITableViewDelegate, UITableViewDa
                 cell.textField.tag = indexPath.row
                 cell.textField.placeholder = "點擊進行編輯"
                 cell.textField.keyboardType = .numberPad
-                cell.textField.text = informationAnsArray[4]
+                // 設定替換字元範圍
+                let strIndex = informationAnsArray[4].index(informationAnsArray[4].startIndex, offsetBy: 0)
+                // 替換首字為 +886
+                cell.textField.text = informationAnsArray[4].replacingCharacters(in: strIndex ... strIndex, with: "+886")
+                cell.textField.isEnabled = false
                 cell.textField.delegate = self
+                if informationAnsArray[12] == "是" {
+                    let view = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 20))
+                    let imageView = UIImageView(frame: CGRect(x: 10, y: 0, width: 20, height: 20))
+                    let image = resizeImage(image: UIImage(named: "phone_verified")!, targetSize: CGSize(width: 20, height: 20))
+                    imageView.image = image
+                    view.addSubview(imageView)
+                    cell.textField.rightView = view
+                    cell.textField.rightViewMode = .always
+                } else {
+                    let view = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 20))
+                    let imageView = UIImageView(frame: CGRect(x: 10, y: 0, width: 20, height: 20))
+                    let image = resizeImage(image: UIImage(named: "phone_alarm")!, targetSize: CGSize(width: 20, height: 20))
+                    imageView.image = image
+                    view.addSubview(imageView)
+                    cell.textField.rightView = view
+                    cell.textField.rightViewMode = .always
+                }
                 return cell
             case .address:
                 let cell = tableView.dequeueReusableCell(withIdentifier: PersionalInformationTableViewCell.identifier,
@@ -366,6 +421,10 @@ extension PersionalInformationViewController: UITableViewDelegate, UITableViewDa
             if indexPath.row == 2 {
                 datePickerStatus.toggle()
                 clickDatePicker()
+            } else if indexPath.row == 4 {
+                let nextVC = PhoneVerificationViewController()
+                nextVC.reloadPersionalInformationDataDelegate = self
+                navigationController?.pushViewController(nextVC, animated: true)
             }
             
         } else if indexPath.section == 1 {
@@ -440,6 +499,14 @@ extension PersionalInformationViewController: UITextFieldDelegate {
         print(informationAnsArray)
     }
 }
+// MARK: - ReloadPersionalInformationData
+extension PersionalInformationViewController: ReloadPersionalInformationData {
+    func reloadPersionalInformationData() {
+        setDefaultArray()
+    }
+}
+
+
 
 // MARK: - UILabelDelegate
 

@@ -197,7 +197,8 @@ class HistoryViewController: UIViewController {
             default:
                 break
             }
-           
+            
+            
         }
         let imageChartDataSet = LineChartDataSet(entries: imageChartDataEntryArray, label: "")
         imageChartDataSet.colors = [.clear]
@@ -352,7 +353,10 @@ extension HistoryViewController: ChartViewDelegate {
         showDateTimeFormatter.dateFormat = "MM/dd hh:mm"
         dateTimeLabel.text = showDateTimeFormatter.string(from: realmDateTimeFormatter.date(from: eventDataTable[dataIndex!].dateTime)!)
         remarkLabel.text = eventDataTable[dataIndex!].note
-        
+    }
+    
+    func chartValueNothingSelected(_ chartView: ChartViewBase) {
+        eventValueDetailView.isHidden = true
     }
 }
 // MARK: - Protocol
